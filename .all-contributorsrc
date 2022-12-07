@@ -1,5 +1,5 @@
 {
-  "projectName": "template-default",
+  "projectName": "weihnachtsmarktkarte",
   "projectOwner": "technologiestiftung",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -25,10 +25,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/2759340?v=4",
       "profile": "http://vogelino.com",
       "contributions": [
-        "doc",
-        "ideas",
-        "review",
-        "code"
+        "doc"
       ]
     },
     {
@@ -38,6 +35,64 @@
       "profile": "http://www.awsm.de",
       "contributions": [
         "doc"
+      ]
+    },
+    {
+      "login": "m-b-e",
+      "name": "Max B. Eckert",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36029603?v=4",
+      "profile": "https://github.com/m-b-e",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "Lisa-Stubert",
+      "name": "Lisa-Stubert",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61182572?v=4",
+      "profile": "https://github.com/Lisa-Stubert",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "hanshack",
+      "name": "Hans Hack",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8025164?v=4",
+      "profile": "https://hanshack.com/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "annameide",
+      "name": "anna",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46717848?v=4",
+      "profile": "https://fhp.incom.org/profile/9200/projects",
+      "contributions": [
+        "design",
+        "ideas"
+      ]
+    },
+    {
+      "login": "ester-t-s",
+      "name": "Ester",
+      "avatar_url": "https://avatars.githubusercontent.com/u/91192024?v=4",
+      "profile": "https://github.com/ester-t-s",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "KlemensM",
+      "name": "KlemensM",
+      "avatar_url": "https://avatars.githubusercontent.com/u/98896505?v=4",
+      "profile": "https://github.com/KlemensM",
+      "contributions": [
+        "ideas",
+        "data"
       ]
     }
   ],

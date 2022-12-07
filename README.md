@@ -1,10 +1,15 @@
 ![](https://img.shields.io/badge/Built%20with%20%E2%9D%A4%EF%B8%8F-at%20Technologiestiftung%20Berlin-blue)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# {repo-template}
+# Berliner Energiekarte
+**This application is a prototype. It may contain errors and small bugs. If you notice something you can report an Issue. Thank you!**
+
+The Berliner Weihnachtsmarktkarte (Berlin Christmas market map) is an interactive web map of Berlin showing all christmas markets 2022 based on an open dataset. You can filter the markets by date and opening hours and also by marktes with no entry fee or with a special focus like international or design marktes. As a further example this map makes the meaning of open data clear by exploring the city in a new way. We wish you a charming exploration of the berlin christmas markets and merry christmas.
+
+![Map](/public/social-image.jpg)
 
 <!--
 
@@ -46,21 +51,110 @@ Read more here https://allcontributors.org/
 Get fancy shields at https://shields.io
  -->
 
-Add your project description here
 
-## Prerequisites
+## Imporant
 
-## Installation
+This repo is currently a work in progress! 
 
-## Usage or Deployment
+## Context
+   
+This application is almost completely based on open data. Open data is now an important part of Berlin's administrative activities and not only creates transparency and openness, but also enables analysis and applications like this to explore the city and come together for pre-christmas time. 
+You can find more open data at the [Berlin Open Data Portal](https://daten.berlin.de).
 
-## Development
+   
+## Data
 
-## Tests
 
-## Contributing
+   
+## Tech stack
 
-Before you create a pull request, write an issue so we can discuss your changes.
+This website is a NextJS app configured with:
+
+- [Typescript](https://www.typescriptlang.org/)
+- Linting with [ESLint](https://eslint.org/)
+- Formatting with [Prettier](https://prettier.io/)
+
+## Project structure
+
+Basic Next.js app
+
+## Getting started
+
+### Requirements
+
+#### Node.js
+
+This project is a Next.js app which requires you to have [Node.js](https://nodejs.org/en/) installed.
+
+
+### Installation
+
+Clone the repository to your local machine:
+
+```bash
+git clone git@github.com:technologiestiftung/energiekarte.git
+```
+
+Move into the repository folder:
+
+```bash
+cd energiekarte
+```
+
+Make sure you use the Node.js version specified in `.nvmrc`. Find out which Node version you're currently on with:
+
+```bash
+node --version
+```
+
+If this version differs from the one specified in `.nvmrc`, please install the required version, either manually, or using a tool such as [nvm](https://github.com/nvm-sh/nvm), which allows switching to the correct version via:
+
+```bash
+nvm use
+```
+
+With the correct Node version, install the dependencies:
+
+```bash
+npm install
+```
+
+Because the map uses a basemap from maptiler (https://www.maptiler.com/), you will need to provide connection details in your environment. In this repository you can find a file `.env.example`. Duplicate this file and name it `.env`. 
+
+In `.env` you must enter the connection details to the Maptiler style file as suggested in `.env.example`.  If you do not know how to obtain the necessary details, please ask a repository maintainer for access. You can also use other basemaps by providing your own style file.  
+
+You are now ready to start a local development server on http://localhost:3000 via:
+
+```bash
+npm run dev
+```
+
+## Workflow
+
+New features, fixes, etc. should always be developed on a separate branch:
+
+- In your local repository, checkout the `main` branch.
+- Run `git checkout -b <name-of-your-branch>` to create a new branch (ideally following [Conventional Commits guidelines](https://www.conventionalcommits.org)).
+- Make your changes
+- Push your changes to the remote: `git push -u origin HEAD`
+- Open a pull request.
+
+You can commit using the `npm run cm` command to ensure your commits follow our conventions.
+
+## Deployment
+
+The app is deployed to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+## Map
+
+The basemap style was created with maptiler (https://www.maptiler.com/). The dark map style that is used in the application is located in our repo under: 
+./resources/mapstyle.json. If you would like to use this particular style feel free to copy it. Please note, that you would need to update the MAPKEY with your own project's mapkey.   
+
+## Page analytics
+
+We use [Matomo](https://matomo.org/) for website analytics. Matomo is respectful of the users' privacy, the page visits are tracked anonymously.
+
+In the production environment, a `NEXT_PUBLIC_MATOMO_URL` and `NEXT_PUBLIC_MATOMO_SITE_ID` is configured for this purpose.
 
 ## Contributors
 
@@ -70,11 +164,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://fabianmoronzirfas.me/"><img src="https://avatars.githubusercontent.com/u/315106?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Fabian Morón Zirfas</b></sub></a><br /><a href="https://github.com/technologiestiftung/template-default/commits?author=ff6347" title="Documentation">📖</a></td>
-    <td align="center"><a href="http://vogelino.com"><img src="https://avatars.githubusercontent.com/u/2759340?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Lucas Vogel</b></sub></a><br /><a href="https://github.com/technologiestiftung/template-default/commits?author=vogelino" title="Documentation">📖</a> <a href="#ideas-vogelino" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/technologiestiftung/template-default/pulls?q=is%3Apr+reviewed-by%3Avogelino" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/technologiestiftung/template-default/commits?author=vogelino" title="Code">💻</a></td>
-    <td align="center"><a href="http://www.awsm.de"><img src="https://avatars.githubusercontent.com/u/434355?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Ingo Hinterding</b></sub></a><br /><a href="https://github.com/technologiestiftung/template-default/commits?author=Esshahn" title="Documentation">📖</a></td>
-  </tr>
+  <tbody>
+    <tr>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
@@ -86,36 +179,39 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## Content Licencing
 
-Texts and content available as [CC BY](https://creativecommons.org/licenses/by/3.0/de/).
-
-Illustrations by Maria Musterfrau, all rights reserved.
+The Christmas market data used is under CC-BY license. We have processed and enriched the data for this application. If you use this dataset processed by us, you must indicate that the original raw data came from the Senatsverwaltung für Wirtschaft, Energie und Betriebe (Senate Department for Economics, Energy and Public Enterprises).
 
 ## Credits
 
 <table>
   <tr>
     <td>
-      Made by <a href="https://citylab-berlin.org/de/start/">
+      <a href="https://odis-berlin.de">
         <br />
         <br />
-        <img width="200" src="https://citylab-berlin.org/wp-content/uploads/2021/05/citylab-logo.svg" />
+        <img width="200" src="https://logos.citylab-berlin.org/logo-odis-berlin.svg" />
       </a>
     </td>
     <td>
-      A project by <a href="https://www.technologiestiftung-berlin.de/">
+      Together with: <a href="https://citylab-berlin.org/en/start/">
         <br />
         <br />
-        <img width="150" src="https://citylab-berlin.org/wp-content/uploads/2021/05/tsb.svg" />
+        <img width="200" src="https://logos.citylab-berlin.org/logo-citylab-berlin.svg" />
       </a>
     </td>
     <td>
-      Supported by <a href="https://www.berlin.de/rbmskzl/">
+      A project by: <a href="https://www.technologiestiftung-berlin.de/en/">
         <br />
         <br />
-        <img width="80" src="https://citylab-berlin.org/wp-content/uploads/2021/12/B_RBmin_Skzl_Logo_DE_V_PT_RGB-300x200.png" />
+        <img width="150" src="https://logos.citylab-berlin.org/logo-technologiestiftung-berlin-en.svg" />
+      </a>
+    </td>
+    <td>
+       Supported by: <a href="https://www.berlin.de/sen/inneres/">
+        <br />
+        <br />
+        <img width="80" src="./resources/B_SEN_InnDS_Logo_DE_V_PW_RGB.svg"/>
       </a>
     </td>
   </tr>
 </table>
-
-## Related Projects

@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+@layer base {
+
+  @font-face {
+    font-family: "Clan Medium";
+    src: url('/fonts/clan-medium.woff') format("woff");
+  }
+
+  @font-face {
+      font-family: "Clan Book";
+      src: url('/fonts/clan-book.woff') format("woff");
+  }
+
+  html, body, #__next {
+    font-family: "Clan Book", sans-serif;
+    color: #222222;
+  }
+
+}
+
+
+
+.maplibregl-ctrl-geolocate span {
+  background-image: url("data:image/svg+xml;base64,PHN2Zwp4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCndpZHRoPScyNCcKaGVpZ2h0PScyNCcKZmlsbD0nI0JEQTMzQicKdmlld0JveD0iMCAwIDIwIDIwIgo+CjxwYXRoCiAgZD0iTTEwIDRDOSA0IDkgNSA5IDV2LjFBNSA1IDAgMCAwIDUuMSA5SDVzLTEgMC0xIDEgMSAxIDEgMWguMUE1IDUgMCAwIDAgOSAxNC45di4xczAgMSAxIDEgMS0xIDEtMXYtLjFhNSA1IDAgMCAwIDMuOS0zLjloLjFzMSAwIDEtMS0xLTEtMS0xaC0uMUE1IDUgMCAwIDAgMTEgNS4xVjVzMC0xLTEtMXptMCAyLjVhMy41IDMuNSAwIDEgMSAwIDcgMy41IDMuNSAwIDEgMSAwLTd6IgovPgo8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIyIiAvPgo8cGF0aAogIGQ9Ik0xNCA1bDEgMS05IDktMS0xIDktOXoiCiAgZGlzcGxheT0ibm9uZSIKLz4KPC9zdmc+") !important;
+}
+
+.maplibregl-ctrl-geolocate span:hover {
+  background-image: url("data:image/svg+xml;base64,PHN2Zwp4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCndpZHRoPScyNCcKaGVpZ2h0PScyNCcKZmlsbD0nIzAwMCcKdmlld0JveD0iMCAwIDIwIDIwIgo+CjxwYXRoCiAgZD0iTTEwIDRDOSA0IDkgNSA5IDV2LjFBNSA1IDAgMCAwIDUuMSA5SDVzLTEgMC0xIDEgMSAxIDEgMWguMUE1IDUgMCAwIDAgOSAxNC45di4xczAgMSAxIDEgMS0xIDEtMXYtLjFhNSA1IDAgMCAwIDMuOS0zLjloLjFzMSAwIDEtMS0xLTEtMS0xaC0uMUE1IDUgMCAwIDAgMTEgNS4xVjVzMC0xLTEtMXptMCAyLjVhMy41IDMuNSAwIDEgMSAwIDcgMy41IDMuNSAwIDEgMSAwLTd6IgovPgo8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIyIiAvPgo8cGF0aAogIGQ9Ik0xNCA1bDEgMS05IDktMS0xIDktOXoiCiAgZGlzcGxheT0ibm9uZSIKLz4KPC9zdmc+") !important;
+}
+
+
+
+
+.maplibregl-ctrl{
+  background: none !important
+}
+
+.maplibregl-ctrl-geolocate span {
+  background-color: #091725;
+  color: #BDA33B;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 90px;
+}
+
+.maplibregl-ctrl-geolocate span:hover {
+  background-color: #BDA33B;
+
+}
+
+.mapboxgl-user-location-dot{
+  background-color:#BDA33B !important;
+}
+
+.mapboxgl-user-location-dot::before, .maplibregl-user-location-dot::before{
+  background-color: #BDA33B !important;
+}
+
+.mapboxgl-user-location-accuracy-circle, .maplibregl-user-location-accuracy-circle{
+  background-color: #BDA33B33 !important;
+}
+
+.mapboxgl-ctrl-group button, .maplibregl-ctrl-group button{
+  width: 40px !important;
+  height: 40px !important;
+}
+/* .maplibregl-ctrl-geolocate {
+  cursor: pointer;
+  position: fixed;
+  bottom: 0px;
+  right:0px
+} */
+.maplibregl-ctrl{
+  position: fixed;
+bottom: 36px;
+right: 15px;
+cursor: pointer;
+}
+.scrolling .scroll-shadow{
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+
+
+
+
+
+
+
