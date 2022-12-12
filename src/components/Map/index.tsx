@@ -102,17 +102,11 @@ export const MapComponent: FC<MapComponentType> = ({
   //   }
   // }, [marketId])
 
-  // const onMapCLick = (e: any): void => {
-  //   if (e?.originalEvent?.originalTarget?.nodeName === 'CANVAS') {
-  //     setMarketId(null)
-  //     return
-  //   }
-  // }
-
   const onMapCLick = (e: any): void => {
     if (e?.originalEvent?.originalTarget?.nodeName === 'CANVAS') {
       setEntityId(null)
       return
+    } else {
     }
   }
 

@@ -3,6 +3,9 @@ import classNames from 'classnames'
 import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
 import { SwitchEnergy } from './SwitchEnergy'
+
+import { typeTranslation } from '@lib/translation'
+
 export interface SidebarContentListType {
   data: any
 }
@@ -88,7 +91,9 @@ export const SidebarContentList: FC<SidebarContentListType> = ({
               >
                 <div className="w-10 text-right font-bold">{i + 1}.</div>
                 <div className="flex-1 pl-2 text-bold border-b-[1px]">
-                  <h3 className="font-bold">{feat.properties.entityType}</h3>
+                  <h3 className="font-bold">
+                    {typeTranslation(feat.properties.entityType)}
+                  </h3>
                   <p className="text-xs pb-2">
                     {feat.properties.entityAddress}; {feat.properties.entityPLZ}
                   </p>

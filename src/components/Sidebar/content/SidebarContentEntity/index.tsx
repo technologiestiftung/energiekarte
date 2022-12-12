@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react'
 import classNames from 'classnames'
 import { useCopyToClipboard } from '@lib/hooks/useCopyToClipboard'
+import { typeTranslation } from '@lib/translation'
 
 import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
@@ -45,7 +46,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
         <>
           <div className="text-bold">
             <h2 className="font-bold pt-4 text-lg">
-              {consumptionData.entityType}
+              {typeTranslation(consumptionData.entityType)}
             </h2>
             <p className="text-xs pb-2">
               {consumptionData.entityAddress}; {consumptionData.entityPLZ}
