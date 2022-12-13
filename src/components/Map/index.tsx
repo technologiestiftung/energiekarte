@@ -38,7 +38,12 @@ export const MapComponent: FC<MapType> = ({
     // @ts-ignore
     map.current = new maplibregl.Map({
       container: 'map',
-      style: mapStyle(),
+      // style: mapStyle(),
+      // style={process.env.NEXT_PUBLIC_MAPTILER_STYLE},
+      // style={process.env.NEXT_PUBLIC_MAPTILER_STYLE},
+
+      style: `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
+
       center: [
         MAP_CONFIG.defaultLongitude,
         MAP_CONFIG.defaultLatitude,
@@ -46,6 +51,7 @@ export const MapComponent: FC<MapType> = ({
       zoom: MAP_CONFIG.defaultZoom,
       minZoom: MAP_CONFIG.minZoom,
       maxZoom: MAP_CONFIG.maxZoom,
+      pitch: 20,
     })
 
     map.current.on('load', function () {
