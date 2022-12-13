@@ -153,6 +153,7 @@ const MapSite: NextPage = (energyData: any) => {
           entityId={entityId}
           entityConsumptionData={entityConsumptionData}
           entityRenovationData={entityRenovationData}
+          renovationLength={energyData.renovation.features.length}
         />
       </SidebarWrapper>
       <SidebarNav

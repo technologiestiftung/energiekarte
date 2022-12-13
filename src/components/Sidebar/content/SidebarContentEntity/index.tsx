@@ -26,6 +26,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   entityId,
   entityConsumptionData,
   entityRenovationData,
+  renovationLength,
 }) => {
   if (!entityId || !entityConsumptionData || !entityRenovationData) {
     return null
@@ -67,9 +68,17 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             <p className="pb-2">{consumptionData.entityHeatType}</p>
           </div>
           <h2 className="font-bold pt-4 text-lg py-4">Sanierungen:</h2>
-          Fläche insgesamt: {sumRenovationArea.toLocaleString('de-DE')}m2
+          {sumRenovationArea !== 0 && (
+            <span>
+              Fläche insgesamt: {sumRenovationArea.toLocaleString('de-DE')}m2
+            </span>
+          )}
           <br />
-          Kosten insgesamt: {sumRenovationCosts.toLocaleString('de-DE')}€
+          {sumRenovationCosts !== 0 && (
+            <span>
+              Kosten insgesamt: {sumRenovationCosts.toLocaleString('de-DE')}€
+            </span>
+          )}
           {renovationData?.map((feat, i) => (
             <div className="py-4 text-sm" key={'haus' + i}>
               <div className="flex pb-2">
@@ -87,6 +96,9 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
               <p>
                 Kosten: {feat.properties['houseCosts'].toLocaleString('de-DE')}{' '}
                 €
+              </p>
+              <p>
+                Prio: {feat.properties['housePrio']} von {renovationLength}
               </p>
             </div>
           ))}
