@@ -32,6 +32,13 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   }
   const consumptionData = entityConsumptionData.properties
   const renovationData = entityRenovationData
+  let sumRenovationCosts = 0
+  let sumRenovationArea = 0
+
+  renovationData.forEach((d) => {
+    sumRenovationArea += d.properties.houseArea
+    sumRenovationCosts += d.properties.houseCosts
+  })
 
   return (
     <>
@@ -59,8 +66,10 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             <p className="text-sm">Art der Wärmeversorgung</p>
             <p className="pb-2">{consumptionData.entityHeatType}</p>
           </div>
-
           <h2 className="font-bold pt-4 text-lg py-4">Sanierungen:</h2>
+          Fläche insgesamt: {sumRenovationArea.toLocaleString('de-DE')}m2
+          <br />
+          Kosten insgesamt: {sumRenovationCosts.toLocaleString('de-DE')}€
           {renovationData?.map((feat, i) => (
             <div className="py-4 text-sm" key={'haus' + i}>
               <div className="flex pb-2">
