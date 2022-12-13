@@ -3,7 +3,7 @@ export const typeTranslation = (type) => {
     Schulen: 'Schule',
     Flüchtlingsunterbringung: 'Geflüchtetenunterbringung',
     Gerichte: 'Gericht',
-    JVA: 'Gefängnis (JVA)',
+    JVA: 'Justizvollzugsanstalt',
   }
   const translatedType = types[type]
   return translatedType || type

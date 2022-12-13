@@ -33,8 +33,6 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   const consumptionData = entityConsumptionData.properties
   const renovationData = entityRenovationData
 
-  console.log(consumptionData, renovationData)
-
   return (
     <>
       <SidebarHeader

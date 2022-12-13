@@ -1,66 +1,81 @@
-import { FC, useEffect, useRef, useCallback, useMemo } from 'react'
-import Map, {
-  Source,
-  Layer,
-  Marker,
-  GeolocateControl,
-  Popup,
-} from 'react-map-gl'
-import maplibregl from 'maplibre-gl'
+import { useEffect, FC, useRef, useState, useCallback } from 'react'
+import maplibregl, { LngLatLike, Map, Marker } from 'maplibre-gl'
+
 import 'maplibre-gl/dist/maplibre-gl.css'
 import mapStyle from './mapStyle'
-import { layerStyles } from './layerStyles'
-import { useState } from 'react'
-import { useHasMobileSize } from '@lib/hooks/useHasMobileSize'
 
-export interface MapComponentType {
+import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
+
+interface MapType {
   energyData: any
-  marketsData: any
-  setMarketId: (time: string | null | number) => void
-  marketId: string | number | null
-  setMarketData: (time: any) => void
   zoomToCenter?: number[]
-  mapZoom?: number
+  entityId: string | number | null
+  setEntityId: (time: string | null | number) => void
+  entityConsumptionData: any
 }
 
-export const MapComponent: FC<MapComponentType> = ({
+const MAP_CONFIG = {
+  defaultZoom: 11,
+  defaultLatitude: 52.520008,
+  defaultLongitude: 13.404954,
+  minZoom: 10,
+  maxZoom: 19,
+}
+
+export const MapComponent: FC<MapType> = ({
   energyData,
   zoomToCenter,
-  mapZoom,
   entityId,
   setEntityId,
+  entityConsumptionData,
 }) => {
-  const isMobile = useHasMobileSize()
-  const mapRef = useRef<mapboxgl.Map>()
-  const startMapView = {
-    longitude: 13.341760020413858,
-    latitude: 52.510831578689704,
-    zoom: mapZoom,
-  }
+  const map = useRef<Map>(null)
+  const highlightedMarker = useRef<Marker>(null)
 
-  const [showMarker, setShowMarker] = useState<boolean>(true)
-  const [popupVisible, setPopupVisible] = useState<boolean>(false)
-  const [popupText, setPopupText] = useState<string>('')
-  const [popupCoo, setPopupCoo] = useState<number[]>([0, 0])
-
-  const [markerPosition, setMarkerPosition] = useState<number[]>([0, 0])
-
+  // Map setup (run only once on initial render)
   useEffect(() => {
-    if (mapRef.current) {
-      // @ts-ignore
-      if (mapRef.current.getZoom() !== mapZoom) {
-        // @ts-ignore
-        mapRef.current.zoomTo(mapZoom, {
-          duration: 200,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    map.current = new maplibregl.Map({
+      container: 'map',
+      style: mapStyle(),
+      center: [
+        MAP_CONFIG.defaultLongitude,
+        MAP_CONFIG.defaultLatitude,
+      ] as LngLatLike,
+      zoom: MAP_CONFIG.defaultZoom,
+      minZoom: MAP_CONFIG.minZoom,
+      maxZoom: MAP_CONFIG.maxZoom,
+    })
+
+    map.current.on('load', function () {
+      if (!map.current) return
+
+      energyData.consumption.features.forEach(function (marker: any) {
+        const el = document.createElement('div')
+        el.className = 'h-3 w-3 rounded-full bg-primary/70 cursor-pointer'
+        el.addEventListener('click', function () {
+          onMarkerClick(marker.properties.entityId, marker.geometry.coordinates)
         })
-      }
-    }
-  }, [mapZoom])
+        // add marker to map
+        new maplibregl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map.current)
+      })
+
+      map.current.on('click', (e) => {
+        if (e?.originalEvent?.originalTarget?.nodeName === 'CANVAS') {
+          setEntityId(null)
+          return
+        }
+      })
+    })
+  }, [])
 
   useEffect(() => {
-    if (mapRef.current) {
+    if (map.current && map.current.isStyleLoaded()) {
       // @ts-ignore
-      mapRef.current.easeTo({
+      map.current.easeTo({
         // @ts-ignore
         center: zoomToCenter,
         zoom: 15,
@@ -70,105 +85,100 @@ export const MapComponent: FC<MapComponentType> = ({
     }
   }, [zoomToCenter])
 
-  const markers = useMemo(
-    () =>
-      energyData.consumption.features.map((feature: any, index: number) => (
-        <Marker
-          longitude={feature.geometry.coordinates[0]}
-          latitude={feature.geometry.coordinates[1]}
-          anchor="center"
-          onClick={() => setEntityId(feature.properties.entityId)}
-          key={index}
-          style={{ cursor: 'pointer' }}
-        >
-          <div
-            // onMouseEnter={() => showPopupNow(true, feature)}
-            // onMouseOut={() => showPopupNow(false, false)}
-            className={'h-3 w-3 rounded-full bg-primary/70'}
-          ></div>
-        </Marker>
-      )),
+  useEffect(() => {
+    if (map.current && map.current.isStyleLoaded()) {
+      if (map.current.getSource('landparcel-source')) {
+        map.current.removeLayer('landparcel-layer')
+        map.current.removeSource('landparcel-source')
+        highlightedMarker && highlightedMarker.current?.remove()
+      }
 
-    [energyData]
-  )
+      if (!entityConsumptionData) {
+        return
+      }
 
-  // useEffect(() => {
-  //   if (marketId == null) {
-  //     setShowMarker(false)
-  //   } else {
-  //     const queriedMarket = marketsData.filter((d: any) => d.id == marketId)[0]
-  //     setShowMarker(true)
-  //     setMarkerPosition([queriedMarket.lng, queriedMarket.lat])
-  //   }
-  // }, [marketId])
+      let intersectingPolygon = false
+      energyData.landparcel.features.forEach((feat: any) => {
+        if (!intersectingPolygon) {
+          if (
+            booleanPointInPolygon(
+              entityConsumptionData.geometry.coordinates,
+              feat
+            )
+          )
+            intersectingPolygon = feat
+        }
+      })
 
-  const onMapCLick = (e: any): void => {
-    if (e?.originalEvent?.originalTarget?.nodeName === 'CANVAS') {
-      setEntityId(null)
-      return
-    } else {
+      if (entityId && map.current.isStyleLoaded()) {
+        map.current.addSource('landparcel-source', {
+          type: 'geojson',
+          data: intersectingPolygon,
+        })
+
+        map.current.addLayer({
+          id: 'landparcel-layer',
+          type: 'line',
+          source: 'landparcel-source',
+          paint: {
+            'line-dasharray': [1, 1],
+            'line-color': '#9bc95b',
+            // 'line-blur': 6,
+            'line-width': 2,
+            'line-opacity': [
+              'interpolate',
+              ['exponential', 0.5],
+              ['zoom'],
+              13,
+              0,
+              16,
+              0.6,
+            ],
+          },
+        })
+
+        // map.current.addLayer({
+        //   id: 'landparcel-layer',
+        //   type: 'fill',
+        //   source: 'landparcel-source',
+        //   paint: {
+        //     'fill-color': '#9bc95b',
+        //     'fill-opacity': [
+        //       'interpolate',
+        //       ['exponential', 0.5],
+        //       ['zoom'],
+        //       13,
+        //       0,
+        //       22,
+        //       0.4,
+        //     ],
+        //   },
+        // })
+
+        // Remove possibly existent markers:
+        highlightedMarker.current?.remove()
+
+        const customMarker = document.createElement('div')
+        customMarker.className =
+          'rounded-full w-4 h-4 blur-sm border-2 border-primary'
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        highlightedMarker.current = new maplibregl.Marker(customMarker)
+          .setLngLat(entityConsumptionData.geometry.coordinates)
+          .addTo(map.current)
+      }
     }
+  }, [entityConsumptionData])
+
+  function onMarkerClick(entityId: any) {
+    setEntityId(entityId)
   }
 
-  const onMapLoad = useCallback(() => {
-    // mapRef.current.on('move', () => {
-    //   // do something
-    // });
-    console.log('map loaded')
-  }, [])
-
   return (
-    <div className="h-screen w-screen">
-      <Map
-        mapLib={maplibregl}
-        initialViewState={{ ...startMapView }}
-        // mapStyle={process.env.NEXT_PUBLIC_MAPTILER_STYLE}
-        mapStyle={mapStyle()}
-        onClick={onMapCLick}
-        onLoad={onMapLoad}
-        // @ts-ignore
-        ref={mapRef}
-        maxBounds={[
-          12.536773681640625, 52.08034997571588, 14.20257568359375,
-          52.9395349771423,
-        ]}
-        attributionControl={false}
-        // onLoad={onMapLoad}
-      >
-        <Source
-          id="landparcel-source"
-          type="geojson"
-          data={energyData.landparcel}
-        >
-          <Layer {...layerStyles['landparcel']} />
-        </Source>
-        {markers}
-
-        {entityId && zoomToCenter && (
-          <Marker
-            longitude={zoomToCenter[0]}
-            latitude={zoomToCenter[1]}
-            anchor="center"
-          >
-            <div
-              className={
-                'h-5 w-5 rounded-full bg-primary border-solid border-secondary border-2'
-              }
-            ></div>
-          </Marker>
-        )}
-      </Map>
-
-      <div>
-        <div className="fixed bottom-2 right-2 text-gray-500/60 text-xs">
-          <a href="https://www.maptiler.com/copyright/" target="_blank">
-            © MapTiler
-          </a>{' '}
-          <a href="https://www.openstreetmap.org/copyright" target="_blank">
-            © OpenStreetMap contributors
-          </a>
-        </div>
-      </div>
-    </div>
+    <div
+      id="map"
+      className="w-full h-full bg-[#F8F4F0] !fixed"
+      aria-label="Kartenansicht der Einrichtungen"
+    ></div>
   )
 }

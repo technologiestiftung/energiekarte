@@ -86,6 +86,9 @@ const MapSite: NextPage = (energyData: any) => {
       setEntityConsumptionData(consumption)
       setEntityRenovationData(renovation)
       setZoomToCenter(consumption?.geometry.coordinates)
+    } else {
+      setEntityConsumptionData(null)
+      setEntityRenovationData(null)
     }
     if (isReady) {
       replace({ pathname, query: { id: entityId } }, undefined, {
@@ -172,6 +175,7 @@ const MapSite: NextPage = (energyData: any) => {
         energyData={energyData}
         entityId={entityId}
         setEntityId={setEntityId}
+        entityConsumptionData={entityConsumptionData}
       />
       <MapNav mapZoom={mapZoom} setMapZoom={setMapZoom} />
     </>

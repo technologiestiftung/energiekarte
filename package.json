@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@headlessui/react": "1.7.3",
+    "@turf/boolean-intersects": "^6.5.0",
+    "@turf/boolean-point-in-polygon": "^6.5.0",
     "classnames": "2.3.2",
     "date-fns": "2.29.3",
     "mapbox-gl": "npm:empty-npm-package@1.0.0",
