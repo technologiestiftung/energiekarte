@@ -8,7 +8,7 @@ const siteUrl =
   'http://localhost:3000'
 
 const faviconPath = '/favicon.ico'
-const faviconPNGPath = '/favicons/star.png'
+const faviconPNGPath = '/favicons/battery.png'
 
 interface HeadPropType {
   currentPagePath: string
@@ -25,11 +25,11 @@ interface HeadPropType {
 }
 
 export const Head: FC<Partial<HeadPropType>> = ({
-  description = 'Glühwein, Glögg, Glückseligkeit - Finde Weihnachtsmärkte in Berlin basierend auf Öffnungszeiten und Themen',
-  siteTitle = 'weihnachtsmaerkte.odis-berlin.de',
-  pageTitle = 'Berliner Weihnachtsmarkt-Finder',
+  description = 'Energiekarte Description',
+  siteTitle = 'energiekarte.odis-berlin.de',
+  pageTitle = 'Berliner Energiekarte',
   fbAppId = '',
-  keywords = ['Berlin', 'Weihnachtsmärkte','Weihnachtsmarkt', 'ODIS', 'Karte','Open Data'],
+  keywords = ['Berlin', 'Energie', 'ODIS', 'Karte', 'Open Data'],
   themeColor = '#091725',
   locales = ['de'],
   locale = 'de',
