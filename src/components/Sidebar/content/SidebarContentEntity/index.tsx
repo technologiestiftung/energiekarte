@@ -101,7 +101,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
           </div>
 
           <div className="text-xs pt-6">
-            Zu einem Grundstück gehen mit
+            Grundstück anzeigen mit
             <span className="flex text-secondary">
               <button className="text-xs py-2 flex-1 bg-white/50 m-1 rounded">
                 höheren Verbrauch
