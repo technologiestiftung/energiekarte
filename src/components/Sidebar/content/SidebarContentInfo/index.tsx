@@ -249,10 +249,6 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
                       odis@ts.berlin
                     </a>
                     .
-                    {/* Presseanfragen gehen am besten an:
-            Laura Schubert
-            laura.schubert@ts.berlin
-            +49 151 1434 0237 */}
                   </p>
                 </>
               ),

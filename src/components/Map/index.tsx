@@ -6,12 +6,34 @@ import mapStyle from './mapStyle'
 
 import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
 
+function getColor(consumptionType, props) {
+  const val = consumptionType === 'heat' ? props?.heat : props?.electricity
+  if (consumptionType === 'heat') {
+    return val > 1000
+      ? '#f03b20'
+      : val > 500
+      ? '#feb24c'
+      : val > 200
+      ? '#ffeda0'
+      : '#ffffff'
+  } else {
+    return val > 1000
+      ? '#c51b8a'
+      : val > 500
+      ? '#fa9fb5'
+      : val > 200
+      ? '#fde0dd'
+      : '#ffffff'
+  }
+}
+
 interface MapType {
   energyData: any
   zoomToCenter?: number[]
   entityId: string | number | null
   setEntityId: (time: string | null | number) => void
   entityConsumptionData: any
+  consumptionType: string
 }
 
 const MAP_CONFIG = {
@@ -28,9 +50,18 @@ export const MapComponent: FC<MapType> = ({
   entityId,
   setEntityId,
   entityConsumptionData,
+  consumptionType,
 }) => {
+  const [mapMarkers, setMapMarkers] = useState([])
+
   const map = useRef<Map>(null)
   const highlightedMarker = useRef<Marker>(null)
+
+  if (mapMarkers) {
+    mapMarkers.forEach((m) => {
+      m[0].style.backgroundColor = getColor(consumptionType, m[1])
+    })
+  }
 
   // Map setup (run only once on initial render)
   useEffect(() => {
@@ -56,18 +87,22 @@ export const MapComponent: FC<MapType> = ({
 
     map.current.on('load', function () {
       if (!map.current) return
-
+      let markers: number[] = []
       energyData.consumption.features.forEach(function (marker: any) {
         const el = document.createElement('div')
-        el.className = 'h-3 w-3 rounded-full bg-primary/70 cursor-pointer'
+        el.style.backgroundColor = getColor(consumptionType, marker.properties)
+        el.className = 'h-3 w-3 rounded-full cursor-pointer'
         el.addEventListener('click', function () {
           onMarkerClick(marker.properties.entityId, marker.geometry.coordinates)
         })
+        markers.push([el, marker.properties])
+
         // add marker to map
         new maplibregl.Marker(el)
           .setLngLat(marker.geometry.coordinates)
           .addTo(map.current)
       })
+      setMapMarkers(markers)
 
       map.current.on('click', (e) => {
         if (e?.originalEvent?.originalTarget?.nodeName === 'CANVAS') {
@@ -128,7 +163,7 @@ export const MapComponent: FC<MapType> = ({
           source: 'landparcel-source',
           paint: {
             'line-dasharray': [1, 1],
-            'line-color': '#9bc95b',
+            'line-color': getColor(consumptionType),
             // 'line-blur': 6,
             'line-width': 2,
             'line-opacity': [
@@ -174,7 +209,7 @@ export const MapComponent: FC<MapType> = ({
           .addTo(map.current)
       }
     }
-  }, [entityConsumptionData])
+  }, [entityConsumptionData, consumptionType])
 
   function onMarkerClick(entityId: any) {
     setEntityId(entityId)

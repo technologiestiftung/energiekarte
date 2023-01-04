@@ -91,16 +91,16 @@ export const SidebarContentList: FC<SidebarContentListType> = ({
                   <p className="text-xs pb-2">
                     {feat.properties.entityAddress}; {feat.properties.entityPLZ}
                   </p>
-                  {consumptionType === 'entityElectricityUsage' ? (
+                  {consumptionType === 'electricity' ? (
                     <>
                       <p className="text-sm">Stromverprauch</p>
-                      {getUsageData(feat, 'entityElectricityUsage')}
+                      {getUsageData(feat, ' electricity')}
                     </>
                   ) : null}
-                  {consumptionType === 'entityHeatUsage' ? (
+                  {consumptionType === 'heat' ? (
                     <>
                       <p className="text-sm">Wärmeverbrauch</p>
-                      {getUsageData(feat, 'entityHeatUsage')}
+                      {getUsageData(feat, 'heat')}
                       <p className="text-sm">Art der Wärmeversorgung</p>
                       <p className="pb-2">{feat.properties.entityHeatType}</p>
                     </>

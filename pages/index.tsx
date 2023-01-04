@@ -66,7 +66,7 @@ const MapSite: NextPage = (energyData: any) => {
   const [zoomToCenter, setZoomToCenter] = useState<number[]>([0, 0])
   const [mapZoom, setMapZoom] = useState<number>(10)
 
-  const [consumptionType, setConsumptionType] = useState('entityHeatUsage')
+  const [consumptionType, setConsumptionType] = useState('heat')
 
   // // when the query string is read check if we have an id
   // useEffect(() => {
@@ -168,6 +168,7 @@ const MapSite: NextPage = (energyData: any) => {
           entityConsumptionData={entityConsumptionData}
           entityRenovationData={entityRenovationData}
           renovationLength={energyData.renovation.features.length}
+          consumptionType={consumptionType}
         />
       </SidebarWrapper>
       <SidebarNav
@@ -191,6 +192,7 @@ const MapSite: NextPage = (energyData: any) => {
         entityId={entityId}
         setEntityId={setEntityId}
         entityConsumptionData={entityConsumptionData}
+        consumptionType={consumptionType}
       />
       <MapNav mapZoom={mapZoom} setMapZoom={setMapZoom} />
     </>

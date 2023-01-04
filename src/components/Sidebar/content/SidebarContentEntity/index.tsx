@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react'
 import classNames from 'classnames'
 import { useCopyToClipboard } from '@lib/hooks/useCopyToClipboard'
 import { typeTranslation } from '@lib/translation'
+// import { Accordion } from '@components/Accordion'
 
 import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
@@ -9,6 +10,7 @@ import { House } from '@components/Icons/'
 
 export interface SidebarContentEntityType {
   marketData: any
+  consumptionType: string
 }
 
 function getUsageData(feat, type) {
@@ -27,6 +29,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   entityConsumptionData,
   entityRenovationData,
   renovationLength,
+  consumptionType,
 }) => {
   if (!entityId || !entityConsumptionData || !entityRenovationData) {
     return null
@@ -58,25 +61,36 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
               {consumptionData.entityAddress}; {consumptionData.entityPLZ}
             </p>
 
-            <p className="text-sm">Stromverprauch</p>
-            {getUsageData(consumptionData, 'entityHeatUsage')}
+            {consumptionType === 'electricity' ? (
+              <>
+                <p className="text-sm">Stromverprauch</p>
+                {getUsageData(consumptionData, 'electricity')}
+              </>
+            ) : null}
 
-            <p className="text-sm">Wärmeverbrauch</p>
-            {getUsageData(consumptionData, 'entityHeatUsage')}
+            {consumptionType === 'heat' ? (
+              <>
+                <p className="text-sm">Wärmeverbrauch</p>
+                {getUsageData(consumptionData, 'heat')}
 
-            <p className="text-sm">Art der Wärmeversorgung</p>
-            <p className="pb-2">{consumptionData.entityHeatType}</p>
+                <p className="text-sm">Art der Wärmeversorgung</p>
+                <p className="pb-2">{consumptionData.entityHeatType}</p>
+              </>
+            ) : null}
           </div>
+
           <h2 className="font-bold pt-4 text-lg py-4">Sanierungen:</h2>
           {sumRenovationArea !== 0 && (
             <span>
-              Fläche insgesamt: {sumRenovationArea.toLocaleString('de-DE')}m2
+              Sanierungsfläche insgesamt:{' '}
+              {sumRenovationArea.toLocaleString('de-DE')}m2
             </span>
           )}
           <br />
           {sumRenovationCosts !== 0 && (
             <span>
-              Kosten insgesamt: {sumRenovationCosts.toLocaleString('de-DE')}€
+              Sanierungskosten insgesamt:{' '}
+              {sumRenovationCosts.toLocaleString('de-DE')}€
             </span>
           )}
           {renovationData?.map((feat, i) => (
