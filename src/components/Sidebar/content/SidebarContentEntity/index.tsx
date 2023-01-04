@@ -6,7 +6,7 @@ import { typeTranslation } from '@lib/translation'
 
 import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
-import { House } from '@components/Icons/'
+import { House, Houses, Building } from '@components/Icons/'
 
 export interface SidebarContentEntityType {
   marketData: any
@@ -14,7 +14,7 @@ export interface SidebarContentEntityType {
 }
 
 function getUsageData(feat, type) {
-  if (feat[type] && feat[type] != 0) {
+  if (feat[type] && feat[type] != 0 && feat[type] !== -1) {
     return (
       <p className="pb-2">{feat[type].toLocaleString('de-DE') + ' kWh/a'}</p>
     )
@@ -53,70 +53,136 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
       <SidebarBody>
         {' '}
         <>
-          <div className="text-bold">
-            <h2 className="font-bold pt-4 text-lg">
-              {typeTranslation(consumptionData.entityType)}
-            </h2>
-            <p className="text-xs pb-2">
-              {consumptionData.entityAddress}; {consumptionData.entityPLZ}
-            </p>
+          <h2 className="font-bold text-md">
+            {typeTranslation(consumptionData.entityType)}
+          </h2>
+          <p className="text-xs pb-2">
+            {consumptionData.entityAddress} | {consumptionData.entityPLZ}
+          </p>
 
-            {consumptionType === 'electricity' ? (
-              <>
-                <p className="text-sm">Stromverprauch</p>
+          <hr className="my-4" />
+
+          <h2 className="font-bold pt-4 text-lg py-4">Verbrauch</h2>
+
+          {consumptionType === 'electricity' ? (
+            <>
+              <p className="text-sm">Stromverbrauch</p>
+              <p className="font-bold">
                 {getUsageData(consumptionData, 'electricity')}
-              </>
-            ) : null}
+              </p>
+            </>
+          ) : null}
 
-            {consumptionType === 'heat' ? (
-              <>
-                <p className="text-sm">Wärmeverbrauch</p>
+          {consumptionType === 'heat' ? (
+            <>
+              <p className="text-sm">Wärmeverbrauch</p>
+              <p className="font-bold">
                 {getUsageData(consumptionData, 'heat')}
+              </p>
 
-                <p className="text-sm">Art der Wärmeversorgung</p>
-                <p className="pb-2">{consumptionData.entityHeatType}</p>
-              </>
-            ) : null}
+              <p className="text-sm">Art der Wärmeversorgung</p>
+              <p className="pb-2 font-bold">{consumptionData.entityHeatType}</p>
+            </>
+          ) : null}
+
+          <div>
+            <p className="text-xs py-2">
+              Der Verbrauch aller Gebäude auf diesem Grundstück entspricht dem
+              Energieverbauch von X 5 Personehaushalten.
+            </p>
+            <div className="flex">
+              {' '}
+              <Building />
+              <Building />
+              <Building />
+              <Building />
+              <Building />
+            </div>
           </div>
 
-          <h2 className="font-bold pt-4 text-lg py-4">Sanierungen:</h2>
-          {sumRenovationArea !== 0 && (
-            <span>
-              Sanierungsfläche insgesamt:{' '}
-              {sumRenovationArea.toLocaleString('de-DE')}m2
+          <div className="text-xs pt-6">
+            Zu einem Grundstück gehen mit
+            <span className="flex text-secondary">
+              <button className="text-xs py-2 flex-1 bg-white/50 m-1 rounded">
+                höheren Verbrauch
+              </button>
+              <button className="text-xs py-2 flex-1 bg-white/50 m-1 rounded">
+                niedrigeren Verbrauch
+              </button>
             </span>
-          )}
-          <br />
-          {sumRenovationCosts !== 0 && (
-            <span>
-              Sanierungskosten insgesamt:{' '}
-              {sumRenovationCosts.toLocaleString('de-DE')}€
-            </span>
-          )}
-          {renovationData?.map((feat, i) => (
-            <div className="py-4 text-sm" key={'haus' + i}>
-              <div className="flex pb-2">
-                <House />
-                <p className="ml-2 font-bold flex text-base">
-                  {feat.properties['houseName']}
-                </p>
-              </div>
+          </div>
 
-              <p>
-                Fläche: {feat.properties['houseArea'].toLocaleString('de-DE')}{' '}
-                m2
-              </p>
-              <p>Einsparpotenzial: {feat.properties['houseSavingPotential']}</p>
-              <p>
-                Kosten: {feat.properties['houseCosts'].toLocaleString('de-DE')}{' '}
-                €
-              </p>
-              <p>
-                Prio: {feat.properties['housePrio']} von {renovationLength}
-              </p>
-            </div>
-          ))}
-          {!renovationData.length && <p>Keine Sanierungdaten vorhanden</p>}
+          {renovationData.length ? (
+            <>
+              <h2 className="font-bold py-4 pt-8 text-lg">Sanierungen</h2>
+
+              <ul className="text-sm">
+                <li className="flex py-2">
+                  <div className="w-12 place-items-center grid">
+                    <Houses />
+                  </div>
+                  <div className="flex-1 pl-2">
+                    <p className="font-bold pb-1">Gesamtsanierung</p>
+                    {sumRenovationArea !== 0 && (
+                      <span>
+                        Fläche: {sumRenovationArea.toLocaleString('de-DE')}m2
+                      </span>
+                    )}
+                    <br />
+                    {sumRenovationCosts !== 0 && (
+                      <span>
+                        Kosten: {sumRenovationCosts.toLocaleString('de-DE')}€
+                      </span>
+                    )}
+                  </div>
+                </li>
+                {renovationData?.map((feat, i) => (
+                  <li className="flex py-4" key={'haus' + i}>
+                    <div className="w-12 place-items-center grid">
+                      <House />
+                    </div>
+                    <div className="flex-1 pl-2">
+                      <p className="font-bold pb-1">
+                        {feat.properties['houseName']}
+                      </p>
+                      <p>
+                        Fläche:{' '}
+                        <span className="font-bold">
+                          {feat.properties['houseArea'].toLocaleString('de-DE')}{' '}
+                          m2
+                        </span>
+                      </p>
+                      <p>
+                        Einsparpotenzial:{' '}
+                        <span className="font-bold">
+                          {feat.properties['houseSavingPotential']}
+                        </span>
+                      </p>
+                      <p>
+                        Kosten:{' '}
+                        <span className="font-bold">
+                          {feat.properties['houseCosts'].toLocaleString(
+                            'de-DE'
+                          )}{' '}
+                          €
+                        </span>
+                      </p>
+                      <p>
+                        Prio:{' '}
+                        <span className="font-bold">
+                          {feat.properties['housePrio']} von {renovationLength}
+                        </span>
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+
+          {!renovationData.length && (
+            <p className="pt-4 text-xs">Keine Sanierungdaten vorhanden</p>
+          )}
         </>
         <div className="mb-10"></div>
       </SidebarBody>
