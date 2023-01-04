@@ -9,7 +9,7 @@ import { MapComponent } from '@components/Map'
 import { SidebarWrapper } from '@components/Sidebar/SidebarWrapper'
 import { SidebarContentEntity } from '@components/Sidebar/content/SidebarContentEntity'
 import { SidebarContentInfo } from '@components/Sidebar/content/SidebarContentInfo'
-import { SidebarContentList } from '@components/Sidebar/content/SidebarContentList'
+import { SidebarContentFilter } from '@components/Sidebar/content/SidebarContentFilter'
 
 import { HamburgerMenu, Info, Filter } from '@components/Icons'
 
@@ -153,6 +153,7 @@ const MapSite: NextPage = (energyData: any) => {
           />
         )} */}
         {navView === 'info' && <SidebarContentInfo />}
+        {navView === 'filter' && <SidebarContentFilter />}
       </SidebarWrapper>
       {/* market data information */}
       <SidebarWrapper

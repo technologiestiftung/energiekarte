@@ -9,19 +9,19 @@ import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
 function getColor(consumptionType, props) {
   const val = consumptionType === 'heat' ? props?.heat : props?.electricity
   if (consumptionType === 'heat') {
-    return val > 1000
+    return val > 1200000
       ? '#f03b20'
-      : val > 500
+      : val > 400000
       ? '#feb24c'
-      : val > 200
+      : val > 0
       ? '#ffeda0'
       : '#ffffff'
   } else {
-    return val > 1000
+    return val > 200000
       ? '#c51b8a'
-      : val > 500
+      : val > 60000
       ? '#fa9fb5'
-      : val > 200
+      : val > 0
       ? '#fde0dd'
       : '#ffffff'
   }
