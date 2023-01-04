@@ -6,7 +6,7 @@ import { typeTranslation } from '@lib/translation'
 
 import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
-import { House, Houses, Building } from '@components/Icons/'
+import { House, Houses, Building, Buildings } from '@components/Icons/'
 
 export interface SidebarContentEntityType {
   marketData: any
@@ -92,11 +92,11 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             </p>
             <div className="flex">
               {' '}
-              <Building />
-              <Building />
-              <Building />
-              <Building />
-              <Building />
+              <House />
+              <House />
+              <House />
+              <House />
+              <House />
             </div>
           </div>
 
@@ -119,7 +119,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
               <ul className="text-sm">
                 <li className="flex py-2">
                   <div className="w-12 place-items-center grid">
-                    <Houses />
+                    <Buildings />
                   </div>
                   <div className="flex-1 pl-2">
                     <p className="font-bold pb-1">Gesamtsanierung</p>
@@ -139,7 +139,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                 {renovationData?.map((feat, i) => (
                   <li className="flex py-4" key={'haus' + i}>
                     <div className="w-12 place-items-center grid">
-                      <House />
+                      <Building />
                     </div>
                     <div className="flex-1 pl-2">
                       <p className="font-bold pb-1">
