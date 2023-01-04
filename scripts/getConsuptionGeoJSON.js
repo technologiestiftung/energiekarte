@@ -2,7 +2,7 @@
 
 module.exports = { getConsuptionGeoJSON }
 
-function getConsuptionGeoJSON(headers, dataVerbrauch,headerTransaltions) {
+function getConsuptionGeoJSON(headers, dataVerbrauch, headerTransaltions) {
   const consuptionGeoJSON = {
     type: 'FeatureCollection',
     name: 'sanierung',
@@ -19,15 +19,18 @@ function getConsuptionGeoJSON(headers, dataVerbrauch,headerTransaltions) {
 
     headers.forEach((h, i) => {
       if (headersWant.includes(h)) {
-        props[headerTransaltions[h]||h] = Number(element[i]) ? Number(element[i]) : element[i]
+        props[headerTransaltions[h] || h] = Number(element[i])
+          ? Number(element[i])
+          : h === 'Wärmeverbrauch' || h === 'Stromverbrauch'
+          ? -1
+          : element[i]
       }
       if (h.includes('gc_xwert') || h.includes('gc_ywert')) {
-        console.log(i,element[i])
+        console.log(i, element[i])
 
         coordinates[h] = Number(element[i])
       }
     })
-
 
     if (coordinates.gc_xwert) {
       const feature = {

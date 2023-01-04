@@ -38,11 +38,11 @@ export const MapComponent: FC<MapType> = ({
     // @ts-ignore
     map.current = new maplibregl.Map({
       container: 'map',
-      // style: mapStyle(),
+      style: mapStyle(),
       // style={process.env.NEXT_PUBLIC_MAPTILER_STYLE},
       // style={process.env.NEXT_PUBLIC_MAPTILER_STYLE},
 
-      style: `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
+      // style: `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
 
       center: [
         MAP_CONFIG.defaultLongitude,

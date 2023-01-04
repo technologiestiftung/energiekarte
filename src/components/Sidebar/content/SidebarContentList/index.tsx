@@ -2,7 +2,6 @@ import { FC, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
-import { SwitchEnergy } from './SwitchEnergy'
 
 import { typeTranslation } from '@lib/translation'
 
@@ -34,7 +33,6 @@ export const SidebarContentList: FC<SidebarContentListType> = ({
 
   const [highlightedEntity, setHighlightedEntity] = useState(null)
   // const [scrollMargin, setScrollMargin] = useState(null)
-  const [consumptionType, setConsumptionType] = useState('entityHeatUsage')
 
   // const menuRef = useRef()
 
@@ -62,10 +60,6 @@ export const SidebarContentList: FC<SidebarContentListType> = ({
           Hier kannst du im Ranking den Strom- und Wärmeverbrauch eines
           Grundstückes sehen.
         </p>
-        <SwitchEnergy
-          setConsumptionType={setConsumptionType}
-          consumptionType={consumptionType}
-        />
 
         <ul className="h-full">
           {data.features

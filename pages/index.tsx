@@ -11,9 +11,11 @@ import { SidebarContentEntity } from '@components/Sidebar/content/SidebarContent
 import { SidebarContentInfo } from '@components/Sidebar/content/SidebarContentInfo'
 import { SidebarContentList } from '@components/Sidebar/content/SidebarContentList'
 
-import { HamburgerMenu, Info } from '@components/Icons'
+import { HamburgerMenu, Info, Filter } from '@components/Icons'
+
 import { SidebarNav } from '@components/Sidebar/SidebarNav'
 import { MapNav } from '@components/MapNav'
+import { ConsumptionTypeSwitch } from '@components/ConsumptionTypeSwitch'
 
 import { IntroModal } from '@components/IntroModal'
 
@@ -26,10 +28,16 @@ export async function getStaticProps() {
 }
 
 const navViews = [
+  // {
+  //   value: 'list',
+  //   name: 'list',
+  //   icon: <HamburgerMenu />,
+  //   mobileHeight: 'half',
+  // },
   {
-    value: 'list',
-    name: 'list',
-    icon: <HamburgerMenu />,
+    value: 'filter',
+    name: 'filter',
+    icon: <Filter />,
     mobileHeight: 'half',
   },
   {
@@ -50,13 +58,15 @@ const MapSite: NextPage = (energyData: any) => {
   const [entityConsumptionData, setEntityConsumptionData] = useState<any>(null)
   const [entityRenovationData, setEntityRenovationData] = useState<any>(null)
 
-  const [navView, setNavView] = useState<'list' | 'info'>('list')
+  const [navView, setNavView] = useState<'filter' | 'info'>('filter')
   const [sidebarMenuOpen, setSidebarMenuOpen] = useState<boolean>(false)
   const [sidebarInfoOpen, setSidebarInfoOpen] = useState<boolean>(false)
   const [mobileHeight, setMobileHeight] = useState<'half' | 'full'>('half')
 
   const [zoomToCenter, setZoomToCenter] = useState<number[]>([0, 0])
   const [mapZoom, setMapZoom] = useState<number>(10)
+
+  const [consumptionType, setConsumptionType] = useState('entityHeatUsage')
 
   // // when the query string is read check if we have an id
   // useEffect(() => {
@@ -123,6 +133,10 @@ const MapSite: NextPage = (energyData: any) => {
         setNavView={setNavView}
         setSidebarMenuOpen={setSidebarMenuOpen}
       />
+      <ConsumptionTypeSwitch
+        setConsumptionType={setConsumptionType}
+        consumptionType={consumptionType}
+      />
       <SidebarWrapper
         classes="z-20"
         position="left"
@@ -131,19 +145,19 @@ const MapSite: NextPage = (energyData: any) => {
         closeSymbol="cross"
         mobileHeight={mobileHeight}
       >
-        {navView === 'list' && (
+        {/* {navView === 'list' && (
           <SidebarContentList
             data={energyData.consumption}
             entityId={entityId}
             setEntityId={setEntityId}
           />
-        )}
+        )} */}
         {navView === 'info' && <SidebarContentInfo />}
       </SidebarWrapper>
       {/* market data information */}
       <SidebarWrapper
         classes="z-30"
-        position="right"
+        position="left"
         isOpen={sidebarInfoOpen}
         setOpen={setSidebarInfoOpen}
         closeSymbol="cross"

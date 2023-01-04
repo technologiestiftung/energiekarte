@@ -30,9 +30,9 @@ export default function mapStyle() {
           'raster-brightness-max': 0.3,
           'raster-saturation': -1,
         },
-        // layout: {
-        //   visibility: "visisible",
-        // }
+        layout: {
+          visibility: 'none',
+        },
       },
     ],
   }
