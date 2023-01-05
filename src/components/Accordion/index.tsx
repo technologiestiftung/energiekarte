@@ -5,6 +5,7 @@ import { FC, ReactNode, useState } from 'react'
 interface AccordionPropType {
   title: string
   children: ReactNode
+  acitve: boolean
 }
 
 type StyleGetterType = (props: { isActive: boolean }) => Record<string, string>
@@ -15,13 +16,17 @@ const getStyles: StyleGetterType = ({ isActive }) => ({
   title: classNames('pt-2 flex w-full', isActive ? 'pb-3' : 'pb-4'),
   content: classNames(
     borderBottomStyle,
-    'rounded m-0 pb-6 pt-0 overflow-hidden',
+    'm-0 pb-6 pt-0 overflow-hidden',
     'max-w-none w-full text-sm'
   ),
 })
 
-export const Accordion: FC<AccordionPropType> = ({ title, children }) => {
-  const [isActive, setIsActive] = useState<boolean>(false)
+export const Accordion: FC<AccordionPropType> = ({
+  title,
+  children,
+  acitve,
+}) => {
+  const [isActive, setIsActive] = useState<boolean>(acitve || false)
   const classes = getStyles({ isActive })
 
   return (
@@ -44,9 +49,9 @@ export const Accordion: FC<AccordionPropType> = ({ title, children }) => {
         />
       </button>
       {isActive && (
-        <span style={{ margin: 0 }} className={classes.content}>
+        <div style={{ margin: 0 }} className={classes.content}>
           {children}
-        </span>
+        </div>
       )}
     </div>
   )
