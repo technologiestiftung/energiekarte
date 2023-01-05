@@ -2,14 +2,9 @@ import { ChevronDown } from '@components/Icons/ChevronDown'
 import classNames from 'classnames'
 import { FC, ReactNode, useState } from 'react'
 
-interface AccordionItemType {
-  id: string
-  title: string
-  content: ReactNode
-}
-
 interface AccordionPropType {
-  items: AccordionItemType[]
+  title: string
+  children: ReactNode
 }
 
 type StyleGetterType = (props: { isActive: boolean }) => Record<string, string>
@@ -25,41 +20,34 @@ const getStyles: StyleGetterType = ({ isActive }) => ({
   ),
 })
 
-export const Accordion: FC<AccordionPropType> = ({ items }) => {
-  const [activeItemId, setActiveItemId] = useState<string | null>(null)
+export const Accordion: FC<AccordionPropType> = ({ title, children }) => {
+  const [isActive, setIsActive] = useState<boolean>(false)
+  const classes = getStyles({ isActive })
+
   return (
-    <div>
-      {items.map(({ id, title, content }) => {
-        const isActive = id === activeItemId
-        const classes = getStyles({ isActive })
-        return (
-          <div key={id} className={classes.wrapper}>
-            <button
-              className={classes.title}
-              onClick={() => {
-                if (activeItemId === id) return setActiveItemId(null)
-                setActiveItemId(id)
-              }}
-              tabIndex={isActive ? 1 : 0}
-            >
-              <h2 className="text-left font-bold max-w-[90%] flex-1 group-hover:text-blue-500 text-sm">
-                {title}
-              </h2>
-              <ChevronDown
-                className={classNames(
-                  'transform transition-transform text-primary',
-                  isActive ? 'rotate-180' : 'rotate-0'
-                )}
-              />
-            </button>
-            {isActive && (
-              <p style={{ margin: 0 }} className={classes.content}>
-                {content}
-              </p>
-            )}
-          </div>
-        )
-      })}
+    <div className={classes.wrapper}>
+      <button
+        className={classes.title}
+        onClick={() => {
+          setIsActive(!isActive)
+        }}
+        tabIndex={isActive ? 1 : 0}
+      >
+        <h2 className="text-left font-bold max-w-[90%] flex-1 group-hover:text-blue-500 text-sm">
+          {title}
+        </h2>
+        <ChevronDown
+          className={classNames(
+            'transform transition-transform text-primary',
+            isActive ? 'rotate-180' : 'rotate-0'
+          )}
+        />
+      </button>
+      {isActive && (
+        <span style={{ margin: 0 }} className={classes.content}>
+          {children}
+        </span>
+      )}
     </div>
   )
 }
