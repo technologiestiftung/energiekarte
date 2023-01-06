@@ -6,26 +6,7 @@ import mapStyle from './mapStyle'
 
 import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
 
-function getColor(consumptionType, props) {
-  const val = consumptionType === 'heat' ? props?.heat : props?.electricity
-  if (consumptionType === 'heat') {
-    return val > 1200000
-      ? '#9E1E0B'
-      : val > 400000
-      ? '#F03B20'
-      : val > 0
-      ? '#FEB24C'
-      : '#ffffff'
-  } else {
-    return val > 200000
-      ? '#031A6D'
-      : val > 60000
-      ? '#276AEC'
-      : val > 0
-      ? '#719BF0'
-      : '#ffffff'
-  }
-}
+import { getConsumtionColor } from '@lib/getConsumtionColor'
 
 interface MapType {
   energyData: any
@@ -61,7 +42,10 @@ export const MapComponent: FC<MapType> = ({
 
   if (mapMarkers) {
     mapMarkers.forEach((m) => {
-      m[0].style.backgroundColor = getColor(consumptionType, m[1])
+      m[0].style.backgroundColor = getConsumtionColor(
+        consumptionType,
+        consumptionType === 'heat' ? m[1].heat : m[1].electricity
+      )
     })
   }
 
@@ -92,7 +76,12 @@ export const MapComponent: FC<MapType> = ({
       let markers: number[] = []
       energyData.consumption.features.forEach(function (marker: any) {
         const el = document.createElement('div')
-        el.style.backgroundColor = getColor(consumptionType, marker.properties)
+        el.style.backgroundColor = getConsumtionColor(
+          consumptionType,
+          consumptionType === 'heat'
+            ? marker.properties.heat
+            : marker.properties.electricity
+        )
         el.className = 'h-3 w-3 rounded-full cursor-pointer'
         el.addEventListener('click', function () {
           onMarkerClick(marker.properties.entityId, marker.geometry.coordinates)
@@ -175,7 +164,7 @@ export const MapComponent: FC<MapType> = ({
           source: 'landparcel-source',
           paint: {
             'line-dasharray': [1, 1],
-            'line-color': getColor(consumptionType),
+            'line-color': '#fff',
             // 'line-blur': 6,
             'line-width': 2,
             'line-opacity': [
@@ -213,7 +202,7 @@ export const MapComponent: FC<MapType> = ({
 
         const customMarker = document.createElement('div')
         customMarker.className =
-          'rounded-full w-4 h-4 blur-sm border-2 border-primary'
+          'rounded-full w-4 h-4 blur-sm border-2 border-secondary'
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         highlightedMarker.current = new maplibregl.Marker(customMarker)

@@ -8,6 +8,8 @@ import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
 import { House, Houses, Building, Buildings } from '@components/Icons/'
 
+import { getConsumtionColor } from '@lib/getConsumtionColor'
+
 export interface SidebarContentEntityType {
   marketData: any
   consumptionType: string
@@ -62,12 +64,26 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
 
           <hr className="my-4" />
 
-          <h2 className="font-bold pt-4 text-lg py-4">Verbrauch</h2>
+          <h2 className="font-bold pt-4 text-lg py-4">
+            {consumptionType === 'electricity'
+              ? 'Stromverbrauch'
+              : 'Wärmeverbrauch'}
+          </h2>
 
           {consumptionType === 'electricity' ? (
             <>
-              <p className="text-sm">Stromverbrauch</p>
-              <p className="font-bold">
+              {/* <p className="text-sm">Stromverbrauch</p> */}
+
+              <p
+                className="font-bold"
+                style={{
+                  color: getConsumtionColor(
+                    'electricity',
+                    consumptionData['electricity'],
+                    { text: true }
+                  ),
+                }}
+              >
                 {getUsageData(consumptionData, 'electricity')}
               </p>
             </>
@@ -75,8 +91,15 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
 
           {consumptionType === 'heat' ? (
             <>
-              <p className="text-sm">Wärmeverbrauch</p>
-              <p className="font-bold">
+              {/* <p className="text-sm">Wärmeverbrauch</p> */}
+              <p
+                className="font-bold"
+                style={{
+                  color: getConsumtionColor('heat', consumptionData['heat'], {
+                    text: true,
+                  }),
+                }}
+              >
                 {getUsageData(consumptionData, 'heat')}
               </p>
 
@@ -101,12 +124,12 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
           </div>
 
           <div className="text-xs pt-6">
-            Grundstück anzeigen mit
-            <span className="flex text-secondary">
-              <button className="text-xs py-2 flex-1 bg-white/50 m-1 rounded">
+            Grundstück ist im Ranking x von X. Zeige Grundstück mit
+            <span className="flex">
+              <button className="text-xs py-2 flex-1 bg-white/50 m-1 rounded border-2">
                 höheren Verbrauch
               </button>
-              <button className="text-xs py-2 flex-1 bg-white/50 m-1 rounded">
+              <button className="text-xs py-2 flex-1 bg-white/50 m-1 rounded border-2">
                 niedrigeren Verbrauch
               </button>
             </span>

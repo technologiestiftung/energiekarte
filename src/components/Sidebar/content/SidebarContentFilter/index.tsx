@@ -104,7 +104,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
           </p>
           <RangeSlider
             value={electricityConsumption}
-            setter={setElectricityConsumption}
+            setValue={setElectricityConsumption}
           />
         </Accordion>
         <Accordion title="Wärmeverbrauch" acitve={true}>
@@ -112,10 +112,10 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             Der Verbrauch bezieht sich auf alle Gebäude auf einem Grundstück
             zusammengenommen.
           </p>
-          <RangeSlider
+          {/* <RangeSlider
             value={electricityConsumption}
             setter={setElectricityConsumption}
-          />
+          /> */}
         </Accordion>
         <Accordion title="Sanierungskosten" acitve={true}>
           <p className="text-xs">
