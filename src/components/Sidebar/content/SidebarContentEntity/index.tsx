@@ -74,16 +74,16 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             <>
               {/* <p className="text-sm">Stromverbrauch</p> */}
 
-              <p
-                className="font-bold"
-                style={{
-                  color: getConsumtionColor(
-                    'electricity',
-                    consumptionData['electricity'],
-                    { text: true }
-                  ),
-                }}
-              >
+              <p className="font-bold flex">
+                <span
+                  className="text-sm mr-2  w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
+                  style={{
+                    backgroundColor: getConsumtionColor(
+                      'electricity',
+                      consumptionData['electricity']
+                    ),
+                  }}
+                ></span>
                 {getUsageData(consumptionData, 'electricity')}
               </p>
             </>
@@ -92,14 +92,16 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
           {consumptionType === 'heat' ? (
             <>
               {/* <p className="text-sm">Wärmeverbrauch</p> */}
-              <p
-                className="font-bold"
-                style={{
-                  color: getConsumtionColor('heat', consumptionData['heat'], {
-                    text: true,
-                  }),
-                }}
-              >
+              <p className="font-bold flex">
+                <span
+                  className="text-sm mr-2  w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
+                  style={{
+                    backgroundColor: getConsumtionColor(
+                      'heat',
+                      consumptionData['heat']
+                    ),
+                  }}
+                ></span>
                 {getUsageData(consumptionData, 'heat')}
               </p>
 
