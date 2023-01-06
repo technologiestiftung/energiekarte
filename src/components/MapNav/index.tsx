@@ -10,7 +10,7 @@ export interface MapNavType {
 
 export const MapNav: FC<MapNavType> = ({ mapZoom, setMapZoom }) => {
   const navClasses =
-    'hover:bg-primary hover:text-secondary bg-secondary text-primary h-10 w-10 mt-2 cursor-pointer list-none text-center grid place-items-center rounded-full'
+    'hover:bg-textcolor hover:text-secondary bg-secondary text-textcolor h-10 w-10 mt-2 cursor-pointer list-none text-center grid place-items-center rounded-full'
 
   return (
     <nav

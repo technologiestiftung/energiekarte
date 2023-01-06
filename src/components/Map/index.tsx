@@ -10,19 +10,19 @@ function getColor(consumptionType, props) {
   const val = consumptionType === 'heat' ? props?.heat : props?.electricity
   if (consumptionType === 'heat') {
     return val > 1200000
-      ? '#f03b20'
+      ? '#9E1E0B'
       : val > 400000
-      ? '#feb24c'
+      ? '#F03B20'
       : val > 0
-      ? '#ffeda0'
+      ? '#FEB24C'
       : '#ffffff'
   } else {
     return val > 200000
-      ? '#c51b8a'
+      ? '#031A6D'
       : val > 60000
-      ? '#fa9fb5'
+      ? '#276AEC'
       : val > 0
-      ? '#fde0dd'
+      ? '#719BF0'
       : '#ffffff'
   }
 }
@@ -34,6 +34,7 @@ interface MapType {
   setEntityId: (time: string | null | number) => void
   entityConsumptionData: any
   consumptionType: string
+  mapZoom: number
 }
 
 const MAP_CONFIG = {
@@ -51,6 +52,7 @@ export const MapComponent: FC<MapType> = ({
   setEntityId,
   entityConsumptionData,
   consumptionType,
+  mapZoom,
 }) => {
   const [mapMarkers, setMapMarkers] = useState([])
 
@@ -125,6 +127,16 @@ export const MapComponent: FC<MapType> = ({
       })
     }
   }, [zoomToCenter])
+
+  useEffect(() => {
+    if (map.current && map.current.isStyleLoaded()) {
+      // @ts-ignore
+      map.current.easeTo({
+        // @ts-ignore
+        zoom: mapZoom,
+      })
+    }
+  }, [mapZoom])
 
   useEffect(() => {
     if (map.current && map.current.isStyleLoaded()) {

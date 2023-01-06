@@ -33,7 +33,7 @@ export const SidebarNav: FC<SidebarNavType> = ({
 
   const padding = sidebarMenuOpen ? (hasMobileSize ? 'pl-4' : 'pl-0') : 'pl-4'
   const navClasses =
-    'h-14 cursor-pointer list-none text-center grid place-items-center hover:bg-primary'
+    'h-14 cursor-pointer list-none text-center grid place-items-center hover:bg-textcolor'
   function onNavClick(listView: any) {
     if (!sidebarMenuOpen) {
       setSidebarMenuOpen(true)
@@ -43,29 +43,27 @@ export const SidebarNav: FC<SidebarNavType> = ({
   }
   return (
     <>
-      <div className="fixed w-full top-4 z-10 text-center">
-        <div
-          onClick={() => setModalOpen(true)}
-          title="home"
-          className={classNames(
-            'text-xs md:text-base mr-4 float-right w-fit cursor-pointer bg-secondary font-bold hover:bg-primary rounded-2xl mb-4 px-4 py-2.5 group'
-          )}
-        >
-          <span className={'text-primary group-hover:text-secondary'}>
-            Energie
-          </span>
-          <span className={'text-lightblue'}>Karte</span>
-        </div>
+      <div
+        onClick={() => setModalOpen(true)}
+        title="home"
+        className={classNames(
+          'fixed top-4 z-20 right-4 text-center text-xs md:text-base mr-4 cursor-pointer bg-secondary font-bold hover:bg-primary rounded-2xl mb-4 px-4 py-2.5 group'
+        )}
+      >
+        <span className={'text-primary group-hover:text-secondary'}>
+          Energie
+        </span>
+        <span className={'text-textcolor'}>Karte</span>
       </div>
 
       <nav
         className={classNames(
           navPositionClasses,
           padding,
-          'fixed top-0 p-4 transition-left ease-in-out duration-300 z-10 rounded overflow-hidden'
+          'fixed top-0 p-4 transition-left ease-in-out duration-300 z-30 rounded overflow-hidden'
         )}
       >
-        <div className="w-14 flex flex-col list-none overflow-hidden shadow-lg text-primary ">
+        <div className="w-14 flex flex-col list-none overflow-hidden shadow-lg text-textcolor ">
           <div className="w-14 flex flex-col list-none rounded overflow-hidden shadow-lg">
             {navViews.map((listView: any) => (
               <div
@@ -73,11 +71,11 @@ export const SidebarNav: FC<SidebarNavType> = ({
                 title={listView.name}
                 onClick={() => onNavClick(listView)}
                 className={classNames(
-                  'text-primary',
+                  'text-secondary',
                   'hover:text-secondary',
                   listView.value === navView && sidebarMenuOpen
-                    ? 'bg-primary text-secondary'
-                    : 'bg-secondary text-primary',
+                    ? 'bg-textcolor text-secondary'
+                    : 'bg-secondary text-textcolor',
                   navClasses
                 )}
               >

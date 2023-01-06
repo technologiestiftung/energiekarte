@@ -43,14 +43,14 @@ export const IntroModal: FC<IntroModalType> = ({
         <div className="fixed inset-0 bg-secondary/60" aria-hidden="true" />
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4 leading-7">
-            <Dialog.Panel className="border-2 border-primary/50  bg-secondary text-lightblue/90 max-h-full p-6 max-w-xs md:max-w-none filter drop-shadow-lg rounded-lg md:min-w-xl md:w-1/2 mx-auto transition-all">
+            <Dialog.Panel className="border-2 border-primary/50  bg-secondary text-textcolor/90 max-h-full p-6 max-w-xs md:max-w-none filter drop-shadow-lg rounded-lg md:min-w-xl md:w-1/2 mx-auto transition-all">
               <button
-                className="text-lightblue focus:outline-none top-0 right-0 m-2 absolute cursor-pointer z-20 hover:bg-primary rounded-full p-2"
+                className="text-textcolor focus:outline-none top-0 right-0 m-2 absolute cursor-pointer z-20 hover:bg-primary rounded-full p-2"
                 onClick={closeModal}
               >
                 <Cross />
               </button>
-              <h2 className="font-bold text-2xl pb-2 pt-2 text-lightblue/80">
+              <h2 className="font-bold text-2xl pb-2 pt-2 text-textcolor/80">
                 Berliner Weihnachtsmarkt-Finder
               </h2>
               <h4 className="pb-4">
@@ -68,13 +68,13 @@ export const IntroModal: FC<IntroModalType> = ({
               </p>
 
               <button
-                className="xmas-btn px-4 bg-secondary hover:bg-primary hover:text-lightblue text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
+                className="xmas-btn px-4 bg-secondary hover:bg-primary hover:text-textcolor text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
                 onClick={closeModalExplore}
               >
                 Erkunden
               </button>
               <button
-                className="px-4 ml-4 bg-secondary text-lightblue text-bold border-2 border-lightblue/90 hover:border-primary p-2 rounded hover:text-lightblue hover:bg-primary"
+                className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/90 hover:border-primary p-2 rounded hover:text-textcolor hover:bg-primary"
                 onClick={closeModalInfo}
               >
                 Mehr Infos

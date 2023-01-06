@@ -48,9 +48,9 @@ module.exports = {
     },
     colors: {
       white: '#fff',
-      lightblue: '#F5F8FE',
+      textcolor: '#222222',
       primary: '#9bc95b',
-      secondary: '#091725',
+      secondary: '#fff',
       gray: {
         '100': '#EDEDED',
         '200': '#E0E0E0',

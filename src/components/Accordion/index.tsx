@@ -43,7 +43,7 @@ export const Accordion: FC<AccordionPropType> = ({
         </h2>
         <ChevronDown
           className={classNames(
-            'transform transition-transform text-primary',
+            'transform transition-transform',
             isActive ? 'rotate-180' : 'rotate-0'
           )}
         />

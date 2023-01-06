@@ -7,14 +7,14 @@ export const ConsumptionTypeSwitch: FC<ConsumptionTypeSwitchType> = ({
 }) => {
   return (
     <div className="fixed w-full top-4 z-20 text-center">
-      <div className="text-xs mr-auto ml-auto w-fit cursor-pointer">
+      <div className=" mr-auto ml-auto w-fit cursor-pointer">
         <button
           onClick={() => setConsumptionType('electricity')}
           className={`${
             consumptionType === 'electricity'
               ? 'bg-primary text-secondary'
-              : 'bg-secondary text-primary'
-          } flex-1 rounded`}
+              : 'bg-secondary text-textcolor'
+          } flex-1 rounded-l-2xl w-20 py-2.5  hover:bg-primary hover:text-secondary`}
         >
           Strom
         </button>
@@ -23,8 +23,8 @@ export const ConsumptionTypeSwitch: FC<ConsumptionTypeSwitchType> = ({
           className={`${
             consumptionType === 'heat'
               ? 'bg-primary text-secondary'
-              : 'bg-secondary text-primary'
-          } flex-1 rounded`}
+              : 'bg-secondary text-textcolor'
+          } flex-1 rounded-r-2xl w-20 py-2.5  hover:bg-primary hover:text-secondary`}
         >
           Wärme
         </button>{' '}

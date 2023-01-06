@@ -19,7 +19,7 @@ export default function mapStyle() {
         id: 'background',
         type: 'background',
         paint: {
-          'background-color': '#2b2c4e',
+          'background-color': '#949494',
         },
       },
       {

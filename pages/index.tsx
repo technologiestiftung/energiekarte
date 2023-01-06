@@ -157,7 +157,7 @@ const MapSite: NextPage = (energyData: any) => {
       </SidebarWrapper>
       {/* market data information */}
       <SidebarWrapper
-        classes="z-30"
+        classes="z-40"
         position="left"
         isOpen={sidebarInfoOpen}
         setOpen={setSidebarInfoOpen}
