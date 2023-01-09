@@ -47,7 +47,7 @@ export const SidebarNav: FC<SidebarNavType> = ({
         onClick={() => setModalOpen(true)}
         title="home"
         className={classNames(
-          'fixed top-4 z-20 right-4 text-center text-xs md:text-base mr-4 cursor-pointer bg-secondary font-bold hover:bg-primary rounded-2xl mb-4 px-4 py-2.5 group'
+          'rotate-90 translate-x-8 translate-y-10 md:rotate-0 md:translate-x-0 md:translate-y-0 fixed top-4 z-20 right-4 text-center text-xs md:text-base cursor-pointer bg-secondary font-bold hover:bg-primary rounded-2xl mb-4 px-4 py-2.5 group'
         )}
       >
         <span className={'text-primary group-hover:text-secondary'}>

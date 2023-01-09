@@ -4,6 +4,7 @@ import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
 import { Accordion } from '@components/Accordion'
 import { RangeSlider } from '@components/RangeSlider'
+import { Square, CheckSquare } from '@components/Icons/'
 
 export interface SidebarContentFilterType {
   data: any
@@ -73,6 +74,14 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
               }
               key={type.value}
             >
+              <span className="text-xs inline-block mr-2">
+                {' '}
+                {type.value === buildingType ? (
+                  <CheckSquare size={18} />
+                ) : (
+                  <Square size={18} />
+                )}
+              </span>
               {type.lable}
             </button>
           ))}
@@ -128,7 +137,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
 
         {(buildingType || heatType) && (
           <button
-            className="block mr-auto ml-auto sticky bottom-4 mb-8 px-4 bg-secondary hover:bg-textcolor hover:text-secondary p-2 text-bold rounded border-2 border-gold "
+            className="text-secondary block mr-auto ml-auto sticky bottom-4 mb-8 px-4 bg-primary hover:bg-primary hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
             onClick={resetFilter}
           >
             Filter zurücksetzen
