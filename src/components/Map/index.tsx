@@ -7,6 +7,7 @@ import mapStyle from './mapStyle'
 import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
 
 import { getConsumtionColor } from '@lib/getConsumtionColor'
+import { MapKey } from './MapKey'
 
 interface MapType {
   energyData: any
@@ -220,10 +221,13 @@ export const MapComponent: FC<MapType> = ({
   }
 
   return (
-    <div
-      id="map"
-      className="w-full h-full bg-[#F8F4F0] !fixed"
-      aria-label="Kartenansicht der Einrichtungen"
-    ></div>
+    <>
+      <div
+        id="map"
+        className="w-full h-full bg-[#F8F4F0] !fixed"
+        aria-label="Kartenansicht der Einrichtungen"
+      ></div>
+      <MapKey consumptionType={consumptionType} />
+    </>
   )
 }
