@@ -4,14 +4,13 @@ import { getMapKeyValues } from '@lib/getConsumtionColor'
 
 export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
   const keyData = getMapKeyValues(consumptionType)
-  console.log(keyData)
-
   return (
     <div className="shadow-lg text-sm w-56 rounded fixed z-20 bottom-0 right-0 mr-4 mb-4 p-4 bg-secondary">
       <h2 className="font-bold text-md pb-2">
         {consumptionType === 'electricity'
           ? 'Stromverbrauch'
           : 'Wärmeverbrauch'}
+        {' (kWh/a)'}
       </h2>
       <p className="flex">
         <span
@@ -20,7 +19,7 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
             backgroundColor: keyData.colors[0],
           }}
         ></span>
-        {'>'} {keyData.values[0]}
+        {'>'} {keyData.values[0].toLocaleString('de-DE')}
       </p>
       <p className="flex">
         <span
@@ -29,7 +28,8 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
             backgroundColor: keyData.colors[1],
           }}
         ></span>
-        {'>'} {keyData.values[1]}
+        {'>'} {keyData.values[1].toLocaleString('de-DE')} {'<'}{' '}
+        {keyData.values[0].toLocaleString('de-DE')}
       </p>{' '}
       <p className="flex">
         <span
@@ -38,7 +38,7 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
             backgroundColor: keyData.colors[2],
           }}
         ></span>
-        {'<'} {keyData.values[1]}
+        {'<'} {keyData.values[1].toLocaleString('de-DE')}
       </p>
       <p className="flex">
         <span
@@ -47,7 +47,7 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
             backgroundColor: keyData.colors[3],
           }}
         ></span>
-        Keine Daten
+        keine Daten
       </p>
     </div>
   )
