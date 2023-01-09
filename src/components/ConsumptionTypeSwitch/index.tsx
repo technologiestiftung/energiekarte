@@ -7,7 +7,7 @@ export const ConsumptionTypeSwitch: FC<ConsumptionTypeSwitchType> = ({
 }) => {
   return (
     <div className="fixed w-full top-4 z-20 text-center">
-      <div className=" mr-auto ml-auto w-fit cursor-pointer text-xs md:text-base ">
+      <div className=" mr-auto ml-auto w-fit cursor-pointer text-xs md:text-base shadow-lg">
         <button
           onClick={() => setConsumptionType('electricity')}
           className={`${
