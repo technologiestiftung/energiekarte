@@ -58,7 +58,6 @@ export const MapComponent: FC<MapType> = ({
       // style: mapStyle(),
       // @ts-ignore
       style: `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
-
       center: [
         MAP_CONFIG.defaultLongitude,
         MAP_CONFIG.defaultLatitude,
@@ -156,8 +155,6 @@ export const MapComponent: FC<MapType> = ({
           type: 'geojson',
           data: intersectingPolygon,
         })
-
-        console.log(entityConsumptionData)
 
         map.current.addLayer({
           id: 'landparcel-layer',

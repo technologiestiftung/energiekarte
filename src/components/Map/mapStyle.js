@@ -26,12 +26,12 @@ export default function mapStyle() {
         id: 'osmBaseMap',
         type: 'raster',
         source: 'osmBaseMap',
-        // paint: {
-        //   'raster-brightness-max': 0.3,
-        //   'raster-saturation': -1,
-        // },
+        paint: {
+          'raster-brightness-max': 0.3,
+          'raster-saturation': -1,
+        },
         layout: {
-          // visibility: 'none',
+          visibility: 'none',
         },
       },
     ],

@@ -23,11 +23,14 @@ export function getMaxMinValues(energyData) {
     })
   )
 
+  const sanierungById = {}
+
   const maxSanierung = Math.max(
     ...energyData.consumption.features.map(function (o) {
       return o.properties.heat
     })
   )
+
   const minSanierung = Math.max(
     ...energyData.consumption.features.map(function (o) {
       return o.properties.heat
@@ -46,6 +49,7 @@ export function getMaxMinValues(energyData) {
     })
   )
 
-  console.log(maxElectricity)
-  return { maxElectricity: maxElectricity, maxHeat: maxHeat }
+  const data = { maxElectricity: maxElectricity, maxHeat: maxHeat }
+  console.log(data)
+  return data
 }

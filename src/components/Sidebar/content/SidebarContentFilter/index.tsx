@@ -66,7 +66,6 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
           {buidlingTypes?.map((type) => (
             <button
               className={classNames(
-                type.value === buildingType ? 'text-primary font-bold' : '',
                 'block w-full text-left hover:text-primary '
               )}
               onClick={() =>
@@ -74,7 +73,12 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
               }
               key={type.value}
             >
-              <span className="text-xs inline-block mr-2">
+              <span
+                className={classNames(
+                  type.value === buildingType ? 'text-primary font-bold' : '',
+                  'text-xs inline-block mr-2'
+                )}
+              >
                 {' '}
                 {type.value === buildingType ? (
                   <CheckSquare size={18} />
