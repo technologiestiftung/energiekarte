@@ -15,15 +15,36 @@ export interface SidebarContentEntityType {
   consumptionType: string
 }
 
-function getUsageData(feat, type) {
+const energyComparison = {
+  heat: 5500,
+  electricity: 5500,
+}
+
+function getUsageDataString(feat, type) {
   if (feat[type] && feat[type] != 0 && feat[type] !== -1) {
     return (
-      <p className="pb-2">{feat[type].toLocaleString('de-DE') + ' kWh/a'}</p>
+      <p className="pb-2">
+        {getUsageData(feat, type).toLocaleString('de-DE') + ' kWh/a'}
+      </p>
     )
   } else {
     return <p className="pb-2 text-sm">liegt nicht vor</p>
     // return (type === 'heat' ? 'Wärmeverbrauch':'Stromverbrauch') + ' liegt nicht vor'
   }
+}
+
+function getUsageData(feat, type) {
+  if (feat[type] && feat[type] != 0 && feat[type] !== -1) {
+    return Number(feat[type])
+  } else {
+    return 0
+  }
+}
+
+function getComparisonNumber(feat, type) {
+  return (
+    Math.round((getUsageData(feat, type) / energyComparison[type]) * 100) / 100
+  )
 }
 
 export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
@@ -49,63 +70,40 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   return (
     <>
       <SidebarHeader
-        text={entityConsumptionData.properties.entityAddress}
+        text={typeTranslation(consumptionData.entityType)}
         fontSize="text-lg"
       />
       <SidebarBody>
         {' '}
         <>
-          <h2 className="font-bold text-md">
-            {typeTranslation(consumptionData.entityType)}
-          </h2>
-          <p className="text-xs pb-2">
-            {consumptionData.entityAddress} | {consumptionData.entityPLZ}
+          <p className="text-sm">{consumptionData.entityAddress}</p>
+          <p className="text-sm pb-2 pt-1">
+            {consumptionData.ortsteil} | {consumptionData.entityPLZ} Berlin
           </p>
+          <hr className="my-2" />
 
-          <hr className="my-4" />
-
-          <h2 className="font-bold pt-4 text-lg py-4">
+          <h2 className="font-bold pt-4 text-md py-4">
             {consumptionType === 'electricity'
               ? 'Stromverbrauch'
               : 'Wärmeverbrauch'}
           </h2>
-
-          {consumptionType === 'electricity' ? (
-            <>
-              {/* <p className="text-sm">Stromverbrauch</p> */}
-
-              <p className="font-bold flex">
-                <span
-                  className="text-sm mr-2  w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
-                  style={{
-                    backgroundColor: getConsumtionColor(
-                      'electricity',
-                      consumptionData['electricity']
-                    ),
-                  }}
-                ></span>
-                {getUsageData(consumptionData, 'electricity')}
-              </p>
-            </>
-          ) : null}
+          <p className="text-sm pb-1">In Kilowattstunden pro Jahr </p>
+          <p className="font-bold flex pb-2">
+            <span
+              className="text-sm mr-2  w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
+              style={{
+                backgroundColor: getConsumtionColor(
+                  consumptionType,
+                  consumptionData[consumptionType]
+                ),
+              }}
+            ></span>
+            {getUsageDataString(consumptionData, consumptionType)}
+          </p>
 
           {consumptionType === 'heat' ? (
             <>
-              {/* <p className="text-sm">Wärmeverbrauch</p> */}
-              <p className="font-bold flex">
-                <span
-                  className="text-sm mr-2  w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
-                  style={{
-                    backgroundColor: getConsumtionColor(
-                      'heat',
-                      consumptionData['heat']
-                    ),
-                  }}
-                ></span>
-                {getUsageData(consumptionData, 'heat')}
-              </p>
-
-              <p className="text-sm">Art der Wärmeversorgung</p>
+              <p className="text-sm pb-1">Art der Wärmeversorgung</p>
               <p className="pb-2 font-bold">{consumptionData.entityHeatType}</p>
             </>
           ) : null}
@@ -113,16 +111,19 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
           <div>
             <p className="text-xs py-2">
               Der Verbrauch aller Gebäude auf diesem Grundstück entspricht dem
-              Energieverbauch von X 5 Personehaushalten.
+              Energieverbauch von ca.{' '}
+              {getComparisonNumber(consumptionData, consumptionType)} 5
+              Personehaushalten (
+              {energyComparison[consumptionType].toLocaleString('de-DE')} kWh).
             </p>
-            <div className="flex">
-              {' '}
-              <House />
-              <House />
-              <House />
-              <House />
-              <House />
+            {/* <div className="flex py-4">
+              {getUsageData(consumptionData, 'heat').map((feat, i) => (
+                <House />))}
+              ))}
             </div>
+            <p className="text-xs italic">
+              Ein Haus entspricht 1000 5 Personenhaushalte
+            </p> */}
           </div>
 
           <div className="text-xs pt-6">

@@ -4,26 +4,27 @@ const fs = require('fs')
 const glob = require('glob')
 const async = require('async')
 const Papa = require('papaparse')
-const { getRenovationGeoJSON } = require('./getRenovationGeoJSON');
-const { getConsuptionGeoJSON } = require('./getConsuptionGeoJSON');
+const { getRenovationGeoJSON } = require('./getRenovationGeoJSON')
+const { getConsuptionGeoJSON } = require('./getConsuptionGeoJSON')
 
 const headerTransaltions = {
-    'lfd.':'entityId',
-    'Wirtschaftseinheit':'entityAddress',
-    'Gebaeudebezeichnung': 'houseName',
-    'Prio':'housePrio',
-    'Nettoflaeche':'houseArea',
-    'Einsparen':'houseSavingPotential',
-    'Typ':'entityType',
-    'Art der Wärmeversorgung':'entityHeatType',
-    'Wärmeverbrauch':'heat',
-    'Stromverbrauch':'electricity',
-    'Bemerkung':'houseComment',
-    'PLZ': 'entityPLZ',
-    'Kosten':'houseCosts',
-    'Denkmal':'houseMonument',
-    'gc_xwert':'x',
-    'gc_ywert':'y'
+  'lfd.': 'entityId',
+  Wirtschaftseinheit: 'entityAddress',
+  Gebaeudebezeichnung: 'houseName',
+  Prio: 'housePrio',
+  Nettoflaeche: 'houseArea',
+  Einsparen: 'houseSavingPotential',
+  Typ: 'entityType',
+  'Art der Wärmeversorgung': 'entityHeatType',
+  Wärmeverbrauch: 'heat',
+  Stromverbrauch: 'electricity',
+  Bemerkung: 'houseComment',
+  PLZ: 'entityPLZ',
+  Kosten: 'houseCosts',
+  Denkmal: 'houseMonument',
+  gc_xwert: 'x',
+  gc_ywert: 'y',
+  gc_ortsteil: 'ortsteil',
 }
 
 let dataSanierung = fs.readFileSync('dataIn/sanierungsplan.csv', 'utf-8')
@@ -85,9 +86,16 @@ async.eachSeries(
     callbackEachRow()
   },
   function (err) {
-
-    const renovationGeoJSON = getRenovationGeoJSON(allHeaders, dataSanierung, headerTransaltions)
-    const consuptionGeoJSON = getConsuptionGeoJSON(dataVerbrauchHeader, dataVerbrauch, headerTransaltions)
+    const renovationGeoJSON = getRenovationGeoJSON(
+      allHeaders,
+      dataSanierung,
+      headerTransaltions
+    )
+    const consuptionGeoJSON = getConsuptionGeoJSON(
+      dataVerbrauchHeader,
+      dataVerbrauch,
+      headerTransaltions
+    )
 
     // finalFile.push(...dataSanierung)
     // let csv = Papa.unparse(finalFile, { newline: '\r\n' })
@@ -96,14 +104,20 @@ async.eachSeries(
     //   console.log('data analysed vvvv')
     // })
 
-    fs.writeFile(`../public/renovation.json`, JSON.stringify(renovationGeoJSON), function (err) {
-        fs.writeFile(`../public/consuption.json`, JSON.stringify(consuptionGeoJSON), function (err) {
+    fs.writeFile(
+      `../public/renovation.json`,
+      JSON.stringify(renovationGeoJSON),
+      function (err) {
+        fs.writeFile(
+          `../public/consuption.json`,
+          JSON.stringify(consuptionGeoJSON),
+          function (err) {
             console.log('all done')
-        })
-    })
+          }
+        )
+      }
+    )
   }
 )
-
-
 
 // non existent cco

@@ -70,7 +70,7 @@ const headersWant = [
   // 'Wirtschaftseinheit_check',
   'gc_xwert',
   'gc_ywert',
-  // 'gc_ortsteil',
+  'gc_ortsteil',
   // 'gc_haus',
   // 'gc_wert',
   // 'gc_typ',

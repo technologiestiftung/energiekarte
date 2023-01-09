@@ -9,11 +9,7 @@ export interface SidebarContentFilterType {
   data: any
 }
 
-export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
-  data,
-  entityId,
-  setEntityId,
-}) => {
+export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
   //   function getUsageData(feat, type) {
 
   //   {'}'}
