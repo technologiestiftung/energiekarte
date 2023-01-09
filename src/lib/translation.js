@@ -4,6 +4,7 @@ export const typeTranslation = (type) => {
     Flüchtlingsunterbringung: 'Geflüchtetenunterbringung',
     Gerichte: 'Gericht',
     JVA: 'Justizvollzugsanstalt',
+    'externe Mieter': 'Externe Mieter',
   }
   const translatedType = types[type]
   return translatedType || type

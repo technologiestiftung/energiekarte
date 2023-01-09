@@ -33,23 +33,23 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
   }
 
   const buidlingTypes = [
-    { lable: 'Schulen', value: 'Schule' },
+    { lable: 'Allgemeiner Bestand', value: 'Allgemeiner Bestand' },
+    { lable: 'Externe Mieter', value: 'externe Mieter' },
+    { lable: 'Feuerwehr', value: 'Feuerwehr' },
     { lable: 'Flüchtlingsunterbringung', value: 'Geflüchtetenunterbringung' },
     { lable: 'Gericht', value: 'Gerichte' },
     { lable: 'Justizvollzugsanstalt', value: 'JVA' },
-    { lable: 'Allgemeiner Bestand', value: 'Allgemeiner Bestand' },
-    { lable: 'externe Mieter', value: 'externe Mieter' },
-    { lable: 'Feuerwehr', value: 'Feuerwehr' },
     { lable: 'Kultur', value: 'Kultur' },
     { lable: 'Polizei', value: 'Polizei' },
+    { lable: 'Schulen', value: 'Schule' },
   ]
 
   const heatTypes = [
-    { lable: 'Gas', value: 'Gas' },
     { lable: 'Fernwärme', value: 'Fernwärme' },
+    { lable: 'Gas', value: 'Gas' },
     { lable: 'Nahwärme', value: 'Nahwärme' },
-    { lable: 'Pellet', value: 'Pellet' },
     { lable: 'Öl', value: 'Öl' },
+    { lable: 'Pellet', value: 'Pellet' },
   ]
 
   return (

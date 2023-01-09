@@ -55,11 +55,9 @@ export const MapComponent: FC<MapType> = ({
     // @ts-ignore
     map.current = new maplibregl.Map({
       container: 'map',
-      style: mapStyle(),
-      // style={process.env.NEXT_PUBLIC_MAPTILER_STYLE},
-      // style={process.env.NEXT_PUBLIC_MAPTILER_STYLE},
-
-      // style: `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
+      // style: mapStyle(),
+      // @ts-ignore
+      style: `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
 
       center: [
         MAP_CONFIG.defaultLongitude,
@@ -82,7 +80,8 @@ export const MapComponent: FC<MapType> = ({
             ? marker.properties.heat
             : marker.properties.electricity
         )
-        el.className = 'h-3 w-3 rounded-full cursor-pointer'
+        el.className =
+          'h-3 w-3 rounded-full cursor-pointer border-gray-500 border'
         el.addEventListener('click', function () {
           onMarkerClick(marker.properties.entityId, marker.geometry.coordinates)
         })
@@ -158,15 +157,22 @@ export const MapComponent: FC<MapType> = ({
           data: intersectingPolygon,
         })
 
+        console.log(entityConsumptionData)
+
         map.current.addLayer({
           id: 'landparcel-layer',
           type: 'line',
           source: 'landparcel-source',
           paint: {
             'line-dasharray': [1, 1],
-            'line-color': '#fff',
+            'line-color': getConsumtionColor(
+              consumptionType,
+              consumptionType === 'heat'
+                ? entityConsumptionData.properties.heat
+                : entityConsumptionData.properties.electricity
+            ),
             // 'line-blur': 6,
-            'line-width': 2,
+            'line-width': 3,
             'line-opacity': [
               'interpolate',
               ['exponential', 0.5],
@@ -174,7 +180,7 @@ export const MapComponent: FC<MapType> = ({
               13,
               0,
               16,
-              0.6,
+              0.8,
             ],
           },
         })

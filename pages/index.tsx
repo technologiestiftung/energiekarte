@@ -21,6 +21,7 @@ import { IntroModal } from '@components/IntroModal'
 
 import { getData } from '@lib/loadMapData'
 import { getDataFromId } from '@lib/getDataFromId'
+import { getMaxMinValues } from '@lib/getMaxMinValues'
 
 export async function getStaticProps() {
   const energyData = getData()
@@ -67,6 +68,7 @@ const MapSite: NextPage = (energyData: any) => {
   const [mapZoom, setMapZoom] = useState<number>(10)
 
   const [consumptionType, setConsumptionType] = useState('heat')
+  let [maxMinValues, setMaxMinValues] = useState<object>({})
 
   // // when the query string is read check if we have an id
   // useEffect(() => {
@@ -87,6 +89,10 @@ const MapSite: NextPage = (energyData: any) => {
   //     setModalOpen(true)
   //   }
   // }, [isReady])
+
+  useEffect(() => {
+    setMaxMinValues(getMaxMinValues(energyData))
+  }, [])
 
   // when the id changes -> open the sidebar and set the query
   useEffect(() => {
