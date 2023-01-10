@@ -5,6 +5,7 @@ const async = require('async')
 const Papa = require('papaparse')
 const { getRenovationGeoJSON } = require('./getRenovationGeoJSON')
 const { getConsuptionGeoJSON } = require('./getConsuptionGeoJSON')
+const minMaxValues = {}
 
 const headerTransaltions = {
   'lfd.': 'entityId',
@@ -134,6 +135,30 @@ async.eachSeries(
         }
       })
     })
+
+    minMaxValues.amountRenovations = renovationGeoJSON.features.length
+    minMaxValues.maxElectricity = Math.max(
+      ...consuptionGeoJSON.features.map(function (f) {
+        return f.properties.electricity
+      })
+    )
+    minMaxValues.maxHeat = Math.max(
+      ...consuptionGeoJSON.features.map(function (f) {
+        return f.properties.heat
+      })
+    )
+    minMaxValues.maxRenovationCosts = Math.max(
+      ...consuptionGeoJSON.features.map(function (f) {
+        return f.properties.renovationsCosts
+      })
+    )
+    minMaxValues.minRenovationCosts = Math.min(
+      ...consuptionGeoJSON.features.map(function (f) {
+        return f.properties.renovationsCosts
+      })
+    )
+
+    console.log(minMaxValues)
 
     fs.writeFile(
       `../public/pointData.json`,

@@ -8,14 +8,20 @@ export interface RangeSliderType {
 
 const primaryColor = '#9bc95b'
 
-export const RangeSlider: FC<RangeSliderType> = ({ value, setValue }) => {
+export const RangeSlider: FC<RangeSliderType> = ({
+  value,
+  setValue,
+  minValue,
+  maxValue,
+  step,
+}) => {
   return (
     <div className="m-4">
       <Range
         values={value}
-        step={1}
-        min={0}
-        max={100}
+        step={step}
+        min={minValue}
+        max={maxValue}
         // rtl={rtl}
         onChange={(v) => {
           setValue(v)
@@ -40,8 +46,8 @@ export const RangeSlider: FC<RangeSliderType> = ({ value, setValue }) => {
                 background: getTrackBackground({
                   values: value,
                   colors: ['#ccc', primaryColor, '#ccc'],
-                  min: 0,
-                  max: 100,
+                  min: minValue,
+                  max: maxValue,
                   //   rtl,
                 }),
                 alignSelf: 'center',
@@ -56,24 +62,42 @@ export const RangeSlider: FC<RangeSliderType> = ({ value, setValue }) => {
             {...props}
             style={{
               ...props.style,
-              height: '20px',
-              width: '10x',
-              borderRadius: '4px',
-              backgroundColor: '#FFF',
+              height: '30px',
+              width: '30px',
+              // borderRadius: '4px',
+              // backgroundColor: '#FFF',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              boxShadow: '0px 2px 6px #AAA',
+              // boxShadow: '0px 2px 6px #AAA',
             }}
           >
             <div
               style={{
-                height: '16px',
+                height: '20px',
                 width: '5px',
-                backgroundColor: isDragged ? primaryColor : '#CCC',
+                borderRadius: '4px',
+                backgroundColor: '#AAA',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                boxShadow: '0px 2px 6px #AAA',
+              }}
+            ></div>
+            <div
+              style={{
+                position: 'absolute',
+                top: '28px',
+                color: primaryColor,
+                fontWeight: 'bold',
+                fontSize: '14px',
+                fontFamily: 'Arial,Helvetica Neue,Helvetica,sans-serif',
+                padding: '4px',
+                borderRadius: '4px',
+                // backgroundColor: isDragged ? primaryColor : '#CCC',
               }}
             >
-              {value[index].toFixed(1)}
+              {value[index]}
             </div>
           </div>
         )}

@@ -127,6 +127,9 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
           <RangeSlider
             value={electricityConsumption}
             setValue={setElectricityConsumption}
+            minValue={0}
+            maxValue={100}
+            step={1}
           />
         </Accordion>
         <Accordion title="Wärmeverbrauch" acitve={true}>
