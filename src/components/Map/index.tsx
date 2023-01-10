@@ -35,6 +35,7 @@ export const MapComponent: FC<MapType> = ({
   entityData,
   consumptionType,
   mapZoom,
+  setMapZoom,
 }) => {
   const [mapMarkers, setMapMarkers] = useState([])
 
@@ -116,11 +117,13 @@ export const MapComponent: FC<MapType> = ({
         // @ts-ignore
         // padding: { left: isMobile ? 0 : 200 },
       })
+      setMapZoom(15)
     }
   }, [zoomToCenter])
 
   useEffect(() => {
     if (map.current && map.current.isStyleLoaded()) {
+      if (map.current.getZoom() === mapZoom) return
       // @ts-ignore
       map.current.easeTo({
         // @ts-ignore

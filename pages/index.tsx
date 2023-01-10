@@ -177,6 +177,7 @@ const MapSite: NextPage = (energyData: any) => {
       <MapComponent
         zoomToCenter={zoomToCenter}
         mapZoom={mapZoom}
+        setMapZoom={setMapZoom}
         energyData={energyData}
         entityId={entityId}
         setEntityId={setEntityId}
