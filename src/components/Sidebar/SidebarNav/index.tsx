@@ -9,8 +9,8 @@ export interface SidebarNavType {
   sidebarMenuOpen: boolean
   setSidebarMenuOpen: (open: boolean) => void
   setModalOpen: (open: boolean) => void
-  marketId: string | number | null
-  setMarketId: (time: string | null | number) => void
+  entityId: string | number | null
+  setEntityId: (time: string | null | number) => void
 }
 
 export const SidebarNav: FC<SidebarNavType> = ({
@@ -20,14 +20,14 @@ export const SidebarNav: FC<SidebarNavType> = ({
   sidebarMenuOpen,
   setSidebarMenuOpen,
   setModalOpen,
-  marketId,
-  setMarketId,
+  entityId,
+  setEntityId,
 }) => {
   const hasMobileSize = useHasMobileSize()
   let navPositionClasses =
     !sidebarMenuOpen || hasMobileSize ? 'left-[0px]' : 'left-sidebar'
 
-  if (marketId && !hasMobileSize) {
+  if (entityId && !hasMobileSize) {
     navPositionClasses = 'left-sidebar'
   }
 
@@ -39,7 +39,7 @@ export const SidebarNav: FC<SidebarNavType> = ({
       setSidebarMenuOpen(true)
     }
     setNavView(listView.value)
-    setMarketId(null)
+    setEntityId(null)
   }
   return (
     <>

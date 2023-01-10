@@ -1,18 +1,13 @@
 export function getDataFromId(id, energyData) {
-  let renovationFromId = []
-  let consumptionFromId
+  let energyDataFromId
 
-  energyData.renovation.features.forEach((d) => {
+  energyData.features.forEach((d) => {
     if (d.properties.entityId === id) {
-      renovationFromId.push(d)
+      energyDataFromId = d
     }
   })
 
-  energyData.consumption.features.forEach((d) => {
-    if (d.properties.entityId === id) {
-      consumptionFromId = d
-    }
-  })
+  console.log(energyDataFromId)
 
-  return { consumption: consumptionFromId, renovation: renovationFromId }
+  return energyDataFromId
 }

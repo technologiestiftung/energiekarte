@@ -52,12 +52,9 @@ const navViews = [
 const MapSite: NextPage = (energyData: any) => {
   const { pathname, query, replace, isReady } = useRouter()
   let [modalOpen, setModalOpen] = useState(false)
-  const [marketId, setMarketId] = useState<string | number | null>(null)
-  const [marketData, setMarketData] = useState<any>()
 
   const [entityId, setEntityId] = useState<string | number | null>(null)
-  const [entityConsumptionData, setEntityConsumptionData] = useState<any>(null)
-  const [entityRenovationData, setEntityRenovationData] = useState<any>(null)
+  const [entityData, setEntityData] = useState<any>(null)
 
   const [navView, setNavView] = useState<'filter' | 'info'>('filter')
   const [sidebarMenuOpen, setSidebarMenuOpen] = useState<boolean>(false)
@@ -90,21 +87,19 @@ const MapSite: NextPage = (energyData: any) => {
   //   }
   // }, [isReady])
 
-  useEffect(() => {
-    setMaxMinValues(getMaxMinValues(energyData))
-  }, [])
+  // useEffect(() => {
+  //   setMaxMinValues(getMaxMinValues(energyData))
+  // }, [])
 
   // when the id changes -> open the sidebar and set the query
   useEffect(() => {
     setSidebarInfoOpen(entityId === null ? false : true)
     if (entityId) {
-      const { consumption, renovation } = getDataFromId(entityId, energyData)
-      setEntityConsumptionData(consumption)
-      setEntityRenovationData(renovation)
-      setZoomToCenter(consumption?.geometry.coordinates)
+      const dataFromId = getDataFromId(entityId, energyData.pointData)
+      setEntityData(dataFromId)
+      setZoomToCenter(dataFromId.geometry.coordinates)
     } else {
-      setEntityConsumptionData(null)
-      setEntityRenovationData(null)
+      setEntityData(null)
     }
     if (isReady) {
       replace({ pathname, query: { id: entityId } }, undefined, {
@@ -151,13 +146,6 @@ const MapSite: NextPage = (energyData: any) => {
         closeSymbol="cross"
         mobileHeight={mobileHeight}
       >
-        {/* {navView === 'list' && (
-          <SidebarContentList
-            data={energyData.consumption}
-            entityId={entityId}
-            setEntityId={setEntityId}
-          />
-        )} */}
         {navView === 'info' && <SidebarContentInfo />}
         {navView === 'filter' && <SidebarContentFilter />}
       </SidebarWrapper>
@@ -172,9 +160,7 @@ const MapSite: NextPage = (energyData: any) => {
       >
         <SidebarContentEntity
           entityId={entityId}
-          entityConsumptionData={entityConsumptionData}
-          entityRenovationData={entityRenovationData}
-          renovationLength={energyData.renovation.features.length}
+          entityData={entityData}
           consumptionType={consumptionType}
         />
       </SidebarWrapper>
@@ -185,20 +171,16 @@ const MapSite: NextPage = (energyData: any) => {
         sidebarMenuOpen={sidebarMenuOpen}
         setSidebarMenuOpen={setSidebarMenuOpen}
         setModalOpen={setModalOpen}
-        marketId={marketId}
-        setMarketId={setMarketId}
+        entityId={entityId}
+        setEntityId={setEntityId}
       />
       <MapComponent
-        energyData={energyData}
         zoomToCenter={zoomToCenter}
         mapZoom={mapZoom}
-        setMarketId={setMarketId}
-        setMarketData={setMarketData}
-        marketId={marketId}
         energyData={energyData}
         entityId={entityId}
         setEntityId={setEntityId}
-        entityConsumptionData={entityConsumptionData}
+        entityData={entityData}
         consumptionType={consumptionType}
       />
       <MapNav mapZoom={mapZoom} setMapZoom={setMapZoom} />

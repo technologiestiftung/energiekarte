@@ -26,8 +26,6 @@ function getConsuptionGeoJSON(headers, dataVerbrauch, headerTransaltions) {
           : element[i]
       }
       if (h.includes('gc_xwert') || h.includes('gc_ywert')) {
-        console.log(i, element[i])
-
         coordinates[h] = Number(element[i])
       }
     })

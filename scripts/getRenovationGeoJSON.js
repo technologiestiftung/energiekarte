@@ -2,7 +2,7 @@
 
 module.exports = { getRenovationGeoJSON }
 
-function getRenovationGeoJSON(allHeaders, dataSanierung,headerTransaltions) {
+function getRenovationGeoJSON(allHeaders, dataSanierung, headerTransaltions) {
   const sanierungGeoJSON = {
     type: 'FeatureCollection',
     name: 'sanierung',
@@ -19,7 +19,9 @@ function getRenovationGeoJSON(allHeaders, dataSanierung,headerTransaltions) {
 
     allHeaders.forEach((h, i) => {
       if (headersWant.includes(h)) {
-        props[headerTransaltions[h]||h] = Number(element[i]) ? Number(element[i]) : element[i]
+        props[headerTransaltions[h] || h] = Number(element[i])
+          ? Number(element[i])
+          : element[i]
       }
       if (h.includes('gc_xwert') || h.includes('gc_ywert')) {
         coordinates[h] = Number(element[i])
@@ -40,8 +42,6 @@ function getRenovationGeoJSON(allHeaders, dataSanierung,headerTransaltions) {
   })
   return sanierungGeoJSON
 }
-
-
 
 const headersWant = [
   // 'Nr',
@@ -64,8 +64,8 @@ const headersWant = [
   // 'Bemerkung',
   // 'Adresse',
   // 'Wirtschaftseinheit_check',
-  'gc_xwert',
-  'gc_ywert',
+  // 'gc_xwert',
+  // 'gc_ywert',
   // 'gc_ortsteil',
   // 'gc_haus',
   // 'gc_wert',

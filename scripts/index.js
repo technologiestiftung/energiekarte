@@ -1,7 +1,6 @@
 'use strict'
 
 const fs = require('fs')
-const glob = require('glob')
 const async = require('async')
 const Papa = require('papaparse')
 const { getRenovationGeoJSON } = require('./getRenovationGeoJSON')
@@ -29,14 +28,12 @@ const headerTransaltions = {
 
 let dataSanierung = fs.readFileSync('dataIn/sanierungsplan.csv', 'utf-8')
 let dataVerbrauch = fs.readFileSync('dataIn/verbrauch.csv', 'utf-8')
-
 dataSanierung = Papa.parse(dataSanierung).data
 dataVerbrauch = Papa.parse(dataVerbrauch).data
 
 const dataVerbrauchHeader = dataVerbrauch[0]
 const dataSanierungHeader = dataSanierung[0]
 const allHeaders = [...dataSanierungHeader, ...dataVerbrauchHeader]
-let finalFile = [allHeaders]
 
 dataSanierung = dataSanierung.splice(1)
 dataVerbrauch = dataVerbrauch.splice(1)
@@ -97,24 +94,52 @@ async.eachSeries(
       headerTransaltions
     )
 
-    // finalFile.push(...dataSanierung)
-    // let csv = Papa.unparse(finalFile, { newline: '\r\n' })
-    // // write CSV with all data
-    // fs.writeFile(`dataOut/sanierungExtended.csv`, csv, function (err) {
-    //   console.log('data analysed vvvv')
-    // })
+    // add the senierungsdata to the consuption data and sum up some values
+    consuptionGeoJSON.features.forEach((featConsumption) => {
+      featConsumption.properties.renovations = []
+      featConsumption.properties.renovationsCosts = 0
+      featConsumption.properties.renovationsArea = 0
+      featConsumption.properties.renovationsSavingsMax = null
+      featConsumption.properties.renovationsSavingsMin = 10000000000000000000000000
+
+      renovationGeoJSON.features.forEach((featRenovation) => {
+        if (
+          featConsumption.properties.entityId ===
+          featRenovation.properties.entityId
+        ) {
+          featConsumption.properties.renovations.push(featRenovation.properties)
+          featConsumption.properties.renovationsCosts +=
+            featRenovation.properties.houseCosts
+          featConsumption.properties.renovationsArea +=
+            featRenovation.properties.houseArea
+
+          const minMaxValues = featRenovation.properties.houseSavingPotential
+            .replace('%', '')
+            .split('-')
+
+            .map((d) => Number(d))
+          if (!minMaxValues[1]) {
+            featConsumption.properties.renovationsSavingsMin = null
+            featConsumption.properties.renovationsSavingsMax = null
+          } else {
+            featConsumption.properties.renovationsSavingsMin = Math.min(
+              minMaxValues[0],
+              featConsumption.properties.renovationsSavingsMin
+            )
+            featConsumption.properties.renovationsSavingsMax = Math.max(
+              minMaxValues[1],
+              featConsumption.properties.renovationsSavingsMax
+            )
+          }
+        }
+      })
+    })
 
     fs.writeFile(
-      `../public/renovation.json`,
-      JSON.stringify(renovationGeoJSON),
+      `../public/pointData.json`,
+      JSON.stringify(consuptionGeoJSON),
       function (err) {
-        fs.writeFile(
-          `../public/consuption.json`,
-          JSON.stringify(consuptionGeoJSON),
-          function (err) {
-            console.log('all done')
-          }
-        )
+        console.log('all done')
       }
     )
   }

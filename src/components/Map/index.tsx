@@ -14,7 +14,7 @@ interface MapType {
   zoomToCenter?: number[]
   entityId: string | number | null
   setEntityId: (time: string | null | number) => void
-  entityConsumptionData: any
+  entityData: any
   consumptionType: string
   mapZoom: number
 }
@@ -32,7 +32,7 @@ export const MapComponent: FC<MapType> = ({
   zoomToCenter,
   entityId,
   setEntityId,
-  entityConsumptionData,
+  entityData,
   consumptionType,
   mapZoom,
 }) => {
@@ -75,7 +75,7 @@ export const MapComponent: FC<MapType> = ({
     map.current.on('load', function () {
       if (!map.current) return
       let markers: number[] = []
-      energyData.consumption.features.forEach(function (marker: any) {
+      energyData.pointData.features.forEach(function (marker: any) {
         const el = document.createElement('div')
         el.style.backgroundColor = getConsumtionColor(
           consumptionType,
@@ -137,19 +137,14 @@ export const MapComponent: FC<MapType> = ({
         highlightedMarker && highlightedMarker.current?.remove()
       }
 
-      if (!entityConsumptionData) {
+      if (!entityData) {
         return
       }
 
       let intersectingPolygon = false
       energyData.landparcel.features.forEach((feat: any) => {
         if (!intersectingPolygon) {
-          if (
-            booleanPointInPolygon(
-              entityConsumptionData.geometry.coordinates,
-              feat
-            )
-          )
+          if (booleanPointInPolygon(entityData.geometry.coordinates, feat))
             intersectingPolygon = feat
         }
       })
@@ -169,8 +164,8 @@ export const MapComponent: FC<MapType> = ({
             'line-color': getConsumtionColor(
               consumptionType,
               consumptionType === 'heat'
-                ? entityConsumptionData.properties.heat
-                : entityConsumptionData.properties.electricity
+                ? entityData.properties.heat
+                : entityData.properties.electricity
             ),
             // 'line-blur': 6,
             'line-width': 3,
@@ -213,11 +208,11 @@ export const MapComponent: FC<MapType> = ({
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         highlightedMarker.current = new maplibregl.Marker(customMarker)
-          .setLngLat(entityConsumptionData.geometry.coordinates)
+          .setLngLat(entityData.geometry.coordinates)
           .addTo(map.current)
       }
     }
-  }, [entityConsumptionData, consumptionType])
+  }, [entityData, consumptionType])
 
   function onMarkerClick(entityId: any) {
     setEntityId(entityId)

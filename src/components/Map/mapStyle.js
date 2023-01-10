@@ -31,7 +31,7 @@ export default function mapStyle() {
           'raster-saturation': -1,
         },
         layout: {
-          visibility: 'none',
+          // visibility: 'none',
         },
       },
     ],
