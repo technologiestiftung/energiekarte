@@ -16,10 +16,10 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
   }, [hasMobileSize])
 
   return (
-    <div className="shadow-lg text-sm  rounded fixed z-20 bottom-0 right-0 mr-4 mb-4 p-4 bg-secondary">
+    <div className="shadow-lg text-sm  rounded fixed z-20 bottom-0 right-0 mr-4 mb-4 bg-secondary">
       <h2
         onClick={() => setOpen(!open)}
-        className="font-bold text-md cursor-pointer hover:text-primary"
+        className="font-bold text-md cursor-pointer hover:text-primary p-4"
       >
         {!open
           ? 'Legende'
@@ -27,12 +27,12 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
           ? 'Stromverbrauch (kWh/a)'
           : 'Wärmeverbrauch (kWh/a)'}
 
-        <span className="float-right inline-block ml-4">
+        <span className="float-right bottom-0.5 relative ml-4">
           {open ? <Minus /> : <Plus />}
         </span>
       </h2>
       {open && (
-        <span className="mt-2 block">
+        <span className="block px-4 pb-4">
           <p className="flex">
             <span
               className="text-sm mr-2 w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
@@ -49,7 +49,7 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
                 backgroundColor: keyData.colors[1],
               }}
             ></span>
-            {'>'} {keyData.values[1].toLocaleString('de-DE')} {'<'}{' '}
+            {'>'} {keyData.values[1].toLocaleString('de-DE')} {' - '}
             {keyData.values[0].toLocaleString('de-DE')}
           </p>{' '}
           <p className="flex">
@@ -59,7 +59,7 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
                 backgroundColor: keyData.colors[2],
               }}
             ></span>
-            {'<'} {keyData.values[1].toLocaleString('de-DE')}
+            {'<='} {keyData.values[1].toLocaleString('de-DE')}
           </p>
           <p className="flex">
             <span

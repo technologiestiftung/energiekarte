@@ -8,7 +8,7 @@ import { OdisLogo } from '@components/Logos/OdisLogo'
 export interface IntroModalType {
   modalOpen: boolean
   setModalOpen: (date: boolean) => void
-  setNavView: (date: 'info' | 'list') => void
+  setNavView: (date: 'info' | 'filter') => void
   setSidebarMenuOpen: (date: boolean) => void
 }
 
@@ -23,7 +23,7 @@ export const IntroModal: FC<IntroModalType> = ({
   }
   function closeModalExplore() {
     setModalOpen(false)
-    setNavView('list')
+    setNavView('filter')
     setSidebarMenuOpen(true)
   }
   function closeModalInfo() {

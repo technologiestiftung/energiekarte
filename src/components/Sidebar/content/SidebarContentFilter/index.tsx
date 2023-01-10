@@ -86,7 +86,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
                   <Square size={18} />
                 )}
               </span>
-              {type.lable}
+              <span className="relative bottom-0.5">{type.lable}</span>
             </button>
           ))}
         </Accordion>
@@ -102,7 +102,20 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
               }
               key={type.value}
             >
-              {type.lable}
+              <span
+                className={classNames(
+                  type.value === heatType ? 'text-primary font-bold' : '',
+                  'text-xs inline-block mr-2'
+                )}
+              >
+                {' '}
+                {type.value === heatType ? (
+                  <CheckSquare size={18} />
+                ) : (
+                  <Square size={18} />
+                )}
+              </span>
+              <span className="relative bottom-0.5">{type.lable}</span>
             </button>
           ))}
         </Accordion>

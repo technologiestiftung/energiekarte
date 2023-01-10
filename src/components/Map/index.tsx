@@ -58,7 +58,10 @@ export const MapComponent: FC<MapType> = ({
       container: 'map',
       // style: mapStyle(),
       // @ts-ignore
-      style: `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
+      style:
+        process.env.NODE_ENV == 'development'
+          ? mapStyle()
+          : `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
       center: [
         MAP_CONFIG.defaultLongitude,
         MAP_CONFIG.defaultLatitude,
