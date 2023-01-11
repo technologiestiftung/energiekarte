@@ -1,6 +1,10 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import { useHasMobileSize } from '@lib/hooks/useHasMobileSize'
+import { Plus, Minus } from '@components/Icons'
+
+const btnClasses =
+  'hover:bg-textcolor hover:text-secondary bg-secondary text-textcolor h-10 w-10 mt-2 cursor-pointer list-none text-center grid place-items-center rounded-full'
 
 export interface SidebarNavType {
   navViews: any
@@ -11,6 +15,8 @@ export interface SidebarNavType {
   setModalOpen: (open: boolean) => void
   entityId: string | number | null
   setEntityId: (time: string | null | number) => void
+  mapZoom: number
+  setMapZoom: (time: number) => void
 }
 
 export const SidebarNav: FC<SidebarNavType> = ({
@@ -22,6 +28,8 @@ export const SidebarNav: FC<SidebarNavType> = ({
   setModalOpen,
   entityId,
   setEntityId,
+  mapZoom,
+  setMapZoom,
 }) => {
   const hasMobileSize = useHasMobileSize()
   let navPositionClasses =
@@ -83,6 +91,35 @@ export const SidebarNav: FC<SidebarNavType> = ({
               </div>
             ))}
           </div>
+        </div>
+      </nav>
+
+      <nav
+        className={classNames(
+          navPositionClasses,
+          padding,
+          'fixed bottom-0 p-4 transition-left ease-in-out duration-300 z-30 rounded overflow-hidden'
+        )}
+      >
+        <div>
+          <button
+            title="zoom in"
+            className={btnClasses}
+            onClick={() => setMapZoom(mapZoom + 1)}
+          >
+            <Plus />
+          </button>
+          <button
+            title="zoom out"
+            className={btnClasses}
+            onClick={() => setMapZoom(mapZoom - 1)}
+          >
+            <Minus />
+          </button>
+          {/* <button title="" className={navClasses}>
+          {' '}
+          <Geolocate />
+        </button> */}
         </div>
       </nav>
     </>

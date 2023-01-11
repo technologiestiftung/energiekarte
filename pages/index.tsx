@@ -173,6 +173,8 @@ const MapSite: NextPage = (energyData: any) => {
         setModalOpen={setModalOpen}
         entityId={entityId}
         setEntityId={setEntityId}
+        mapZoom={mapZoom}
+        setMapZoom={setMapZoom}
       />
       <MapComponent
         zoomToCenter={zoomToCenter}
@@ -184,7 +186,7 @@ const MapSite: NextPage = (energyData: any) => {
         entityData={entityData}
         consumptionType={consumptionType}
       />
-      <MapNav mapZoom={mapZoom} setMapZoom={setMapZoom} />
+      {/* <MapNav mapZoom={mapZoom} setMapZoom={setMapZoom} /> */}
     </>
   )
 }

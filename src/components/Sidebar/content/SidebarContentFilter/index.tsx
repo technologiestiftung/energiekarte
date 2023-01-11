@@ -10,26 +10,36 @@ export interface SidebarContentFilterType {
   data: any
 }
 
+const defaultValues = {
+  electricityConsumption: [0, 5000000],
+  heatConsumption: [0, 30000000],
+  renovationCosts: [0, 71000000],
+  savingPotential: [0, 100],
+}
+
 export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
+  // FILTER
   const [filterBuildingType, setFilterBuildingType] = useState<string | null>(
     null
   )
   const [filterHeatType, setFilterHeatType] = useState<string | null>(null)
   const [filterElectricityConsumption, setFilterElectricityConsumption] =
-    useState<number[]>([0, 4896155])
-  const [filterHeatConsumption, setFilterHeatConsumption] = useState<number[]>([
-    0, 100,
-  ])
-  const [filterRenovationCosts, setFilterRenovationCosts] = useState<number[]>([
-    0, 100,
-  ])
-  const [filterSavingPotential, setFilterSavingPotential] = useState<number[]>([
-    0, 100,
-  ])
+    useState<number[]>(defaultValues.electricityConsumption)
+  const [filterHeatConsumption, setFilterHeatConsumption] = useState<number[]>(
+    defaultValues.heatConsumption
+  )
+  const [filterRenovationCosts, setFilterRenovationCosts] = useState<number[]>(
+    defaultValues.renovationCosts
+  )
+  const [filterSavingPotential, setFilterSavingPotential] = useState<number[]>(
+    defaultValues.savingPotential
+  )
 
   function resetFilter() {
     setFilterBuildingType(null)
     setFilterHeatType(null)
+    setFilterElectricityConsumption(defaultValues.electricityConsumption)
+    setFilterHeatConsumption(defaultValues.heatConsumption)
   }
 
   const buidlingTypes = [
@@ -127,41 +137,62 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
         </Accordion>
         <Accordion title="Stromverbrauch" acitve={true}>
           <p className="text-xs">
-            Der Verbrauch bezieht sich auf alle Gebäude auf einem Grundstück
-            zusammengenommen.
+            Der Verbrauch bezieht sich auf die Summe aller Gebäude auf einem
+            Grundstück.
+            <b className="block pt-2">In Mio. kWh/a</b>
           </p>
           <RangeSlider
             value={filterElectricityConsumption}
             setValue={setFilterElectricityConsumption}
-            minValue={0}
-            maxValue={4896155}
-            step={1}
+            minValue={defaultValues.electricityConsumption[0]}
+            maxValue={defaultValues.electricityConsumption[1]}
+            step={100000}
+            rounding={'million'}
           />
         </Accordion>
         <Accordion title="Wärmeverbrauch" acitve={true}>
           <p className="text-xs">
-            Der Verbrauch bezieht sich auf alle Gebäude auf einem Grundstück
-            zusammengenommen.
+            Der Verbrauch bezieht sich auf die Summe aller Gebäude auf einem
+            Grundstück.
+            <b className="block pt-2">In Mio. kWh/a</b>
           </p>
           <RangeSlider
             value={filterHeatConsumption}
             setValue={setFilterHeatConsumption}
-            minValue={0}
-            maxValue={100}
-            step={1}
+            minValue={defaultValues.heatConsumption[0]}
+            maxValue={defaultValues.heatConsumption[1]}
+            step={100000}
+            rounding={'million'}
           />
         </Accordion>
         <Accordion title="Sanierungskosten" acitve={true}>
           <p className="text-xs">
-            Snierungskosten beziehen sich auf die zu sanierenden Gebäude auf
-            einem Grundstück. Es sind Schätzungen aus dem Jahr 2020.
+            Snierungskosten beziehen sich auf die Summe der zu sanierenden
+            Gebäude auf einem Grundstück.
+            <b className="block pt-2">In Millionen Euro</b>
           </p>
+          <RangeSlider
+            value={filterRenovationCosts}
+            setValue={setFilterRenovationCosts}
+            minValue={defaultValues.renovationCosts[0]}
+            maxValue={defaultValues.renovationCosts[1]}
+            step={100000}
+            rounding={'million'}
+          />
         </Accordion>
         <Accordion title="Einsparpotenzial" acitve={true}>
           <p className="text-xs">
             Das Einsparpotential ist nur eine Schätzung, die sich stets in einem
-            Rahmen befindet.{' '}
+            Rahmen befindet.
+            <b className="block pt-2">In %</b>
           </p>
+          <RangeSlider
+            value={filterSavingPotential}
+            setValue={setFilterSavingPotential}
+            minValue={defaultValues.savingPotential[0]}
+            maxValue={defaultValues.savingPotential[1]}
+            step={10}
+          />
         </Accordion>
 
         {(filterBuildingType || filterHeatType) && (

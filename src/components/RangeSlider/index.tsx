@@ -8,15 +8,23 @@ export interface RangeSliderType {
 
 const primaryColor = '#9bc95b'
 
+function roundingFunction(value, type) {
+  if (type === 'million') {
+    return Math.round((value / 1000000) * 100) / 100
+  }
+  return value.toLocaleString('de-DE')
+}
+
 export const RangeSlider: FC<RangeSliderType> = ({
   value,
   setValue,
   minValue,
   maxValue,
   step,
+  rounding,
 }) => {
   return (
-    <div className="m-4 mx-8">
+    <div className="m-4 mx-4">
       <Range
         values={value}
         step={step}
@@ -70,6 +78,7 @@ export const RangeSlider: FC<RangeSliderType> = ({
               justifyContent: 'center',
               alignItems: 'center',
               // boxShadow: '0px 2px 6px #AAA',
+              outline: 'none',
             }}
           >
             <div
@@ -77,7 +86,7 @@ export const RangeSlider: FC<RangeSliderType> = ({
                 height: '20px',
                 width: '5px',
                 borderRadius: '4px',
-                backgroundColor: '#AAA',
+                backgroundColor: primaryColor,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -97,7 +106,7 @@ export const RangeSlider: FC<RangeSliderType> = ({
                 // backgroundColor: isDragged ? primaryColor : '#CCC',
               }}
             >
-              {value[index].toLocaleString('de-DE')}
+              {roundingFunction(value[index], rounding)}
             </div>
           </div>
         )}
