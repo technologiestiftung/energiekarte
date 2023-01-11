@@ -115,11 +115,11 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
 
           <div className="text-xs pt-6">
             Grundstück ist im Ranking x von X. Zeige Grundstück mit
-            <span className="flex">
-              <button className="text-xs py-2 flex-1 bg-white/50 m-1 rounded border-2">
+            <span className="flex pt-4">
+              <button className="text-xs py-2 flex-1 bg-white/50 mr-1 rounded border-2">
                 höheren Verbrauch
               </button>
-              <button className="text-xs py-2 flex-1 bg-white/50 m-1 rounded border-2">
+              <button className="text-xs py-2 flex-1 bg-white/50 ml-1 rounded border-2">
                 niedrigeren Verbrauch
               </button>
             </span>
