@@ -51,20 +51,18 @@ export const IntroModal: FC<IntroModalType> = ({
                 <Cross />
               </button>
               <h2 className="font-bold text-2xl pb-2 pt-2 text-textcolor/80">
-                Berliner Weihnachtsmarkt-Finder
+                Berliner Energie Checkpoint
               </h2>
               <h4 className="pb-4">
-                Glühwein, Glögg, Glückseligkeit - alle Weihnachtsmärkte auf
-                einen Blick!
+                Nostrum minima repudiandae accusamus impedit provident
+                asperiores magnam culpa, ullam sapiente illo tempora eius
+                deserunt neque facilis incidunt.
               </h4>
               <p className="pb-4">
-                Der Weihnachtsmarkt-Finder zeigt das vielfältige Angebot von
-                über 60 Berliner Weihnachtsmärkten von traditionellem bis zu
-                individuellem Flair. Lass dir Weihnachtsmärkte nach Wunschdatum
-                und Öffnungszeiten anzeigen. So verpasst du deinen
-                Lieblingsmarkt im Kiez nie wieder. Oder nutze die Filter, um
-                passende Märkte zu finden und teile deine Entdeckung mit deinen
-                Freund:innen! Frohe Weihnachten!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
+                voluptates dicta earum nostrum minima repudiandae accusamus
+                impedit provident asperiores magnam culpa, ullam sapiente illo
+                tempora eius deserunt neque facilis incidunt.
               </p>
 
               <button
