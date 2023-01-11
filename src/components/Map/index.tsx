@@ -207,7 +207,7 @@ export const MapComponent: FC<MapType> = ({
 
         const customMarker = document.createElement('div')
         customMarker.className =
-          'rounded-full w-4 h-4 blur-sm border-2 border-secondary'
+          'rounded-full w-4 h-4 blur-sm border-2 border-secondary cursor-pointer'
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         highlightedMarker.current = new maplibregl.Marker(customMarker)
