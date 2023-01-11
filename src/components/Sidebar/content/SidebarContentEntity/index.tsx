@@ -67,6 +67,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
           <p className="text-sm pb-2 pt-1">
             {data.ortsteil} | {data.entityPLZ} Berlin
           </p>
+          <p className="text-sm">Betrieben von: BIM</p>
           <hr className="my-2" />
 
           <h2 className="font-bold pt-4 text-md py-4">

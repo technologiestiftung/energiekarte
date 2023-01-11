@@ -11,25 +11,25 @@ export interface SidebarContentFilterType {
 }
 
 export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
-  //   function getUsageData(feat, type) {
-
-  //   {'}'}
-
-  //   const [highlightedEntity, setHighlightedEntity] = useState(null)
-
-  //   useEffect(() => {
-
-  //   }, [])
-
-  const [buildingType, setBuildingType] = useState<string | null>(null)
-  const [heatType, setHeatType] = useState<string | null>(null)
-  const [electricityConsumption, setElectricityConsumption] = useState<
-    number[]
-  >([30, 50])
+  const [filterBuildingType, setFilterBuildingType] = useState<string | null>(
+    null
+  )
+  const [filterHeatType, setFilterHeatType] = useState<string | null>(null)
+  const [filterElectricityConsumption, setFilterElectricityConsumption] =
+    useState<number[]>([0, 4896155])
+  const [filterHeatConsumption, setFilterHeatConsumption] = useState<number[]>([
+    0, 100,
+  ])
+  const [filterRenovationCosts, setFilterRenovationCosts] = useState<number[]>([
+    0, 100,
+  ])
+  const [filterSavingPotential, setFilterSavingPotential] = useState<number[]>([
+    0, 100,
+  ])
 
   function resetFilter() {
-    setBuildingType(null)
-    setHeatType(null)
+    setFilterBuildingType(null)
+    setFilterHeatType(null)
   }
 
   const buidlingTypes = [
@@ -44,7 +44,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
     { lable: 'Schulen', value: 'Schule' },
   ]
 
-  const heatTypes = [
+  const filterHeatTypes = [
     { lable: 'Fernwärme', value: 'Fernwärme' },
     { lable: 'Gas', value: 'Gas' },
     { lable: 'Nahwärme', value: 'Nahwärme' },
@@ -69,18 +69,22 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
                 'block w-full text-left hover:text-primary '
               )}
               onClick={() =>
-                setBuildingType(type.value !== buildingType ? type.value : null)
+                setFilterBuildingType(
+                  type.value !== filterBuildingType ? type.value : null
+                )
               }
               key={type.value}
             >
               <span
                 className={classNames(
-                  type.value === buildingType ? 'text-primary font-bold' : '',
+                  type.value === filterBuildingType
+                    ? 'text-primary font-bold'
+                    : '',
                   'text-xs inline-block mr-2'
                 )}
               >
                 {' '}
-                {type.value === buildingType ? (
+                {type.value === filterBuildingType ? (
                   <CheckSquare size={18} />
                 ) : (
                   <Square size={18} />
@@ -91,25 +95,27 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
           ))}
         </Accordion>
         <Accordion title="Wäremtyp" acitve={true}>
-          {heatTypes?.map((type) => (
+          {filterHeatTypes?.map((type) => (
             <button
               className={classNames(
-                type.value === heatType ? '!text-primary font-bold' : '',
+                type.value === filterHeatType ? '!text-primary font-bold' : '',
                 'block'
               )}
               onClick={() =>
-                setHeatType(type.value !== heatType ? type.value : null)
+                setFilterHeatType(
+                  type.value !== filterHeatType ? type.value : null
+                )
               }
               key={type.value}
             >
               <span
                 className={classNames(
-                  type.value === heatType ? 'text-primary font-bold' : '',
+                  type.value === filterHeatType ? 'text-primary font-bold' : '',
                   'text-xs inline-block mr-2'
                 )}
               >
                 {' '}
-                {type.value === heatType ? (
+                {type.value === filterHeatType ? (
                   <CheckSquare size={18} />
                 ) : (
                   <Square size={18} />
@@ -125,10 +131,10 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
             zusammengenommen.
           </p>
           <RangeSlider
-            value={electricityConsumption}
-            setValue={setElectricityConsumption}
+            value={filterElectricityConsumption}
+            setValue={setFilterElectricityConsumption}
             minValue={0}
-            maxValue={100}
+            maxValue={4896155}
             step={1}
           />
         </Accordion>
@@ -137,10 +143,13 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
             Der Verbrauch bezieht sich auf alle Gebäude auf einem Grundstück
             zusammengenommen.
           </p>
-          {/* <RangeSlider
-            value={electricityConsumption}
-            setter={setElectricityConsumption}
-          /> */}
+          <RangeSlider
+            value={filterHeatConsumption}
+            setValue={setFilterHeatConsumption}
+            minValue={0}
+            maxValue={100}
+            step={1}
+          />
         </Accordion>
         <Accordion title="Sanierungskosten" acitve={true}>
           <p className="text-xs">
@@ -155,7 +164,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
           </p>
         </Accordion>
 
-        {(buildingType || heatType) && (
+        {(filterBuildingType || filterHeatType) && (
           <button
             className="text-secondary block mr-auto ml-auto sticky bottom-4 mb-8 px-4 bg-primary hover:bg-primary hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
             onClick={resetFilter}

@@ -16,7 +16,7 @@ export const RangeSlider: FC<RangeSliderType> = ({
   step,
 }) => {
   return (
-    <div className="m-4">
+    <div className="m-4 mx-8">
       <Range
         values={value}
         step={step}
@@ -97,7 +97,7 @@ export const RangeSlider: FC<RangeSliderType> = ({
                 // backgroundColor: isDragged ? primaryColor : '#CCC',
               }}
             >
-              {value[index]}
+              {value[index].toLocaleString('de-DE')}
             </div>
           </div>
         )}
