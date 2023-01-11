@@ -104,7 +104,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
             </button>
           ))}
         </Accordion>
-        <Accordion title="Wäremtyp" acitve={true}>
+        <Accordion title="Wärmetyp" acitve={true}>
           {filterHeatTypes?.map((type) => (
             <button
               className={classNames(

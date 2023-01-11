@@ -100,7 +100,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             <p className="text-xs py-2">
               Der Verbrauch aller Gebäude auf diesem Grundstück entspricht dem
               Energieverbauch von ca.{' '}
-              {getComparisonNumber(data, consumptionType)} 5 Personehaushalten (
+              {getComparisonNumber(data, consumptionType)} 5-Personenhaushalten (
               {energyComparison[consumptionType].toLocaleString('de-DE')} kWh).
             </p>
             {/* <div className="flex py-4">
