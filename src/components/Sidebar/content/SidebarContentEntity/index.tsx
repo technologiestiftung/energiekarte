@@ -48,6 +48,8 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   entityData,
   // renovationLength,
   consumptionType,
+  closestIdsToValue,
+  setEntityId,
 }) => {
   if (!entityId || !entityData) {
     return null
@@ -100,8 +102,8 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             <p className="text-xs py-2">
               Der Verbrauch aller Gebäude auf diesem Grundstück entspricht dem
               Energieverbauch von ca.{' '}
-              {getComparisonNumber(data, consumptionType)} 5-Personenhaushalten (
-              {energyComparison[consumptionType].toLocaleString('de-DE')} kWh).
+              {getComparisonNumber(data, consumptionType)} 5-Personenhaushalten
+              ({energyComparison[consumptionType].toLocaleString('de-DE')} kWh).
             </p>
             {/* <div className="flex py-4">
               {getUsageData(consumptionData, 'heat').map((feat, i) => (
@@ -116,10 +118,16 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
           <div className="text-xs pt-6">
             Grundstück ist im Ranking x von X. Zeige Grundstück mit
             <span className="flex pt-4">
-              <button className="text-xs py-2 flex-1 bg-white/50 mr-1 rounded border-2">
+              <button
+                className="text-xs py-2 flex-1 bg-white/50 mr-1 rounded border-2"
+                onClick={() => setEntityId(closestIdsToValue[1])}
+              >
                 höheren Verbrauch
               </button>
-              <button className="text-xs py-2 flex-1 bg-white/50 ml-1 rounded border-2">
+              <button
+                className="text-xs py-2 flex-1 bg-white/50 ml-1 rounded border-2"
+                onClick={() => setEntityId(closestIdsToValue[0])}
+              >
                 niedrigeren Verbrauch
               </button>
             </span>

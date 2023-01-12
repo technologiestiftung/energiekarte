@@ -21,7 +21,8 @@ import { IntroModal } from '@components/IntroModal'
 
 import { getData } from '@lib/loadMapData'
 import { getDataFromId } from '@lib/getDataFromId'
-import { getMaxMinValues } from '@lib/getMaxMinValues'
+
+import { findClosestValues } from '@lib/findClosestValues'
 
 export async function getStaticProps() {
   const energyData = getData()
@@ -65,7 +66,7 @@ const MapSite: NextPage = (energyData: any) => {
   const [mapZoom, setMapZoom] = useState<number>(10)
 
   const [consumptionType, setConsumptionType] = useState('heat')
-  let [maxMinValues, setMaxMinValues] = useState<object>({})
+  let [closestIdsToValue, setClosestIdsToValue] = useState<number[]>([])
 
   // // when the query string is read check if we have an id
   // useEffect(() => {
@@ -106,6 +107,9 @@ const MapSite: NextPage = (energyData: any) => {
         shallow: true,
       })
     }
+    setClosestIdsToValue(
+      findClosestValues(energyData.pointData, consumptionType, entityId)
+    )
   }, [entityId])
 
   // when the sidebar is closed -> set markerId to null
@@ -162,6 +166,8 @@ const MapSite: NextPage = (energyData: any) => {
           entityId={entityId}
           entityData={entityData}
           consumptionType={consumptionType}
+          closestIdsToValue={closestIdsToValue}
+          setEntityId={setEntityId}
         />
       </SidebarWrapper>
       <SidebarNav
