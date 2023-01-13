@@ -3,9 +3,10 @@
 // return id of values
 
 export function findClosestValues(data, consumptionType, id) {
-  let min
-  let max
+  let more
+  let less
   let lastWithValue
+  let rankingPosition
   const dataSorted = data.features.sort(
     (a, b) => b.properties[consumptionType] - a.properties[consumptionType]
   )
@@ -16,13 +17,21 @@ export function findClosestValues(data, consumptionType, id) {
     if (hasValue) {
       lastWithValue = dataSorted[index].properties.entityId
     }
+    console.log(hasValue)
     if (dataSorted[index].properties.entityId === id) {
-      min = data.features[index - 1]?.properties.entityId
-      max = hasValue
-        ? data.features[index + 1]?.properties.entityId
+      rankingPosition = index + 1
+      less = hasValue ? data.features[index + 1]?.properties.entityId : null
+      more = hasValue
+        ? data.features[index - 1]?.properties.entityId
         : lastWithValue
       break
     }
   }
-  return [max, min]
+
+  return {
+    idMore: more,
+    idLess: less,
+    rankingPosition: rankingPosition,
+    rankingLength: dataSorted.length,
+  }
 }

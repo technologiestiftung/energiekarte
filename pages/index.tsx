@@ -66,7 +66,7 @@ const MapSite: NextPage = (energyData: any) => {
   const [mapZoom, setMapZoom] = useState<number>(10)
 
   const [consumptionType, setConsumptionType] = useState('heat')
-  let [closestIdsToValue, setClosestIdsToValue] = useState<number[]>([])
+  let [rankingInfo, setRankingInfo] = useState<any>([])
 
   // // when the query string is read check if we have an id
   // useEffect(() => {
@@ -107,10 +107,18 @@ const MapSite: NextPage = (energyData: any) => {
         shallow: true,
       })
     }
-    setClosestIdsToValue(
+    setRankingInfo(
       findClosestValues(energyData.pointData, consumptionType, entityId)
     )
   }, [entityId])
+
+  useEffect(() => {
+    setRankingInfo(
+      findClosestValues(energyData.pointData, consumptionType, entityId)
+    )
+  }, [consumptionType])
+
+  consumptionType
 
   // when the sidebar is closed -> set markerId to null
   useEffect(() => {
@@ -166,7 +174,7 @@ const MapSite: NextPage = (energyData: any) => {
           entityId={entityId}
           entityData={entityData}
           consumptionType={consumptionType}
-          closestIdsToValue={closestIdsToValue}
+          rankingInfo={rankingInfo}
           setEntityId={setEntityId}
         />
       </SidebarWrapper>

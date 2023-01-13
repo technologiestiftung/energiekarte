@@ -7,7 +7,5 @@ export function getDataFromId(id, energyData) {
     }
   })
 
-  console.log(energyDataFromId)
-
   return energyDataFromId
 }

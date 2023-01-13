@@ -20,6 +20,47 @@ const energyComparison = {
   electricity: 5500,
 }
 
+function Comparision({ consumptionType, rankingInfo, setEntityId }) {
+  let rankingText
+  if (!rankingInfo.idLess) {
+    rankingText = `Es liegt kein ${
+      consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
+    } vor. `
+  } else {
+    rankingText = `Das Grundstück liegt im 
+    ${
+      consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
+    } auf Platz ${rankingInfo.rankingPosition} von ${
+      rankingInfo.rankingLength
+    }. `
+  }
+
+  return (
+    <div className="text-xs pt-6">
+      {rankingText}
+      Gehe zu einem Grundstück mit
+      <span className="flex pt-4">
+        <button
+          className={classNames(
+            'disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 mr-1 rounded border-2'
+          )}
+          onClick={() => setEntityId(rankingInfo.idMore)}
+          disabled={!rankingInfo.idMore}
+        >
+          höheren Verbrauch
+        </button>
+        <button
+          className="disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 ml-1 rounded border-2"
+          onClick={() => setEntityId(rankingInfo.idLess)}
+          disabled={!rankingInfo.idLess}
+        >
+          niedrigeren Verbrauch
+        </button>
+      </span>
+    </div>
+  )
+}
+
 function getUsageDataString(feat, type) {
   if (feat[type] && feat[type] != 0 && feat[type] !== -1) {
     return getUsageData(feat, type).toLocaleString('de-DE') + ' kWh/a'
@@ -48,7 +89,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   entityData,
   // renovationLength,
   consumptionType,
-  closestIdsToValue,
+  rankingInfo,
   setEntityId,
 }) => {
   if (!entityId || !entityData) {
@@ -114,24 +155,11 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
               Ein Haus entspricht 1000 5 Personenhaushalte
             </p> */}
           </div>
-
-          <div className="text-xs pt-6">
-            Grundstück ist im Ranking x von X. Zeige Grundstück mit
-            <span className="flex pt-4">
-              <button
-                className="text-xs py-2 flex-1 bg-white/50 mr-1 rounded border-2"
-                onClick={() => setEntityId(closestIdsToValue[1])}
-              >
-                höheren Verbrauch
-              </button>
-              <button
-                className="text-xs py-2 flex-1 bg-white/50 ml-1 rounded border-2"
-                onClick={() => setEntityId(closestIdsToValue[0])}
-              >
-                niedrigeren Verbrauch
-              </button>
-            </span>
-          </div>
+          <Comparision
+            consumptionType={consumptionType}
+            rankingInfo={rankingInfo}
+            setEntityId={setEntityId}
+          />
 
           {data.renovations.length ? (
             <>
