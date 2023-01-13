@@ -201,13 +201,13 @@ export const MapComponent: FC<MapType> = ({
             ),
 
             // Get fill-extrusion-height from the source 'height' property.
-            'fill-extrusion-height': 50,
+            'fill-extrusion-height': 30,
 
             // Get fill-extrusion-base from the source 'base_height' property.
             'fill-extrusion-base': 0,
 
             // Make extrusions slightly opaque for see through indoor walls.
-            'fill-extrusion-opacity': 0.2,
+            'fill-extrusion-opacity': 0.3,
           },
         })
         // map.current.addLayer({
