@@ -158,32 +158,58 @@ export const MapComponent: FC<MapType> = ({
           data: intersectingPolygon,
         })
 
+        // map.current.addLayer({
+        //   id: 'landparcel-layer',
+        //   type: 'line',
+        //   source: 'landparcel-source',
+        //   paint: {
+        //     'line-dasharray': [1, 1],
+        //     'line-color': getConsumtionColor(
+        //       consumptionType,
+        //       consumptionType === 'heat'
+        //         ? entityData.properties.heat
+        //         : entityData.properties.electricity
+        //     ),
+        //     // 'line-blur': 6,
+        //     'line-width': 3,
+        //     'line-opacity': [
+        //       'interpolate',
+        //       ['exponential', 0.5],
+        //       ['zoom'],
+        //       13,
+        //       0,
+        //       16,
+        //       0.8,
+        //     ],
+        //   },
+        // })
+
         map.current.addLayer({
           id: 'landparcel-layer',
-          type: 'line',
+          type: 'fill-extrusion',
           source: 'landparcel-source',
           paint: {
-            'line-dasharray': [1, 1],
-            'line-color': getConsumtionColor(
+            // See the MapLibre Style Specification for details on data expressions.
+            // https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/
+
+            // Get the fill-extrusion-color from the source 'color' property.
+            'fill-extrusion-color': getConsumtionColor(
               consumptionType,
               consumptionType === 'heat'
                 ? entityData.properties.heat
                 : entityData.properties.electricity
             ),
-            // 'line-blur': 6,
-            'line-width': 3,
-            'line-opacity': [
-              'interpolate',
-              ['exponential', 0.5],
-              ['zoom'],
-              13,
-              0,
-              16,
-              0.8,
-            ],
+
+            // Get fill-extrusion-height from the source 'height' property.
+            'fill-extrusion-height': 50,
+
+            // Get fill-extrusion-base from the source 'base_height' property.
+            'fill-extrusion-base': 0,
+
+            // Make extrusions slightly opaque for see through indoor walls.
+            'fill-extrusion-opacity': 0.2,
           },
         })
-
         // map.current.addLayer({
         //   id: 'landparcel-layer',
         //   type: 'fill',
