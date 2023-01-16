@@ -42,19 +42,19 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
       <span className="flex pt-4">
         <button
           className={classNames(
-            'disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 mr-1 rounded border-2'
+            'disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 mr-1 rounded border-2 hover:border-primary'
           )}
           onClick={() => setEntityId(rankingInfo.idMore)}
           disabled={!rankingInfo.idMore}
         >
-          höheren Verbrauch
+          mehr Verbrauch
         </button>
         <button
-          className="disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 ml-1 rounded border-2"
+          className="disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 ml-1 rounded border-2 hover:border-primary"
           onClick={() => setEntityId(rankingInfo.idLess)}
           disabled={!rankingInfo.idLess}
         >
-          niedrigeren Verbrauch
+          weniger Verbrauch
         </button>
       </span>
     </div>

@@ -104,6 +104,10 @@ export const MapComponent: FC<MapType> = ({
           return
         }
       })
+
+      // map.current.on('zoomend', (e) => {
+      //   setMapZoom(map.current?.getZoom())
+      // })
     })
   }, [])
 
@@ -136,6 +140,7 @@ export const MapComponent: FC<MapType> = ({
     if (map.current && map.current.isStyleLoaded()) {
       if (map.current.getSource('landparcel-source')) {
         map.current.removeLayer('landparcel-layer')
+        map.current.removeLayer('landparcel-layer-extrusion')
         map.current.removeSource('landparcel-source')
         highlightedMarker && highlightedMarker.current?.remove()
       }
@@ -158,34 +163,34 @@ export const MapComponent: FC<MapType> = ({
           data: intersectingPolygon,
         })
 
-        // map.current.addLayer({
-        //   id: 'landparcel-layer',
-        //   type: 'line',
-        //   source: 'landparcel-source',
-        //   paint: {
-        //     'line-dasharray': [1, 1],
-        //     'line-color': getConsumtionColor(
-        //       consumptionType,
-        //       consumptionType === 'heat'
-        //         ? entityData.properties.heat
-        //         : entityData.properties.electricity
-        //     ),
-        //     // 'line-blur': 6,
-        //     'line-width': 3,
-        //     'line-opacity': [
-        //       'interpolate',
-        //       ['exponential', 0.5],
-        //       ['zoom'],
-        //       13,
-        //       0,
-        //       16,
-        //       0.8,
-        //     ],
-        //   },
-        // })
-
         map.current.addLayer({
           id: 'landparcel-layer',
+          type: 'line',
+          source: 'landparcel-source',
+          paint: {
+            'line-dasharray': [1, 1],
+            'line-color': getConsumtionColor(
+              consumptionType,
+              consumptionType === 'heat'
+                ? entityData.properties.heat
+                : entityData.properties.electricity
+            ),
+            // 'line-blur': 6,
+            'line-width': 3,
+            'line-opacity': [
+              'interpolate',
+              ['exponential', 0.5],
+              ['zoom'],
+              13,
+              0,
+              16,
+              0.8,
+            ],
+          },
+        })
+
+        map.current.addLayer({
+          id: 'landparcel-layer-extrusion',
           type: 'fill-extrusion',
           source: 'landparcel-source',
           paint: {
@@ -199,14 +204,8 @@ export const MapComponent: FC<MapType> = ({
                 ? entityData.properties.heat
                 : entityData.properties.electricity
             ),
-
-            // Get fill-extrusion-height from the source 'height' property.
             'fill-extrusion-height': 30,
-
-            // Get fill-extrusion-base from the source 'base_height' property.
             'fill-extrusion-base': 0,
-
-            // Make extrusions slightly opaque for see through indoor walls.
             'fill-extrusion-opacity': 0.3,
           },
         })
