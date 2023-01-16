@@ -105,9 +105,9 @@ export const MapComponent: FC<MapType> = ({
         }
       })
 
-      // map.current.on('zoomend', (e) => {
-      //   setMapZoom(map.current?.getZoom())
-      // })
+      map.current.on('zoomend', (e) => {
+        setMapZoom(map.current?.getZoom())
+      })
     })
   }, [])
 
@@ -121,7 +121,6 @@ export const MapComponent: FC<MapType> = ({
         // @ts-ignore
         // padding: { left: isMobile ? 0 : 200 },
       })
-      setMapZoom(15)
     }
   }, [zoomToCenter])
 
