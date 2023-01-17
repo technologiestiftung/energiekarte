@@ -19,43 +19,107 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ }) => {
 
       <SidebarBody>
         <p className="text-sm pt-2 pb-2">
-          WIP
+          Wie hoch ist der jährliche Energieverbauch des Friedrichstadtpalast? Was kostet die Sanierung des Brandenburger Tors? Oder mit welchem Energieträger wird die Berliner Philharmonie versorgt?
+          Als Betreiber öffentlicher Gebäude ist die BIM Berliner Immobilienmanagement GmbH ebenso wie die Bezirke verpflichtet im Rahmen des Berliner Klimaschutz- und Energiewendegesetz (EWG Bln)
+          zu Energieverbrauchsdaten und Einsparmaßnahmen regemäßig und vollständig zu berichten.
+          Der EnergieCheckpoint ist ein prototypische Anwendung, die eine Visualisierung der Daten an einzelnen Standorten möglich macht.
+          So können Energieverbrauch nach Strom/Wärme, Art der Wärmeversorgung sowie Angaben zu Einsparpotenzialen und Sanierungskosten auf einer Karte angeziegt werden.
+          Außerdem lassen sich die Gebäude nach bestimmten Attributen wie Gebäudetyp, Wärmetyp, Strombverbrauch, Wsowei eine Filterung nach bestimmten Attributen erlaubt.
+          So lassen sich schnell Informationen zum Energieverbrauch über Strom/Wärme, Art der Wärmeversorgung, über einzelne Standorte abrufen.
         </p>
 
         <Accordion title="Woher kommen die Daten?">
           <p className="text-sm pb-2">
-            WIP
+            Diese Anwendung basiert komplett auf (eingeschränkt) offenen Daten
+            der BIM Berliner Immobilienmanagement GmbH, die jährlich unter {' '}
+            <a
+              target="blank"
+              href="https://www.bim-berlin.de/presse/publikationen/"
+              className="text-primary"
+            >
+              Berichte und Reports{' '}
+            </a> den Energieverbrauchsübersicht und Sanierungsfahrplan als PDF-Dateien veröffentlichen.
+            Die Daten liegen (noch) nicht als maschinenlesbare Daten auf dem Berliner Datenportal bereit, weswegen wir in diesem Fall von eingeschränkt offenen Daten sprechen.
+            Die aktuelle Energieverbrauchsübersicht liegt für 2020 vor, die Daten zum Sanierungsfahrplan haben den Stand 04.05.2022.
+            Um die einzelnen Adresspunkte zu Grundstücken zuordnen zu können, haben wir offene Daten zu ALKIS verwendet.
+            Die verarbeiteten Daten und die Skripte zur Datenprozessierung sind in GitHub-Repository zu finden.
+            Die Hintergrundkarte basiert auf der OpenStreetMap .
           </p>
         </Accordion>
 
         <Accordion title="Was ist Open Data?">
           <p className="text-sm pb-2">
             Offene Daten definieren sich dadurch, dass sie in einem offenen und maschinenlesbaren Format vorliegen, unter einer freien Lizenz nutzbar sind, der Zugang diskriminierungsfrei und kostenlos ist und die Daten an einem zentralen Ort dauerhaft auffindbar sind.
-            Open Data ist heute ein wichtiger Bestandteil im Verwaltungshandeln Berlins und schafft nicht nur Transparenz und Offenheit, sondern ermöglicht auch Analysen und Monitorings wie diese, um einen Überblick über wichtige Entwicklungen zu erhalten. Deshalb unterstützt die Open Data Infor­mations­stelle Berliner Behörden bei der Bereit­stellung von Open Data.
-            Mehr offene Daten findest du im Berliner Datenportal.
+            Open Data ist heute ein wichtiger Bestandteil im Verwaltungshandeln Berlins und schafft nicht nur Transparenz und Offenheit, sondern ermöglicht auch Analysen und Monitorings wie diese, Deshalb unterstützt die {' '}
+            <a
+              target="blank"
+              href="https://odis-berlin.de"
+              className="text-primary"
+            >
+              Open Data Informationsstelle{' '}
+            </a> Berliner Behörden bei der Bereit­stellung von Open Data.
+            Mehr offene Daten findest du im {' '}
+            <a
+              target="blank"
+              href="https://daten.berlin.de"
+              className="text-primary"
+            >
+              Berliner Datenportal{' '}
+            </a>.
           </p>
         </Accordion>
 
-        <Accordion title="Wie kann ein landeesweites Monitoring entstehen?">
-          <p className="text-sm pb-2">
-            WIP
-          </p>
-        </Accordion>
+
 
         <Accordion title="Was ist mit anderen Städten?">
           <p className="text-sm pb-2">
-            Der “Berliner Weihnachtsmarkt-Finder” ist ein Open-Source-Projekt und läuft unter einer MIT Lizenz. Dementsprechend kann die Idee, aber auch der Quellcode für die Umsetzung in anderen Städten kostenlos genutzt, angepasst und weiterentwickelt werden. Wenn Du dich dafür interessierst, schau gerne in unserem GitHub-Repository vorbei.
+            Der “Berliner EnergieCheckpoint” ist ein Open-Source-Projekt und läuft unter einer MIT Lizenz. Dementsprechend kann die Idee, aber auch der Quellcode für die Umsetzung in anderen Städten kostenlos genutzt, angepasst und weiterentwickelt werden. Wenn Du dich dafür interessierst, schau gerne in unserem {' '}
+            <a
+              target="blank"
+              href="https://github.com/technologiestiftung/energiekarte"
+              className="text-primary"
+            >
+              GitHub-Repository{' '}
+            </a> vorbei.
           </p>
         </Accordion>
 
         <Accordion title="Über uns">
           <p className="text-sm pb-2">
-            Der “Berliner EnergieCheckpoint” ist ein Projekt der Open Data Informationsstelle Berlin in Zusammenarbeit mit dem CityLAB Berlin.
+            Der “Berliner EnergieCheckpoint” ist ein Projekt der {' '}
+            <a
+              target="blank"
+              href="https://odis-berlin.de"
+              className="text-primary"
+            >
+              Open Data Informationsstelle{' '}
+            </a> in Zusammenarbeit mit dem {' '}
+            <a
+              target="blank"
+              href="https://citylab-berlin.org/de/start/"
+              className="text-primary"
+            >
+              CityLAB Berlin{' '}
+            </a>.
             Die ODIS wird von der Berliner Senatsverwaltung für Inneres, Digitalisierung und Sport und der Investitionsbank Berlin
-            aus den Mitteln des Landes Berlin gefördert und ist ein Projekt der Technologiestiftung Berlin.
+            aus den Mitteln des Landes Berlin gefördert und ist ein Projekt der {' '}
+            <a
+              target="blank"
+              href="https://www.technologiestiftung-berlin.de"
+              className="text-primary"
+            >
+              Technologiestiftung Berlin{' '}
+            </a>.
             Seit 2018 begleiten wir als ODIS die Stadt auf dem Weg zu einer partizipativen, nachhaltigen und datengetriebenen Gesellschaft
             mit dem Schwerpunkt auf die Bereitstellung und Nutzung offener Daten.
-            Du hast Feedback oder willst mehr erfahren? Schau dich auf unserer Webseite um oder kontaktiere uns unter odis@ts.berlin.
+            Du hast Feedback oder willst mehr erfahren? Schau dich auf unserer Webseite um oder kontaktiere uns unter {' '}
+            <a
+              target="blank"
+              href="mailto:odis@ts.berlin"
+              className="text-primary"
+            >
+              odis@ts.berlin{' '}
+            </a>.
           </p>
         </Accordion>
 
