@@ -56,12 +56,13 @@ export const IntroModal: FC<IntroModalType> = ({
               <h4 className="pb-4">
                 <p>Energieverbrauch und Einsparpotentiale - Wie steht es um den Beitrag öffentlicher Gebäude zur Klimaneutralität?<br></br>
 
+                </p>
 
+                <p>
                   Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu beschloss das Berliner Klimaschutz- und Energiewendegesetz (EWG Bln) eine Reduktion der Kohlendioxidemmissionen
-                  um mindestens 95 % im Vergleich zu den Emissionen des Jahres 1990.
+                  um mindestens 95 % im Vergleich zu den Emissionen des Jahres 1990. Öffentliche Gebäude wie Feuerwehren oder Kultureinrichtungen sollen durch Energieeinsparungen und Sanierungen eine Vorbildrolle einnehmen.</p>
 
-                  Öffentliche Gebäude wie Feuerwehren oder Kultureinrichtungen sollen durch Energieeinsparungen und Sanierungen eine Vorbildrolle einnehmen.<br></br>
-
+                <p>
                   Wir schauen beispielhaft auf die Daten zu Strom- und Wärmevebrauch sowie Sanierungskosten und Einsparpotenzial der Liegenschaften der BIM (Berliner Immobilien Management)
                 </p>
 

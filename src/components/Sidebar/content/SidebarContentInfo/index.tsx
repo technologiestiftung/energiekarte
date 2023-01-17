@@ -19,13 +19,14 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ }) => {
 
       <SidebarBody>
         <p className="text-sm pt-2 pb-2">
-          Wie hoch ist der jährliche Energieverbauch des Friedrichstadtpalast? Was kostet die Sanierung des Brandenburger Tors? Oder mit welchem Energieträger wird die Berliner Philharmonie versorgt?
-          Als Betreiber öffentlicher Gebäude ist die BIM Berliner Immobilienmanagement GmbH ebenso wie die Bezirke verpflichtet im Rahmen des Berliner Klimaschutz- und Energiewendegesetz (EWG Bln)
-          zu Energieverbrauchsdaten und Einsparmaßnahmen regemäßig und vollständig zu berichten.
-          Der EnergieCheckpoint ist ein prototypische Anwendung, die eine Visualisierung der Daten an einzelnen Standorten möglich macht.
-          So können Energieverbrauch nach Strom/Wärme, Art der Wärmeversorgung sowie Angaben zu Einsparpotenzialen und Sanierungskosten auf einer Karte angeziegt werden.
-          Außerdem lassen sich die Gebäude nach bestimmten Attributen wie Gebäudetyp, Wärmetyp, Strombverbrauch, Wsowei eine Filterung nach bestimmten Attributen erlaubt.
-          So lassen sich schnell Informationen zum Energieverbrauch über Strom/Wärme, Art der Wärmeversorgung, über einzelne Standorte abrufen.
+          Wie hoch ist der jährliche Energieverbauch des Friedrichstadtpalast? Was kostet die Sanierung des Brandenburger Tors? Mit welchem Energieträger wird die Berliner Philharmonie versorgt?
+          Als Betreiber öffentlicher Gebäude sind die BIM Berliner Immobilienmanagement GmbH ebenso wie die Bezirke im Rahmen des Berliner Klimaschutz- und Energiewendegesetzes (EWG Bln) verpflichtet
+          zu Energieverbrauchsdaten und Einsparmaßnahmen regemäßig und vollständig zu berichten. Um das Ziel Klimaneutralität bis 2045 zu erreichen, müssen nicht nur die Gebäude der öffentlichen Hand ihren Beitrag leisten,
+          es bedarf auch eines umfassenden Monitorings um Entwicklungen aufzuzeigen und gegebenenfalls nachjustieren zu können.
+          Der EnergieCheckpoint ist ein prototypische Anwendung, die eine Visualisierung der Daten und Erkundung der einzelnen Standorte möglich macht.
+          So werden Energieverbräuche nach Strom/Wärme, die Art der Wärmeversorgung sowie Angaben zu Einsparpotenzialen und Sanierungskosten für alle Standorte auf einer Karte angezeigt.
+          Mit verschiedenen Filterfunktionen lassen sich die Gebäude nach bestimmten Attributen wie Gebäude- oder Wärmetyp durchsuchen und in einer finalen Excel-Liste exportieren.
+          Die Anwendung ist offen für weitere Daten zum Beispiel aus den Berliner Bezirken, um ein landesweites Monitoring aufzubauen.
         </p>
 
         <Accordion title="Woher kommen die Daten?">
