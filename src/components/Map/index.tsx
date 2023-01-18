@@ -10,13 +10,14 @@ import { getConsumtionColor } from '@lib/getConsumtionColor'
 import { MapKey } from './MapKey'
 
 interface MapType {
-  energyData: any
   zoomToCenter?: number[]
   entityId: string | number | null
   setEntityId: (time: string | null | number) => void
   entityData: any
   consumptionType: string
   mapZoom: number
+  landparcelData: any
+  pointData: any
 }
 
 const MAP_CONFIG = {
@@ -28,7 +29,6 @@ const MAP_CONFIG = {
 }
 
 export const MapComponent: FC<MapType> = ({
-  energyData,
   zoomToCenter,
   entityId,
   setEntityId,
@@ -36,22 +36,33 @@ export const MapComponent: FC<MapType> = ({
   consumptionType,
   mapZoom,
   setMapZoom,
+  landparcelData,
+  pointData,
 }) => {
   const [mapMarkers, setMapMarkers] = useState([])
 
   const map = useRef<Map>(null)
   const highlightedMarker = useRef<Marker>(null)
 
-  if (mapMarkers) {
-    mapMarkers.forEach((m) => {
-      m[0].style.backgroundColor = getConsumtionColor(
-        consumptionType,
-        consumptionType === 'heat' ? m[1].heat : m[1].electricity
-      )
-    })
-  }
+  useEffect(() => {
+    if (mapMarkers) {
+      mapMarkers.forEach((m, i) => {
+        m.style.backgroundColor = getConsumtionColor(
+          consumptionType,
+          consumptionType === 'heat'
+            ? pointData.features[i].properties.heat
+            : pointData.features[i].properties.electricity
+        )
+        const visble = pointData.features[i].properties.visible
+        m.style['pointer-events'] = visble ? 'unset' : 'none'
+        m.style.opacity = visble ? 1 : 0
+      })
+    }
+  }, [consumptionType, pointData])
 
   // Map setup (run only once on initial render)
+  let loaded = false
+
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -72,24 +83,27 @@ export const MapComponent: FC<MapType> = ({
       maxZoom: MAP_CONFIG.maxZoom,
       pitch: 20,
     })
-
     map.current.on('load', function () {
-      if (!map.current) return
+      if (!map.current || loaded) return
       let markers: number[] = []
-      energyData.pointData.features.forEach(function (marker: any) {
+      loaded = true
+
+      pointData.features.forEach(function (marker: any, index: number) {
         const el = document.createElement('div')
+        el.key = index
         el.style.backgroundColor = getConsumtionColor(
           consumptionType,
           consumptionType === 'heat'
             ? marker.properties.heat
             : marker.properties.electricity
         )
+        el.style.display = 'unset'
         el.className =
           'h-3 w-3 rounded-full cursor-pointer border-gray-500 border'
         el.addEventListener('click', function () {
           onMarkerClick(marker.properties.entityId, marker.geometry.coordinates)
         })
-        markers.push([el, marker.properties])
+        markers.push(el)
 
         // add marker to map
         new maplibregl.Marker(el)
@@ -139,7 +153,7 @@ export const MapComponent: FC<MapType> = ({
     if (map.current && map.current.isStyleLoaded()) {
       if (map.current.getSource('landparcel-source')) {
         map.current.removeLayer('landparcel-layer')
-        map.current.removeLayer('landparcel-layer-extrusion')
+        // map.current.removeLayer('landparcel-layer-extrusion')
         map.current.removeSource('landparcel-source')
         highlightedMarker && highlightedMarker.current?.remove()
       }
@@ -148,8 +162,10 @@ export const MapComponent: FC<MapType> = ({
         return
       }
 
+      console.log(entityData.properties)
+
       let intersectingPolygon = false
-      energyData.landparcel.features.forEach((feat: any) => {
+      landparcelData.features.forEach((feat: any) => {
         if (!intersectingPolygon) {
           if (booleanPointInPolygon(entityData.geometry.coordinates, feat))
             intersectingPolygon = feat
@@ -275,7 +291,7 @@ export const MapComponent: FC<MapType> = ({
       <div
         id="map"
         className="w-full h-full bg-[#F8F4F0] !fixed"
-        aria-label="Kartenansicht der Einrichtungen"
+        aria-label="Kartenansicht"
       ></div>
       <MapKey consumptionType={consumptionType} />
     </>

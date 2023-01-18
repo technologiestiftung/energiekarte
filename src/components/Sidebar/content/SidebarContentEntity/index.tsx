@@ -65,7 +65,7 @@ function getUsageDataString(feat, type) {
   if (feat[type] && feat[type] != 0 && feat[type] !== -1) {
     return getUsageData(feat, type).toLocaleString('de-DE') + ' kWh/a'
   } else {
-    return <p className="pb-2 text-sm">liegt nicht vor</p>
+    return <span className="pb-2 text-sm">liegt nicht vor</span>
     // return (type === 'heat' ? 'Wärmeverbrauch':'Stromverbrauch') + ' liegt nicht vor'
   }
 }

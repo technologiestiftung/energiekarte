@@ -22,7 +22,7 @@ function getConsuptionGeoJSON(headers, dataVerbrauch, headerTransaltions) {
         props[headerTransaltions[h] || h] = Number(element[i])
           ? Number(element[i])
           : h === 'Wärmeverbrauch' || h === 'Stromverbrauch'
-          ? -1
+          ? 0
           : element[i]
       }
       if (h.includes('gc_xwert') || h.includes('gc_ywert')) {

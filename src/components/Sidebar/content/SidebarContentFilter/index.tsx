@@ -7,17 +7,21 @@ import { RangeSlider } from '@components/RangeSlider'
 import { Square, CheckSquare } from '@components/Icons/'
 
 export interface SidebarContentFilterType {
-  data: any
+  pointData: any
+  // setPointData,
 }
 
 const defaultValues = {
-  electricityConsumption: [0, 5000000],
+  electricityConsumption: [0, 5000000], // 5000000
   heatConsumption: [0, 30000000],
   renovationCosts: [0, 71000000],
-  savingPotential: [0, 100],
+  savingPotential: [0, 60],
 }
 
-export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
+export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
+  pointData,
+  setPointData,
+}) => {
   // FILTER
   const [filterBuildingType, setFilterBuildingType] = useState<string | null>(
     null
@@ -35,6 +39,59 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
     defaultValues.savingPotential
   )
 
+  useEffect(() => {
+    pointData.features.forEach((f) => {
+      const props = f.properties
+      props.visible = true
+      // building type
+      if (filterBuildingType && props.entityType !== filterBuildingType) {
+        props.visible = false
+      }
+      // what kind of heat
+      if (filterHeatType && !props.entityHeatType.includes(filterHeatType)) {
+        props.visible = false
+      }
+      // electricity consumption
+      if (
+        props.electricity < filterElectricityConsumption[0] ||
+        props.electricity > filterElectricityConsumption[1]
+      ) {
+        props.visible = false
+      }
+      // heat consumption
+      if (
+        props.heat < filterHeatConsumption[0] ||
+        props.heat > filterHeatConsumption[1]
+      ) {
+        props.visible = false
+      }
+      // renovations costs
+
+      if (
+        props.renovationsCosts < filterRenovationCosts[0] ||
+        props.renovationsCosts > filterRenovationCosts[1]
+      ) {
+        props.visible = false
+      }
+
+      // saving potential
+      if (
+        // props.renovationsSavingsMin < filterSavingPotential[0] ||
+        props.renovationsSavingsMax > filterSavingPotential[1]
+      ) {
+        props.visible = false
+      }
+    })
+    setPointData(JSON.parse(JSON.stringify(pointData)))
+  }, [
+    filterBuildingType,
+    filterHeatType,
+    filterElectricityConsumption,
+    filterHeatConsumption,
+    filterRenovationCosts,
+    filterSavingPotential,
+  ])
+
   function resetFilter() {
     setFilterBuildingType(null)
     setFilterHeatType(null)
@@ -51,7 +108,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
     { lable: 'Justizvollzugsanstalt', value: 'JVA' },
     { lable: 'Kultur', value: 'Kultur' },
     { lable: 'Polizei', value: 'Polizei' },
-    { lable: 'Schulen', value: 'Schule' },
+    { lable: 'Schule', value: 'Schulen' },
   ]
 
   const filterHeatTypes = [
@@ -109,7 +166,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
             <button
               className={classNames(
                 type.value === filterHeatType ? '!text-primary font-bold' : '',
-                'block'
+                'block w-full text-left hover:text-primary'
               )}
               onClick={() =>
                 setFilterHeatType(

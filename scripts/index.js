@@ -100,7 +100,7 @@ async.eachSeries(
       featConsumption.properties.renovations = []
       featConsumption.properties.renovationsCosts = 0
       featConsumption.properties.renovationsArea = 0
-      featConsumption.properties.renovationsSavingsMax = null
+      featConsumption.properties.renovationsSavingsMax = 0
       featConsumption.properties.renovationsSavingsMin = 10000000000000000000000000
 
       renovationGeoJSON.features.forEach((featRenovation) => {
@@ -113,15 +113,27 @@ async.eachSeries(
             featRenovation.properties.houseCosts
           featConsumption.properties.renovationsArea +=
             featRenovation.properties.houseArea
+          console.log('!!!!!', featRenovation.properties.houseSavingPotential)
 
           const minMaxValues = featRenovation.properties.houseSavingPotential
             .replace('%', '')
+            .replace('>', '')
             .split('-')
-
             .map((d) => Number(d))
+
+          if (minMaxValues.length === 1) {
+            minMaxValues.unshift(0)
+            console.log('öööö', minMaxValues)
+          }
+
           if (!minMaxValues[1]) {
-            featConsumption.properties.renovationsSavingsMin = null
-            featConsumption.properties.renovationsSavingsMax = null
+            console.log(
+              '?????',
+              featRenovation.properties.houseSavingPotential,
+              minMaxValues
+            )
+            featConsumption.properties.renovationsSavingsMin = 0
+            featConsumption.properties.renovationsSavingsMax = 0
           } else {
             featConsumption.properties.renovationsSavingsMin = Math.min(
               minMaxValues[0],
@@ -134,6 +146,15 @@ async.eachSeries(
           }
         }
       })
+    })
+
+    consuptionGeoJSON.features.forEach((featConsumption) => {
+      if (
+        featConsumption.properties.renovationsSavingsMin ===
+        10000000000000000000000000
+      ) {
+        featConsumption.properties.renovationsSavingsMin = 0
+      }
     })
 
     minMaxValues.amountRenovations = renovationGeoJSON.features.length
