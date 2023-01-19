@@ -74,10 +74,9 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
         props.visible = false
       }
 
-      // saving potential
       if (
-        // props.renovationsSavingsMin < filterSavingPotential[0] ||
-        props.renovationsSavingsMax > filterSavingPotential[1]
+        props.renovationsSavingsMax > filterSavingPotential[1] ||
+        props.renovationsSavingsMax < filterSavingPotential[0]
       ) {
         props.visible = false
       }
@@ -97,6 +96,8 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
     setFilterHeatType(null)
     setFilterElectricityConsumption(defaultValues.electricityConsumption)
     setFilterHeatConsumption(defaultValues.heatConsumption)
+    setFilterRenovationCosts(defaultValues.renovationCosts)
+    setFilterSavingPotential(defaultValues.savingPotential)
   }
 
   const buidlingTypes = [
@@ -252,7 +253,18 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
           />
         </Accordion>
 
-        {(filterBuildingType || filterHeatType) && (
+        {(filterBuildingType ||
+          filterHeatType ||
+          defaultValues.electricityConsumption[0] !==
+            filterElectricityConsumption[0] ||
+          defaultValues.electricityConsumption[1] !==
+            filterElectricityConsumption[1] ||
+          defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
+          defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
+          defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
+          defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
+          defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
+          defaultValues.savingPotential[1] !== filterSavingPotential[1]) && (
           <button
             className="text-secondary block mr-auto ml-auto sticky bottom-4 mb-8 px-4 bg-primary hover:bg-primary hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
             onClick={resetFilter}

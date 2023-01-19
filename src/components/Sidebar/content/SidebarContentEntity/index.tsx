@@ -1,12 +1,17 @@
-import { FC, ReactNode } from 'react'
+import { FC, useState } from 'react'
 import classNames from 'classnames'
-import { useCopyToClipboard } from '@lib/hooks/useCopyToClipboard'
 import { typeTranslation } from '@lib/translation'
-// import { Accordion } from '@components/Accordion'
 
 import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
-import { House, Houses, Building, Buildings } from '@components/Icons/'
+import { Accordion } from '@components/Accordion'
+
+import {
+  Person,
+  Location,
+  Building,
+  BuildingsSanierung,
+} from '@components/Icons/'
 
 import { getConsumtionColor } from '@lib/getConsumtionColor'
 
@@ -43,7 +48,7 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
       <span className="flex pt-4">
         <button
           className={classNames(
-            'disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 mr-1 rounded border-2 hover:border-primary'
+            'disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 mr-1 rounded border hover:border-primary'
           )}
           onClick={() => setEntityId(rankingInfo.idMore)}
           disabled={!rankingInfo.idMore}
@@ -51,7 +56,7 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
           mehr Verbrauch
         </button>
         <button
-          className="disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 ml-1 rounded border-2 hover:border-primary"
+          className="disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 ml-1 rounded border hover:border-primary"
           onClick={() => setEntityId(rankingInfo.idLess)}
           disabled={!rankingInfo.idLess}
         >
@@ -98,6 +103,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
     return null
   }
   const data = entityData.properties
+  const [showRenovations, setShowRenovations] = useState<boolean>(false)
 
   return (
     <>
@@ -108,47 +114,70 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
       <SidebarBody>
         {' '}
         <>
-          <p className="text-sm">{data.entityAddress}</p>
-          <p className="text-sm pb-2 pt-1">
-            {data.ortsteil} | {data.entityPLZ} Berlin
-          </p>
-          <p className="text-sm">Betrieben von: BIM</p>
+          <div className="flex text-sm pb-2">
+            <div className="w-12 place-items-center grid">
+              <Location />
+            </div>
+            <div className="flex-1 pl-2">
+              <p>{data.entityAddress}</p>
+              <p>
+                {data.ortsteil} | {data.entityPLZ} Berlin
+              </p>
+            </div>
+          </div>
+          <div className="flex text-sm pb-2">
+            <div className="w-12 place-items-center grid">
+              <Person />
+            </div>
+            <div className="flex-1 pl-2">
+              <p>BIM</p>
+            </div>
+          </div>
           <hr className="my-2" />
-
           <h2 className="font-bold pt-4 text-md py-4">
             {consumptionType === 'electricity'
               ? 'Stromverbrauch'
               : 'Wärmeverbrauch'}
           </h2>
-          <p className="text-sm pb-1">In Kilowattstunden pro Jahr </p>
-          <p className="font-bold flex pb-2">
-            <span
-              className="text-sm mr-2  w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
-              style={{
-                backgroundColor: getConsumtionColor(
-                  consumptionType,
-                  data[consumptionType]
-                ),
-              }}
-            ></span>
-            {getUsageDataString(data, consumptionType)}
-          </p>
+          <div className="flex text-sm pb-2">
+            <div className="w-12 place-items-center grid">
+              <span
+                className="text-sm mr-2  w-6 h-6 rounded-2xl mt-1 border-gray-500 border"
+                style={{
+                  backgroundColor: getConsumtionColor(
+                    consumptionType,
+                    data[consumptionType]
+                  ),
+                }}
+              ></span>
+            </div>
+            <div className="flex-1 pl-2">
+              <p className="">In Kilowattstunden pro Jahr</p>
+              <p className="font-bold">
+                {getUsageDataString(data, consumptionType)}
+              </p>
+            </div>
+          </div>
 
-          {consumptionType === 'heat' ? (
-            <>
-              <p className="text-sm pb-1">Art der Wärmeversorgung</p>
-              <p className="pb-2 font-bold">{data.entityHeatType}</p>
-            </>
-          ) : null}
-
-          <div>
-            <p className="text-xs py-2">
-              Der Verbrauch aller Gebäude auf diesem Grundstück entspricht dem
-              Energieverbauch von ca.{' '}
-              {getComparisonNumber(data, consumptionType)} 5-Personenhaushalten
-              ({energyComparison[consumptionType].toLocaleString('de-DE')} kWh).
-            </p>
-            {/* <div className="flex py-4">
+          <div className="flex">
+            <div className="w-12"></div>
+            <div className="flex-1 pl-2">
+              {consumptionType === 'heat' ? (
+                <>
+                  <p className="text-sm pb-1">Art der Wärmeversorgung</p>
+                  <p className="pb-2 font-bold">{data.entityHeatType}</p>
+                </>
+              ) : null}
+              <div>
+                <p className="text-xs py-4">
+                  Der Verbrauch aller Gebäude auf diesem Grundstück entspricht
+                  dem Energieverbauch von ca.{' '}
+                  {getComparisonNumber(data, consumptionType)}{' '}
+                  5-Personenhaushalten (
+                  {energyComparison[consumptionType].toLocaleString('de-DE')}{' '}
+                  kWh).
+                </p>
+                {/* <div className="flex py-4">
               {getUsageData(consumptionData, 'heat').map((feat, i) => (
                 <House />))}
               ))}
@@ -156,76 +185,85 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             <p className="text-xs italic">
               Ein Haus entspricht 1000 5 Personenhaushalte
             </p> */}
+              </div>
+              <Comparision
+                consumptionType={consumptionType}
+                rankingInfo={rankingInfo}
+                setEntityId={setEntityId}
+              />
+            </div>
           </div>
-          <Comparision
-            consumptionType={consumptionType}
-            rankingInfo={rankingInfo}
-            setEntityId={setEntityId}
-          />
 
+          <span className="my-4 w-full block"></span>
           {data.renovations.length ? (
-            <>
-              <h2 className="font-bold py-4 pt-8 text-lg">Sanierungen</h2>
-
-              <ul className="text-sm">
-                <li className="flex py-2">
-                  <div className="w-12 place-items-center grid">
-                    <Buildings />
-                  </div>
-                  <div className="flex-1 pl-2">
-                    <p className="font-bold pb-1">Gesamtsanierung</p>
-                    {data.renovationsArea !== 0 && (
-                      <span>
-                        Fläche: {data.renovationsArea.toLocaleString('de-DE')}
-                        m2
-                      </span>
-                    )}
-                    <br />
-                    {data.renovationsCosts !== 0 && (
-                      <span>
-                        Kosten: {data.renovationsCosts.toLocaleString('de-DE')}€
-                      </span>
-                    )}
-                  </div>
-                </li>
-                {data.renovations?.map((feat, i) => (
-                  <li className="flex py-4" key={'haus' + i}>
+            <Accordion title="Sanierungen" acitve={showRenovations}>
+              <>
+                <ul className="text-sm">
+                  <li className="flex py-2">
                     <div className="w-12 place-items-center grid">
-                      <Building />
+                      <BuildingsSanierung
+                        size={50}
+                        color2={getConsumtionColor(
+                          consumptionType,
+                          data[consumptionType]
+                        )}
+                      />
                     </div>
                     <div className="flex-1 pl-2">
-                      <p className="font-bold pb-1">{feat['houseName']}</p>
-                      <p>
-                        Fläche:{' '}
-                        <span className="font-bold">
-                          {feat['houseArea'].toLocaleString('de-DE')} m2
+                      <p className="font-bold pb-1">Gesamtsanierung</p>
+                      {data.renovationsArea !== 0 && (
+                        <span>
+                          Fläche: {data.renovationsArea.toLocaleString('de-DE')}
+                          m2
                         </span>
-                      </p>
-                      <p>
-                        Einsparpotenzial:{' '}
-                        <span className="font-bold">
-                          {feat['houseSavingPotential']}
+                      )}
+                      <br />
+                      {data.renovationsCosts !== 0 && (
+                        <span>
+                          Kosten:{' '}
+                          {data.renovationsCosts.toLocaleString('de-DE')}€
                         </span>
-                      </p>
-                      <p>
-                        Kosten:{' '}
-                        <span className="font-bold">
-                          {feat['houseCosts'].toLocaleString('de-DE')} €
-                        </span>
-                      </p>
-                      <p>
-                        Prio:{' '}
-                        <span className="font-bold">
-                          {feat['housePrio']} von {pointDataLenght}
-                        </span>
-                      </p>
+                      )}
                     </div>
                   </li>
-                ))}
-              </ul>
-            </>
+                  {data.renovations?.map((feat, i) => (
+                    <li className="flex py-4" key={'haus' + i}>
+                      <div className="w-12 place-items-center grid">
+                        <Building />
+                      </div>
+                      <div className="flex-1 pl-2">
+                        <p className="font-bold pb-1">{feat['houseName']}</p>
+                        <p>
+                          Fläche:{' '}
+                          <span className="font-bold">
+                            {feat['houseArea'].toLocaleString('de-DE')} m2
+                          </span>
+                        </p>
+                        <p>
+                          Einsparpotenzial:{' '}
+                          <span className="font-bold">
+                            {feat['houseSavingPotential']}
+                          </span>
+                        </p>
+                        <p>
+                          Kosten:{' '}
+                          <span className="font-bold">
+                            {feat['houseCosts'].toLocaleString('de-DE')} €
+                          </span>
+                        </p>
+                        <p>
+                          Prio:{' '}
+                          <span className="font-bold">
+                            {feat['housePrio']} von {pointDataLenght}
+                          </span>
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            </Accordion>
           ) : null}
-
           {!entityData.properties.renovations.length && (
             <p className="pt-4 text-xs">Keine Sanierungdaten vorhanden</p>
           )}

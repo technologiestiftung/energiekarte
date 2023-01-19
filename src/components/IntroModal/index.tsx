@@ -40,46 +40,50 @@ export const IntroModal: FC<IntroModalType> = ({
         className="relative z-50"
         onClose={closeModal}
       >
-        <div className="fixed inset-0 bg-secondary/60" aria-hidden="true" />
+        <div className="fixed inset-0 bg-secondary/80" aria-hidden="true" />
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4 leading-7">
-            <Dialog.Panel className="border-2 border-primary/50  bg-secondary text-textcolor/90 max-h-full p-6 max-w-xs md:max-w-none filter drop-shadow-lg rounded-lg md:min-w-xl md:w-1/2 mx-auto transition-all">
+            <Dialog.Panel className="border border-primary/50  bg-secondary text-textcolor/90 max-h-full p-6 max-w-xs md:max-w-none filter drop-shadow-lg rounded-lg md:min-w-xl md:w-1/2 mx-auto transition-all">
               <button
-                className="text-textcolor focus:outline-none top-0 right-0 m-2 absolute cursor-pointer z-20 hover:bg-primary rounded-full p-2"
+                className="text-textcolor focus:outline-none top-0 right-0 m-2 absolute cursor-pointer z-20 hover:bg-primary rounded-full p-2 hover:text-secondary"
                 onClick={closeModal}
               >
                 <Cross />
               </button>
-              <h2 className="font-bold text-2xl pb-2 pt-2 text-textcolor/80">
+              <h2 className="font-bold text-2xl pb-4 pt-2 text-textcolor/80">
                 Berliner EnergieCheckpoint
               </h2>
               <h4 className="pb-4">
-                <p>Energieverbrauch und Einsparpotentiale - Wie steht es um den Beitrag öffentlicher Gebäude zur Klimaneutralität?<br></br>
-
+                <p>
+                  Energieverbrauch und Einsparpotentiale - Wie steht es um den
+                  Beitrag öffentlicher Gebäude zur Klimaneutralität?<br></br>
                 </p>
 
                 <p>
-                  Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu beschloss das Berliner Klimaschutz- und Energiewendegesetz (EWG Bln) eine Reduktion der Kohlendioxidemmissionen
-                  um mindestens 95 % im Vergleich zu den Emissionen des Jahres 1990. Öffentliche Gebäude wie Feuerwehren oder Kultureinrichtungen sollen durch Energieeinsparungen und Sanierungen eine Vorbildrolle einnehmen.</p>
-
-                <p>
-                  Wir schauen beispielhaft auf die Daten zu Strom- und Wärmevebrauch sowie Sanierungskosten und Einsparpotenzial der Liegenschaften der BIM (Berliner Immobilien Management)
+                  Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu
+                  beschloss das Berliner Klimaschutz- und Energiewendegesetz
+                  (EWG Bln) eine Reduktion der Kohlendioxidemmissionen um
+                  mindestens 95 % im Vergleich zu den Emissionen des Jahres
+                  1990. Öffentliche Gebäude wie Feuerwehren oder
+                  Kultureinrichtungen sollen durch Energieeinsparungen und
+                  Sanierungen eine Vorbildrolle einnehmen.
                 </p>
 
+                <p>
+                  Wir schauen beispielhaft auf die Daten zu Strom- und
+                  Wärmevebrauch sowie Sanierungskosten und Einsparpotenzial der
+                  Liegenschaften der BIM (Berliner Immobilien Management)
+                </p>
               </h4>
 
-
-
-
-
               <button
-                className="xmas-btn px-4 bg-secondary hover:bg-primary hover:text-textcolor text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
+                className="xmas-btn px-4 bg-secondary hover:bg-primary hover:text-secondary text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
                 onClick={closeModalExplore}
               >
                 Erkunden
               </button>
               <button
-                className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/90 hover:border-primary p-2 rounded hover:text-textcolor hover:bg-primary"
+                className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/90 hover:border-primary p-2 rounded hover:text-secondary hover:bg-primary"
                 onClick={closeModalInfo}
               >
                 Mehr Infos

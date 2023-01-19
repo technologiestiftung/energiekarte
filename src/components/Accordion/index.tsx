@@ -10,7 +10,7 @@ interface AccordionPropType {
 
 type StyleGetterType = (props: { isActive: boolean }) => Record<string, string>
 
-const borderBottomStyle = 'border-b border-gray-300'
+const borderBottomStyle = 'border-b border-gray-300/40'
 const getStyles: StyleGetterType = ({ isActive }) => ({
   wrapper: classNames(!isActive && borderBottomStyle, 'relative z-0'),
   title: classNames('pt-2 flex w-full', isActive ? 'pb-3' : 'pb-4'),

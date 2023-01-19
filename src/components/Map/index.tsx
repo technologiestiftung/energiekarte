@@ -81,7 +81,7 @@ export const MapComponent: FC<MapType> = ({
       zoom: MAP_CONFIG.defaultZoom,
       minZoom: MAP_CONFIG.minZoom,
       maxZoom: MAP_CONFIG.maxZoom,
-      pitch: 20,
+      pitch: 60,
     })
     map.current.on('load', function () {
       if (!map.current || loaded) return
