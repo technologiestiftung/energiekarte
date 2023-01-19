@@ -51,19 +51,26 @@ export const IntroModal: FC<IntroModalType> = ({
                 <Cross />
               </button>
               <h2 className="font-bold text-2xl pb-2 pt-2 text-textcolor/80">
-                Berliner Energie Checkpoint
+                Berliner EnergieCheckpoint
               </h2>
               <h4 className="pb-4">
-                Nostrum minima repudiandae accusamus impedit provident
-                asperiores magnam culpa, ullam sapiente illo tempora eius
-                deserunt neque facilis incidunt.
+                <p>Energieverbrauch und Einsparpotentiale - Wie steht es um den Beitrag öffentlicher Gebäude zur Klimaneutralität?<br></br>
+
+                </p>
+
+                <p>
+                  Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu beschloss das Berliner Klimaschutz- und Energiewendegesetz (EWG Bln) eine Reduktion der Kohlendioxidemmissionen
+                  um mindestens 95 % im Vergleich zu den Emissionen des Jahres 1990. Öffentliche Gebäude wie Feuerwehren oder Kultureinrichtungen sollen durch Energieeinsparungen und Sanierungen eine Vorbildrolle einnehmen.</p>
+
+                <p>
+                  Wir schauen beispielhaft auf die Daten zu Strom- und Wärmevebrauch sowie Sanierungskosten und Einsparpotenzial der Liegenschaften der BIM (Berliner Immobilien Management)
+                </p>
+
               </h4>
-              <p className="pb-4">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
-                voluptates dicta earum nostrum minima repudiandae accusamus
-                impedit provident asperiores magnam culpa, ullam sapiente illo
-                tempora eius deserunt neque facilis incidunt.
-              </p>
+
+
+
+
 
               <button
                 className="xmas-btn px-4 bg-secondary hover:bg-primary hover:text-textcolor text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
