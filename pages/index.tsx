@@ -71,9 +71,12 @@ const MapSite: NextPage = (energyData: any) => {
   const [consumptionType, setConsumptionType] = useState('heat')
   let [rankingInfo, setRankingInfo] = useState<any>([])
 
+  const [pointDataLenght, setPointDataLenght] = useState<number>(0)
+
   useEffect(() => {
     setPointData(energyData.pointData)
     setLandparcelData(energyData.landparcel)
+    setPointDataLenght(energyData.pointData.features.length)
   }, [])
 
   // // when the query string is read check if we have an id
@@ -190,6 +193,7 @@ const MapSite: NextPage = (energyData: any) => {
             consumptionType={consumptionType}
             rankingInfo={rankingInfo}
             setEntityId={setEntityId}
+            pointDataLenght={pointDataLenght}
           />
         </SidebarWrapper>
         <SidebarNav

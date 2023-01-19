@@ -13,6 +13,7 @@ import { getConsumtionColor } from '@lib/getConsumtionColor'
 export interface SidebarContentEntityType {
   marketData: any
   consumptionType: string
+  pointDataLenght: number
 }
 
 const energyComparison = {
@@ -91,6 +92,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   consumptionType,
   rankingInfo,
   setEntityId,
+  pointDataLenght,
 }) => {
   if (!entityId || !entityData) {
     return null
@@ -214,7 +216,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                       <p>
                         Prio:{' '}
                         <span className="font-bold">
-                          {/* {feat['housePrio']} von {renovationLength} */}
+                          {feat['housePrio']} von {pointDataLenght}
                         </span>
                       </p>
                     </div>
