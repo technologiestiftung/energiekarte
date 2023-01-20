@@ -39,7 +39,7 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
       consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
     } liegt im Ranking auf Platz ${rankingInfo.rankingPosition} von ${
       rankingInfo.rankingLength
-    }. `
+    }. Finde Grundstücke mit hören bzw. niederigern Verbrauch.`
   }
 
   return (
@@ -50,7 +50,7 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
       <span className="flex pt-4">
         <button
           className={classNames(
-            'disabled:opacity-50 text-xs py-2  bg-white/50 mr-1 rounded border hover:border-primary'
+            'disabled:opacity-50 text-xs py-2 flex-1 justify-center flex bg-white/50 mr-1 rounded border hover:border-primary'
           )}
           onClick={() => setEntityId(rankingInfo.idMore)}
           disabled={!rankingInfo.idMore}
@@ -58,7 +58,7 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
           <Plus />
         </button>
         <button
-          className="disabled:opacity-50 text-xs py-2  bg-white/50 ml-1 rounded border hover:border-primary"
+          className="disabled:opacity-50 text-xs py-2 flex-1 justify-center flex bg-white/50 ml-1 rounded border hover:border-primary"
           onClick={() => setEntityId(rankingInfo.idLess)}
           disabled={!rankingInfo.idLess}
         >
@@ -254,7 +254,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                           </span>
                         </p>
                         <p>
-                          Prio:{' '}
+                          Prio.:{' '}
                           <span className="font-bold">
                             {feat['housePrio']} von {pointDataLenght}
                           </span>

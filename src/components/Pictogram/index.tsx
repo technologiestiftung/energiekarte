@@ -31,7 +31,7 @@ export const Pictogram: FC<PictogramType> = ({ data, consumptionType }) => {
         5-Personenhaushalten (
         {energyComparison[consumptionType].toLocaleString('de-DE')} kWh).
       </p>
-      {Array.apply(null, { length: 40 }).map((d, i) => (
+      {Array.apply(null, { length: 35 }).map((d, i) => (
         <>
           <span className="inline-block ">
             <House size={22} />
