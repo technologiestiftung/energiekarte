@@ -5,12 +5,18 @@ import { typeTranslation } from '@lib/translation'
 import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
 import { Accordion } from '@components/Accordion'
+import { Pictogram } from '@components/Pictogram'
 
 import {
   Person,
   Location,
   Building,
   BuildingsSanierung,
+  ThermometerHalf,
+  SortDown,
+  Plus,
+  Minus,
+  DotsVertical,
 } from '@components/Icons/'
 
 import { getConsumtionColor } from '@lib/getConsumtionColor'
@@ -21,11 +27,6 @@ export interface SidebarContentEntityType {
   pointDataLenght: number
 }
 
-const energyComparison = {
-  heat: 5500,
-  electricity: 5500,
-}
-
 function Comparision({ consumptionType, rankingInfo, setEntityId }) {
   let rankingText
   if (!rankingInfo.idLess) {
@@ -33,34 +34,35 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
       consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
     } vor. `
   } else {
-    rankingText = `Das Grundstück liegt im 
+    rankingText = `Der 
     ${
       consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
-    } auf Platz ${rankingInfo.rankingPosition} von ${
+    } liegt im Ranking auf Platz ${rankingInfo.rankingPosition} von ${
       rankingInfo.rankingLength
     }. `
   }
 
   return (
-    <div className="text-xs pt-6">
-      {rankingText}
-      Gehe zu einem Grundstück mit
+    <div className="text-xs">
+      <p className="text-sm pb-2">Ranking</p>
+      <span className="text-gray-500 text-xs">{rankingText}</span>
+
       <span className="flex pt-4">
         <button
           className={classNames(
-            'disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 mr-1 rounded border hover:border-primary'
+            'disabled:opacity-50 text-xs py-2  bg-white/50 mr-1 rounded border hover:border-primary'
           )}
           onClick={() => setEntityId(rankingInfo.idMore)}
           disabled={!rankingInfo.idMore}
         >
-          mehr Verbrauch
+          <Plus />
         </button>
         <button
-          className="disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 ml-1 rounded border hover:border-primary"
+          className="disabled:opacity-50 text-xs py-2  bg-white/50 ml-1 rounded border hover:border-primary"
           onClick={() => setEntityId(rankingInfo.idLess)}
           disabled={!rankingInfo.idLess}
         >
-          weniger Verbrauch
+          <Minus />
         </button>
       </span>
     </div>
@@ -84,12 +86,6 @@ function getUsageData(feat, type) {
   }
 }
 
-function getComparisonNumber(feat, type) {
-  return (
-    Math.round((getUsageData(feat, type) / energyComparison[type]) * 100) / 100
-  )
-}
-
 export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   entityId,
   entityData,
@@ -103,6 +99,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
     return null
   }
   const data = entityData.properties
+  const [showConsumption, setShowConsumption] = useState<boolean>(true)
   const [showRenovations, setShowRenovations] = useState<boolean>(false)
 
   return (
@@ -134,65 +131,70 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             </div>
           </div>
           <hr className="my-2" />
-          <h2 className="font-bold pt-4 text-md py-4">
-            {consumptionType === 'electricity'
-              ? 'Stromverbrauch'
-              : 'Wärmeverbrauch'}
-          </h2>
-          <div className="flex text-sm pb-2">
-            <div className="w-12 place-items-center grid">
-              <span
-                className="text-sm mr-2  w-6 h-6 rounded-2xl mt-1 border-gray-500 border"
-                style={{
-                  backgroundColor: getConsumtionColor(
-                    consumptionType,
-                    data[consumptionType]
-                  ),
-                }}
-              ></span>
-            </div>
-            <div className="flex-1 pl-2">
-              <p className="">In Kilowattstunden pro Jahr</p>
-              <p className="font-bold">
-                {getUsageDataString(data, consumptionType)}
-              </p>
-            </div>
-          </div>
 
-          <div className="flex">
-            <div className="w-12"></div>
-            <div className="flex-1 pl-2">
-              {consumptionType === 'heat' ? (
-                <>
-                  <p className="text-sm pb-1">Art der Wärmeversorgung</p>
-                  <p className="pb-2 font-bold">{data.entityHeatType}</p>
-                </>
-              ) : null}
-              <div>
-                <p className="text-xs py-4">
-                  Der Verbrauch aller Gebäude auf diesem Grundstück entspricht
-                  dem Energieverbauch von ca.{' '}
-                  {getComparisonNumber(data, consumptionType)}{' '}
-                  5-Personenhaushalten (
-                  {energyComparison[consumptionType].toLocaleString('de-DE')}{' '}
-                  kWh).
-                </p>
-                {/* <div className="flex py-4">
-              {getUsageData(consumptionData, 'heat').map((feat, i) => (
-                <House />))}
-              ))}
-            </div>
-            <p className="text-xs italic">
-              Ein Haus entspricht 1000 5 Personenhaushalte
-            </p> */}
+          <Accordion
+            title={
+              consumptionType === 'electricity'
+                ? 'Stromverbrauch'
+                : 'Wärmeverbrauch'
+            }
+            acitve={showConsumption}
+          >
+            <div className="flex text-sm pb-4">
+              <div className="w-12 place-items-center grid">
+                <span
+                  className="text-sm  w-5 h-5 rounded-2xl border-textcolor border"
+                  style={{
+                    backgroundColor: getConsumtionColor(
+                      consumptionType,
+                      data[consumptionType]
+                    ),
+                  }}
+                ></span>
               </div>
-              <Comparision
-                consumptionType={consumptionType}
-                rankingInfo={rankingInfo}
-                setEntityId={setEntityId}
-              />
+              <div className="flex-1 pl-2">
+                <p className="">In Kilowattstunden pro Jahr</p>
+                <p className="font-bold">
+                  {getUsageDataString(data, consumptionType)}
+                </p>
+              </div>
             </div>
-          </div>
+            {consumptionType === 'heat' ? (
+              <div className="flex pb-4 ">
+                <div className="w-12 place-items-center grid">
+                  <ThermometerHalf />
+                </div>
+                <div className="flex-1 pl-2">
+                  <p className="text-sm">Art der Wärmeversorgung</p>
+                  <p className="font-bold">{data.entityHeatType}</p>
+                </div>
+              </div>
+            ) : null}
+
+            <div className="flex pb-4">
+              <div className="w-12 justify-center top-1 grid">
+                <DotsVertical />
+              </div>
+              <div className="flex-1 pl-2">
+                <p className="text-sm">Vergleich</p>
+
+                <Pictogram data={data} consumptionType={consumptionType} />
+              </div>
+            </div>
+
+            <div className="flex ">
+              <div className="w-12 grid justify-center top-1">
+                <SortDown />
+              </div>
+              <div className="flex-1 pl-2">
+                <Comparision
+                  consumptionType={consumptionType}
+                  rankingInfo={rankingInfo}
+                  setEntityId={setEntityId}
+                />
+              </div>
+            </div>
+          </Accordion>
 
           <span className="my-4 w-full block"></span>
           {data.renovations.length ? (

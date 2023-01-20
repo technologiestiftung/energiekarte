@@ -19,7 +19,6 @@ export function findClosestValues(data, consumptionType, id) {
     }
     if (dataSorted[index].properties.entityId === id) {
       rankingPosition = index + 1
-      console.log('hasValue', hasValue)
       less = hasValue ? dataSorted[index + 1]?.properties.entityId : null
       more = hasValue
         ? dataSorted[index - 1]?.properties.entityId
@@ -27,8 +26,6 @@ export function findClosestValues(data, consumptionType, id) {
       break
     }
   }
-
-  console.log(more, less)
 
   return {
     idMore: more,
