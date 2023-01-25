@@ -200,6 +200,11 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
           {data.renovations.length ? (
             <Accordion title="Sanierungen" acitve={showRenovations}>
               <>
+                <p className="mb-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestiae voluptates iure quidem ipsum repudiandae dolorem,
+                  labore autem dignissimos debitis.
+                </p>
                 <ul className="text-sm">
                   <li className="flex py-2">
                     <div className="w-12 place-items-center grid">
