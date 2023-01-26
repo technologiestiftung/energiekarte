@@ -4,7 +4,7 @@ import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
 import { Accordion } from '@components/Accordion'
 import { RangeSlider } from '@components/RangeSlider'
-import { Square, CheckSquare } from '@components/Icons/'
+import { Square, CheckSquare, Filter } from '@components/Icons/'
 
 export interface SidebarContentFilterType {
   pointData: any
@@ -39,7 +39,14 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
     defaultValues.savingPotential
   )
 
-  useEffect(() => {
+  const [allHeatUsage, setAllHeatUsage] = useState<number>(0)
+  const [allElectrictyUsage, setAllElectrictyUsage] = useState<number>(0)
+
+  const [isFiltered, setIsFiltered] = useState<boolean>(false)
+
+  function filterData() {
+    let heat = 0
+    let electricity = 0
     pointData.features.forEach((f) => {
       const props = f.properties
       props.visible = true
@@ -80,8 +87,61 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
       ) {
         props.visible = false
       }
+
+      if (props.visible) {
+        heat += props.heat
+        electricity += props.electricity
+      }
     })
+
+    return { pointData: pointData, heat: heat, electricity: electricity }
+  }
+
+  function downloadCSV() {
+    console.log(pointData)
+
+    const rows = [
+      ['name1', 'city1', 'some other info'],
+      ['name2', 'city2', 'more info'],
+    ]
+    let headers =
+      'electricity,entityAddress,entityHeatType,entityId,entityPLZ,entityType,heat,houseComment,ortsteil,,renovationsArea,renovationsCosts,renovationsSavingsMax,renovationsSavingsMin,visible,x,y'
+
+    let csvContent =
+      'data:text/csv;charset=utf-8,' + rows.map((e) => e.join(',')).join('\n')
+
+    var encodedUri = encodeURI(csvContent)
+    var link = document.createElement('a')
+    link.setAttribute('href', encodedUri)
+    link.setAttribute('download', 'my_data.csv')
+    document.body.appendChild(link) // Required for FF
+
+    link.click() // This will download the data file named "my_data.csv".
+  }
+
+  useEffect(() => {
+    const { pointData, heat, electricity } = filterData()
+
+    setAllHeatUsage(heat)
+    setAllElectrictyUsage(electricity)
+
     setPointData(JSON.parse(JSON.stringify(pointData)))
+
+    const isFiltereddd =
+      filterBuildingType ||
+      filterHeatType ||
+      defaultValues.electricityConsumption[0] !==
+        filterElectricityConsumption[0] ||
+      defaultValues.electricityConsumption[1] !==
+        filterElectricityConsumption[1] ||
+      defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
+      defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
+      defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
+      defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
+      defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
+      defaultValues.savingPotential[1] !== filterSavingPotential[1]
+
+    setIsFiltered(isFiltereddd)
   }, [
     filterBuildingType,
     filterHeatType,
@@ -90,6 +150,21 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
     filterRenovationCosts,
     filterSavingPotential,
   ])
+
+  // useEffect(()=>{
+  // setIsFiltered(filterBuildingType ||
+  //   filterHeatType ||
+  //   defaultValues.electricityConsumption[0] !==
+  //     filterElectricityConsumption[0] ||
+  //   defaultValues.electricityConsumption[1] !==
+  //     filterElectricityConsumption[1] ||
+  //   defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
+  //   defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
+  //   defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
+  //   defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
+  //   defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
+  //   defaultValues.savingPotential[1] !== filterSavingPotential[1])
+  // },[])
 
   function resetFilter() {
     setFilterBuildingType(null)
@@ -125,12 +200,41 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
       <SidebarHeader text="Filter" />
 
       <SidebarBody>
-        <p className="py-2 text-sm">
+        <p className="pt-2 pb-4 text-sm">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est,
           repellat? Voluptatem, eum accusantium molestias voluptatibus placeat
           veritatis quod officiis.
         </p>
-        <Accordion title="Gebäudetyp" acitve={true}>
+        <p className="text-xs">
+          Gesamter Wäremverbrauch{' '}
+          {isFiltered ? (
+            <span
+              title="gefiltert"
+              className="text-primary inline-block absolute pl-2"
+            >
+              <Filter size={15} />{' '}
+            </span>
+          ) : null}
+        </p>
+        <p className="font-bold text-lg pb-2">
+          {allHeatUsage.toLocaleString('de-DE')} in kWh/a
+        </p>
+        <p className="text-xs">
+          Gesamter Stromverbrauch{' '}
+          {isFiltered ? (
+            <span
+              title="gefiltert"
+              className="text-primary inline-block absolute pl-2"
+            >
+              <Filter size={15} />{' '}
+            </span>
+          ) : null}
+        </p>
+        <p className="font-bold text-lg pb-4">
+          {allElectrictyUsage.toLocaleString('de-DE')} in kWh/a
+        </p>
+
+        <Accordion title="Gebäudetyp" acitve={false}>
           {buidlingTypes?.map((type) => (
             <button
               className={classNames(
@@ -162,7 +266,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             </button>
           ))}
         </Accordion>
-        <Accordion title="Wärmetyp" acitve={true}>
+        <Accordion title="Wärmetyp" acitve={false}>
           {filterHeatTypes?.map((type) => (
             <button
               className={classNames(
@@ -193,7 +297,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             </button>
           ))}
         </Accordion>
-        <Accordion title="Stromverbrauch" acitve={true}>
+        <Accordion title="Stromverbrauch" acitve={false}>
           <p className="text-xs">
             Der Verbrauch bezieht sich auf die Summe aller Gebäude auf einem
             Grundstück.
@@ -208,7 +312,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             rounding={'million'}
           />
         </Accordion>
-        <Accordion title="Wärmeverbrauch" acitve={true}>
+        <Accordion title="Wärmeverbrauch" acitve={false}>
           <p className="text-xs">
             Der Verbrauch bezieht sich auf die Summe aller Gebäude auf einem
             Grundstück.
@@ -223,7 +327,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             rounding={'million'}
           />
         </Accordion>
-        <Accordion title="Sanierungskosten" acitve={true}>
+        <Accordion title="Sanierungskosten" acitve={false}>
           <p className="text-xs">
             Snierungskosten beziehen sich auf die Summe der zu sanierenden
             Gebäude auf einem Grundstück.
@@ -238,7 +342,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             rounding={'million'}
           />
         </Accordion>
-        <Accordion title="Einsparpotenzial" acitve={true}>
+        <Accordion title="Einsparpotenzial" acitve={false}>
           <p className="text-xs">
             Das Einsparpotential ist nur eine Schätzung, die sich stets in einem
             Rahmen befindet.
@@ -252,26 +356,21 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             step={10}
           />
         </Accordion>
-
-        {(filterBuildingType ||
-          filterHeatType ||
-          defaultValues.electricityConsumption[0] !==
-            filterElectricityConsumption[0] ||
-          defaultValues.electricityConsumption[1] !==
-            filterElectricityConsumption[1] ||
-          defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
-          defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
-          defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
-          defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
-          defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
-          defaultValues.savingPotential[1] !== filterSavingPotential[1]) && (
+        {isFiltered && (
           <button
-            className="text-secondary block mr-auto ml-auto sticky bottom-4 mb-8 px-4 bg-primary hover:bg-primary hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
+            className="text-secondary block mr-auto ml-auto sticky bottom-4 mb-8 px-4 bg-primary hover:bg-primary/80 hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
             onClick={resetFilter}
           >
             Filter zurücksetzen
           </button>
         )}
+
+        <button
+          className="text-secondary block mr-auto ml-auto bottom-4 mt-8 mb-8 px-4 bg-primary hover:bg-primary/80 hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
+          onClick={downloadCSV}
+        >
+          CSV exportieren
+        </button>
       </SidebarBody>
     </>
   )

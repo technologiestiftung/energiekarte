@@ -14,9 +14,12 @@ import {
   BuildingsSanierung,
   ThermometerHalf,
   SortDown,
-  Plus,
-  Minus,
   DotsVertical,
+  ArrowLeft,
+  ArrowRight,
+  ArrowLeftRight,
+  ArrowUp,
+  ArrowDown,
 } from '@components/Icons/'
 
 import { getConsumtionColor } from '@lib/getConsumtionColor'
@@ -55,14 +58,14 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
           onClick={() => setEntityId(rankingInfo.idMore)}
           disabled={!rankingInfo.idMore}
         >
-          <Plus />
+          <ArrowUp />
         </button>
         <button
           className="disabled:opacity-50 text-xs py-2 flex-1 justify-center flex bg-white/50 ml-1 rounded border hover:border-primary"
           onClick={() => setEntityId(rankingInfo.idLess)}
           disabled={!rankingInfo.idLess}
         >
-          <Minus />
+          <ArrowDown />
         </button>
       </span>
     </div>
@@ -179,7 +182,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
 
             <div className="flex pb-4">
               <div className="w-12 justify-center top-1 grid">
-                <DotsVertical />
+                <ArrowLeftRight />
               </div>
               <div className="flex-1 pl-2">
                 <p className="text-sm">Vergleich</p>
