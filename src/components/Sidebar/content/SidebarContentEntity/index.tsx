@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useState, useEffect } from 'react'
 import classNames from 'classnames'
 import { typeTranslation } from '@lib/translation'
 
@@ -69,20 +69,15 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
   )
 }
 
-function getUsageDataString(feat, type) {
-  if (feat[type] && feat[type] != 0 && feat[type] !== -1) {
-    return getUsageData(feat, type).toLocaleString('de-DE') + ' kWh/a'
+function getUsageDataString(energyUsage) {
+  if (energyUsage != 0) {
+    return energyUsage.toLocaleString('de-DE') + ' kWh/a'
   } else {
-    return <span className="pb-2 text-sm">liegt nicht vor</span>
-    // return (type === 'heat' ? 'Wärmeverbrauch':'Stromverbrauch') + ' liegt nicht vor'
-  }
-}
-
-function getUsageData(feat, type) {
-  if (feat[type] && feat[type] != 0 && feat[type] !== -1) {
-    return Number(feat[type])
-  } else {
-    return 0
+    return (
+      <span className="text-xs pb-2 font-normal">
+        Es liegt kein Stromverbrauch vor.
+      </span>
+    )
   }
 }
 
@@ -101,6 +96,19 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   const data = entityData.properties
   const [showConsumption, setShowConsumption] = useState<boolean>(true)
   const [showRenovations, setShowRenovations] = useState<boolean>(false)
+  const [energyUsage, setEnergyUsage] = useState<number>(0)
+
+  useEffect(() => {
+    if (
+      entityData.properties[consumptionType] &&
+      entityData.properties[consumptionType] != 0 &&
+      entityData.properties[consumptionType] !== -1
+    ) {
+      setEnergyUsage(Number(entityData.properties[consumptionType]))
+    } else {
+      setEnergyUsage(0)
+    }
+  }, [consumptionType, entityData])
 
   return (
     <>
@@ -154,9 +162,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
               </div>
               <div className="flex-1 pl-2">
                 <p className="">In Kilowattstunden pro Jahr</p>
-                <p className="font-bold">
-                  {getUsageDataString(data, consumptionType)}
-                </p>
+                <p className="font-bold">{getUsageDataString(energyUsage)}</p>
               </div>
             </div>
             {consumptionType === 'heat' ? (
@@ -178,7 +184,10 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
               <div className="flex-1 pl-2">
                 <p className="text-sm">Vergleich</p>
 
-                <Pictogram data={data} consumptionType={consumptionType} />
+                <Pictogram
+                  energyUsage={energyUsage}
+                  consumptionType={consumptionType}
+                />
               </div>
             </div>
 

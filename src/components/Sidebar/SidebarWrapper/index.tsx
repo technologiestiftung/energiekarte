@@ -26,7 +26,7 @@ export const SidebarWrapper: FC<SidebarWrapperType> = ({
   const positionClass = position === 'left' ? 'left-0' : 'right-0'
   const positionClassClosed =
     position === 'left' ? '-translate-x-full' : 'translate-x-full'
-  const heightOnMobile = mobileHeight === 'full' ? 'h-full' : 'h-1/2'
+  const heightOnMobile = mobileHeight === 'full' ? 'h-3/4' : 'h-3/4' // this is currently the same css
 
   const classesMobile = hasMobileSize
     ? isOpen

@@ -83,9 +83,9 @@ export const RangeSlider: FC<RangeSliderType> = ({
           >
             <div
               style={{
-                height: '20px',
-                width: '5px',
-                borderRadius: '4px',
+                height: '15px',
+                width: '15px',
+                borderRadius: '1rem',
                 backgroundColor: primaryColor,
                 display: 'flex',
                 justifyContent: 'center',
