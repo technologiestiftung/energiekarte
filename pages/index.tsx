@@ -211,7 +211,7 @@ const MapSite: NextPage = (energyData: any) => {
     pointData && (
       <>
         <Joyride
-          callback={handleJoyrideCallback}
+          // callback={handleJoyrideCallback}
           run={runJoyride}
           steps={steps}
           debug
