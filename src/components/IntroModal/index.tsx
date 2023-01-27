@@ -17,6 +17,7 @@ export const IntroModal: FC<IntroModalType> = ({
   setModalOpen,
   setNavView,
   setSidebarMenuOpen,
+  setRunJoyride,
 }) => {
   function closeModal() {
     setModalOpen(false)
@@ -87,6 +88,12 @@ export const IntroModal: FC<IntroModalType> = ({
                 onClick={closeModalInfo}
               >
                 Mehr Infos
+              </button>
+              <button
+                className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/90 hover:border-primary p-2 rounded hover:text-secondary hover:bg-primary"
+                onClick={() => setRunJoyride(true)}
+              >
+                Tour starten
               </button>
 
               <div className="grid md:grid-cols-[1fr,auto] gap-4 mt-4 md:mt-6">

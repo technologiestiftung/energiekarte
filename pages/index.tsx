@@ -24,6 +24,8 @@ import { getDataFromId } from '@lib/getDataFromId'
 
 import { findClosestValues } from '@lib/findClosestValues'
 
+import Joyride, { ACTIONS, EVENTS, STATUS } from 'react-joyride'
+
 export async function getStaticProps() {
   const energyData = getData()
   return energyData
@@ -72,6 +74,9 @@ const MapSite: NextPage = (energyData: any) => {
   let [rankingInfo, setRankingInfo] = useState<any>([])
 
   const [pointDataLenght, setPointDataLenght] = useState<number>(0)
+
+  const [runJoyride, setRunJoyride] = useState<boolean>(false)
+  const [joyrideIndex, setJoyrideIndex] = useState<number>(0)
 
   useEffect(() => {
     setPointData(energyData.pointData)
@@ -148,15 +153,112 @@ const MapSite: NextPage = (energyData: any) => {
     setSidebarInfoOpen(false)
   }, [navView])
 
+  const steps = [
+    {
+      target: '.introbtn',
+      content: 'Hi 1',
+      title: 'This is my awesome feature!',
+      // isFixed: true
+      disableBeacon: true,
+    },
+    {
+      target: '.introbtn',
+      content: 'Hiiii 1',
+      title: 'This is my awesome feature!',
+      // isFixed: true
+      disableBeacon: true,
+    },
+    {
+      target: '.introbtn',
+      content: 'END',
+      title: 'This is my awesome feature!',
+      // isFixed: true
+      disableBeacon: true,
+    },
+  ]
+
+  useEffect(() => {
+    setRunJoyride(true)
+  }, [])
+
+  const handleJoyrideCallback = (jRData) => {
+    const { action, index, status, type } = jRData
+
+    console.log(action, index, status, type)
+
+    if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
+      let tempIndex
+      if (action === 'next') {
+        tempIndex = index + 1
+        setJoyrideIndex(tempIndex)
+      }
+      if (action === 'prev') {
+        tempIndex = index - 1
+        setJoyrideIndex(tempIndex)
+      }
+      if (action === 'close') {
+        setRunJoyride(false)
+        setJoyrideIndex(0)
+      }
+
+      if (tempIndex === 1) {
+        setMapZoom(12)
+      }
+    }
+  }
+
   return (
     pointData && (
       <>
+        <Joyride
+          callback={handleJoyrideCallback}
+          run={runJoyride}
+          steps={steps}
+          debug
+          showProgress
+          disableScrolling={false}
+          disableScrollParentFix
+          showSkipButton
+          continuous
+          stepIndex={joyrideIndex}
+          locale={{
+            back: 'Zurück',
+            close: 'Verlassen',
+            last: 'Ende',
+            next: 'Weiter',
+            skip: 'Tour verlassen',
+          }}
+          styles={{
+            options: { primaryColor: '#9bc95b' },
+            tooltip: {
+              borderRadius: '.2rem',
+            },
+            tooltipContainer: {
+              textAlign: 'left',
+            },
+            tooltipTitle: {
+              margin: 0,
+            },
+            tooltipContent: {
+              padding: '1rem 0',
+            },
+            buttonNext: {
+              borderRadius: '.2rem',
+              color: '#fff',
+            },
+            buttonBack: {
+              marginRight: '.2rem',
+            },
+          }}
+        />
+
         <Head />
         <IntroModal
           modalOpen={modalOpen}
           setModalOpen={setModalOpen}
           setNavView={setNavView}
           setSidebarMenuOpen={setSidebarMenuOpen}
+          setRunJoyride={setRunJoyride}
         />
         <ConsumptionTypeSwitch
           setConsumptionType={setConsumptionType}
