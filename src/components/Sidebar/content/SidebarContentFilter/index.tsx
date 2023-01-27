@@ -5,6 +5,7 @@ import { SidebarBody } from '@components/Sidebar/SidebarBody'
 import { Accordion } from '@components/Accordion'
 import { RangeSlider } from '@components/RangeSlider'
 import { Square, CheckSquare, Filter } from '@components/Icons/'
+import { toCSV } from '@lib/toCSV'
 
 export interface SidebarContentFilterType {
   pointData: any
@@ -98,25 +99,8 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
   }
 
   function downloadCSV() {
-    console.log(pointData)
-
-    const rows = [
-      ['name1', 'city1', 'some other info'],
-      ['name2', 'city2', 'more info'],
-    ]
-    let headers =
-      'electricity,entityAddress,entityHeatType,entityId,entityPLZ,entityType,heat,houseComment,ortsteil,,renovationsArea,renovationsCosts,renovationsSavingsMax,renovationsSavingsMin,visible,x,y'
-
-    let csvContent =
-      'data:text/csv;charset=utf-8,' + rows.map((e) => e.join(',')).join('\n')
-
-    var encodedUri = encodeURI(csvContent)
-    var link = document.createElement('a')
-    link.setAttribute('href', encodedUri)
-    link.setAttribute('download', 'my_data.csv')
-    document.body.appendChild(link) // Required for FF
-
-    link.click() // This will download the data file named "my_data.csv".
+    const { pointData } = filterData()
+    toCSV(pointData)
   }
 
   useEffect(() => {
