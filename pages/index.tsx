@@ -170,8 +170,22 @@ const MapSite: NextPage = (energyData: any) => {
     },
     {
       target: '.introbtn',
+      content: '???',
+      title: 'Wärem',
+      // isFixed: true
+      disableBeacon: true,
+    },
+    {
+      target: '.introbtn',
       content: 'END',
-      title: 'This is my awesome feature!',
+      title: 'Strom',
+      // isFixed: true
+      disableBeacon: true,
+    },
+    {
+      target: '.introbtn',
+      content: 'END',
+      title: 'END',
       // isFixed: true
       disableBeacon: true,
     },
@@ -202,8 +216,26 @@ const MapSite: NextPage = (energyData: any) => {
         setJoyrideIndex(0)
       }
 
+      console.log(type)
+
+      if (type === 'tour:end') {
+        console.log('HUHUHUHU')
+
+        // setRunJoyride(false)
+        // setJoyrideIndex(0)
+      }
+
       if (tempIndex === 1) {
-        setMapZoom(12)
+        setZoomToCenter([13.30429217, 52.49626599])
+      }
+      if (tempIndex === 2) {
+        setMapZoom(10)
+      }
+      if (tempIndex === 3) {
+        setConsumptionType('electricity')
+      }
+      if (tempIndex === 4) {
+        setConsumptionType('heat')
       }
     }
   }
@@ -215,7 +247,6 @@ const MapSite: NextPage = (energyData: any) => {
           callback={handleJoyrideCallback}
           run={runJoyride}
           steps={steps}
-          debug
           showProgress
           disableScrolling={false}
           disableScrollParentFix
