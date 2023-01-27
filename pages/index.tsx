@@ -185,6 +185,7 @@ const MapSite: NextPage = (energyData: any) => {
     const { action, index, status, type } = jRData
 
     console.log(action, index, status, type)
+    console.log(EVENTS.STEP_AFTER)
 
     if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
       let tempIndex
