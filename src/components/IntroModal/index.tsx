@@ -91,7 +91,12 @@ export const IntroModal: FC<IntroModalType> = ({
               </button>
               <button
                 className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/90 hover:border-primary p-2 rounded hover:text-secondary hover:bg-primary"
-                onClick={() => setRunJoyride(true)}
+                onClick={() =>
+                  (function () {
+                    setRunJoyride(true)
+                    setModalOpen(false)
+                  })()
+                }
               >
                 Tour starten
               </button>
