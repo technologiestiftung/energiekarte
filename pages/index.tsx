@@ -153,33 +153,33 @@ const MapSite: NextPage = (energyData: any) => {
     setSidebarInfoOpen(false)
   }, [navView])
 
-  const steps = [
-    {
-      target: '.introbtn',
-      content: 'Hi 1',
-      title: 'This is my awesome feature!',
-      // isFixed: true
-      disableBeacon: true,
-    },
-    {
-      target: '.introbtn',
-      content: 'Hiiii 1',
-      title: 'This is my awesome feature!',
-      // isFixed: true
-      disableBeacon: true,
-    },
-    {
-      target: '.introbtn',
-      content: 'END',
-      title: 'This is my awesome feature!',
-      // isFixed: true
-      disableBeacon: true,
-    },
-  ]
+  // const steps = [
+  //   {
+  //     target: '.introbtn',
+  //     content: 'Hi 1',
+  //     title: 'This is my awesome feature!',
+  //     // isFixed: true
+  //     disableBeacon: true,
+  //   },
+  //   {
+  //     target: '.introbtn',
+  //     content: 'Hiiii 1',
+  //     title: 'This is my awesome feature!',
+  //     // isFixed: true
+  //     disableBeacon: true,
+  //   },
+  //   {
+  //     target: '.introbtn',
+  //     content: 'END',
+  //     title: 'This is my awesome feature!',
+  //     // isFixed: true
+  //     disableBeacon: true,
+  //   },
+  // ]
 
-  useEffect(() => {
-    setRunJoyride(true)
-  }, [])
+  // useEffect(() => {
+  //   setRunJoyride(true)
+  // }, [])
 
   const handleJoyrideCallback = (jRData) => {
     const { action, index, status, type } = jRData
@@ -210,7 +210,7 @@ const MapSite: NextPage = (energyData: any) => {
   return (
     pointData && (
       <>
-        <Joyride
+        {/* <Joyride
           // callback={handleJoyrideCallback}
           run={runJoyride}
           steps={steps}
@@ -250,7 +250,7 @@ const MapSite: NextPage = (energyData: any) => {
               marginRight: '.2rem',
             },
           }}
-        />
+        /> */}
 
         <Head />
         <IntroModal

@@ -59,7 +59,7 @@ export const SidebarNav: FC<SidebarNavType> = ({
         )}
       >
         <span className={'text-primary group-hover:text-secondary'}>
-          Energi.e
+          Energie
         </span>
         <span className={'text-textcolor'}>Checkpoint </span>
       </div>
