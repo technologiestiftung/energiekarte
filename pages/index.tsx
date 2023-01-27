@@ -211,7 +211,7 @@ const MapSite: NextPage = (energyData: any) => {
     pointData && (
       <>
         <Joyride
-          // callback={handleJoyrideCallback}
+          callback={handleJoyrideCallback}
           run={runJoyride}
           steps={steps}
           debug
@@ -221,35 +221,35 @@ const MapSite: NextPage = (energyData: any) => {
           showSkipButton
           continuous
           stepIndex={joyrideIndex}
-          // locale={{
-          //   back: 'Zurück',
-          //   close: 'Verlassen',
-          //   last: 'Ende',
-          //   next: 'Weiter',
-          //   skip: 'Tour verlassen',
-          // }}
-          // styles={{
-          //   options: { primaryColor: '#9bc95b' },
-          //   tooltip: {
-          //     borderRadius: '.2rem',
-          //   },
-          //   tooltipContainer: {
-          //     textAlign: 'left',
-          //   },
-          //   tooltipTitle: {
-          //     margin: 0,
-          //   },
-          //   tooltipContent: {
-          //     padding: '1rem 0',
-          //   },
-          //   buttonNext: {
-          //     borderRadius: '.2rem',
-          //     color: '#fff',
-          //   },
-          //   buttonBack: {
-          //     marginRight: '.2rem',
-          //   },
-          // }}
+          locale={{
+            back: 'Zurück',
+            close: 'Verlassen',
+            last: 'Ende',
+            next: 'Weiter',
+            skip: 'Tour verlassen',
+          }}
+          styles={{
+            options: { primaryColor: '#9bc95b' },
+            tooltip: {
+              borderRadius: '.2rem',
+            },
+            tooltipContainer: {
+              textAlign: 'left',
+            },
+            tooltipTitle: {
+              margin: 0,
+            },
+            tooltipContent: {
+              padding: '1rem 0',
+            },
+            buttonNext: {
+              borderRadius: '.2rem',
+              color: '#fff',
+            },
+            buttonBack: {
+              marginRight: '.2rem',
+            },
+          }}
         />
 
         <Head />
