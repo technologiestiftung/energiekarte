@@ -31,24 +31,25 @@ export interface SidebarContentEntityType {
 }
 
 function Comparision({ consumptionType, rankingInfo, setEntityId }) {
-  let rankingText
-  if (!rankingInfo.idLess) {
-    rankingText = `Es liegt kein ${
-      consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
-    } vor. `
-  } else {
-    rankingText = `Der 
-    ${
-      consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
-    } liegt im Ranking auf Platz ${rankingInfo.rankingPosition} von ${
-      rankingInfo.rankingLength
-    }. Finde Grundstücke mit hören bzw. niederigern Verbrauch.`
-  }
+  const type =
+    consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
 
   return (
     <div className="text-xs">
       <p className="text-sm pb-2">Ranking</p>
-      <span className="text-gray-500 text-xs">{rankingText}</span>
+
+      <span className="text-gray-500 text-xs">
+        {!rankingInfo.idLess ? (
+          <span>Es liegt kein {type} vor.</span>
+        ) : (
+          <span>
+            Der {type} liegt im Ranking auf Platz{' '}
+            <b>{rankingInfo.rankingPosition}</b> von{' '}
+            <b>{rankingInfo.rankingLength}</b>. Finde Grundstücke mit hören bzw.
+            niederigern Verbrauch.
+          </span>
+        )}
+      </span>
 
       <span className="flex pt-4">
         <button
