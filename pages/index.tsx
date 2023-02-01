@@ -198,8 +198,10 @@ const MapSite: NextPage = (energyData: any) => {
   const handleJoyrideCallback = (jRData) => {
     const { action, index, status, type } = jRData
 
-    console.log(action, index, status, type)
-    console.log(EVENTS.STEP_AFTER)
+    if (type === 'tour:end') {
+      setRunJoyride(false)
+      setJoyrideIndex(0)
+    }
 
     if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
       let tempIndex
@@ -214,15 +216,6 @@ const MapSite: NextPage = (energyData: any) => {
       if (action === 'close') {
         setRunJoyride(false)
         setJoyrideIndex(0)
-      }
-
-      console.log(type)
-
-      if (type === 'tour:end') {
-        console.log('HUHUHUHU')
-
-        // setRunJoyride(false)
-        // setJoyrideIndex(0)
       }
 
       if (tempIndex === 1) {
