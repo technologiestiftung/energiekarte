@@ -78,19 +78,7 @@ export const IntroModal: FC<IntroModalType> = ({
               </h4>
 
               <button
-                className="xmas-btn px-4 bg-secondary hover:bg-primary hover:text-secondary text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
-                onClick={closeModalExplore}
-              >
-                Erkunden
-              </button>
-              <button
-                className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/90 hover:border-primary p-2 rounded hover:text-secondary hover:bg-primary"
-                onClick={closeModalInfo}
-              >
-                Mehr Infos
-              </button>
-              <button
-                className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/90 hover:border-primary p-2 rounded hover:text-secondary hover:bg-primary"
+                className="px-4 bg-secondary hover:bg-primary hover:text-secondary text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
                 onClick={() =>
                   (function () {
                     setRunJoyride(true)
@@ -98,7 +86,14 @@ export const IntroModal: FC<IntroModalType> = ({
                   })()
                 }
               >
-                Tour starten
+                Erkunden
+              </button>
+
+              <button
+                className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/30 hover:border-primary p-2 rounded hover:text-secondary hover:bg-primary"
+                onClick={closeModalInfo}
+              >
+                Mehr Infos
               </button>
 
               <div className="grid md:grid-cols-[1fr,auto] gap-4 mt-4 md:mt-6">
