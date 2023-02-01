@@ -48,7 +48,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
   function filterData() {
     let heat = 0
     let electricity = 0
-    pointData.features.forEach((f) => {
+    pointData.features.forEach((f: any) => {
       const props = f.properties
       props.visible = true
       // building type
@@ -134,21 +134,6 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
     filterRenovationCosts,
     filterSavingPotential,
   ])
-
-  // useEffect(()=>{
-  // setIsFiltered(filterBuildingType ||
-  //   filterHeatType ||
-  //   defaultValues.electricityConsumption[0] !==
-  //     filterElectricityConsumption[0] ||
-  //   defaultValues.electricityConsumption[1] !==
-  //     filterElectricityConsumption[1] ||
-  //   defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
-  //   defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
-  //   defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
-  //   defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
-  //   defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
-  //   defaultValues.savingPotential[1] !== filterSavingPotential[1])
-  // },[])
 
   function resetFilter() {
     setFilterBuildingType(null)

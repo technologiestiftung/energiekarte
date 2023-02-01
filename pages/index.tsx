@@ -124,7 +124,7 @@ const MapSite: NextPage = (energyData: any) => {
           shallow: true,
         })
       }
-      setRankingInfo(findClosestValues(pointData, consumptionType, entityId))
+      // setRankingInfo(findClosestValues(pointData, consumptionType, entityId))
     }
   }, [entityId])
 
@@ -132,7 +132,7 @@ const MapSite: NextPage = (energyData: any) => {
     if (pointData) {
       setRankingInfo(findClosestValues(pointData, consumptionType, entityId))
     }
-  }, [consumptionType])
+  }, [entityId, consumptionType, pointData])
 
   consumptionType
 

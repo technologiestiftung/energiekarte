@@ -7,7 +7,8 @@ export function findClosestValues(data, consumptionType, id) {
   let less
   let lastWithValue
   let rankingPosition
-  const dataSorted = [...data.features].sort(
+  let dataSorted = [...data.features].filter((d) => d.properties.visible)
+  dataSorted = dataSorted.sort(
     (a, b) => b.properties[consumptionType] - a.properties[consumptionType]
   )
 
