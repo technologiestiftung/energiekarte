@@ -1,3 +1,14 @@
+// Gebäude
+// Nr.	Adresse	Gebäude-
+// bezeichnung	PLZ	Netto-
+// raum-
+// fläche m²	Denkmal-schutz	Priorisierung
+// für weitere Sanierungs-
+// planungen	Einspar-potenzial Endenergie	Grobkosten-schätzung
+// EURO
+// brutto
+// Nr	Addresse	Gebaeudebezeichnung	Plz	Nettoflaeche	Denkmal	Prio	Einsparen	Kosten
+
 export function toCSV(pointData) {
   const headerTranslation = {
     x: 'lat',
@@ -5,7 +16,7 @@ export function toCSV(pointData) {
     houseComment: 'kommentar',
     entityAddress: 'adresse',
     entityPLZ: 'plz',
-    entityType: 'type',
+    entityType: 'Gebaeudebezeichnung',
     houseArea: 'fleach',
     houseCosts: 'kosten',
     houseMonument: 'denkmal',

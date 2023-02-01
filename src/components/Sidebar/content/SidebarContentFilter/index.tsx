@@ -163,7 +163,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
     { lable: 'Allgemeiner Bestand', value: 'Allgemeiner Bestand' },
     { lable: 'Externe Mieter', value: 'externe Mieter' },
     { lable: 'Feuerwehr', value: 'Feuerwehr' },
-    { lable: 'Flüchtlingsunterbringung', value: 'Geflüchtetenunterbringung' },
+    { lable: 'Geflüchtetenunterbringung', value: 'Flüchtlingsunterbringung' },
     { lable: 'Gericht', value: 'Gerichte' },
     { lable: 'Justizvollzugsanstalt', value: 'JVA' },
     { lable: 'Kultur', value: 'Kultur' },
@@ -174,9 +174,9 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
   const filterHeatTypes = [
     { lable: 'Fernwärme', value: 'Fernwärme' },
     { lable: 'Gas', value: 'Gas' },
-    { lable: 'Nahwärme', value: 'Nahwärme' },
-    { lable: 'Öl', value: 'Öl' },
+    { lable: 'Heizöl', value: 'Heizöl' },
     { lable: 'Pellet', value: 'Pellet' },
+    { lable: 'keine Angabe', value: 'n/a' },
   ]
 
   return (

@@ -38,23 +38,29 @@ const allHeaders = [...dataSanierungHeader, ...dataVerbrauchHeader]
 
 dataSanierung = dataSanierung.splice(1)
 dataVerbrauch = dataVerbrauch.splice(1)
-dataVerbrauch.pop()
+// dataVerbrauch.pop()
+
+let noMatch = {}
 
 async.eachSeries(
   dataSanierung,
   function (row, callbackEachRow) {
-    const adrSanierung = row[1]
+    const adrSanierung = row[1].trim().replaceAll('\n', '')
     if (!adrSanierung) {
       callbackEachRow()
+      console.log('THIS should not happen')
       return
     }
+    noMatch[adrSanierung] = 'HI'
+
     for (let i = 0; i < dataVerbrauch.length; i++) {
-      const adrVerbrauch = dataVerbrauch[i][3]
+      const adrVerbrauch = dataVerbrauch[i][1].trim().replaceAll('\n', '')
       if (
         adrSanierung.includes(adrVerbrauch) ||
         adrVerbrauch.includes(adrSanierung)
       ) {
         row.push(...dataVerbrauch[i])
+        delete noMatch[adrSanierung]
         break
       }
 
@@ -62,6 +68,8 @@ async.eachSeries(
 
       if (nonExistent.includes(adrSanierung)) {
         row.push('nodata')
+        delete noMatch[adrSanierung]
+
         break
       }
 
@@ -70,6 +78,8 @@ async.eachSeries(
         adrVerbrauch.includes('Märkische Allee 181, 189')
       ) {
         row.push(...dataVerbrauch[i])
+        delete noMatch[adrSanierung]
+
         break
       }
 
@@ -78,12 +88,16 @@ async.eachSeries(
         adrVerbrauch.includes('Hallesches Ufer 34-38')
       ) {
         row.push(...dataVerbrauch[i])
+        delete noMatch[adrSanierung]
+
         break
       }
     }
     callbackEachRow()
   },
   function (err) {
+    console.log(noMatch)
+
     const renovationGeoJSON = getRenovationGeoJSON(
       allHeaders,
       dataSanierung,
@@ -113,7 +127,7 @@ async.eachSeries(
             featRenovation.properties.houseCosts
           featConsumption.properties.renovationsArea +=
             featRenovation.properties.houseArea
-          console.log('!!!!!', featRenovation.properties.houseSavingPotential)
+          // console.log('!!!!!', featRenovation.properties.houseSavingPotential)
 
           const minMaxValues = featRenovation.properties.houseSavingPotential
             .replace('%', '')
@@ -123,7 +137,7 @@ async.eachSeries(
 
           if (minMaxValues.length === 1) {
             minMaxValues.unshift(0)
-            console.log('öööö', minMaxValues)
+            // console.log('öööö', minMaxValues)
           }
 
           if (!minMaxValues[1]) {

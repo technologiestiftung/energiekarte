@@ -22,9 +22,16 @@ function getRenovationGeoJSON(allHeaders, dataSanierung, headerTransaltions) {
         props[headerTransaltions[h] || h] = Number(element[i])
           ? Number(element[i])
           : element[i]
+          ? element[i].trim()
+          : element[i]
       }
       if (h.includes('gc_xwert') || h.includes('gc_ywert')) {
         coordinates[h] = Number(element[i])
+      }
+      if (h.includes('Nettoflaeche') || h.includes('Kosten')) {
+        props[headerTransaltions[h] || h] = Number(
+          element[i].replaceAll('.', '')
+        )
       }
     })
 
