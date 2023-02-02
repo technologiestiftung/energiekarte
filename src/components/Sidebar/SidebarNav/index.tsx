@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import { useHasMobileSize } from '@lib/hooks/useHasMobileSize'
-import { Plus, Minus } from '@components/Icons'
+import { Plus, Minus, Box } from '@components/Icons'
 
 const btnClasses =
   'shadow-lg hover:bg-textcolor hover:text-secondary bg-secondary text-textcolor h-10 w-10 mt-2 cursor-pointer list-none text-center grid place-items-center rounded-full'
@@ -17,6 +17,8 @@ export interface SidebarNavType {
   setEntityId: (time: string | null | number) => void
   mapZoom: number
   setMapZoom: (time: number) => void
+  mapPitch: boolean
+  setMapPitch: (pitch: boolean) => void
 }
 
 export const SidebarNav: FC<SidebarNavType> = ({
@@ -30,6 +32,8 @@ export const SidebarNav: FC<SidebarNavType> = ({
   setEntityId,
   mapZoom,
   setMapZoom,
+  setMapPitch,
+  mapPitch,
 }) => {
   const hasMobileSize = useHasMobileSize()
   let navPositionClasses =
@@ -104,6 +108,13 @@ export const SidebarNav: FC<SidebarNavType> = ({
       >
         <div>
           <button
+            title="pitch"
+            className={btnClasses}
+            onClick={() => setMapPitch(!mapPitch)}
+          >
+            <Box />
+          </button>
+          <button
             title="zoom in"
             className={btnClasses}
             onClick={() => setMapZoom(mapZoom + 1)}
@@ -113,7 +124,15 @@ export const SidebarNav: FC<SidebarNavType> = ({
           <button
             title="zoom out"
             className={btnClasses}
-            onClick={() => setMapZoom(mapZoom - 1)}
+            // onClick={() => setMapZoom(mapZoom - 1)}
+            onClick={() =>
+              (function () {
+                console.log('oooo')
+
+                // setMapPitch(false)
+                setMapZoom(mapZoom - 1)
+              })()
+            }
           >
             <Minus />
           </button>

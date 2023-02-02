@@ -38,6 +38,7 @@ export const MapComponent: FC<MapType> = ({
   setMapZoom,
   landparcelData,
   pointData,
+  mapPitch,
 }) => {
   const [mapMarkers, setMapMarkers] = useState([])
 
@@ -82,7 +83,7 @@ export const MapComponent: FC<MapType> = ({
       zoom: MAP_CONFIG.defaultZoom,
       minZoom: MAP_CONFIG.minZoom,
       maxZoom: MAP_CONFIG.maxZoom,
-      pitch: 0,
+      pitch: 60,
     })
     map.current.on('load', function () {
       if (!map.current || loaded) return
@@ -140,6 +141,15 @@ export const MapComponent: FC<MapType> = ({
       })
     }
   }, [zoomToCenter])
+
+  useEffect(() => {
+    if (map.current && map.current.isStyleLoaded()) {
+      // @ts-ignore
+      map.current.easeTo({
+        pitch: mapPitch ? 60 : 0,
+      })
+    }
+  }, [mapPitch])
 
   useEffect(() => {
     if (map.current && map.current.isStyleLoaded()) {

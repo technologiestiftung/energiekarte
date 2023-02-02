@@ -68,6 +68,7 @@ const MapSite: NextPage = (energyData: any) => {
 
   const [zoomToCenter, setZoomToCenter] = useState<number[]>([0, 0])
   const [mapZoom, setMapZoom] = useState<number>(10)
+  const [mapPitch, setMapPitch] = useState<boolean>(true)
 
   const [consumptionType, setConsumptionType] = useState('heat')
   let [rankingInfo, setRankingInfo] = useState<any>([])
@@ -229,6 +230,8 @@ const MapSite: NextPage = (energyData: any) => {
           setEntityId={setEntityId}
           mapZoom={mapZoom}
           setMapZoom={setMapZoom}
+          setMapPitch={setMapPitch}
+          mapPitch={mapPitch}
         />
         <MapComponent
           zoomToCenter={zoomToCenter}
@@ -240,6 +243,7 @@ const MapSite: NextPage = (energyData: any) => {
           setEntityId={setEntityId}
           entityData={entityData}
           consumptionType={consumptionType}
+          mapPitch={mapPitch}
         />
         {/* <MapNav mapZoom={mapZoom} setMapZoom={setMapZoom} /> */}
       </>
