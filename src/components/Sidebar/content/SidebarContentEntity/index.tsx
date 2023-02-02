@@ -52,9 +52,10 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
       </span>
 
       <span className="flex pt-4 ranking-btns">
+        {/* <div className="w-24 border"> */}
         <button
           className={classNames(
-            'disabled:opacity-50 text-xs py-2 flex-1 justify-center flex bg-white/50 mr-1 rounded border hover:border-primary'
+            'disabled:opacity-50 text-xs py-2 flex-1 justify-center flex bg-white/50 mr-1 rounded border border-textcolor hover:border-primary hover:text-primary'
           )}
           onClick={() => setEntityId(rankingInfo.idMore)}
           disabled={!rankingInfo.idMore}
@@ -62,7 +63,7 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
           <ArrowUp />
         </button>
         <button
-          className="disabled:opacity-50 text-xs py-2 flex-1 justify-center flex bg-white/50 ml-1 rounded border hover:border-primary"
+          className="disabled:opacity-50 text-xs py-2 flex-1 justify-center flex bg-white/50 ml-1 rounded border border-textcolor hover:border-primary  hover:text-primary"
           onClick={() => setEntityId(rankingInfo.idLess)}
           disabled={!rankingInfo.idLess}
         >
@@ -129,7 +130,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             </div>
             <div className="flex-1 pl-2">
               <p>{data.entityAddress}</p>
-              <p>
+              <p className="text-xs">
                 {data.ortsteil} | {data.entityPLZ} Berlin
               </p>
             </div>
@@ -140,6 +141,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             </div>
             <div className="flex-1 pl-2">
               <p>BIM</p>
+              <p className="text-xs">Berliner Immobilien Management</p>
             </div>
           </div>
           <hr className="my-2" />
@@ -238,15 +240,20 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                       <p className="font-bold pb-1">Gesamtsanierung</p>
                       {data.renovationsArea !== 0 && (
                         <span>
-                          Fläche: {data.renovationsArea.toLocaleString('de-DE')}
-                          m2
+                          Fläche:{' '}
+                          <b>
+                            {data.renovationsArea.toLocaleString('de-DE')}{' '}
+                            &#13217;
+                          </b>
                         </span>
                       )}
                       <br />
                       {data.renovationsCosts !== 0 && (
                         <span>
                           Kosten:{' '}
-                          {data.renovationsCosts.toLocaleString('de-DE')}€
+                          <b>
+                            {data.renovationsCosts.toLocaleString('de-DE')} €
+                          </b>
                         </span>
                       )}
                     </div>
@@ -261,13 +268,13 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                         <p>
                           Fläche:{' '}
                           <span className="font-bold">
-                            {feat['houseArea'].toLocaleString('de-DE')} m2
+                            {feat['houseArea'].toLocaleString('de-DE')} &#13217;
                           </span>
                         </p>
                         <p>
                           Einsparpotenzial:{' '}
                           <span className="font-bold">
-                            {feat['houseSavingPotential']}
+                            {feat['houseSavingPotential'].replace('%', ' %')}
                           </span>
                         </p>
                         <p>
@@ -277,7 +284,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                           </span>
                         </p>
                         <p>
-                          Prio.:{' '}
+                          Ranking:{' '}
                           <span className="font-bold">
                             {feat['housePrio']} von {pointDataLenght}
                           </span>
