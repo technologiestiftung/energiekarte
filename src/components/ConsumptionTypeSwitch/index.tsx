@@ -6,7 +6,7 @@ export const ConsumptionTypeSwitch: FC<ConsumptionTypeSwitchType> = ({
   setConsumptionType,
 }) => {
   return (
-    <div className="rounded-2xl overflow-hidden fixed z-20 left-2/4 -translate-x-2/4 top-4 w-fit cursor-pointer text-xs md:text-base shadow-lg">
+    <div className="consumption-switch rounded-2xl overflow-hidden fixed z-20 left-2/4 -translate-x-2/4 top-4 w-fit cursor-pointer text-xs md:text-base shadow-lg">
       <button
         onClick={() => setConsumptionType('electricity')}
         className={`${

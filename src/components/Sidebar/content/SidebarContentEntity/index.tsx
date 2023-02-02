@@ -51,7 +51,7 @@ function Comparision({ consumptionType, rankingInfo, setEntityId }) {
         )}
       </span>
 
-      <span className="flex pt-4">
+      <span className="flex pt-4 ranking-btns">
         <button
           className={classNames(
             'disabled:opacity-50 text-xs py-2 flex-1 justify-center flex bg-white/50 mr-1 rounded border hover:border-primary'
@@ -93,13 +93,13 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   rankingInfo,
   setEntityId,
   pointDataLenght,
+  showEntityRenovations,
+  showEntityConsumption,
 }) => {
   if (!entityId || !entityData) {
     return null
   }
   const data = entityData.properties
-  const [showConsumption, setShowConsumption] = useState<boolean>(true)
-  const [showRenovations, setShowRenovations] = useState<boolean>(false)
   const [energyUsage, setEnergyUsage] = useState<number>(0)
 
   useEffect(() => {
@@ -123,7 +123,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
       <SidebarBody>
         {' '}
         <>
-          <div className="flex text-sm pb-2">
+          <div className="flex text-sm pb-2 location">
             <div className="w-12 place-items-center grid">
               <Location />
             </div>
@@ -150,7 +150,8 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                 ? 'Stromverbrauch'
                 : 'Wärmeverbrauch'
             }
-            acitve={showConsumption}
+            active={showEntityConsumption}
+            extraClassName="energy-usage-dropdown"
           >
             <div className="flex text-sm pb-4">
               <div className="w-12 place-items-center grid">
@@ -211,7 +212,11 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
 
           <span className="my-4 w-full block"></span>
           {data.renovations.length ? (
-            <Accordion title="Sanierungen" acitve={showRenovations}>
+            <Accordion
+              title="Sanierungen"
+              active={showEntityRenovations}
+              extraClassName="renovation-dropdown"
+            >
               <>
                 <p className="mb-4">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.

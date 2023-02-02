@@ -79,6 +79,7 @@ export const SidebarNav: FC<SidebarNavType> = ({
                 title={listView.name}
                 onClick={() => onNavClick(listView)}
                 className={classNames(
+                  listView.name,
                   'text-secondary',
                   'hover:text-secondary',
                   listView.value === navView && sidebarMenuOpen

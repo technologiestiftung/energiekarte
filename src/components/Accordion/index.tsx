@@ -1,11 +1,12 @@
 import { ChevronDown } from '@components/Icons/ChevronDown'
 import classNames from 'classnames'
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode, useState, useEffect } from 'react'
 
 interface AccordionPropType {
   title: string
   children: ReactNode
-  acitve: boolean
+  active: boolean
+  extraClassName: string
 }
 
 type StyleGetterType = (props: { isActive: boolean }) => Record<string, string>
@@ -24,13 +25,18 @@ const getStyles: StyleGetterType = ({ isActive }) => ({
 export const Accordion: FC<AccordionPropType> = ({
   title,
   children,
-  acitve,
+  active,
+  extraClassName,
 }) => {
-  const [isActive, setIsActive] = useState<boolean>(acitve || false)
+  const [isActive, setIsActive] = useState<boolean>(active || false)
   const classes = getStyles({ isActive })
 
+  useEffect(() => {
+    setIsActive(active)
+  }, [active])
+
   return (
-    <div className={classes.wrapper}>
+    <div className={classNames(extraClassName, classes.wrapper)}>
       <button
         className={classes.title}
         onClick={() => {

@@ -203,7 +203,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
           {allElectrictyUsage.toLocaleString('de-DE')} in kWh/a
         </p>
 
-        <Accordion title="Gebäudetyp" acitve={false}>
+        <Accordion title="Gebäudetyp" active={false}>
           {buidlingTypes?.map((type) => (
             <button
               className={classNames(
@@ -235,7 +235,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             </button>
           ))}
         </Accordion>
-        <Accordion title="Wärmetyp" acitve={false}>
+        <Accordion title="Wärmetyp" active={false}>
           {filterHeatTypes?.map((type) => (
             <button
               className={classNames(
@@ -266,7 +266,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             </button>
           ))}
         </Accordion>
-        <Accordion title="Stromverbrauch" acitve={false}>
+        <Accordion title="Stromverbrauch" active={false}>
           <p className="text-xs">
             Der Verbrauch bezieht sich auf die Summe aller Gebäude auf einem
             Grundstück.
@@ -281,7 +281,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             rounding={'million'}
           />
         </Accordion>
-        <Accordion title="Wärmeverbrauch" acitve={false}>
+        <Accordion title="Wärmeverbrauch" active={false}>
           <p className="text-xs">
             Der Verbrauch bezieht sich auf die Summe aller Gebäude auf einem
             Grundstück.
@@ -296,7 +296,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             rounding={'million'}
           />
         </Accordion>
-        <Accordion title="Sanierungskosten" acitve={false}>
+        <Accordion title="Sanierungskosten" active={false}>
           <p className="text-xs">
             Snierungskosten beziehen sich auf die Summe der zu sanierenden
             Gebäude auf einem Grundstück.
@@ -311,7 +311,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
             rounding={'million'}
           />
         </Accordion>
-        <Accordion title="Einsparpotenzial" acitve={false}>
+        <Accordion title="Einsparpotenzial" active={false}>
           <p className="text-xs">
             Das Einsparpotential ist nur eine Schätzung, die sich stets in einem
             Rahmen befindet.

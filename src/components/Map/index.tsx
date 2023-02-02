@@ -91,6 +91,8 @@ export const MapComponent: FC<MapType> = ({
       pointData.features.forEach(function (marker: any, index: number) {
         const el = document.createElement('div')
         el.key = index
+        el.id = 'marker-' + marker.properties.entityId
+
         el.style.backgroundColor = getConsumtionColor(
           consumptionType,
           consumptionType === 'heat'

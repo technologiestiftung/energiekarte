@@ -18,6 +18,7 @@ export const IntroModal: FC<IntroModalType> = ({
   setNavView,
   setSidebarMenuOpen,
   setRunJoyride,
+  setEntityId,
 }) => {
   function closeModal() {
     setModalOpen(false)
@@ -81,8 +82,11 @@ export const IntroModal: FC<IntroModalType> = ({
                 className="px-4 bg-secondary hover:bg-primary hover:text-secondary text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
                 onClick={() =>
                   (function () {
-                    setRunJoyride(true)
                     setModalOpen(false)
+                    setEntityId(26)
+                    setTimeout(() => {
+                      setRunJoyride(true)
+                    }, 400)
                   })()
                 }
               >
