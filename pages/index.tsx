@@ -123,11 +123,11 @@ const MapSite: NextPage = (energyData: any) => {
       } else {
         setEntityData(null)
       }
-      if (isReady) {
-        replace({ pathname, query: { id: entityId } }, undefined, {
-          shallow: true,
-        })
-      }
+      // if (isReady) {
+      //   replace({ pathname, query: { id: entityId } }, undefined, {
+      //     shallow: true,
+      //   })
+      // }
       // setRankingInfo(findClosestValues(pointData, consumptionType, entityId))
     }
   }, [entityId])

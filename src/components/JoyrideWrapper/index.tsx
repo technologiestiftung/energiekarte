@@ -18,6 +18,7 @@ const steps = [
       'Der Energie CheckPoint visualisiert prototypisch den Strom- und Wärmeverbrauch verschiedener öffentlichen Berliner Gebäuden, wie z.B. das Rote Rathaus, Sitz der Regierenden Bürgermeisterin Berlins.',
     disableBeacon: true,
     spotlightPadding: 75,
+    offset: 0,
   },
   {
     target: '.entity-wrapper',
@@ -119,8 +120,6 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         setRunJoyride(false)
         setJoyrideIndex(0)
       }
-
-      console.log('GGGGG', tempIndex)
 
       if (tempIndex === 0) {
         // setZoomToCenter([13.40907, 52.51853])
