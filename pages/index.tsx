@@ -167,6 +167,7 @@ const MapSite: NextPage = (energyData: any) => {
           setConsumptionType={setConsumptionType}
           setNavView={setNavView}
           setSidebarMenuOpen={setSidebarMenuOpen}
+          setMapZoom={setMapZoom}
         />
         <Head />
         <IntroModal
