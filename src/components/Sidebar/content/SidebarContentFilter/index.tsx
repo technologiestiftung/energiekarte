@@ -315,7 +315,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
           <p className="text-xs">
             Das Einsparpotential ist nur eine Schätzung, die sich stets in einem
             Rahmen befindet.
-            <b className="block pt-2">In %</b>
+            <b className="block pt-2">In Prozent (%)</b>
           </p>
           <RangeSlider
             value={filterSavingPotential}
@@ -327,7 +327,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
         </Accordion>
         {isFiltered && (
           <button
-            className="text-secondary block mr-auto ml-auto sticky bottom-4 mb-8 px-4 bg-primary hover:bg-primary/80 hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
+            className="text-secondary block mr-auto ml-auto sticky bottom-4 mb-8 px-4 bg-primary hover:bg-primary-dark font-bold hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
             onClick={resetFilter}
           >
             Filter zurücksetzen
@@ -335,7 +335,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
         )}
 
         <button
-          className="text-secondary block mr-auto ml-auto bottom-4 mt-8 mb-8 px-4 bg-primary hover:bg-primary/80 hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
+          className="text-secondary block mr-auto ml-auto bottom-4 mt-8 mb-8 px-4 bg-primary hover:bg-primary-dark font-bold hover:text-secondary p-2 text-bold rounded border-1 border-textcolor "
           onClick={downloadCSV}
         >
           CSV exportieren

@@ -55,31 +55,25 @@ export const IntroModal: FC<IntroModalType> = ({
               <h2 className="font-bold text-2xl pb-4 pt-2 text-textcolor/80">
                 Berliner EnergieCheckpoint
               </h2>
-              <h4 className="pb-4">
+              <h4 className="pb-6 leading-normal">
                 <p>
                   Energieverbrauch und Einsparpotentiale - Wie steht es um den
                   Beitrag öffentlicher Gebäude zur Klimaneutralität?<br></br>
-                </p>
-
-                <p>
                   Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu
                   beschloss das Berliner Klimaschutz- und Energiewendegesetz
                   (EWG Bln) eine Reduktion der Kohlendioxidemmissionen um
                   mindestens 95 % im Vergleich zu den Emissionen des Jahres
                   1990. Öffentliche Gebäude wie Feuerwehren oder
                   Kultureinrichtungen sollen durch Energieeinsparungen und
-                  Sanierungen eine Vorbildrolle einnehmen.
-                </p>
-
-                <p>
-                  Wir schauen beispielhaft auf die Daten zu Strom- und
-                  Wärmevebrauch sowie Sanierungskosten und Einsparpotenzial der
-                  Liegenschaften der BIM (Berliner Immobilien Management)
+                  Sanierungen eine Vorbildrolle einnehmen. Wir schauen
+                  beispielhaft auf die Daten zu Strom- und Wärmevebrauch sowie
+                  Sanierungskosten und Einsparpotenzial der Liegenschaften der
+                  BIM (Berliner Immobilien Management)
                 </p>
               </h4>
 
               <button
-                className="px-4 bg-secondary hover:bg-primary hover:text-secondary text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
+                className="px-4 bg-primary hover:bg-primary-dark font-bold text-white p-2 text-bold rounded hover:border-primary"
                 onClick={() =>
                   (function () {
                     setModalOpen(false)
@@ -94,7 +88,7 @@ export const IntroModal: FC<IntroModalType> = ({
               </button>
 
               <button
-                className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/30 hover:border-primary p-2 rounded hover:text-secondary hover:bg-primary"
+                className="px-4 ml-4 bg-secondary text-gray-500 text-bold hover:text-primary p-2 rounded "
                 onClick={closeModalInfo}
               >
                 Mehr Infos

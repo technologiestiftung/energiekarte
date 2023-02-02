@@ -90,7 +90,7 @@ export const RangeSlider: FC<RangeSliderType> = ({
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                boxShadow: '0px 2px 6px #AAA',
+                // boxShadow: '0px 2px 6px #AAA',
               }}
             ></div>
             <div

@@ -50,6 +50,7 @@ module.exports = {
       white: '#fff',
       textcolor: '#222222',
       primary: '#9bc95b',
+      'primary-dark': '#719D34',
       secondary: '#fff',
       gray: {
         '100': '#EDEDED',
