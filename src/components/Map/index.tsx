@@ -71,9 +71,10 @@ export const MapComponent: FC<MapType> = ({
       // style: mapStyle(),
       // @ts-ignore
       style:
-        process.env.NODE_ENV == 'development'
-          ? mapStyle()
-          : `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
+        // process.env.NODE_ENV == 'development'
+        //   ? mapStyle()
+        //   :
+        `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
       center: [
         MAP_CONFIG.defaultLongitude,
         MAP_CONFIG.defaultLatitude,
@@ -81,7 +82,7 @@ export const MapComponent: FC<MapType> = ({
       zoom: MAP_CONFIG.defaultZoom,
       minZoom: MAP_CONFIG.minZoom,
       maxZoom: MAP_CONFIG.maxZoom,
-      pitch: 60,
+      pitch: 0,
     })
     map.current.on('load', function () {
       if (!map.current || loaded) return
