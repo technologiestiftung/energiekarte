@@ -1,5 +1,8 @@
 import { FC } from 'react'
-export interface ConsumptionTypeSwitchType {}
+export interface ConsumptionTypeSwitchType {
+  consumptionType: string
+  setConsumptionType: (zoom: string) => void
+}
 
 export const ConsumptionTypeSwitch: FC<ConsumptionTypeSwitchType> = ({
   consumptionType,

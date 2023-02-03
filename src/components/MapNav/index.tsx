@@ -5,7 +5,7 @@ import { Plus, Minus, Geolocate } from '../Icons'
 
 export interface MapNavType {
   mapZoom: number
-  setMapZoom: (time: number) => void
+  setMapZoom: (zoom: number) => void
 }
 
 export const MapNav: FC<MapNavType> = ({ mapZoom, setMapZoom }) => {

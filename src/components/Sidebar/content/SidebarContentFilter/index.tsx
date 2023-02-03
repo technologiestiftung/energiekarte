@@ -9,7 +9,7 @@ import { toCSV } from '@lib/toCSV'
 
 export interface SidebarContentFilterType {
   pointData: any
-  // setPointData,
+  setPointData: (data: any) => void
 }
 
 const defaultValues = {
@@ -111,19 +111,20 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
 
     setPointData(JSON.parse(JSON.stringify(pointData)))
 
-    const isFiltereddd =
+    const isFiltereddd = Boolean(
       filterBuildingType ||
-      filterHeatType ||
-      defaultValues.electricityConsumption[0] !==
-        filterElectricityConsumption[0] ||
-      defaultValues.electricityConsumption[1] !==
-        filterElectricityConsumption[1] ||
-      defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
-      defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
-      defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
-      defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
-      defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
-      defaultValues.savingPotential[1] !== filterSavingPotential[1]
+        filterHeatType ||
+        defaultValues.electricityConsumption[0] !==
+          filterElectricityConsumption[0] ||
+        defaultValues.electricityConsumption[1] !==
+          filterElectricityConsumption[1] ||
+        defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
+        defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
+        defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
+        defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
+        defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
+        defaultValues.savingPotential[1] !== filterSavingPotential[1]
+    )
 
     setIsFiltered(isFiltereddd)
   }, [

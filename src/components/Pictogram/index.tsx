@@ -1,15 +1,19 @@
 import { FC, useState, useEffect } from 'react'
 import { House } from '@components/Icons/'
 
-export interface PictogramType {}
+export interface PictogramType {
+  energyUsage: number
+  consumptionType: string
+}
 
 const energyComparison = {
   heat: 5500,
   electricity: 5500,
 }
 
-function getComparisonNumber(energyUsage, consumptionType) {
+function getComparisonNumber(energyUsage: number, consumptionType: string) {
   return (
+    // @ts-ignore
     Math.round((energyUsage / energyComparison[consumptionType]) * 100) / 100
   )
 }
@@ -18,13 +22,16 @@ export const Pictogram: FC<PictogramType> = ({
   energyUsage,
   consumptionType,
 }) => {
-  const [numberOfPictograms, setNumberOfPictograms] = useState<number>(40)
+  const [numberOfPictograms, setNumberOfPictograms] = useState<number[]>([])
 
   useEffect(() => {
     const pictos =
+      // @ts-ignore
       Math.round((energyUsage / energyComparison[consumptionType]) * 100) / 100
-
-    setNumberOfPictograms(pictos)
+    // @ts-ignore
+    const arr = Array.apply(null, { length: pictos })
+    // @ts-ignore
+    setNumberOfPictograms(arr)
   }, [consumptionType, energyUsage])
 
   if (energyUsage !== 0) {
@@ -36,7 +43,8 @@ export const Pictogram: FC<PictogramType> = ({
           {getComparisonNumber(energyUsage, consumptionType)}{' '}
           5-Personenhaushalten ({energyUsage.toLocaleString('de-DE')} kWh).
         </p>
-        {Array.apply(null, { length: numberOfPictograms }).map((d, i) => (
+
+        {numberOfPictograms.map((d, i) => (
           <span key={'picto-' + i}>
             <span className="inline-block ">
               <House size={22} />

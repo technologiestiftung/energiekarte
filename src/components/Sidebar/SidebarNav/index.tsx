@@ -8,13 +8,13 @@ const btnClasses =
 
 export interface SidebarNavType {
   navViews: any
-  setNavView: (view: 'info' | 'list') => void
-  navView?: 'info' | 'list'
+  setNavView: (view: 'info' | 'filter') => void
+  navView?: 'info' | 'filter'
   sidebarMenuOpen: boolean
   setSidebarMenuOpen: (open: boolean) => void
   setModalOpen: (open: boolean) => void
-  entityId: string | number | null
-  setEntityId: (time: string | null | number) => void
+  entityId: number | null
+  setEntityId: (time: null | number) => void
   mapZoom: number
   setMapZoom: (time: number) => void
   mapPitch: boolean

@@ -11,13 +11,15 @@ import { MapKey } from './MapKey'
 
 interface MapType {
   zoomToCenter?: number[]
-  entityId: string | number | null
-  setEntityId: (time: string | null | number) => void
+  entityId: number | null
+  setEntityId: (time: null | number) => void
+  setMapZoom: (zoom: number) => void
   entityData: any
   consumptionType: string
   mapZoom: number
   landparcelData: any
   pointData: any
+  mapPitch: boolean
 }
 
 const MAP_CONFIG = {
@@ -47,7 +49,7 @@ export const MapComponent: FC<MapType> = ({
 
   useEffect(() => {
     if (mapMarkers) {
-      mapMarkers.forEach((m, i) => {
+      mapMarkers.forEach((m: any, i: number) => {
         m.style.backgroundColor = getConsumtionColor(
           consumptionType,
           consumptionType === 'heat'
@@ -72,10 +74,9 @@ export const MapComponent: FC<MapType> = ({
       // style: mapStyle(),
       // @ts-ignore
       style:
-        // process.env.NODE_ENV == 'development'
-        //   ? mapStyle()
-        //   :
-        `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
+        process.env.NODE_ENV == 'development'
+          ? mapStyle()
+          : `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
       center: [
         MAP_CONFIG.defaultLongitude,
         MAP_CONFIG.defaultLatitude,
@@ -87,11 +88,13 @@ export const MapComponent: FC<MapType> = ({
     })
     map.current.on('load', function () {
       if (!map.current || loaded) return
-      let markers: number[] = []
+      // @ts-ignore
+      let markers = []
       loaded = true
 
       pointData.features.forEach(function (marker: any, index: number) {
         const el = document.createElement('div')
+        // @ts-ignore
         el.key = index
         el.id = 'marker-' + marker.properties.entityId
 
@@ -105,6 +108,7 @@ export const MapComponent: FC<MapType> = ({
         el.className =
           'h-3 w-3 rounded-full cursor-pointer border-gray-500 border'
         el.addEventListener('click', function () {
+          // @ts-ignore
           onMarkerClick(marker.properties.entityId, marker.geometry.coordinates)
         })
         markers.push(el)
@@ -112,11 +116,14 @@ export const MapComponent: FC<MapType> = ({
         // add marker to map
         new maplibregl.Marker(el)
           .setLngLat(marker.geometry.coordinates)
+          // @ts-ignore
           .addTo(map.current)
       })
+      // @ts-ignore
       setMapMarkers(markers)
 
       map.current.on('click', (e) => {
+        // @ts-ignore
         if (e?.originalEvent?.originalTarget?.nodeName === 'CANVAS') {
           setEntityId(null)
           return
@@ -124,6 +131,7 @@ export const MapComponent: FC<MapType> = ({
       })
 
       map.current.on('zoomend', (e) => {
+        // @ts-ignore
         setMapZoom(map.current?.getZoom())
       })
     })

@@ -81,7 +81,18 @@ const steps = [
 
 // renovation-dropdown
 
-export interface JoyrideWrapper {}
+export interface JoyrideWrapper {
+  runJoyride: boolean
+  setRunJoyride: (x: boolean) => void
+  setZoomToCenter: (x: number[]) => void
+  setEntityId: (id: number | null) => void
+  setShowEntityConsumption: (x: boolean) => void
+  setShowEntityRenovations: (x: boolean) => void
+  setConsumptionType: (typeName: string) => void
+  setNavView: (view: 'filter' | 'info') => void
+  setSidebarMenuOpen: (open: boolean) => void
+  setMapZoom: (zoom: number) => void
+}
 
 export const JoyrideWrapper: FC<JoyrideWrapper> = ({
   runJoyride,
@@ -97,7 +108,7 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
 }) => {
   const [joyrideIndex, setJoyrideIndex] = useState<number>(0)
 
-  const handleJoyrideCallback = (jRData) => {
+  const handleJoyrideCallback = (jRData: any) => {
     const { action, index, status, type } = jRData
 
     if (type === 'tour:end') {
@@ -171,6 +182,7 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
     <Joyride
       callback={handleJoyrideCallback}
       run={runJoyride}
+      // @ts-ignore
       steps={steps}
       showProgress
       disableScrolling={false}

@@ -58,7 +58,7 @@ const MapSite: NextPage = (energyData: any) => {
   const [pointData, setPointData] = useState<any>(null)
   const [landparcelData, setLandparcelData] = useState<any>(null)
 
-  const [entityId, setEntityId] = useState<string | number | null>(null)
+  const [entityId, setEntityId] = useState<number | null>(null)
   const [entityData, setEntityData] = useState<any>(null)
 
   const [navView, setNavView] = useState<'filter' | 'info'>('filter')
@@ -119,6 +119,7 @@ const MapSite: NextPage = (energyData: any) => {
       if (entityId) {
         const dataFromId = getDataFromId(entityId, pointData)
         setEntityData(dataFromId)
+        // @ts-ignore
         setZoomToCenter(dataFromId.geometry.coordinates)
       } else {
         setEntityData(null)

@@ -10,6 +10,8 @@ export interface IntroModalType {
   setModalOpen: (date: boolean) => void
   setNavView: (date: 'info' | 'filter') => void
   setSidebarMenuOpen: (date: boolean) => void
+  setRunJoyride: (date: boolean) => void
+  setEntityId: (date: number) => void
 }
 
 export const IntroModal: FC<IntroModalType> = ({
@@ -103,7 +105,7 @@ export const IntroModal: FC<IntroModalType> = ({
                   </i>
                 </p>
                 <div className="inline-block ml-4 md:flex self-center">
-                  <div className="w-32">
+                  <div className="w-32 md:pt-4 md:pl-4">
                     <TsbLogo className={`w-30`} />
                   </div>
                   <div className="w-32 pt-2 mr-8 md:mt-0 self-center">

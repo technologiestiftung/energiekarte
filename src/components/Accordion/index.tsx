@@ -5,8 +5,8 @@ import { FC, ReactNode, useState, useEffect } from 'react'
 interface AccordionPropType {
   title: string
   children: ReactNode
-  active: boolean
-  extraClassName: string
+  active?: boolean
+  extraClassName?: string
 }
 
 type StyleGetterType = (props: { isActive: boolean }) => Record<string, string>
@@ -32,7 +32,7 @@ export const Accordion: FC<AccordionPropType> = ({
   const classes = getStyles({ isActive })
 
   useEffect(() => {
-    setIsActive(active)
+    setIsActive(active || false)
   }, [active])
 
   return (
