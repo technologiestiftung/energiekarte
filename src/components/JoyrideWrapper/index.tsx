@@ -1,7 +1,7 @@
 import Joyride, { ACTIONS, EVENTS, STATUS } from 'react-joyride'
 import { FC, useState } from 'react'
 
-//  1. Toggle: Wärme, Auswahl von Rotes Rathaus und Zoom auf Gebäude (Jüdenstr. 1), Sprechblase auf Punkt, restlicher Bildschirm ausgegraut
+// 1. Toggle: Wärme, Auswahl von Rotes Rathaus und Zoom auf Gebäude (Jüdenstr. 1), Sprechblase auf Punkt, restlicher Bildschirm ausgegraut
 // 2. Seitenmenü mit Informationen zum Gebäude wird eingeblendet, Dropdown Wärmeverbrauch und Sanierungen sind nicht ausgewählt, restlicher Bildschirm ausgegraut
 // 3. Auswahl Dropdown ‘Wärmeverbrauch’, Rest ausgegraut
 // 4. Auswahl Dropdown ‘Wärmeverbrauch’, nur ‘Ranking’ hervorgehoben:
@@ -139,12 +139,10 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
       }
 
       if (tempIndex === 0) {
-        // setEntityId(26)
       }
       if (tempIndex === 1) {
         setShowEntityConsumption(true)
         setShowEntityRenovations(false)
-        // setEntityId(26)
       }
       if (tempIndex === 2) {
         setShowEntityConsumption(true)
@@ -164,13 +162,6 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         setShowEntityRenovations(true)
       }
       if (tempIndex === 6) {
-        // setTimeout(() => {
-        //   setConsumptionType('electricity')
-        //   setTimeout(() => {
-        //     setConsumptionType('heat')
-        //   }, 1000)
-        // }, 1000)
-
         setSidebarMenuOpen(false)
         setEntityId(278)
       }

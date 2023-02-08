@@ -230,69 +230,6 @@ export const MapComponent: FC<MapType> = ({
           },
           process.env.NODE_ENV == 'development' ? '' : 'building'
         )
-        // map.current.addLayer({
-        //   id: 'landparcel-layer',
-        //   type: 'line',
-        //   source: 'landparcel-source',
-        //   paint: {
-        //     'line-dasharray': [1, 1],
-        //     'line-color': getConsumtionColor(
-        //       consumptionType,
-        //       consumptionType === 'heat'
-        //         ? entityData.properties.heat
-        //         : entityData.properties.electricity
-        //     ),
-        //     // 'line-blur': 6,
-        //     'line-width': 3,
-        //     'line-opacity': [
-        //       'interpolate',
-        //       ['exponential', 0.5],
-        //       ['zoom'],
-        //       13,
-        //       0,
-        //       16,
-        //       0.8,
-        //     ],
-        //   },
-        // })
-
-        // map.current.addLayer({
-        //   id: 'landparcel-layer-extrusion',
-        //   type: 'fill-extrusion',
-        //   source: 'landparcel-source',
-        //   paint: {
-        //     // See the MapLibre Style Specification for details on data expressions.
-        //     // https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/
-
-        //     // Get the fill-extrusion-color from the source 'color' property.
-        //     'fill-extrusion-color': getConsumtionColor(
-        //       consumptionType,
-        //       consumptionType === 'heat'
-        //         ? entityData.properties.heat
-        //         : entityData.properties.electricity
-        //     ),
-        //     'fill-extrusion-height': 30,
-        //     'fill-extrusion-base': 0,
-        //     'fill-extrusion-opacity': 0.3,
-        //   },
-        // })
-        // map.current.addLayer({
-        //   id: 'landparcel-layer',
-        //   type: 'fill',
-        //   source: 'landparcel-source',
-        //   paint: {
-        //     'fill-color': '#9bc95b',
-        //     'fill-opacity': [
-        //       'interpolate',
-        //       ['exponential', 0.5],
-        //       ['zoom'],
-        //       13,
-        //       0,
-        //       22,
-        //       0.4,
-        //     ],
-        //   },
-        // })
 
         // Remove possibly existent markers:
         highlightedMarker.current?.remove()

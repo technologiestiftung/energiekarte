@@ -4,10 +4,10 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# Berliner Energiekarte
+# Berliner EnergieCheckpoint
 **This application is a prototype. It may contain errors and small bugs. If you notice something you can report an Issue. Thank you!**
 
-The Berliner Weihnachtsmarktkarte (Berlin Christmas market map) is an interactive web map of Berlin showing all christmas markets 2022 based on an open dataset. You can filter the markets by date and opening hours and also by marktes with no entry fee or with a special focus like international or design marktes. As a further example this map makes the meaning of open data clear by exploring the city in a new way. We wish you a charming exploration of the berlin christmas markets and merry christmas.
+About Text WIP
 
 ![Map](/public/social-image.jpg)
 
@@ -58,13 +58,12 @@ This repo is currently a work in progress!
 
 ## Context
    
-This application is almost completely based on open data. Open data is now an important part of Berlin's administrative activities and not only creates transparency and openness, but also enables analysis and applications like this to explore the city and come together for pre-christmas time. 
-You can find more open data at the [Berlin Open Data Portal](https://daten.berlin.de).
+This application is based on open data. Open data is an important part of Berlin's administrative activities and not only creates transparency and openness, but also enables analysis and applications like this. You can find more open data at the [Berlin Open Data Portal](https://daten.berlin.de).
 
    
 ## Data
 
-
+You can find the raw data on the [BIM Website](https://bim-berlin.de/)
    
 ## Tech stack
 
@@ -85,7 +84,6 @@ Basic Next.js app
 #### Node.js
 
 This project is a Next.js app which requires you to have [Node.js](https://nodejs.org/en/) installed.
-
 
 ### Installation
 
@@ -147,8 +145,7 @@ The app is deployed to the cloud with [Vercel](https://vercel.com/new?utm_source
 
 ## Map
 
-The basemap style was created with maptiler (https://www.maptiler.com/). The dark map style that is used in the application is located in our repo under: 
-./resources/mapstyle.json. If you would like to use this particular style feel free to copy it. Please note, that you would need to update the MAPKEY with your own project's mapkey.   
+The basemap style was created with maptiler (https://www.maptiler.com/).  Please note, that you need to update the MAPKEY with your own project's mapkey. You can also use any other basemap by adapting the code in the *src/Map* folder.
 
 ## Page analytics
 
@@ -179,7 +176,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## Content Licencing
 
-The Christmas market data used is under CC-BY license. We have processed and enriched the data for this application. If you use this dataset processed by us, you must indicate that the original raw data came from the Senatsverwaltung für Wirtschaft, Energie und Betriebe (Senate Department for Economics, Energy and Public Enterprises).
+The data used is is derived from the [BIM website](https://bim-berlin.de/). We have processed and enriched the data for this application. If you use this dataset processed by us, you must indicate that the original raw data came from the BIM (BIM Berliner Immobilienmanagement GmbH).
 
 ## Credits
 
