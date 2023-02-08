@@ -142,7 +142,7 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         // setEntityId(26)
       }
       if (tempIndex === 1) {
-        setShowEntityConsumption(false)
+        setShowEntityConsumption(true)
         setShowEntityRenovations(false)
         // setEntityId(26)
       }
