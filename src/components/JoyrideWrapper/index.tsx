@@ -13,26 +13,26 @@ import { FC, useState } from 'react'
 const steps = [
   {
     target: '#marker-26',
-    title: 'STEP1',
+    title: 'Energie Checkpoint',
     content:
-      'Der Energie CheckPoint visualisiert prototypisch den Strom- und Wärmeverbrauch verschiedener öffentlichen Berliner Gebäuden, wie z.B. das Rote Rathaus, Sitz der Regierenden Bürgermeisterin Berlins.',
+      'Der Energie CheckPoint visualisiert prototypisch den Strom- und Wärmeverbrauch unterschiedlicher öffentlicher Gebäude in Berlin – beispielsweise das Rote Rathaus, Sitz der Regierenden Bürgermeisterin Berlins.',
     disableBeacon: true,
     spotlightPadding: 75,
     offset: 0,
   },
   {
     target: '.entity-wrapper',
-    title: 'STEP2',
+    title: 'Seitenleiste',
     content:
-      'In dieser Box finden sie einen Steckbrief zum derzeitigen Verbrauch, sowie zu Sanierungsplänen und Einsparungspotenzial des jeweiligen Gebäudes.',
+      'Die Seitenleiste zeigt einen Steckbrief zum Strom- und Wärmeverbrauch (im Jahr 2020). Außerdem gibt es Angaben zu Sanierungsplänen und Einsparpotenzialen des jeweiligen Gebäudes.',
     placement: 'right',
     disableBeacon: true,
   },
   {
     target: '.energy-usage-dropdown',
-    title: 'step3',
+    title: 'Einheiten-Vergleich',
     content:
-      'Hier finden sich Informationen über die Art der Wärmeversorgung und den Verbrauch, ausgedrückt in Kilowattstunden pro Jahr, sowie umgerechnet in den vergleichbaren Verbrauch eines Fünfpersonenhaushaltes.',
+      'Hier finden sich Informationen über die Art der Wärmeversorgung und die Höhe des Verbrauches in Kilowattstunden pro Jahr. Für ein besseres Verständnis wird der Wert in den vergleichbaren Verbrauch eines durchschnittlichen Fünfpersonenhaushaltes umgerechnet.',
     placement: 'right',
     disableBeacon: true,
   },
@@ -40,32 +40,32 @@ const steps = [
     target: '.ranking-btns',
     title: 'Ranking',
     content:
-      'Die ‘Ranking’ Funktion erlaubt es, zum Gebäude mit dem nächsthohen bzw. -niedrigen Verbrauch zu wechseln. ',
+      'Die ‘Ranking’ Funktion erlaubt es, zum Gebäude mit dem nächsthohen bzw. nächstniedrigen Verbrauch zu springen.',
     placement: 'top',
     disableBeacon: true,
   },
   {
     target: '.location',
-    title: 'Ranking 2',
+    title: 'Gebäudetyp-Anzeige',
     content:
-      'Im Fall des Roten Rathauses ist das Gebäude mit dem nächstniedrigen Wärmeverbrauch ein Polizeigebäude, das ein Revier, sowie Dienstgebäude des Landeskriminalamtes beinhaltet.',
+      'Hier wird der Gebäudetyp bzw. die Art der Liegenschaft und die dazugehörige Adresse angezeigt. In unserem Beispiel vom Roten Rathaus ist das Gebäude mit dem nächstniedrigen Wärmeverbrauch ein Polizeigebäude. Die Daten umfassen sowohl das Revier, als auch die Dienstgebäude des Landeskriminalamtes.',
     disableBeacon: true,
   },
   // step 6
   {
     target: '.renovation-dropdown',
-    title: 'Sanierungsfahrplan',
+    title: 'Sanierungen',
     content:
-      'Der Sanierungsfahrplan des Landes berechnet für jedes Gebäude Kerndaten zur Sanierung, wie Kosten oder Einsparungspotenzial.',
+      'Der Sanierungsfahrplan des Landes berechnet für jedes Gebäude Kerndaten zur Sanierung, wie Kosten oder Einsparpotenzial.',
     placement: 'right',
     disableBeacon: true,
   },
   // step 7
   {
     target: '.consumption-switch',
-    title: 'Wärme- als auch Stromverbrauch',
+    title: 'Wärme- und Stromverbrauch',
     content:
-      'Sämtliche Gebäudeinformationen lassen sich sowohl für Wärme- als auch Stromverbrauch anzeigen.',
+      'Sämtliche Gebäudeinformationen lassen sich sowohl für Wärme- als auch Stromverbrauch anzeigen. Die Ansicht kann hier umgeschaltet werden. ',
     // isFixed: true
     disableBeacon: true,
   },
@@ -73,7 +73,7 @@ const steps = [
     target: '.filter',
     title: 'Filter',
     content:
-      'Über die Filterfunktion lassen sich Gebäude nach bestimmten Merkmalen eingrenzen und anzeigen, wie zum Beispiel Schulen, oder Gebäude mit besonders hohem, bzw. niedrigen Verbrauch.',
+      'Über die Filterfunktion lassen sich Gebäude nach bestimmten Merkmalen eingrenzen und anzeigen, wie zum Beispiel Schulen, Feuerwehren oder Gebäude mit besonders hohem, bzw. niedrigen Verbrauch.',
     placement: 'bottom',
     disableBeacon: true,
   },
