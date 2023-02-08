@@ -121,8 +121,10 @@ const MapSite: NextPage = (energyData: any) => {
         setEntityData(dataFromId)
         // @ts-ignore
         setZoomToCenter(dataFromId.geometry.coordinates)
+        setSidebarMenuOpen(false)
       } else {
         setEntityData(null)
+        setZoomToCenter([0, 0])
       }
       // if (isReady) {
       //   replace({ pathname, query: { id: entityId } }, undefined, {

@@ -82,7 +82,7 @@ export const IntroModal: FC<IntroModalType> = ({
                     setEntityId(26)
                     setTimeout(() => {
                       setRunJoyride(true)
-                    }, 400)
+                    }, 500)
                   })()
                 }
               >

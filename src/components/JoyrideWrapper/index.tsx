@@ -50,6 +50,7 @@ const steps = [
     content:
       'Hier wird der Gebäudetyp bzw. die Art der Liegenschaft und die dazugehörige Adresse angezeigt. In unserem Beispiel vom Roten Rathaus ist das Gebäude mit dem nächstniedrigen Wärmeverbrauch ein Polizeigebäude. Die Daten umfassen sowohl das Revier, als auch die Dienstgebäude des Landeskriminalamtes.',
     disableBeacon: true,
+    spotlightPadding: 20,
   },
   // step 6
   {
@@ -115,9 +116,18 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
       setRunJoyride(false)
       setJoyrideIndex(0)
       setSidebarMenuOpen(false)
+      setEntityId(null)
+      return
     }
 
     if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
+      if (action === 'close') {
+        setEntityId(null)
+        setRunJoyride(false)
+        setJoyrideIndex(0)
+        return
+      }
+
       let tempIndex = 0
       if (action === 'next') {
         tempIndex = index + 1
@@ -127,21 +137,14 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         tempIndex = index - 1
         setJoyrideIndex(tempIndex)
       }
-      if (action === 'close') {
-        setRunJoyride(false)
-        setJoyrideIndex(0)
-      }
 
       if (tempIndex === 0) {
-        // setZoomToCenter([13.40907, 52.51853])
         // setEntityId(26)
       }
       if (tempIndex === 1) {
-        // setZoomToCenter([13.40907, 52.51853])
         setShowEntityConsumption(false)
         setShowEntityRenovations(false)
-
-        setEntityId(26)
+        // setEntityId(26)
       }
       if (tempIndex === 2) {
         setShowEntityConsumption(true)
@@ -167,6 +170,9 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         //     setConsumptionType('heat')
         //   }, 1000)
         // }, 1000)
+
+        setSidebarMenuOpen(false)
+        setEntityId(278)
       }
       if (tempIndex === 7) {
         setNavView('filter')
@@ -174,6 +180,7 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         setEntityId(null)
         setZoomToCenter([13.404954, 52.520008])
         setMapZoom(11)
+        return
       }
     }
   }

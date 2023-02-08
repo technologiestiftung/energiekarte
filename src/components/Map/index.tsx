@@ -138,6 +138,11 @@ export const MapComponent: FC<MapType> = ({
   }, [])
 
   useEffect(() => {
+    // @ts-ignore
+    if (zoomToCenter[0] === 0) {
+      return
+    }
+
     if (map.current && map.current.isStyleLoaded()) {
       // @ts-ignore
       map.current.easeTo({
@@ -183,7 +188,8 @@ export const MapComponent: FC<MapType> = ({
         return
       }
 
-      console.log(entityData.properties)
+      // for debugging
+      // console.log(entityData.properties)
 
       let intersectingPolygon = false
       landparcelData.features.forEach((feat: any) => {

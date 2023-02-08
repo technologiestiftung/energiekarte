@@ -43,7 +43,7 @@ export const SidebarNav: FC<SidebarNavType> = ({
     navPositionClasses = 'left-sidebar'
   }
 
-  const padding = sidebarMenuOpen ? (hasMobileSize ? 'pl-4' : 'pl-0') : 'pl-4'
+  const padding = hasMobileSize ? 'pl-4' : 'pl-0'
   const navClasses =
     'h-14 cursor-pointer list-none text-center grid place-items-center hover:bg-textcolor'
   function onNavClick(listView: any) {
