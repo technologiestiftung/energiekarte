@@ -8,7 +8,7 @@ export interface PictogramType {
 
 const energyComparison = {
   heat: 5500,
-  electricity: 5500,
+  electricity: 6100,
 }
 
 function getComparisonNumber(energyUsage: number, consumptionType: string) {
