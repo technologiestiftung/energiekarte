@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from 'react'
-import { House } from '@components/Icons/'
+import { House, FootballField } from '@components/Icons/'
 
 export interface PictogramType {
   energyUsage: number
@@ -7,8 +7,8 @@ export interface PictogramType {
 }
 
 const energyComparison = {
-  heat: 5500,
-  electricity: 6100,
+  heat: 19500 * 3,
+  electricity: 19500,
 }
 
 function getComparisonNumber(energyUsage: number, consumptionType: string) {
@@ -18,7 +18,7 @@ function getComparisonNumber(energyUsage: number, consumptionType: string) {
   )
 }
 
-export const Pictogram: FC<PictogramType> = ({
+export const PictogramSolar: FC<PictogramType> = ({
   energyUsage,
   consumptionType,
 }) => {
@@ -38,16 +38,15 @@ export const Pictogram: FC<PictogramType> = ({
     return (
       <>
         <p className="text-xs pt-2 pb-4 text-gray-500">
-          Der Verbrauch aller Gebäude auf diesem Grundstück entspricht dem
-          Energieverbauch von ca.{' '}
-          {getComparisonNumber(energyUsage, consumptionType)}{' '}
-          5-Personenhaushalten ({energyUsage.toLocaleString('de-DE')} kWh).
+          Um den Stromverbauch aller Gebäude auf diesem Grundstück zu decken
+          bräuchte es ca. {getComparisonNumber(energyUsage, consumptionType)}{' '}
+          Tennisfelder mit Freiflächen PV-Anlage.
         </p>
 
         {numberOfPictograms.map((d, i) => (
           <span key={'picto-' + i}>
             <span className="inline-block ">
-              <House size={22} />
+              <FootballField size={22} />
             </span>
             {i === 9 || i === 19 || i === 29 ? <br /> : null}
           </span>

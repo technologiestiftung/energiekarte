@@ -6,6 +6,8 @@ import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
 import { Accordion } from '@components/Accordion'
 import { Pictogram } from '@components/Pictogram'
+import { PictogramSolar } from '@components/PictogramSolar'
+
 import { Comparision } from './Comparison'
 
 import {
@@ -16,6 +18,7 @@ import {
   ThermometerHalf,
   SortDown,
   ArrowLeftRight,
+  Solar,
 } from '@components/Icons/'
 
 import { getConsumtionColor } from '@lib/getConsumtionColor'
@@ -140,7 +143,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
               </div>
             ) : null}
 
-            <div className="flex pb-4">
+            {/* <div className="flex pb-4">
               <div className="w-12 justify-center top-1 grid">
                 <ArrowLeftRight />
               </div>
@@ -148,6 +151,20 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                 <p className="text-sm">Vergleich</p>
 
                 <Pictogram
+                  energyUsage={energyUsage}
+                  consumptionType={consumptionType}
+                />
+              </div>
+            </div> */}
+
+            <div className="flex pb-4">
+              <div className="w-12 justify-center top-1 grid">
+                <Solar size={30}></Solar>
+              </div>
+              <div className="flex-1 pl-2">
+                <p className="text-sm">In Solar</p>
+
+                <PictogramSolar
                   energyUsage={energyUsage}
                   consumptionType={consumptionType}
                 />
