@@ -255,7 +255,9 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             </Accordion>
           ) : null}
           {!entityData.properties.renovations.length && (
-            <p className="pt-4 text-xs">Keine Sanierungdaten vorhanden</p>
+            <p className="pt-4 text-xs">
+              Keine Daten zu zukünftigen Sanierungen vorhanden
+            </p>
           )}
         </>
         <div className="mb-10"></div>
