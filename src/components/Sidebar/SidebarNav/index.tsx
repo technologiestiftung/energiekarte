@@ -112,7 +112,7 @@ export const SidebarNav: FC<SidebarNavType> = ({
         <div>
           <button
             title="pitch"
-            className={btnClasses}
+            className={classNames('pitch-btn', btnClasses)}
             onClick={() => setMapPitch(!mapPitch)}
           >
             <Box />

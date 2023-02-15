@@ -12,6 +12,7 @@ export interface IntroModalType {
   setSidebarMenuOpen: (date: boolean) => void
   setRunJoyride: (date: boolean) => void
   setEntityId: (date: number) => void
+  setConsumptionType: (type: string) => void
 }
 
 export const IntroModal: FC<IntroModalType> = ({
@@ -21,6 +22,7 @@ export const IntroModal: FC<IntroModalType> = ({
   setSidebarMenuOpen,
   setRunJoyride,
   setEntityId,
+  setConsumptionType,
 }) => {
   function closeModal() {
     setModalOpen(false)
@@ -82,6 +84,8 @@ export const IntroModal: FC<IntroModalType> = ({
                   (function () {
                     setModalOpen(false)
                     setEntityId(26)
+                    setConsumptionType('electricity')
+
                     setTimeout(() => {
                       setRunJoyride(true)
                     }, 500)

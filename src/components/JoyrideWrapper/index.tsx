@@ -63,6 +63,14 @@ const steps = [
   },
   // step 7
   {
+    target: '.pitch-btn',
+    title: '3D Ansicht',
+    content: 'Hier läßt sich die Ansicht ändern.',
+    // isFixed: true
+    disableBeacon: true,
+  },
+  // step 8
+  {
     target: '.consumption-switch',
     title: 'Wärme- und Stromverbrauch',
     content:
@@ -93,6 +101,7 @@ export interface JoyrideWrapper {
   setNavView: (view: 'filter' | 'info') => void
   setSidebarMenuOpen: (open: boolean) => void
   setMapZoom: (zoom: number) => void
+  setMapPitch: (pitch: boolean) => void
 }
 
 export const JoyrideWrapper: FC<JoyrideWrapper> = ({
@@ -106,6 +115,7 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
   setNavView,
   setSidebarMenuOpen,
   setMapZoom,
+  setMapPitch,
 }) => {
   const [joyrideIndex, setJoyrideIndex] = useState<number>(0)
 
@@ -160,17 +170,24 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
       if (tempIndex === 5) {
         setShowEntityConsumption(false)
         setShowEntityRenovations(true)
+        setMapPitch(true)
       }
       if (tempIndex === 6) {
+        setMapPitch(false)
+      }
+      if (tempIndex === 7) {
+        setMapPitch(true)
         setSidebarMenuOpen(false)
         setEntityId(278)
       }
-      if (tempIndex === 7) {
+
+      if (tempIndex === 8) {
         setNavView('filter')
         setSidebarMenuOpen(true)
         setEntityId(null)
         setZoomToCenter([13.404954, 52.520008])
         setMapZoom(11)
+        setMapPitch(true)
         return
       }
     }
