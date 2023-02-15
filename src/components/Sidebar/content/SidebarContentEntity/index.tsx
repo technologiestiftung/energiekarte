@@ -111,7 +111,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             active={showEntityConsumption}
             extraClassName="energy-usage-dropdown"
           >
-            <div className="flex text-sm pb-4">
+            <div className="flex text-sm pb-4 energy-data">
               <div className="w-12 place-items-center grid">
                 <span
                   className="text-sm  w-5 h-5 rounded-2xl border-textcolor border"
@@ -145,7 +145,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                 <div className="w-12 justify-center top-1 grid">
                   <ArrowLeftRight />
                 </div>
-                <div className="flex-1 pl-2">
+                <div className="flex-1 pl-2 compare-section">
                   <p className="text-sm">Vergleich</p>
 
                   <Pictogram
@@ -179,9 +179,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             >
               <>
                 <p className="mb-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestiae voluptates iure quidem ipsum repudiandae dolorem,
-                  labore autem dignissimos debitis.
+                Die Sanierungsdaten beziehen sich auf einzelnen Gebäude oder Gebäudeteile der Liegenschaft. Die farbige Fläche markiert die geschätzte Fläche der Liegenschaft. Dies ist eine Annäherung. Gebäude können sich auch außerhalb der Fläche befinden.
                 </p>
                 <ul className="text-sm">
                   <li className="flex py-2">

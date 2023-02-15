@@ -61,20 +61,18 @@ export const IntroModal: FC<IntroModalType> = ({
               </h2>
               <h4 className="pb-6 leading-normal">
                 <p className="font-bold text-lg pb-2">
-                  Energieverbrauch und Einsparpotentiale - Wie steht es um den
-                  Beitrag öffentlicher Gebäude zur Klimaneutralität?
+                  Öffentliche Gebäude und ihr Beitrag zur Klimaneutralität
                 </p>
                 <p>
                   Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu
                   beschloss das Berliner Klimaschutz- und Energiewendegesetz
-                  (EWG Bln) eine Reduktion der Kohlendioxidemmissionen um
-                  mindestens 95 % im Vergleich zu den Emissionen des Jahres
-                  1990. Öffentliche Gebäude wie Feuerwehren oder
+                  (EWG Bln) eine Reduktion der Kohlendioxidemissionen um
+                  mindestens 95 % im Vergleich zum Jahr
+                  1990. Öffentliche Gebäude wie Schulen und
                   Kultureinrichtungen sollen durch Energieeinsparungen und
-                  Sanierungen eine Vorbildrolle einnehmen. Wir schauen
-                  beispielhaft auf die Daten zu Strom- und Wärmevebrauch sowie
-                  Sanierungskosten und Einsparpotenzial der Liegenschaften der
-                  BIM (Berliner Immobilien Management)
+                  Sanierungen eine Vorbildrolle einnehmen. Doch welche Gebäude verbrauchen wie viel Energie und welche Einsparpotentiale stecken in der Sanierung einzelner Gebäude? Wir schauen
+                  beispielhaft auf die Daten zu Liegenschaften der
+                  BIM (Berliner Immobilien Management).
                 </p>
               </h4>
 
