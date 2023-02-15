@@ -55,12 +55,14 @@ export const IntroModal: FC<IntroModalType> = ({
                 <Cross />
               </button>
               <h2 className="font-bold text-2xl pb-4 pt-2 text-textcolor/80">
-                Berliner EnergieCheckpoint
+                Berliner <span className="text-primary">Energie</span>Checkpoint
               </h2>
               <h4 className="pb-6 leading-normal">
-                <p>
+                <p className="font-bold text-lg pb-2">
                   Energieverbrauch und Einsparpotentiale - Wie steht es um den
-                  Beitrag öffentlicher Gebäude zur Klimaneutralität?<br></br>
+                  Beitrag öffentlicher Gebäude zur Klimaneutralität?
+                </p>
+                <p>
                   Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu
                   beschloss das Berliner Klimaschutz- und Energiewendegesetz
                   (EWG Bln) eine Reduktion der Kohlendioxidemmissionen um
