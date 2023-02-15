@@ -74,6 +74,11 @@ module.exports = {
       spacing: {
         sidebar: SIDEBARWIDTH,
       },
+      gridTemplateColumns: {
+        // Simple 20 column grid
+        '20': 'repeat(20, minmax(0, 1fr))',
+        '30': 'repeat(30, minmax(0, 1fr))',
+      },
     },
   },
   plugins: [],

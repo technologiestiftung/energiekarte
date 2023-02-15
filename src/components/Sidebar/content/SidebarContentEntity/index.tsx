@@ -140,19 +140,21 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
               </div>
             ) : null}
 
-            <div className="flex pb-4">
-              <div className="w-12 justify-center top-1 grid">
-                <ArrowLeftRight />
-              </div>
-              <div className="flex-1 pl-2">
-                <p className="text-sm">Vergleich</p>
+            {consumptionType === 'electricity' ? (
+              <div className="flex pb-4">
+                <div className="w-12 justify-center top-1 grid">
+                  <ArrowLeftRight />
+                </div>
+                <div className="flex-1 pl-2">
+                  <p className="text-sm">Vergleich</p>
 
-                <Pictogram
-                  energyUsage={energyUsage}
-                  consumptionType={consumptionType}
-                />
+                  <Pictogram
+                    energyUsage={energyUsage}
+                    consumptionType={consumptionType}
+                  />
+                </div>
               </div>
-            </div>
+            ) : null}
 
             <div className="flex ">
               <div className="w-12 grid justify-center top-1">

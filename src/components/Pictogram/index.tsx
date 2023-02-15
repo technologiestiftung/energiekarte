@@ -6,15 +6,13 @@ export interface PictogramType {
   consumptionType: string
 }
 
-const energyComparison = {
-  heat: 5500,
-  electricity: 6100,
-}
+const houseConsuption = 5900
 
 function getComparisonNumber(energyUsage: number, consumptionType: string) {
   return (
     // @ts-ignore
-    Math.round((energyUsage / energyComparison[consumptionType]) * 100) / 100
+    // Math.round((energyUsage / energyComparison[consumptionType]) * 100) / 100
+    Math.round(energyUsage / houseConsuption)
   )
 }
 
@@ -23,11 +21,13 @@ export const Pictogram: FC<PictogramType> = ({
   consumptionType,
 }) => {
   const [numberOfPictograms, setNumberOfPictograms] = useState<number[]>([])
+  const [amountHouseholds, setAmountHouseholds] = useState<number>(0)
 
   useEffect(() => {
     const pictos =
       // @ts-ignore
-      Math.round((energyUsage / energyComparison[consumptionType]) * 100) / 100
+      Math.round(energyUsage / houseConsuption)
+    setAmountHouseholds(pictos)
     // @ts-ignore
     const arr = Array.apply(null, { length: pictos })
     // @ts-ignore
@@ -40,18 +40,37 @@ export const Pictogram: FC<PictogramType> = ({
         <p className="text-xs pt-2 pb-4 text-gray-500">
           Der Verbrauch aller Gebäude auf diesem Grundstück entspricht dem
           Energieverbauch von ca.{' '}
-          {getComparisonNumber(energyUsage, consumptionType)}{' '}
-          5-Personenhaushalten ({energyUsage.toLocaleString('de-DE')} kWh).
+          <span className={'font-bold'}>{amountHouseholds} </span>
+          5-Personenhaushalten ({houseConsuption} kWh).
         </p>
 
-        {numberOfPictograms.map((d, i) => (
-          <span key={'picto-' + i}>
-            <span className="inline-block ">
-              <House size={22} />
-            </span>
-            {i === 9 || i === 19 || i === 29 ? <br /> : null}
-          </span>
-        ))}
+        {amountHouseholds <= 40 && (
+          <div className="pb-4 grid grid-cols-10">
+            {numberOfPictograms.map((d, i) => (
+              <span key={'picto-' + i} className="inline-block">
+                <House size={22} />
+              </span>
+            ))}
+          </div>
+        )}
+        {amountHouseholds > 40 && amountHouseholds <= 81 && (
+          <div className="leading-4 grid grid-cols-20">
+            {numberOfPictograms.map((d, i) => (
+              <span key={'picto-' + i} className="pb-1">
+                <House size={12} />
+              </span>
+            ))}
+          </div>
+        )}
+        {amountHouseholds > 80 && (
+          <div className="leading-4 grid grid-cols-30">
+            {numberOfPictograms.map((d, i) => (
+              <span key={'picto-' + i} className="pb-1">
+                <House size={8} />
+              </span>
+            ))}
+          </div>
+        )}
       </>
     )
   } else {
