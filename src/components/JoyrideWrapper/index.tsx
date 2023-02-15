@@ -13,26 +13,26 @@ import { FC, useState } from 'react'
 const steps = [
   {
     target: '#marker-26',
-    title: 'Energie Checkpoint',
+    title: 'Öffentliche Einrichtungen',
     content:
-      'Der Energie CheckPoint visualisiert prototypisch den Strom- und Wärmeverbrauch unterschiedlicher öffentlicher Gebäude in Berlin – beispielsweise das Rote Rathaus, Sitz der Regierenden Bürgermeisterin Berlins.',
+      'Wo wird wie viel verbraucht? Die Karte zeigt den Standort und eine grobe Einordnung des Energieverbrauchs unterschiedlicher öffentlicher Einrichtungen bzw. Liegenschaften in Berlin – beispielsweise das Rote Rathaus, Sitz der Regierenden Bürgermeisterin Berlins.',
     disableBeacon: true,
     spotlightPadding: 75,
     offset: 0,
   },
   {
-    target: '.entity-wrapper',
-    title: 'Seitenleiste',
+    target: '.energy-data',
+    title: 'Verbrauchsdaten',
     content:
-      'Die Seitenleiste zeigt einen Steckbrief zum Strom- und Wärmeverbrauch (im Jahr 2020). Außerdem gibt es Angaben zu Sanierungsplänen und Einsparpotenzialen des jeweiligen Gebäudes.',
+      'Durch Klick auf einen Standort öffnen sich die Detailinformationen zum Verbrauch (Stand 2020). Der Verbrauch im Roten Rathaus ist vergleichsweise hoch. ABER: Die Daten müssen natürlich auch in Relation zur Größe und Nutzungsart der Einrichtung gesehen werden. Zu einer Einrichtung gehören oft auch mehrere Gebäude. Ein hoher Verbrauch weist nicht direkt auf ein Defizit hin!',
     placement: 'right',
     disableBeacon: true,
   },
   {
-    target: '.energy-usage-dropdown',
-    title: 'Einheiten-Vergleich',
+    target: '.compare-section',
+    title: 'Vergleich zur besseren Einordnung',
     content:
-      'Hier finden sich Informationen über die Art der Wärmeversorgung und die Höhe des Verbrauches in Kilowattstunden pro Jahr. Für ein besseres Verständnis wird der Wert in den vergleichbaren Verbrauch eines durchschnittlichen Fünfpersonenhaushaltes umgerechnet.',
+      'Für ein besseres Verständnis wird der Wert mit dem Verbrauch eines durchschnittlichen Fünfpersonenhaushalte verglichen. Das Rote Rathaus verbraucht geschätzt so viel wie 164 Haushalte.',
     placement: 'right',
     disableBeacon: true,
   },
@@ -40,13 +40,13 @@ const steps = [
     target: '.ranking-btns',
     title: 'Ranking',
     content:
-      'Die ‘Ranking’ Funktion erlaubt es, zum Gebäude mit dem nächsthohen bzw. nächstniedrigen Verbrauch zu springen.',
+      'Die Ranking-Funktion erlaubt es, die Karte weiter zu explorieren und die Einrichtungen nacheinander durchzugehen. Es kann zur Liegenschaft mit dem nächsthohen bzw. nächstniedrigen Verbrauch gesprungen werden.',
     placement: 'top',
     disableBeacon: true,
   },
   {
     target: '.location',
-    title: 'Gebäudetyp-Anzeige',
+    title: 'Gebäudetyp',
     content:
       'Hier wird der Gebäudetyp bzw. die Art der Liegenschaft und die dazugehörige Adresse angezeigt. In unserem Beispiel vom Roten Rathaus ist das Gebäude mit dem nächstniedrigen Wärmeverbrauch ein Polizeigebäude. Die Daten umfassen sowohl das Revier, als auch die Dienstgebäude des Landeskriminalamtes.',
     disableBeacon: true,
@@ -55,17 +55,17 @@ const steps = [
   // step 6
   {
     target: '.renovation-dropdown',
-    title: 'Sanierungen',
+    title: 'Informationen zur Sanierung',
     content:
-      'Der Sanierungsfahrplan des Landes berechnet für jedes Gebäude Kerndaten zur Sanierung, wie Kosten oder Einsparpotenzial.',
+      'Der Sanierungsfahrplan des Landes enthält Kerndaten zur Sanierung, wie Kosten oder Einsparpotenzial. Im Gegensatz zum Verbrauch liegen diese Informationen detailliert für die einzelnen Gebäude oder Gebäudeteile vor.',
     placement: 'right',
     disableBeacon: true,
   },
   // step 7
   {
     target: '.pitch-btn',
-    title: '3D Ansicht',
-    content: 'Hier läßt sich die Ansicht ändern.',
+    title: '2D-Ansicht und Liegenschaft',
+    content: 'Hier läßt sich die Ansicht ändern, um einen besseren Blick auf die Grundfläche der Liegenschaft zu bekommen. ABER: Diese Fläche ist in einigen Fällen nur ungefähre Angabe. Teilweise stehen Gebäude auch außerhalb dieser Liegenschaft.',
     // isFixed: true
     disableBeacon: true,
   },
@@ -74,7 +74,7 @@ const steps = [
     target: '.consumption-switch',
     title: 'Wärme- und Stromverbrauch',
     content:
-      'Sämtliche Gebäudeinformationen lassen sich sowohl für Wärme- als auch Stromverbrauch anzeigen. Die Ansicht kann hier umgeschaltet werden. ',
+      'Die Verbrauchsinformationen lassen sich sowohl für Wärme- als auch Stromverbrauch anzeigen. Die Ansicht kann hier umgeschaltet werden. ',
     // isFixed: true
     disableBeacon: true,
   },
@@ -82,7 +82,7 @@ const steps = [
     target: '.filter',
     title: 'Filter',
     content:
-      'Über die Filterfunktion lassen sich Gebäude nach bestimmten Merkmalen eingrenzen und anzeigen, wie zum Beispiel Schulen, Feuerwehren oder Gebäude mit besonders hohem, bzw. niedrigen Verbrauch.',
+      'Über die Filterfunktion lassen sich die öffentlichen Einrichtungen nach bestimmten Merkmalen eingrenzen und anzeigen, wie zum Beispiel nach dem Gebäudetyp "Schulen", nach Gebäuden die über Gas beheizt werden oder nach Gebäude mit besonders hohem Einsparpotential.',
     placement: 'bottom',
     disableBeacon: true,
   },

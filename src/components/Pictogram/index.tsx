@@ -38,8 +38,8 @@ export const Pictogram: FC<PictogramType> = ({
     return (
       <>
         <p className="text-xs pt-2 pb-4 text-gray-500">
-          Der Verbrauch aller Gebäude auf diesem Grundstück entspricht dem
-          Energieverbauch von ca.{' '}
+          Der Verbrauch aller Gebäude dieser Einrichtung entspricht dem
+          Energieverbrauch von ca.{' '}
           <span className={'font-bold'}>{amountHouseholds} </span>
           5-Personenhaushalten ({houseConsuption} kWh).
         </p>
