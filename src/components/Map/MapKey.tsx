@@ -35,7 +35,7 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
         <span className="block px-4 pb-4">
           <p className="flex">
             <span
-              className="text-sm mr-2 w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
+              className="text-sm mr-2 w-4 h-4 rounded-2xl mt-1  "
               style={{
                 backgroundColor: keyData.colors[0],
               }}
@@ -44,7 +44,7 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
           </p>
           <p className="flex">
             <span
-              className="text-sm mr-2 w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
+              className="text-sm mr-2 w-4 h-4 rounded-2xl mt-1 "
               style={{
                 backgroundColor: keyData.colors[1],
               }}
@@ -54,7 +54,7 @@ export const MapKey: FC<MapKeyType> = ({ consumptionType }) => {
           </p>{' '}
           <p className="flex">
             <span
-              className="text-sm mr-2 w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
+              className="text-sm mr-2 w-4 h-4 rounded-2xl mt-1  "
               style={{
                 backgroundColor: keyData.colors[2],
               }}

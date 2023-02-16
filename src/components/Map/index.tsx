@@ -111,9 +111,8 @@ export const MapComponent: FC<MapType> = ({
         )
         el.style.display = 'unset'
         el.className = 'h-3 w-3 rounded-full cursor-pointer'
-        if (el.style.backgroundColor === '#ffffff') {
-          console.log('LLLLLLL')
-          el.className += 'border-gray-500 border'
+        if (el.style.backgroundColor === 'rgb(255, 255, 255)') {
+          el.className += ' border-gray-500 border'
         }
         el.addEventListener('click', function () {
           // @ts-ignore

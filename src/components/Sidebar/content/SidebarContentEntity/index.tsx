@@ -114,7 +114,10 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             <div className="flex text-sm pb-4 energy-data">
               <div className="w-12 place-items-center grid">
                 <span
-                  className="text-sm  w-5 h-5 rounded-2xl border-textcolor border"
+                  className={classNames(
+                    'text-sm  w-5 h-5 rounded-2xl',
+                    data[consumptionType] === 0 ? 'border-textcolor border' : ''
+                  )}
                   style={{
                     backgroundColor: getConsumtionColor(
                       consumptionType,
@@ -179,7 +182,10 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             >
               <>
                 <p className="mb-4">
-                Die Sanierungsdaten beziehen sich auf einzelnen Gebäude oder Gebäudeteile der Liegenschaft. Die farbige Fläche markiert die geschätzte Fläche der Liegenschaft. Dies ist eine Annäherung. Gebäude können sich auch außerhalb der Fläche befinden.
+                  Die Sanierungsdaten beziehen sich auf einzelnen Gebäude oder
+                  Gebäudeteile der Liegenschaft. Die farbige Fläche markiert die
+                  geschätzte Fläche der Liegenschaft. Dies ist eine Annäherung.
+                  Gebäude können sich auch außerhalb der Fläche befinden.
                 </p>
                 <ul className="text-sm">
                   <li className="flex py-2">
