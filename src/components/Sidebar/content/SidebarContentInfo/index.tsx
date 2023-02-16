@@ -19,8 +19,7 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
       <div className="leading-relaxed">
         <SidebarBody>
           <p className="text-sm pt-2 pb-2">
-            Wie hoch ist der jährliche Energieverbauch des Friedrichstadt
-            -palast? Was kostet die Sanierung des Brandenburger Tors? Mit
+            Wie hoch ist der jährliche Energieverbrauch des Friedrichstadtpalast? Was würde die energetische Sanierung des Roten Rathauses kosten? Mit
             welchem Energieträger wird die Berliner Philharmonie versorgt?
             <br />
             <br />
@@ -30,22 +29,24 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
             verpflichtet zu Energieverbrauchsdaten und Einsparmaßnahmen
             regemäßig und vollständig zu berichten. Um das Ziel Klimaneutralität
             bis 2045 zu erreichen, müssen nicht nur die Gebäude der öffentlichen
-            Hand ihren Beitrag leisten, es bedarf auch eines umfassenden
+            Hand Stück für Stück saniert werden, es bedarf auch eines umfassenden
             Monitorings um Entwicklungen aufzuzeigen und gegebenenfalls
             nachjustieren zu können.
-            <br />
-            <br />
-            Der EnergieCheckpoint ist ein prototypische Anwendung, die eine
+            </p>
+
+          <Accordion title="Was ist der EnergieCheckpoint?">
+            <p className="text-sm pb-2">
+            Der EnergieCheckpoint ist eine prototypische Anwendung, die eine
             Visualisierung der Daten und Erkundung der einzelnen Standorte
-            möglich macht. So werden Energieverbräuche nach Strom/Wärme, die Art
+            möglich macht. So werden Energieverbräuche nach Strom und Wärme, die Art
             der Wärmeversorgung sowie Angaben zu Einsparpotenzialen und
             Sanierungskosten für alle Standorte auf einer Karte angezeigt. Mit
             verschiedenen Filterfunktionen lassen sich die Gebäude nach
-            bestimmten Attributen wie Gebäude- oder Wärmetyp durchsuchen und in
-            einer finalen Excel-Liste exportieren. Die Anwendung ist offen für
-            weitere Daten zum Beispiel aus den Berliner Bezirken, um ein
-            landesweites Monitoring aufzubauen.
-          </p>
+            bestimmten Attributen wie Gebäude- oder Wärmetyp durchsuchen und exportieren. Die Anwendung ist offen für
+            weitere Daten zum Beispiel aus den Berliner Bezirken, um eine
+            landesweites Übersicht zu schaffen.
+            </p>
+          </Accordion>
 
           <Accordion title="Woher kommen die Daten?">
             <p className="text-sm pb-2">
@@ -58,7 +59,7 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
               >
                 Berichte und Reports{' '}
               </a>{' '}
-              den Energieverbrauchsübersicht und Sanierungsfahrplan als
+              die Energieverbrauchsübersicht und den Sanierungsfahrplan als
               PDF-Dateien veröffentlichen. Die Daten liegen (noch) nicht als
               maschinenlesbare Daten auf dem Berliner Datenportal bereit,
               weswegen wir in diesem Fall von eingeschränkt offenen Daten
@@ -66,8 +67,15 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
               vor, die Daten zum Sanierungsfahrplan haben den Stand 04.05.2022.
               Um die einzelnen Adresspunkte zu Grundstücken zuordnen zu können,
               haben wir offene Daten zu ALKIS verwendet. Die verarbeiteten Daten
-              und die Skripte zur Datenprozessierung sind in GitHub-Repository
+              und die Skripte zur Datenprozessierung sind in einem GitHub-Repository
               zu finden. Die Hintergrundkarte basiert auf der OpenStreetMap .
+            </p>
+          </Accordion>
+
+          <Accordion title="Wie sind die Daten zu verstehen? Was muss ich beachten?">
+            <p className="text-sm pb-2">
+tbd<br></br>
+Absatz dazu, was die Daten nicht aussagen und über Ungenauigkeiten.
             </p>
           </Accordion>
 
