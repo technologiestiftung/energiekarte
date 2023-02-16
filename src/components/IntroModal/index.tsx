@@ -67,12 +67,13 @@ export const IntroModal: FC<IntroModalType> = ({
                   Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu
                   beschloss das Berliner Klimaschutz- und Energiewendegesetz
                   (EWG Bln) eine Reduktion der Kohlendioxidemissionen um
-                  mindestens 95 % im Vergleich zum Jahr
-                  1990. Öffentliche Gebäude wie Schulen und
-                  Kultureinrichtungen sollen durch Energieeinsparungen und
-                  Sanierungen eine Vorbildrolle einnehmen. Doch welche Gebäude verbrauchen wie viel Energie und welche Einsparpotentiale stecken in der Sanierung einzelner Gebäude? Wir schauen
-                  beispielhaft auf die Daten zu Liegenschaften der
-                  BIM (Berliner Immobilien Management).
+                  mindestens 95 % im Vergleich zum Jahr 1990. Öffentliche
+                  Gebäude wie Schulen und Kultureinrichtungen sollen durch
+                  Energieeinsparungen und Sanierungen eine Vorbildrolle
+                  einnehmen. Doch welche Gebäude verbrauchen wie viel Energie
+                  und welche Einsparpotentiale stecken in der Sanierung
+                  einzelner Gebäude? Wir schauen beispielhaft auf die Daten zu
+                  Liegenschaften der BIM (Berliner Immobilien Management).
                 </p>
               </h4>
 
@@ -82,7 +83,7 @@ export const IntroModal: FC<IntroModalType> = ({
                   (function () {
                     setModalOpen(false)
                     setEntityId(26)
-                    setConsumptionType('electricity')
+                    setConsumptionType('heat')
 
                     setTimeout(() => {
                       setRunJoyride(true)

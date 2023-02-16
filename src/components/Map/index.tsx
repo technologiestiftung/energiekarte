@@ -23,9 +23,9 @@ interface MapType {
 }
 
 const MAP_CONFIG = {
-  defaultZoom: 11,
+  defaultZoom: 15,
   defaultLatitude: 52.520008,
-  defaultLongitude: 13.404954,
+  defaultLongitude: 13.414954,
   minZoom: 10,
   maxZoom: 19,
 }
@@ -74,9 +74,10 @@ export const MapComponent: FC<MapType> = ({
       // style: mapStyle(),
       // @ts-ignore
       style:
-        process.env.NODE_ENV == 'development'
-          ? mapStyle()
-          : `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
+        // process.env.NODE_ENV == 'development'
+        //   ? mapStyle()
+        //   :
+        `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
       center: [
         MAP_CONFIG.defaultLongitude,
         MAP_CONFIG.defaultLatitude,
@@ -109,8 +110,11 @@ export const MapComponent: FC<MapType> = ({
             : marker.properties.electricity
         )
         el.style.display = 'unset'
-        el.className =
-          'h-3 w-3 rounded-full cursor-pointer border-gray-500 border'
+        el.className = 'h-3 w-3 rounded-full cursor-pointer'
+        if (el.style.backgroundColor === '#ffffff') {
+          console.log('LLLLLLL')
+          el.className += 'border-gray-500 border'
+        }
         el.addEventListener('click', function () {
           // @ts-ignore
           onMarkerClick(marker.properties.entityId, marker.geometry.coordinates)

@@ -28,14 +28,7 @@ const steps = [
     placement: 'right',
     disableBeacon: true,
   },
-  {
-    target: '.compare-section',
-    title: 'Vergleich zur besseren Einordnung',
-    content:
-      'Für ein besseres Verständnis wird der Wert mit dem Verbrauch eines durchschnittlichen Fünfpersonenhaushalte verglichen. Das Rote Rathaus verbraucht geschätzt so viel wie 164 Haushalte.',
-    placement: 'right',
-    disableBeacon: true,
-  },
+
   {
     target: '.ranking-btns',
     title: 'Ranking',
@@ -48,10 +41,27 @@ const steps = [
     target: '.location',
     title: 'Gebäudetyp',
     content:
-      'Hier wird der Gebäudetyp bzw. die Art der Liegenschaft und die dazugehörige Adresse angezeigt. In unserem Beispiel vom Roten Rathaus ist das Gebäude mit dem nächstniedrigen Wärmeverbrauch ein Polizeigebäude. Die Daten umfassen sowohl das Revier, als auch die Dienstgebäude des Landeskriminalamtes.',
+      'Hier wird der Gebäudetyp bzw. die Art der Liegenschaft und die dazugehörige Adresse angezeigt. Die Liegenschaft mit dem nächstniedrigen Wärmeverbrauch ist eine Einrichtung der Polizei. Die Daten umfassen sowohl das Revier, als auch die Dienstgebäude des Landeskriminalamtes.',
     disableBeacon: true,
     spotlightPadding: 20,
   },
+  {
+    target: '.consumption-switch',
+    title: 'Wärme- und Stromverbrauch',
+    content:
+      'Die Verbrauchsinformationen lassen sich sowohl für Wärme- als auch Stromverbrauch anzeigen. Die Ansicht kann hier umgeschaltet werden. ',
+    // isFixed: true
+    disableBeacon: true,
+  },
+  {
+    target: '.compare-section',
+    title: 'Vergleich zur besseren Einordnung',
+    content:
+      'Für ein besseres Verständnis wird der Stromverbrauch mit dem Verbrauch eines durchschnittlichen Fünfpersonenhaushalts verglichen. Diese Polizeieinrichtung verbraucht geschätzt so viel wie 92 Haushalte.',
+    placement: 'right',
+    disableBeacon: true,
+  },
+
   // step 6
   {
     target: '.renovation-dropdown',
@@ -65,19 +75,13 @@ const steps = [
   {
     target: '.pitch-btn',
     title: '2D-Ansicht und Liegenschaft',
-    content: 'Hier läßt sich die Ansicht ändern, um einen besseren Blick auf die Grundfläche der Liegenschaft zu bekommen. ABER: Diese Fläche ist in einigen Fällen nur ungefähre Angabe. Teilweise stehen Gebäude auch außerhalb dieser Liegenschaft.',
+    content:
+      'Hier läßt sich die Ansicht ändern, um einen besseren Blick auf die Grundfläche der Liegenschaft zu bekommen. ABER: Diese Fläche ist in einigen Fällen nur ungefähre Angabe. Teilweise stehen Gebäude auch außerhalb dieser Liegenschaft.',
     // isFixed: true
     disableBeacon: true,
   },
   // step 8
-  {
-    target: '.consumption-switch',
-    title: 'Wärme- und Stromverbrauch',
-    content:
-      'Die Verbrauchsinformationen lassen sich sowohl für Wärme- als auch Stromverbrauch anzeigen. Die Ansicht kann hier umgeschaltet werden. ',
-    // isFixed: true
-    disableBeacon: true,
-  },
+
   {
     target: '.filter',
     title: 'Filter',
@@ -127,6 +131,8 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
       setJoyrideIndex(0)
       setSidebarMenuOpen(false)
       setEntityId(null)
+      setMapPitch(true)
+
       return
     }
 
@@ -135,6 +141,8 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         setEntityId(null)
         setRunJoyride(false)
         setJoyrideIndex(0)
+        setMapPitch(true)
+
         return
       }
 
@@ -147,6 +155,9 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         tempIndex = index - 1
         setJoyrideIndex(tempIndex)
       }
+
+      console.log('ddd', tempIndex)
+      //                     setConsumptionType('electricity')
 
       if (tempIndex === 0) {
       }
@@ -161,22 +172,25 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
       if (tempIndex === 3) {
         setShowEntityConsumption(true)
         setShowEntityRenovations(false)
+        setEntityId(278)
       }
       if (tempIndex === 4) {
         setShowEntityConsumption(true)
         setShowEntityRenovations(false)
-        setEntityId(278)
       }
       if (tempIndex === 5) {
+        setShowEntityConsumption(true)
+        setShowEntityRenovations(false)
+        setConsumptionType('electricity')
+        setMapPitch(true)
+      }
+      if (tempIndex === 6) {
         setShowEntityConsumption(false)
         setShowEntityRenovations(true)
         setMapPitch(true)
       }
-      if (tempIndex === 6) {
-        setMapPitch(false)
-      }
       if (tempIndex === 7) {
-        setMapPitch(true)
+        setMapPitch(false)
         setSidebarMenuOpen(false)
         setEntityId(278)
       }
@@ -187,7 +201,7 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         setEntityId(null)
         setZoomToCenter([13.404954, 52.520008])
         setMapZoom(11)
-        setMapPitch(true)
+
         return
       }
     }
