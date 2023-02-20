@@ -9,6 +9,8 @@ import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
 import { getConsumtionColor } from '@lib/getConsumtionColor'
 import { MapKey } from './MapKey'
 
+import { getStripes } from '@lib/getStripes'
+
 interface MapType {
   zoomToCenter?: number[]
   entityId: number | null
@@ -212,18 +214,26 @@ export const MapComponent: FC<MapType> = ({
           data: intersectingPolygon,
         })
 
+        if (map.current.hasImage('stripes')) {
+          map.current.removeImage('stripes')
+        }
+
+        const fillColor = getConsumtionColor(
+          consumptionType,
+          consumptionType === 'heat'
+            ? entityData.properties.heat
+            : entityData.properties.electricity
+        )
+        // @ts-ignore
+        map.current.addImage(`stripes`, getStripes({ color: fillColor }))
+
         map.current.addLayer(
           {
             id: 'landparcel-layer',
             type: 'fill',
             source: 'landparcel-source',
             paint: {
-              'fill-color': getConsumtionColor(
-                consumptionType,
-                consumptionType === 'heat'
-                  ? entityData.properties.heat
-                  : entityData.properties.electricity
-              ),
+              // 'fill-color': fillColor,
               'fill-opacity': [
                 'interpolate',
                 ['exponential', 0.5],
@@ -233,9 +243,10 @@ export const MapComponent: FC<MapType> = ({
                 16,
                 0.5,
               ],
+              'fill-pattern': `stripes`,
             },
           },
-          process.env.NODE_ENV == 'development' ? '' : 'building'
+          process.env.NODE_ENV == 'development' ? '' : 'building-3d'
         )
 
         // Remove possibly existent markers:
