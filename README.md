@@ -183,28 +183,28 @@ The data used is is derived from the [BIM website](https://bim-berlin.de/). We h
 <table>
   <tr>
     <td>
-      <a src="https://odis-berlin.de">
+      <a href="https://odis-berlin.de">
         <br />
         <br />
         <img width="200" src="https://logos.citylab-berlin.org/logo-odis-berlin.svg" />
       </a>
     </td>
     <td>
-      Together with: <a src="https://citylab-berlin.org/en/start/">
+      Together with: <a href="https://citylab-berlin.org/en/start/">
         <br />
         <br />
         <img width="200" src="https://logos.citylab-berlin.org/logo-citylab-berlin.svg" />
       </a>
     </td>
     <td>
-      A project by: <a src="https://www.technologiestiftung-berlin.de/en/">
+      A project by: <a href="https://www.technologiestiftung-berlin.de/en/">
         <br />
         <br />
         <img width="150" src="https://logos.citylab-berlin.org/logo-technologiestiftung-berlin-en.svg" />
       </a>
     </td>
     <td>
-      Supported by: <a src="https://www.berlin.de/sen/inneres/">
+      Supported by: <a href="https://www.berlin.de/sen/inneres/">
         <br />
         <br />
         <img width="100" src="https://logos.citylab-berlin.org/logo-berlin-seninnds-en.svg" />
