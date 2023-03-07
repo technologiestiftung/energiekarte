@@ -245,12 +245,12 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                             {feat['houseCosts'].toLocaleString('de-DE')} €
                           </span>
                         </p>
-                        <p>
+                        {/* <p>
                           Ranking:{' '}
                           <span className="font-bold">
                             {feat['housePrio']} von {pointDataLenght}
                           </span>
-                        </p>
+                        </p> */}
                       </div>
                     </li>
                   ))}
