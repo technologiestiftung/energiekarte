@@ -21,7 +21,7 @@ function getConsuptionGeoJSON(headers, dataVerbrauch, headerTransaltions) {
       if (headersWant.includes(h)) {
         props[headerTransaltions[h] || h] = Number(element[i])
           ? Number(element[i])
-          : h === 'Wärmeverbrauch' || h === 'Stromverbrauch'
+          : h === 'Wärmeverbrauch Witterung' || h === 'Stromverbrauch'
           ? 0
           : element[i]
           ? element[i].trim()
@@ -72,7 +72,7 @@ const headersWant = [
   'Wirtschaftseinheit',
   'PLZ',
   'Art der Wärmeversorgung',
-  'Wärmeverbrauch',
+  'Wärmeverbrauch Witterung',
   'Stromverbrauch',
   'Bemerkung',
   // 'Adresse',

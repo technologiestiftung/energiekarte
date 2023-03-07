@@ -16,7 +16,7 @@ const headerTransaltions = {
   Einsparen: 'houseSavingPotential',
   Typ: 'entityType',
   'Art der Wärmeversorgung': 'entityHeatType',
-  Wärmeverbrauch: 'heat',
+  'Wärmeverbrauch Witterung': 'heat',
   Stromverbrauch: 'electricity',
   Bemerkung: 'houseComment',
   PLZ: 'entityPLZ',
