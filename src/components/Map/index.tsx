@@ -157,7 +157,7 @@ export const MapComponent: FC<MapType> = ({
       map.current.easeTo({
         // @ts-ignore
         center: zoomToCenter,
-        zoom: 15,
+        zoom: 17,
         // @ts-ignore
         // padding: { left: isMobile ? 0 : 200 },
       })
