@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "async": "^3.2.4",
-    "glob": "^8.0.3",
+    "glob": "^9.0.0",
     "papaparse": "^5.3.2"
   }
 }
