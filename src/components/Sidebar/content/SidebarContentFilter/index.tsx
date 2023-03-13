@@ -17,7 +17,7 @@ const defaultValues = {
   savingPotential: [0, 100],
 }
 
-export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
+export const SidebarContentFilter: FC<SidebarContentFilterType> = ({ }) => {
   // FILTER
   const [filterBuildingType, setFilterBuildingType] = useState<string | null>(
     null
@@ -68,9 +68,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
 
       <SidebarBody>
         <p className="py-2 text-sm">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est,
-          repellat? Voluptatem, eum accusantium molestias voluptatibus placeat
-          veritatis quod officiis.
+          Hier lassen sich die Adressen nach verschiedenen Merkmalen filtern.
         </p>
         <Accordion title="Gebäudetyp" acitve={true}>
           {buidlingTypes?.map((type) => (
@@ -167,7 +165,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({}) => {
         </Accordion>
         <Accordion title="Sanierungskosten" acitve={true}>
           <p className="text-xs">
-            Snierungskosten beziehen sich auf die Summe der zu sanierenden
+            Sanierungskosten beziehen sich auf die Summe der zu sanierenden
             Gebäude auf einem Grundstück.
             <b className="block pt-2">In Millionen Euro</b>
           </p>
