@@ -113,17 +113,17 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
 
     const isFiltereddd = Boolean(
       filterBuildingType ||
-        filterHeatType ||
-        defaultValues.electricityConsumption[0] !==
-          filterElectricityConsumption[0] ||
-        defaultValues.electricityConsumption[1] !==
-          filterElectricityConsumption[1] ||
-        defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
-        defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
-        defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
-        defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
-        defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
-        defaultValues.savingPotential[1] !== filterSavingPotential[1]
+      filterHeatType ||
+      defaultValues.electricityConsumption[0] !==
+      filterElectricityConsumption[0] ||
+      defaultValues.electricityConsumption[1] !==
+      filterElectricityConsumption[1] ||
+      defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
+      defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
+      defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
+      defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
+      defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
+      defaultValues.savingPotential[1] !== filterSavingPotential[1]
     )
 
     setIsFiltered(isFiltereddd)
@@ -171,9 +171,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
 
       <SidebarBody>
         <p className="pt-2 pb-4 text-sm">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est,
-          repellat? Voluptatem, eum accusantium molestias voluptatibus placeat
-          veritatis quod officiis.
+          Hier lassen sich die Informationen zu den einzelnen Adressen filtern.
         </p>
         <p className="text-xs">
           Gesamter Wäremverbrauch{' '}
@@ -299,7 +297,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
         </Accordion>
         <Accordion title="Sanierungskosten" active={false}>
           <p className="text-xs">
-            Snierungskosten beziehen sich auf die Summe der zu sanierenden
+            Sanierungskosten beziehen sich auf die Summe der zu sanierenden
             Gebäude auf einem Grundstück.
             <b className="block pt-2">In Millionen Euro</b>
           </p>
