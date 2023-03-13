@@ -52,9 +52,6 @@ Get fancy shields at https://shields.io
  -->
 
 
-## Important
-
-This repo is currently a work in progress! 
 
 ## Context
    
