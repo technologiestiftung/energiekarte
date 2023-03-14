@@ -3,7 +3,7 @@ import { FC, HTMLProps } from 'react'
 export const OdisLogo: FC<HTMLProps<HTMLDivElement>> = (props) => (
   <div {...props}>
     <svg
-      width="150px"
+      width="130px"
       height="60px"
       viewBox="0 0 528 180"
       version="1.1"

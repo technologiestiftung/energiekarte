@@ -1,101 +1,75 @@
-import { FC, ReactNode } from 'react'
+import { FC, useState, useEffect } from 'react'
 import classNames from 'classnames'
-import { useCopyToClipboard } from '@lib/hooks/useCopyToClipboard'
 import { typeTranslation } from '@lib/translation'
-// import { Accordion } from '@components/Accordion'
 
 import { SidebarHeader } from '@components/Sidebar/SidebarHeader'
 import { SidebarBody } from '@components/Sidebar/SidebarBody'
-import { House, Houses, Building, Buildings } from '@components/Icons/'
+import { Accordion } from '@components/Accordion'
+import { Pictogram } from '@components/Pictogram'
+import { Comparision } from './Comparison'
+
+import {
+  Person,
+  Location,
+  Building,
+  BuildingsSanierung,
+  ThermometerHalf,
+  SortDown,
+  ArrowLeftRight,
+} from '@components/Icons/'
 
 import { getConsumtionColor } from '@lib/getConsumtionColor'
 
 export interface SidebarContentEntityType {
-  marketData: any
+  entityId: number | null | null
+  entityData: any
   consumptionType: string
+  rankingInfo: any
+  setEntityId: (id: number | null) => void
+  pointDataLenght: number
+  showEntityRenovations: boolean
+  showEntityConsumption: boolean
 }
 
-const energyComparison = {
-  heat: 5500,
-  electricity: 5500,
-}
-
-function Comparision({ consumptionType, rankingInfo, setEntityId }) {
-  let rankingText
-  if (!rankingInfo.idLess) {
-    rankingText = `Es liegt kein ${
-      consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
-    } vor. `
+function getUsageDataString(energyUsage: number) {
+  if (energyUsage != 0) {
+    return energyUsage.toLocaleString('de-DE') + ' kWh/a'
   } else {
-    rankingText = `Das Grundstück liegt im 
-    ${
-      consumptionType === 'electricity' ? 'Stromverbrauch' : 'Wärmeverbrauch'
-    } auf Platz ${rankingInfo.rankingPosition} von ${
-      rankingInfo.rankingLength
-    }. `
-  }
-
-  return (
-    <div className="text-xs pt-6">
-      {rankingText}
-      Gehe zu einem Grundstück mit
-      <span className="flex pt-4">
-        <button
-          className={classNames(
-            'disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 mr-1 rounded border-2 hover:border-primary'
-          )}
-          onClick={() => setEntityId(rankingInfo.idMore)}
-          disabled={!rankingInfo.idMore}
-        >
-          mehr Verbrauch
-        </button>
-        <button
-          className="disabled:opacity-50 text-xs py-2 flex-1 bg-white/50 ml-1 rounded border-2 hover:border-primary"
-          onClick={() => setEntityId(rankingInfo.idLess)}
-          disabled={!rankingInfo.idLess}
-        >
-          weniger Verbrauch
-        </button>
+    return (
+      <span className="text-xs pb-2 font-normal">
+        Es liegt kein Stromverbrauch vor.
       </span>
-    </div>
-  )
-}
-
-function getUsageDataString(feat, type) {
-  if (feat[type] && feat[type] != 0 && feat[type] !== -1) {
-    return getUsageData(feat, type).toLocaleString('de-DE') + ' kWh/a'
-  } else {
-    return <p className="pb-2 text-sm">liegt nicht vor</p>
-    // return (type === 'heat' ? 'Wärmeverbrauch':'Stromverbrauch') + ' liegt nicht vor'
+    )
   }
-}
-
-function getUsageData(feat, type) {
-  if (feat[type] && feat[type] != 0 && feat[type] !== -1) {
-    return Number(feat[type])
-  } else {
-    return 0
-  }
-}
-
-function getComparisonNumber(feat, type) {
-  return (
-    Math.round((getUsageData(feat, type) / energyComparison[type]) * 100) / 100
-  )
 }
 
 export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
   entityId,
   entityData,
-  // renovationLength,
   consumptionType,
   rankingInfo,
   setEntityId,
+  pointDataLenght,
+  showEntityRenovations,
+  showEntityConsumption,
 }) => {
   if (!entityId || !entityData) {
     return null
   }
   const data = entityData.properties
+  const [energyUsage, setEnergyUsage] = useState<number>(0)
+
+  useEffect(() => {
+    if (
+      entityData.properties[consumptionType] &&
+      entityData.properties[consumptionType] != 0 &&
+      entityData.properties[consumptionType] !== -1
+    ) {
+      setEnergyUsage(Number(entityData.properties[consumptionType]))
+    } else {
+      setEnergyUsage(0)
+    }
+  }, [consumptionType, entityData])
 
   return (
     <>
@@ -106,126 +80,188 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
       <SidebarBody>
         {' '}
         <>
-          <p className="text-sm">{data.entityAddress}</p>
-          <p className="text-sm pb-2 pt-1">
-            {data.ortsteil} | {data.entityPLZ} Berlin
-          </p>
-          <p className="text-sm">Betrieben von: BIM</p>
+          <div className="flex text-sm pb-2 location">
+            <div className="w-12 place-items-center grid">
+              <Location />
+            </div>
+            <div className="flex-1 pl-2">
+              <p>{data.entityAddress}</p>
+              <p className="text-xs">
+                {data.ortsteil} | {data.entityPLZ} Berlin
+              </p>
+            </div>
+          </div>
+          <div className="flex text-sm pb-2">
+            <div className="w-12 place-items-center grid">
+              <Person />
+            </div>
+            <div className="flex-1 pl-2">
+              <p>BIM</p>
+              <p className="text-xs">Berliner Immobilien Management</p>
+            </div>
+          </div>
           <hr className="my-2" />
 
-          <h2 className="font-bold pt-4 text-md py-4">
-            {consumptionType === 'electricity'
-              ? 'Stromverbrauch'
-              : 'Wärmeverbrauch'}
-          </h2>
-          <p className="text-sm pb-1">In Kilowattstunden pro Jahr </p>
-          <p className="font-bold flex pb-2">
-            <span
-              className="text-sm mr-2  w-4 h-4 rounded-2xl mt-1 border-gray-500 border"
-              style={{
-                backgroundColor: getConsumtionColor(
-                  consumptionType,
-                  data[consumptionType]
-                ),
-              }}
-            ></span>
-            {getUsageDataString(data, consumptionType)}
-          </p>
-
-          {consumptionType === 'heat' ? (
-            <>
-              <p className="text-sm pb-1">Art der Wärmeversorgung</p>
-              <p className="pb-2 font-bold">{data.entityHeatType}</p>
-            </>
-          ) : null}
-
-          <div>
-            <p className="text-xs py-2">
-              Der Verbrauch aller Gebäude auf diesem Grundstück entspricht dem
-              Energieverbauch von ca.{' '}
-              {getComparisonNumber(data, consumptionType)} 5-Personenhaushalten
-              ({energyComparison[consumptionType].toLocaleString('de-DE')} kWh).
-            </p>
-            {/* <div className="flex py-4">
-              {getUsageData(consumptionData, 'heat').map((feat, i) => (
-                <House />))}
-              ))}
+          <Accordion
+            title={
+              consumptionType === 'electricity'
+                ? 'Stromverbrauch'
+                : 'Wärmeverbrauch'
+            }
+            active={showEntityConsumption}
+            extraClassName="energy-usage-dropdown"
+          >
+            <div className="flex text-sm pb-4 energy-data">
+              <div className="w-12 place-items-center grid">
+                <span
+                  className={classNames(
+                    'text-sm  w-5 h-5 rounded-2xl',
+                    data[consumptionType] === 0 ? 'border-textcolor border' : ''
+                  )}
+                  style={{
+                    backgroundColor: getConsumtionColor(
+                      consumptionType,
+                      data[consumptionType]
+                    ),
+                  }}
+                ></span>
+              </div>
+              <div className="flex-1 pl-2">
+                <p className="">In Kilowattstunden pro Jahr</p>
+                <p className="font-bold">{getUsageDataString(energyUsage)}</p>
+              </div>
             </div>
-            <p className="text-xs italic">
-              Ein Haus entspricht 1000 5 Personenhaushalte
-            </p> */}
-          </div>
-          <Comparision
-            consumptionType={consumptionType}
-            rankingInfo={rankingInfo}
-            setEntityId={setEntityId}
-          />
+            {consumptionType === 'heat' ? (
+              <div className="flex pb-4 ">
+                <div className="w-12 place-items-center grid">
+                  <ThermometerHalf />
+                </div>
+                <div className="flex-1 pl-2">
+                  <p className="text-sm">Art der Wärmeversorgung</p>
+                  <p className="font-bold">{data.entityHeatType}</p>
+                </div>
+              </div>
+            ) : null}
 
+            {consumptionType === 'electricity' ? (
+              <div className="flex pb-4">
+                <div className="w-12 justify-center top-1 grid">
+                  <ArrowLeftRight />
+                </div>
+                <div className="flex-1 pl-2 compare-section">
+                  <p className="text-sm">Vergleich</p>
+
+                  <Pictogram
+                    energyUsage={energyUsage}
+                    consumptionType={consumptionType}
+                  />
+                </div>
+              </div>
+            ) : null}
+
+            <div className="flex ">
+              <div className="w-12 grid justify-center top-1">
+                <SortDown />
+              </div>
+              <div className="flex-1 pl-2">
+                <Comparision
+                  consumptionType={consumptionType}
+                  rankingInfo={rankingInfo}
+                  setEntityId={setEntityId}
+                />
+              </div>
+            </div>
+          </Accordion>
+
+          <span className="my-4 w-full block"></span>
           {data.renovations.length ? (
-            <>
-              <h2 className="font-bold py-4 pt-8 text-lg">Sanierungen</h2>
-
-              <ul className="text-sm">
-                <li className="flex py-2">
-                  <div className="w-12 place-items-center grid">
-                    <Buildings />
-                  </div>
-                  <div className="flex-1 pl-2">
-                    <p className="font-bold pb-1">Gesamtsanierung</p>
-                    {data.renovationsArea !== 0 && (
-                      <span>
-                        Fläche: {data.renovationsArea.toLocaleString('de-DE')}
-                        m2
-                      </span>
-                    )}
-                    <br />
-                    {data.renovationsCosts !== 0 && (
-                      <span>
-                        Kosten: {data.renovationsCosts.toLocaleString('de-DE')}€
-                      </span>
-                    )}
-                  </div>
-                </li>
-                {data.renovations?.map((feat, i) => (
-                  <li className="flex py-4" key={'haus' + i}>
+            <Accordion
+              title="Sanierungen"
+              active={showEntityRenovations}
+              extraClassName="renovation-dropdown"
+            >
+              <>
+                <p className="mb-4">
+                  Die Sanierungsdaten beziehen sich auf einzelnen Gebäude oder
+                  Gebäudeteile der Liegenschaft. Die farbige Fläche markiert die
+                  geschätzte Fläche der Liegenschaft. Dies ist eine Annäherung.
+                  Gebäude können sich auch außerhalb der Fläche befinden.
+                </p>
+                <ul className="text-sm">
+                  <li className="flex py-2">
                     <div className="w-12 place-items-center grid">
-                      <Building />
+                      <BuildingsSanierung
+                        size={50}
+                        color2={getConsumtionColor(
+                          consumptionType,
+                          data[consumptionType]
+                        )}
+                      />
                     </div>
                     <div className="flex-1 pl-2">
-                      <p className="font-bold pb-1">{feat['houseName']}</p>
-                      <p>
-                        Fläche:{' '}
-                        <span className="font-bold">
-                          {feat['houseArea'].toLocaleString('de-DE')} m2
+                      <p className="font-bold pb-1">Gesamtsanierung</p>
+                      {data.renovationsArea !== 0 && (
+                        <span>
+                          Fläche:{' '}
+                          <b>
+                            {data.renovationsArea.toLocaleString('de-DE')}{' '}
+                            &#13217;
+                          </b>
                         </span>
-                      </p>
-                      <p>
-                        Einsparpotenzial:{' '}
-                        <span className="font-bold">
-                          {feat['houseSavingPotential']}
+                      )}
+                      <br />
+                      {data.renovationsCosts !== 0 && (
+                        <span>
+                          Kosten:{' '}
+                          <b>
+                            {data.renovationsCosts.toLocaleString('de-DE')} €
+                          </b>
                         </span>
-                      </p>
-                      <p>
-                        Kosten:{' '}
-                        <span className="font-bold">
-                          {feat['houseCosts'].toLocaleString('de-DE')} €
-                        </span>
-                      </p>
-                      <p>
-                        Prio:{' '}
-                        <span className="font-bold">
-                          {/* {feat['housePrio']} von {renovationLength} */}
-                        </span>
-                      </p>
+                      )}
                     </div>
                   </li>
-                ))}
-              </ul>
-            </>
+                  {data.renovations?.map((feat: any, i: number) => (
+                    <li className="flex py-4" key={'haus' + i}>
+                      <div className="w-12 place-items-center grid">
+                        <Building />
+                      </div>
+                      <div className="flex-1 pl-2">
+                        <p className="font-bold pb-1">{feat['houseName']}</p>
+                        <p>
+                          Fläche:{' '}
+                          <span className="font-bold">
+                            {feat['houseArea'].toLocaleString('de-DE')} &#13217;
+                          </span>
+                        </p>
+                        <p>
+                          Einsparpotenzial:{' '}
+                          <span className="font-bold">
+                            {feat['houseSavingPotential'].replace('%', ' %')}
+                          </span>
+                        </p>
+                        <p>
+                          Kosten:{' '}
+                          <span className="font-bold">
+                            {feat['houseCosts'].toLocaleString('de-DE')} €
+                          </span>
+                        </p>
+                        {/* <p>
+                          Ranking:{' '}
+                          <span className="font-bold">
+                            {feat['housePrio']} von {pointDataLenght}
+                          </span>
+                        </p> */}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            </Accordion>
           ) : null}
-
           {!entityData.properties.renovations.length && (
-            <p className="pt-4 text-xs">Keine Sanierungdaten vorhanden</p>
+            <p className="pt-4 text-xs">
+              Keine Daten zu zukünftigen Sanierungen vorhanden
+            </p>
           )}
         </>
         <div className="mb-10"></div>

@@ -3,12 +3,16 @@ import { Range, getTrackBackground } from 'react-range'
 
 export interface RangeSliderType {
   value: number[]
-  // setValue
+  setValue: (value: number[]) => void
+  minValue: number
+  maxValue: number
+  step: number
+  rounding?: string | undefined
 }
 
 const primaryColor = '#9bc95b'
 
-function roundingFunction(value, type) {
+function roundingFunction(value: number, type: string | undefined) {
   if (type === 'million') {
     return Math.round((value / 1000000) * 100) / 100
   }
@@ -31,7 +35,8 @@ export const RangeSlider: FC<RangeSliderType> = ({
         min={minValue}
         max={maxValue}
         // rtl={rtl}
-        onChange={(v) => {
+        onChange={(v: number[]) => {
+          // @ts-ignore
           setValue(v)
         }}
         renderTrack={({ props, children }) => (
@@ -83,14 +88,14 @@ export const RangeSlider: FC<RangeSliderType> = ({
           >
             <div
               style={{
-                height: '20px',
-                width: '5px',
-                borderRadius: '4px',
+                height: '15px',
+                width: '15px',
+                borderRadius: '1rem',
                 backgroundColor: primaryColor,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                boxShadow: '0px 2px 6px #AAA',
+                // boxShadow: '0px 2px 6px #AAA',
               }}
             ></div>
             <div

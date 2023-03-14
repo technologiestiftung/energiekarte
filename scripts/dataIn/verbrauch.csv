@@ -1,387 +1,387 @@
-lfd.;Segment - Liegenschaft;Typ;Wirtschaftseinheit;PLZ;Art der Wärmeversorgung;Wärmeverbrauch;Stromverbrauch;Bemerkung;Adresse;Wirtschaftseinheit_check;gc_xwert;gc_ywert;gc_ortsteil;gc_haus;gc_wert;gc_typ;geo_corrected;more_work
-1;Allgemeiner Bestand - Dominicusstr. 12;Allgemeiner Bestand;Dominicusstr. 12;10823;Gas;406361;0;Stromverbrauch liegt nicht vor;Dominicusstr. 12,10823,Berlin;Dominicusstr. 12;13.34604;52.48304;Schöneberg;12;T;Haus;;
-2;Allgemeiner Bestand - Albrecht-Achilles-Str. 61 - 64;Allgemeiner Bestand;Albrecht-Achilles-Str. 61 - 64;10709;Fernwärme;638433;0;Stromverbrauch liegt nicht vor;Albrecht-Achilles-Str. 61 - 64,10709,Berlin;Albrecht-Achilles-Str. 61 - 64;13.30388;52.49768;Wilmersdorf;61;M;Haus;;
-3;Allgemeiner Bestand - Alt-Friedrichsfelde 60;Allgemeiner Bestand;Alt-Friedrichsfelde 60;10315;Fernwärme,Gas;6892602;2908133;;Alt-Friedrichsfelde 60,10315,Berlin;Alt-Friedrichsfelde 60;13.52556;52.50937;Friedrichsfelde;60;T;Haus;;
-4;Allgemeiner Bestand - Am Köllnischen Park 3 / Rungestraße 29;Allgemeiner Bestand;Am Köllnischen Park 3 / Rungestraße 29;10179;Fernwärme;1374183;;;Am Köllnischen Park 3 / Rungestraße 29,10179,Berlin;Am Köllnischen Park 3 / Rungestraße 29;13.41572;52.51323;Mitte;3;F;Haus;;
-5;Allgemeiner Bestand - An der Urania 4-10;Allgemeiner Bestand;An der Urania 4-10;10787;Fernwärme;1378939;;;An der Urania 4-10,10787,Berlin;An der Urania 4-10;13.34874;52.50282;Schöneberg;4;M;Haus;;
-6;Allgemeiner Bestand - Auf dem Grat 2 (ehem. Clayallee 138);Allgemeiner Bestand;Auf dem Grat 2 (ehem. Clayallee 138);14195;Gas;406361;132782;;Auf dem Grat 2 (ehem. Clayallee 138),14195,Berlin;Auf dem Grat 2 (ehem. Clayallee 138);13.27375;52.4554;Dahlem;2;F;Haus;;
-7;Allgemeiner Bestand - Belziger Str. 52-58;Allgemeiner Bestand;Belziger Str. 52-58;10823;Gas;59699;;;Belziger Str. 52-58,10823,Berlin;Belziger Str. 52-58;13.34853;52.48602;Schöneberg;52;M;Haus;;
-8;Allgemeiner Bestand - Bismarckstr. 48;Allgemeiner Bestand;Bismarckstr. 48;10627;Fernwärme;1530921;342077;;Bismarckstr. 48,10627,Berlin;Bismarckstr. 48;13.30363;52.51165;Charlottenburg;48;T;Haus;;
-9;Allgemeiner Bestand - Bredtschneiderstr. 5;Allgemeiner Bestand;Bredtschneiderstr. 5;14057;Fernwärme;822562;226551;;Bredtschneiderstr. 5,14057,Berlin;Bredtschneiderstr. 5;13.28079;52.50886;Westend;5;T;Haus;;
-10;Allgemeiner Bestand - Brodauer Str. 16-22;Allgemeiner Bestand;Brodauer Str. 16-22;12621;Gas;70372;20000;;Brodauer Str. 16-22,12621,Berlin;Brodauer Str. 16-22;13.58356;52.50918;Kaulsdorf;16;M;Haus;;
-11;Allgemeiner Bestand - Brunnenstr. 188-190;Allgemeiner Bestand;Brunnenstr. 188-190;10119;Gas;1713553;;;Brunnenstr. 188-190,10119,Berlin;Brunnenstr. 188-190;13.40006;52.53085;Mitte;188;M;Haus;;
-12;Allgemeiner Bestand - Bundesallee 171;Allgemeiner Bestand;Bundesallee 171;10715;Fernwärme,Öl;3317323;;;Bundesallee 171,10715,Berlin;Bundesallee 171;13.33149;52.48486;Wilmersdorf;171;T;Haus;;
-13;Allgemeiner Bestand - Buschkrugallee 95;Allgemeiner Bestand;Buschkrugallee 95;12359;Gas;502685;25359;;Buschkrugallee 95,12359,Berlin;Buschkrugallee 95;13.4507;52.4555;Britz;95;T;Haus;;
-14;Allgemeiner Bestand - Eichborndamm 208;Allgemeiner Bestand;Eichborndamm 208;13403;Fernwärme,Öl;921333;341753;;Eichborndamm 208,13403,Berlin;Eichborndamm 208;13.32487;52.58719;Wittenau;208;T;Haus;;
-15;Allgemeiner Bestand - Fehrbelliner Platz;Allgemeiner Bestand;Fehrbelliner Platz;10707;Fernwärme;6983854;;;Fehrbelliner Platz,10707,Berlin;Fehrbelliner Platz;;;Wilmersdorf;;T;Strasse;;keine hausnummer
-16;Allgemeiner Bestand - Ferdinand-Schultze-Str. 55;Allgemeiner Bestand;Ferdinand-Schultze-Str. 55;13055;Fernwärme;559315;191512;;Ferdinand-Schultze-Str. 55,13055,Berlin;Ferdinand-Schultze-Str. 55;13.51049;52.53981;Alt-Hohenschönhausen;55;T;Haus;;
-17;Allgemeiner Bestand - Friedrich-Krause-Ufer 24,25;Allgemeiner Bestand;Friedrich-Krause-Ufer 24,25;13353;Gas,Öl;1841599;317962;;Friedrich-Krause-Ufer 24,25,13353,Berlin;Friedrich-Krause-Ufer 24,25;13.35483;52.53796;Tiergarten;24;F;Haus;;
-18;Allgemeiner Bestand - Friedrichstr. 219;Allgemeiner Bestand;Friedrichstr. 219;10969;Fernwärme;1468400;;;Friedrichstr. 219,10969,Berlin;Friedrichstr. 219;13.39056;52.50501;Kreuzberg;219;T;Haus;;
-19;Allgemeiner Bestand - Fröbelstr. 15;Allgemeiner Bestand;Fröbelstr. 15;10405;n/a;2039980;0;Stromverbrauch liegt nicht vor;Fröbelstr. 15,10405,Berlin;Fröbelstr. 15;13.42896;52.53986;Prenzlauer Berg;15;T;Haus;;
-20;Allgemeiner Bestand - Fröbelstr. 17;Allgemeiner Bestand;Fröbelstr. 17;10405;Fernwärme;3865371;974381;;Fröbelstr. 17,10405,Berlin;Fröbelstr. 17;13.42734;52.5405;Prenzlauer Berg;17;T;Haus;;
-21;Allgemeiner Bestand - Hanna-Renate-Laurien-Platz 1;Allgemeiner Bestand;Hanna-Renate-Laurien-Platz 1;12247;Gas;0;186863;Wärmeverbrauch liegt nicht vor;Hanna-Renate-Laurien-Platz 1,12247,Berlin;Hanna-Renate-Laurien-Platz 1;13.34354;52.43851;Lankwitz;1;T;Haus;;
-22;Allgemeiner Bestand - Hartmannsweilerweg 63;Allgemeiner Bestand;Hartmannsweilerweg 63;14163;Gas;337628;405037;;Hartmannsweilerweg 63,14163,Berlin;Hartmannsweilerweg 63;13.24769;52.44467;Zehlendorf;63;T;Haus;;
-23;Allgemeiner Bestand - Havelchaussee 149-151;Allgemeiner Bestand;Havelchaussee 149-151;14055;Gas;2865;824;;Havelchaussee 149-151,14055,Berlin;Havelchaussee 149-151;13.21555;52.50974;Westend;149;M;Haus;;
-24;Allgemeiner Bestand - Invalidenstr. 60;Allgemeiner Bestand;Invalidenstr. 60;10557;Fernwärme,Öl;167238;244526;;Invalidenstr. 60,10557,Berlin;Invalidenstr. 60;13.3648;52.52477;Moabit;60;T;Haus;;
-25;Allgemeiner Bestand - Josef-Orlopp-Str. 62;Allgemeiner Bestand;Josef-Orlopp-Str. 62;10365;Gas;590858;0;Stromverbrauch liegt nicht vor;Josef-Orlopp-Str. 62,10365,Berlin;Josef-Orlopp-Str. 62;13.49146;52.52289;Lichtenberg;62;T;Haus;;
-26;Allgemeiner Bestand - Jüdenstr. 1;Allgemeiner Bestand;Jüdenstr. 1;10178;Fernwärme,Öl;2170561;;;Jüdenstr. 1,10178,Berlin;Jüdenstr. 1;13.40907;52.51853;Mitte;1;T;Haus;;
-27;Allgemeiner Bestand - Juliusstr. 67;Allgemeiner Bestand;Juliusstr. 67;12051;Gas;341227;4215;;Juliusstr. 67,12051,Berlin;Juliusstr. 67;13.44232;52.46393;Neukölln;67;T;Haus;;
-28;Allgemeiner Bestand - Karl-Hofer-Str. 31;Allgemeiner Bestand;Karl-Hofer-Str. 31;14163;n/a;0;2908133;Wärmeverbrauch liegt nicht vor;Karl-Hofer-Str. 31,14163,Berlin;Karl-Hofer-Str. 31;13.23718;52.43868;Zehlendorf;31;T;Haus;;
-29;Allgemeiner Bestand - Klosterstr. 47;Allgemeiner Bestand;Klosterstr. 47;10179;Fernwärme;2924809;;;Klosterstr. 47,10179,Berlin;Klosterstr. 47;13.41219;52.51655;Mitte;47;T;Haus;;
-30;Allgemeiner Bestand - Klosterstr. 59;Allgemeiner Bestand;Klosterstr. 59;10179;Fernwärme;1517443;;;Klosterstr. 59,10179,Berlin;Klosterstr. 59;13.41247;52.51533;Mitte;59;T;Haus;;
-31;Allgemeiner Bestand - Klosterstr. 71;Allgemeiner Bestand;Klosterstr. 71;10179;Fernwärme;556624;162348;;Klosterstr. 71,10179,Berlin;Klosterstr. 71;13.41235;52.5179;Mitte;71;T;Haus;;
-32;Allgemeiner Bestand - Kniprodestr. 31;Allgemeiner Bestand;Kniprodestr. 31;10407;Fernwärme;0;365697;Wärmeverbrauch liegt nicht vor;Kniprodestr. 31,10407,Berlin;Kniprodestr. 31;13.44714;52.53435;Prenzlauer Berg;31;T;Haus;;
-33;Allgemeiner Bestand - Levetzowstr. 1-2;Allgemeiner Bestand;Levetzowstr. 1-2;10555;Gas;453878;102019;;Levetzowstr. 1-2,10555,Berlin;Levetzowstr. 1-2;13.33061;52.52229;Moabit;1;M;Haus;;
-34;Allgemeiner Bestand - Magdalenenstr. 25;Allgemeiner Bestand;Magdalenenstr. 25;10365;Fernwärme;1607040;302813;;Magdalenenstr. 25,10365,Berlin;Magdalenenstr. 25;13.48867;52.51487;Lichtenberg;25;T;Haus;;
-35;Allgemeiner Bestand - Martin-Buber-Str. 20,21;Allgemeiner Bestand;Martin-Buber-Str. 20,21;14163;Gas;1068902;169534;;Martin-Buber-Str. 20,21,14163,Berlin;Martin-Buber-Str. 20,21;13.25658;52.43419;Zehlendorf;20;F;Haus;;
-36;Allgemeiner Bestand - Martin-Luther-Str. 105;Allgemeiner Bestand;Martin-Luther-Str. 105;10825;Fernwärme;1633743;632594;;Martin-Luther-Str. 105,10825,Berlin;Martin-Luther-Str. 105;13.34536;52.48327;Schöneberg;105;T;Haus;;
-37;Allgemeiner Bestand - Max-Brunnow-Str. 4;Allgemeiner Bestand;Max-Brunnow-Str. 4;10369;Fernwärme;427181;115822;;Max-Brunnow-Str. 4,10369,Berlin;Max-Brunnow-Str. 4;13.45988;52.52621;Lichtenberg;4;T;Haus;;
-38;Allgemeiner Bestand - Mehringdamm 110;Allgemeiner Bestand;Mehringdamm 110;10965;Gas;999879;128908;;Mehringdamm 110,10965,Berlin;Mehringdamm 110;13.38555;52.48735;Kreuzberg;110;T;Haus;;
-39;Allgemeiner Bestand - Mehringdamm 22;Allgemeiner Bestand;Mehringdamm 22;10961;Gas;689164;57606;;Mehringdamm 22,10961,Berlin;Mehringdamm 22;13.38861;52.49475;Kreuzberg;22;T;Haus;;
-40;Allgemeiner Bestand - Mohriner Allee 137;Allgemeiner Bestand;Mohriner Allee 137;12347;Gas;1870171;352164;;Mohriner Allee 137,12347,Berlin;Mohriner Allee 137;13.41438;52.43902;Britz;137;T;Haus;;
-41;Allgemeiner Bestand - Munsterdamm 90 / Planetarium und Sternwarte;Allgemeiner Bestand;Munsterdamm 90 / Planetarium und Sternwarte;12169;Gas;139231;112694;;Munsterdamm 90 / Planetarium und Sternwarte,12169,Berlin;Munsterdamm 90 / Planetarium und Sternwarte;13.34918;52.45769;Steglitz;90;F;Haus;;
-42;Allgemeiner Bestand - Nonnendammallee 21;Allgemeiner Bestand;Nonnendammallee 21;13599;Fernwärme;1160193;;;Nonnendammallee 21,13599,Berlin;Nonnendammallee 21;13.23837;52.53872;Haselhorst;21;T;Haus;;
-43;Allgemeiner Bestand - Oranienstr. 106;Allgemeiner Bestand;Oranienstr. 106;10969;Fernwärme;1762711;;;Oranienstr. 106,10969,Berlin;Oranienstr. 106;13.40053;52.50628;Kreuzberg;106;T;Haus;;
-44;Allgemeiner Bestand - Osloer Str. 37;Allgemeiner Bestand;Osloer Str. 37;13359;Gas;1521622;145695;;Osloer Str. 37,13359,Berlin;Osloer Str. 37;13.3741;52.55707;Gesundbrunnen;37;T;Haus;;
-45;Allgemeiner Bestand - Otto-Braun-Str. 70-72 (Haus d. Statistik);Allgemeiner Bestand;Otto-Braun-Str. 70-72 (Haus d. Statistik);10178;n/a;61967;17151;;Otto-Braun-Str. 70-72 (Haus d. Statistik),10178,Berlin;Otto-Braun-Str. 70-72 (Haus d. Statistik);13.41864;52.52314;Mitte;70;T;Haus;;
-46;Allgemeiner Bestand - Parochialstr. 1-3;Allgemeiner Bestand;Parochialstr. 1-3;10179;Fernwärme;831083;;;Parochialstr. 1-3,10179,Berlin;Parochialstr. 1-3;13.41069;52.51716;Mitte;1;M;Haus;;
-47;Allgemeiner Bestand - Potsdamer Str. 140;Allgemeiner Bestand;Potsdamer Str. 140;10783;Fernwärme;513315;198235;;Potsdamer Str. 140,10783,Berlin;Potsdamer Str. 140;13.36189;52.4982;Schöneberg;140;T;Haus;;
-48;Allgemeiner Bestand - Potsdamer Str. 186;Allgemeiner Bestand;Potsdamer Str. 186;10783;Öl;;987;;Potsdamer Str. 186,10783,Berlin;Potsdamer Str. 186;13.36065;52.4929;Schöneberg;186;T;Haus;;
-49;Allgemeiner Bestand - Potsdamer Str. 61-65;Allgemeiner Bestand;Potsdamer Str. 61-65;10785;Fernwärme;;85919;;Potsdamer Str. 61-65,10785,Berlin;Potsdamer Str. 61-65;13.36707;52.50411;Tiergarten;61;M;Haus;;
-50;Allgemeiner Bestand - Rubensstr. 111;Allgemeiner Bestand;Rubensstr. 111;12157;Fernwärme;483999;234894;;Rubensstr. 111,12157,Berlin;Rubensstr. 111;13.34484;52.46447;Schöneberg;111;T;Haus;;
-51;Allgemeiner Bestand - Salzburger Str. 21-25;Allgemeiner Bestand;Salzburger Str. 21-25;10825;Fernwärme;1588617;396439;;Salzburger Str. 21-25,10825,Berlin;Salzburger Str. 21-25;13.34327;52.48577;Schöneberg;21;T;Haus;;
-52;Allgemeiner Bestand - Sarrazinstr. 4;Allgemeiner Bestand;Sarrazinstr. 4;12159;Gas;613;535;;Sarrazinstr. 4,12159,Berlin;Sarrazinstr. 4;13.33176;52.47533;Friedenau;4;T;Haus;;
-53;Allgemeiner Bestand - Schloßstr. 58,59;Allgemeiner Bestand;Schloßstr. 58,59;12165;Gas;632064;276273;;Schloßstr. 58,59,12165,Berlin;Schloßstr. 58,59;13.31297;52.45322;Steglitz;58;F;Haus;;
-54;Allgemeiner Bestand - Seelenbinderstr. 99;Allgemeiner Bestand;Seelenbinderstr. 99;12555;Gas;1281267;156171;;Seelenbinderstr. 99,12555,Berlin;Seelenbinderstr. 99;13.58868;52.45565;Köpenick;99;T;Haus;;
-55;Allgemeiner Bestand - Storkower Str. 134;Allgemeiner Bestand;Storkower Str. 134;10407;Fernwärme;1514950;0;Stromverbrauch liegt nicht vor;Storkower Str. 134,10407,Berlin;Storkower Str. 134;13.45231;52.53267;Prenzlauer Berg;134;T;Haus;;
-56;Allgemeiner Bestand - Storkower Str. 97;Allgemeiner Bestand;Storkower Str. 97;10407;Fernwärme;489706;128666;;Storkower Str. 97,10407,Berlin;Storkower Str. 97;13.45077;52.53684;Prenzlauer Berg;97;T;Haus;;
-57;Allgemeiner Bestand - Straßburger Str. 56;Allgemeiner Bestand;Straßburger Str. 56;10405;Öl;784699;;;Straßburger Str. 56,10405,Berlin;Straßburger Str. 56;13.41269;52.52921;Prenzlauer Berg;56;T;Haus;;
-58;Allgemeiner Bestand - Tempelhofer Damm 234;Allgemeiner Bestand;Tempelhofer Damm 234;12099;Gas;535285;251986;;Tempelhofer Damm 234,12099,Berlin;Tempelhofer Damm 234;13.38372;52.45435;Tempelhof;234;T;Haus;;
-59;Allgemeiner Bestand - Turmstr. 21;Allgemeiner Bestand;Turmstr. 21;10559;Fernwärme;9587800;;;Turmstr. 21,10559,Berlin;Turmstr. 21;13.34785;52.52642;Moabit;21;T;Haus;;
-60;Allgemeiner Bestand - Turmstr. 22;Allgemeiner Bestand;Turmstr. 22;10559;Fernwärme,Öl;32713;271383;;Turmstr. 22,10559,Berlin;Turmstr. 22;13.34715;52.52641;Moabit;22;T;Haus;;
-61;Allgemeiner Bestand - Turmstr. 86;Allgemeiner Bestand;Turmstr. 86;10559;Fernwärme,Öl;617923;;;Turmstr. 86,10559,Berlin;Turmstr. 86;13.34967;52.52609;Moabit;86;T;Haus;;
-62;externe Mieter - Müllerstr. 147;externe Mieter;Müllerstr. 147;13353;Fernwärme;437693;706979;;Müllerstr. 147,13353,Berlin;Müllerstr. 147;13.35659;52.54686;Wedding;147;T;Haus;;
-63;externe Mieter - Neue Jakobstr. 9;externe Mieter;Neue Jakobstr. 9;10249;Fernwärme;0;342077;Wärmeverbrauch liegt nicht vor;Neue Jakobstr. 9,10249,Berlin;Neue Jakobstr. 9;13.41131;52.51118;Mitte;9;F;Haus;;
-64;Feuerwehr - Adlergestell 782;Feuerwehr;Adlergestell 782;12527;Öl;4189;4545;;Adlergestell 782,12527,Berlin;Adlergestell 782;13.64848;52.37579;Schmöckwitz;782;T;Haus;;
-65;Feuerwehr - Alt-Biesdorf 58;Feuerwehr;Alt-Biesdorf 58;12683;Gas;178289;25875;;Alt-Biesdorf 58,12683,Berlin;Alt-Biesdorf 58;13.55629;52.50925;Biesdorf;58;T;Haus;;
-66;Feuerwehr - Alt-Blankenburg 9;Feuerwehr;Alt-Blankenburg 9;13129;Gas;130266;25078;;Alt-Blankenburg 9,13129,Berlin;Alt-Blankenburg 9;13.45198;52.59295;Blankenburg;9;T;Haus;;
-67;Feuerwehr - Alt-Heiligensee 68;Feuerwehr;Alt-Heiligensee 68;13503;Öl;43321;;;Alt-Heiligensee 68,13503,Berlin;Alt-Heiligensee 68;13.21129;52.6067;Heiligensee;68;T;Haus;;
-68;Feuerwehr - Alt-Karow 10,11;Feuerwehr;Alt-Karow 10,11;13125;Gas;189299;52573;;Alt-Karow 10,11,13125,Berlin;Alt-Karow 10,11;13.48301;52.61099;Karow;10;F;Haus;;
-69;Feuerwehr - Alt-Lübars 12;Feuerwehr;Alt-Lübars 12;13469;Gas;28915;304686;;Alt-Lübars 12,13469,Berlin;Alt-Lübars 12;13.35809;52.62078;Lübars;12;T;Haus;;
-70;Feuerwehr - Alt-Rudow 67,69;Feuerwehr;Alt-Rudow 67,69;12355;Gas;159304;28547;;Alt-Rudow 67,69,12355,Berlin;Alt-Rudow 67,69;13.49685;52.41698;Rudow;67;F;Haus;;
-71;Feuerwehr - Berliner Str. 16;Feuerwehr;Berliner Str. 16;13507;Gas;221948;83681;;Berliner Str. 16,13507,Berlin;Berliner Str. 16;13.28617;52.58659;Tegel;16;T;Haus;;
-72;Feuerwehr - Betckestr. 13;Feuerwehr;Betckestr. 13;13595;Gas;594867;226551;;Betckestr. 13,13595,Berlin;Betckestr. 13;13.20456;52.52096;Wilhelmstadt;13;T;Haus;;
-73;Feuerwehr - Blenheimstr. 65,67;Feuerwehr;Blenheimstr. 65,67;12685;Fernwärme;112688;17151;;Blenheimstr. 65,67,12685,Berlin;Blenheimstr. 65,67;13.5621;52.5421;Marzahn;65;F;Haus;;
-74;Feuerwehr - Borussiastr. 16,17;Feuerwehr;Borussiastr. 16,17;12103;Gas;352657;;;Borussiastr. 16,17,12103,Berlin;Borussiastr. 16,17;13.38385;52.46697;Tempelhof;16;F;Haus;;
-75;Feuerwehr - Charlottenburger Str. 10,12;Feuerwehr;Charlottenburger Str. 10,12;14169;Gas;752682;16864;;Charlottenburger Str. 10,12,14169,Berlin;Charlottenburger Str. 10,12;13.26534;52.43717;Zehlendorf;10;F;Haus;;
-76;Feuerwehr - Danziger Str., Kniprodestr.;Feuerwehr;Danziger Str., Kniprodestr.;10407;n/a;0;20;Wärmeverbrauch liegt nicht vor;Danziger Str., Kniprodestr.,10407,Berlin;Danziger Str., Kniprodestr.;;;Prenzlauer Berg;;;Ort;TRUE;keine feuerwehr kein adresse
-77;Feuerwehr - Dönhoffstr. 30,31;Feuerwehr;Dönhoffstr. 30,31;10318;Gas;295533;80421;;Dönhoffstr. 30,31,10318,Berlin;Dönhoffstr. 30,31;13.52034;52.48396;Karlshorst;30;F;Haus;;
-78;Feuerwehr - Dorfstr. 4;Feuerwehr;Dorfstr. 4;13059;Gas;134623;18917;;Dorfstr. 4,13059,Berlin;Dorfstr. 4;13.5157;52.57475;Wartenberg;4;T;Haus;;
-79;Feuerwehr - Edelweißstr. 35;Feuerwehr;Edelweißstr. 35;13158;Fernwärme;61585;2183;;Edelweißstr. 35,13158,Berlin;Edelweißstr. 35;13.37001;52.58582;Wilhelmsruh;35;T;Haus;;
-80;Feuerwehr - Edinburger Str. 7;Feuerwehr;Edinburger Str. 7;13349;Gas;4858;5075;;Edinburger Str. 7,13349,Berlin;Edinburger Str. 7;13.35196;52.55372;Wedding;7;T;Haus;;
-81;Feuerwehr - Ferdinand-Schultze-Str. 128,130,132;Feuerwehr;Ferdinand-Schultze-Str. 128,130,132;13055;Fernwärme;175925;0;Stromverbrauch liegt nicht vor;Ferdinand-Schultze-Str. 128,130,132,13055,Berlin;Ferdinand-Schultze-Str. 128,130,132;13.50814;52.54505;Alt-Hohenschönhausen;128;F;Haus;;
-82;Feuerwehr - Feurigstr. 58;Feuerwehr;Feurigstr. 58;10827;Gas;7244;16864;;Feurigstr. 58,10827,Berlin;Feurigstr. 58;13.35675;52.48461;Schöneberg;58;T;Haus;;
-83;Feuerwehr - Frankenbergstr. 23;Feuerwehr;Frankenbergstr. 23;12589;Gas;58609;10037;;Frankenbergstr. 23,12589,Berlin;Frankenbergstr. 23;13.71614;52.4367;Wilhelmshagen;23;T;Haus;;
-84;Feuerwehr - Friederikestr. 19;Feuerwehr;Friederikestr. 19;13505;Gas;108363;18041;;Friederikestr. 19,13505,Berlin;Friederikestr. 19;13.22891;52.57079;Konradshöhe;19;T;Haus;;
-85;85 Feuerwehr - Fürstenwalder Allee 356;Feuerwehr;Fürstenwalder Allee 356;12589;n/a;0;402624;Wärmeverbrauch liegt nicht vor;Fürstenwalder Allee 356,12589,Berlin;Fürstenwalder Allee 356;13.72222;52.43063;Wilhelmshagen;356;T;Haus;;
-86;Feuerwehr - Gasteiner Str. 19-20;Feuerwehr;Gasteiner Str. 19-20;10717;Fernwärme;417426;7115;;Gasteiner Str. 19-20,10717,Berlin;Gasteiner Str. 19-20;13.32045;52.48751;Wilmersdorf;19;M;Haus;;
-87;Feuerwehr - Gatower Str. 333;Feuerwehr;Gatower Str. 333;14089;Pellet;;20624;Wärmeverbrauch liegt nicht vor;Gatower Str. 333,14089,Berlin;Gatower Str. 333;13.1807;52.4897;Gatow;333;T;Haus;;
-88;Feuerwehr - Godbersenstr. 31;Feuerwehr;Godbersenstr. 31;12527;n/a;0;5785;Wärmeverbrauch liegt nicht vor;Godbersenstr. 31,12527,Berlin;Godbersenstr. 31;13.64377;52.37832;Schmöckwitz;31;T;Haus;;
-89;Feuerwehr - Goethestr. 7;Feuerwehr;Goethestr. 7;12207;Gas;431309;59948;;Goethestr. 7,12207,Berlin;Goethestr. 7;13.3155;52.42956;Lichterfelde;7;T;Haus;;
-90;Feuerwehr - Gravensteinstr. 9, 4-18;Feuerwehr;Gravensteinstr. 9, 4-18;13127;Gas;91748;113676;;Gravensteinstr. 9, 4-18,13127,Berlin;Gravensteinstr. 9, 4-18;13.43607;52.60702;Französisch Buchholz;18;T;Haus;;
-91;Feuerwehr - Groß-Berliner Damm 18;Feuerwehr;Groß-Berliner Damm 18;12487;Fernwärme/Gas;497181;;;Groß-Berliner Damm 18,12487,Berlin;Groß-Berliner Damm 18;13.51013;52.45026;Johannisthal;18;T;Haus;;
-92;Feuerwehr - Grunowstr. 18;Feuerwehr;Grunowstr. 18;13187;n/a;0;0;Strom- und Wärmeverbrauch liegt nicht vor;Grunowstr. 18,13187,Berlin;Grunowstr. 18;13.40927;52.56824;Pankow;18;T;Haus;;
-93;Feuerwehr - Hackbuschstr. 65;Feuerwehr;Hackbuschstr. 65;13591;Gas;154628;27136;;Hackbuschstr. 65,13591,Berlin;Hackbuschstr. 65;13.15055;52.54348;Staaken;65;T;Haus;;
-94;Feuerwehr - Hauptstr. 14;Feuerwehr;Hauptstr. 14;13159;Gas;75846;40655;;Hauptstr. 14,13159,Berlin;Hauptstr. 14;13.38766;52.61773;Blankenfelde;14;T;Haus;;
-95;Feuerwehr - Hausvaterweg 16;Feuerwehr;Hausvaterweg 16;13057;Gas;199924;14954;;Hausvaterweg 16,13057,Berlin;Hausvaterweg 16;13.54614;52.56962;Falkenberg;16;T;Haus;;
-96;Feuerwehr - Heinsestr. 24;Feuerwehr;Heinsestr. 24;13467;Gas;219039;93103;;Heinsestr. 24,13467,Berlin;Heinsestr. 24;13.30877;52.61538;Hermsdorf;24;T;Haus;;
-97;Feuerwehr - Hellersdorfer Str. 143-147;Feuerwehr;Hellersdorfer Str. 143-147;12619;Fernwärme;135814;41511;;Hellersdorfer Str. 143-147,12619,Berlin;Hellersdorfer Str. 143-147;13.58962;52.52973;Kaulsdorf;143;M;Haus;;
-98;Feuerwehr - Im Domstift 22;Feuerwehr;Im Domstift 22;12309;Gas;113912;4705;;Im Domstift 22,12309,Berlin;Im Domstift 22;13.41223;52.39247;Lichtenrade;22;T;Haus;;
-99;Feuerwehr - Imkerweg/ Insel Werderchen;Feuerwehr;Imkerweg/ Insel Werderchen;12527;n/a;0;2799052;Wärmeverbrauch liegt nicht vor;Imkerweg/ Insel Werderchen,12527,Berlin;Imkerweg/ Insel Werderchen;;;Grünau;;;Ort;TRUE;keine feuerwehr kein adresse
-100;Feuerwehr - Jagowstr. 31;Feuerwehr;Jagowstr. 31;10555;Gas;835904;194627;;Jagowstr. 31,10555,Berlin;Jagowstr. 31;13.33369;52.52267;Moabit;31;T;Haus;;
-101;Feuerwehr - Johannisthaler Chaussee 222;Feuerwehr;Johannisthaler Chaussee 222;12351;Fernwärme;495168;84341;;Johannisthaler Chaussee 222,12351,Berlin;Johannisthaler Chaussee 222;13.46832;52.43419;Buckow;222;T;Haus;;
-102;Feuerwehr - Josef-Orlopp-Str. 69;Feuerwehr;Josef-Orlopp-Str. 69;10365;Gas;866535;188791;;Josef-Orlopp-Str. 69,10365,Berlin;Josef-Orlopp-Str. 69;13.49285;52.52318;Lichtenberg;69;T;Haus;;
-103;Feuerwehr - Katzengraben 1,1a;Feuerwehr;Katzengraben 1,1a;12555;Gas;0;191582;Wärmeverbrauch liegt nicht vor Sanierung 2020;Katzengraben 1,1a,12555,Berlin;Katzengraben 1,1a;13.57904;52.44721;Köpenick;1A;F;Haus;;
-104;Feuerwehr - Kirchhofstr. 20;Feuerwehr;Kirchhofstr. 20;12051;Gas;945806;;;Kirchhofstr. 20,12051,Berlin;Kirchhofstr. 20;13.43843;52.46899;Neukölln;20;T;Haus;;
-105;Feuerwehr - Kladower Damm 367;Feuerwehr;Kladower Damm 367;14089;Gas;100671;;;Kladower Damm 367,14089,Berlin;Kladower Damm 367;13.14522;52.45472;Kladow;367;T;Haus;;
-106;Feuerwehr - Krampenburger Weg 1,3;Feuerwehr;Krampenburger Weg 1,3;12559;Gas;89856;40042;;Krampenburger Weg 1,3,12559,Berlin;Krampenburger Weg 1,3;13.66439;52.41056;Müggelheim;1;F;Haus;;
-107;Feuerwehr - Kronprinzessinnenweg 20;Feuerwehr;Kronprinzessinnenweg 20;14109;Gas;5766;76458;;Kronprinzessinnenweg 20,14109,Berlin;Kronprinzessinnenweg 20;13.18465;52.4293;Wannsee;20;T;Haus;;
-108;Feuerwehr - Kummerower Ring 80;Feuerwehr;Kummerower Ring 80;12619;Fernwärme;302973;49352;;Kummerower Ring 80,12619,Berlin;Kummerower Ring 80;13.58242;52.52559;Kaulsdorf;80;T;Haus;;
-109;Feuerwehr - Linienstr. 128-129;Feuerwehr;Linienstr. 128-129;10115;Gas;;28438;;Linienstr. 128-129,10115,Berlin;Linienstr. 128-129;13.38925;52.52658;Mitte;128;M;Haus;;
-110;Feuerwehr - Mädewalder Weg 21,23;Feuerwehr;Mädewalder Weg 21,23;12621;Gas;149564;13793;;Mädewalder Weg 21,23,12621,Berlin;Mädewalder Weg 21,23;13.58798;52.50686;Kaulsdorf;21;F;Haus;;
-111;Feuerwehr - Märkische Allee 181, 189;Feuerwehr;Märkische Allee 181, 189;12681;Fernwärme;1384520;239361;;Märkische Allee 181, 189,12681,Berlin;Märkische Allee 181, 189;13.53669;52.53499;Marzahn;181;F;Haus;;
-112;Feuerwehr - Müggelseedamm 178;Feuerwehr;Müggelseedamm 178;12587;Gas;265124;40774;;Müggelseedamm 178,12587,Berlin;Müggelseedamm 178;13.62612;52.44657;Friedrichshagen;178;T;Haus;;
-113;Feuerwehr - Mühlenweg 8;Feuerwehr;Mühlenweg 8;12589;Gas;10869;27421;;Mühlenweg 8,12589,Berlin;Mühlenweg 8;13.68963;52.43902;Rahnsdorf;8;T;Haus;;
-114;Feuerwehr - Nikolaus-Groß-Weg 2;Feuerwehr;Nikolaus-Groß-Weg 2;13627;Gas;3225868;2168696;;Nikolaus-Groß-Weg 2,13627,Berlin;Nikolaus-Groß-Weg 2;13.28239;52.53225;Charlottenburg-Nord;2;T;Haus;;
-115;Feuerwehr - Nöldnerstr. 36;Feuerwehr;Nöldnerstr. 36;10317;Fernwärme;36893;1016;;Nöldnerstr. 36,10317,Berlin;Nöldnerstr. 36;13.4839;52.50194;Lichtenberg;36;T;Haus;;
-116;Feuerwehr - Oderberger Str. 24,25;Feuerwehr;Oderberger Str. 24,25;10435;Gas;427577;106799;;Oderberger Str. 24,25,10435,Berlin;Oderberger Str. 24,25;13.40667;52.53991;Prenzlauer Berg;24;F;Haus;;
-117;Feuerwehr - Pablo-Picasso-Str. ggü. 49;Feuerwehr;Pablo-Picasso-Str. ggü. 49;13057;Fernwärme;984462;173553;;Pablo-Picasso-Str. ggü. 49,13057,Berlin;Pablo-Picasso-Str. ggü. 49;13.52684;52.55745;Neu-Hohenschönhausen;48;F;Haus;;
-118;Feuerwehr - Parkstr. 38-39;Feuerwehr;Parkstr. 38-39;13086;Gas;618161;66959;;Parkstr. 38-39,13086,Berlin;Parkstr. 38-39;13.45975;52.55644;Weißensee;38;M;Haus;;
-119;Feuerwehr - Pasewalker Str. 120;Feuerwehr;Pasewalker Str. 120;13127;Fernwärme;154849;18959;;Pasewalker Str. 120,13127,Berlin;Pasewalker Str. 120;13.42898;52.58217;Französisch Buchholz;120;T;Haus;;
-120;Feuerwehr - Paulsternstr. 34;Feuerwehr;Paulsternstr. 34;13629;Fernwärme;113982;1131;;Paulsternstr. 34,13629,Berlin;Paulsternstr. 34;13.24789;52.54397;Siemensstadt;34;T;Haus;;
-121;Feuerwehr - Pölnitzweg 3,5;Feuerwehr;Pölnitzweg 3,5;13125;Fernwärme;162999;2173;;Pölnitzweg 3,5,13125,Berlin;Pölnitzweg 3,5;13.50217;52.63749;Buch;3;F;Haus;;
-122;Feuerwehr - Rankestr. 10-12;Feuerwehr;Rankestr. 10-12;10789;Fernwärme;512742;57606;;Rankestr. 10-12,10789,Berlin;Rankestr. 10-12;13.33263;52.50175;Charlottenburg;10;M;Haus;;
-123;Feuerwehr - Rathausstr. 70,72;Feuerwehr;Rathausstr. 70,72;12105; Gas/Fernwärme;478349;61031;;Rathausstr. 70,72,12105,Berlin;Rathausstr. 70,72;13.38029;52.44392;Mariendorf;70;F;Haus;;
-124;Feuerwehr - Reinickendorfer Str. 15a-15c;Feuerwehr;Reinickendorfer Str. 15a-15c;13347;Fernwärme;577604;68123;;Reinickendorfer Str. 15a-15c,13347,Berlin;Reinickendorfer Str. 15a-15c;13.37;52.54328;Gesundbrunnen;15A;M;Haus;;
-125;Feuerwehr - Remstaler Str. 9;Feuerwehr;Remstaler Str. 9;13465;Gas;46532;25359;;Remstaler Str. 9,13465,Berlin;Remstaler Str. 9;13.30121;52.63694;Frohnau;9;T;Haus;;
-126;Feuerwehr - Roedernallee 55;Feuerwehr;Roedernallee 55;13437;Gas;377923;59303;;Roedernallee 55,13437,Berlin;Roedernallee 55;13.34085;52.58734;Reinickendorf;55;T;Haus;;
-127;Feuerwehr - Romain-Rolland-Str. 103,105,107;Feuerwehr;Romain-Rolland-Str. 103,105,107;13089;Gas;75854;16367;;Romain-Rolland-Str. 103,105,107,13089,Berlin;Romain-Rolland-Str. 103,105,107;13.43729;52.57132;Heinersdorf;103;F;Haus;;
-128;Feuerwehr - Schieritzstr. 24,26;Feuerwehr;Schieritzstr. 24,26;10409;Fernwärme;159172;2723;;Schieritzstr. 24,26,10409,Berlin;Schieritzstr. 24,26;13.4406;52.54521;Prenzlauer Berg;24;F;Haus;;
-129;Feuerwehr - Schlierseestr. 10;Feuerwehr;Schlierseestr. 10;12527;Gas;37733;27421;;Schlierseestr. 10,12527,Berlin;Schlierseestr. 10;13.57936;52.42207;Grünau;10;T;Haus;;
-130;Feuerwehr - Schmöckwitzer Damm 60;Feuerwehr;Schmöckwitzer Damm 60;12527;Gas;;2524;;Schmöckwitzer Damm 60,12527,Berlin;Schmöckwitzer Damm 60;13.64578;52.34725;Schmöckwitz;60;T;Haus;;
-131;Feuerwehr - Selchowstr. 4;Feuerwehr;Selchowstr. 4;12489;Gas;86218;12654;;Selchowstr. 4,12489,Berlin;Selchowstr. 4;13.55003;52.43934;Adlershof;4;T;Haus;;
-132;Feuerwehr - Semmelweisstr. 83-87;Feuerwehr;Semmelweisstr. 83-87;12524;Öl;0;0;Wärme- und Stromverbrauch liegt nicht vor;Semmelweisstr. 83-87,12524,Berlin;Semmelweisstr. 83-87;13.52922;52.42383;Altglienicke;83;M;Haus;;
-133;Feuerwehr - Senheimer Str. 69;Feuerwehr;Senheimer Str. 69;13465;n/a;0;821541;Wärmeverbrauch liegt nicht vor;Senheimer Str. 69,13465,Berlin;Senheimer Str. 69;13.29291;52.64556;Frohnau;69;T;Haus;;
-134;Feuerwehr - Siemensstr. 22;Feuerwehr;Siemensstr. 22;12459;Fernwärme;156;;Stromverbrauch liegt nicht vor;Siemensstr. 22,12459,Berlin;Siemensstr. 22;13.51229;52.46426;Oberschöneweide;22;T;Haus;;
-135;Feuerwehr - Stiftsweg 1a;Feuerwehr;Stiftsweg 1a;13187;Fernwärme;0;0;Wärme- und Stromverbrauch liegt nicht vor;Stiftsweg 1a,13187,Berlin;Stiftsweg 1a;13.4155;52.57306;Pankow;1A;T;Haus;;
-136;Feuerwehr - Suarezstr. 9-10;Feuerwehr;Suarezstr. 9-10;14057;Fernwärme;85861;;;Suarezstr. 9-10,14057,Berlin;Suarezstr. 9-10;13.29606;52.50906;Charlottenburg;9;M;Haus;;
-137;Feuerwehr - Südendstr. 18a;Feuerwehr;Südendstr. 18a;12169;Gas;4676;52288;;Südendstr. 18a,12169,Berlin;Südendstr. 18a;13.33036;52.45597;Steglitz;18A;T;Haus;;
-138;Feuerwehr - Triftstr. 8;Feuerwehr;Triftstr. 8;13585;Gas;431479;;;Triftstr. 8,13585,Berlin;Triftstr. 8;13.21039;52.5448;Hakenfelde;8;T;Haus;;
-139;Feuerwehr - Voltairestr. 2;Feuerwehr;Voltairestr. 2;10179;Fernwärme,Gas;803371;;;Voltairestr. 2,10179,Berlin;Voltairestr. 2;13.41466;52.51691;Mitte;2;T;Haus;;
-140;Feuerwehr - Waltersdorfer Str. 107;Feuerwehr;Waltersdorfer Str. 107;12526;Gas;108473;9683;;Waltersdorfer Str. 107,12526,Berlin;Waltersdorfer Str. 107;13.5742;52.40169;Bohnsdorf;107;T;Haus;;
-141;Feuerwehr - Wendenschloßstr. 348 / Werft Bootshaus;Feuerwehr;Wendenschloßstr. 348 / Werft Bootshaus;12557;n/a;0;409;Wärmeverbrauch liegt nicht vor;Wendenschloßstr. 348 / Werft Bootshaus,12557,Berlin;Wendenschloßstr. 348 / Werft Bootshaus;13.58456;52.42594;Köpenick;348;F;Haus;;
-142;Feuerwehr - Wiener Str. 64;Feuerwehr;Wiener Str. 64;10999;Gas;6287;107743;;Wiener Str. 64,10999,Berlin;Wiener Str. 64;13.42918;52.49863;Kreuzberg;64;T;Haus;;
-143;Feuerwehr - Wilhelm-von-Siemens-Str. 15;Feuerwehr;Wilhelm-von-Siemens-Str. 15;12277;Gas;580522;117684;;Wilhelm-von-Siemens-Str. 15,12277,Berlin;Wilhelm-von-Siemens-Str. 15;13.38049;52.42958;Mariendorf;15;T;Haus;;
-144;Feuerwehr - Wilmsstr. 19,20;Feuerwehr;Wilmsstr. 19,20;10961;Gas;407;59159;;Wilmsstr. 19,20,10961,Berlin;Wilmsstr. 19,20;13.40313;52.49551;Kreuzberg;19;F;Haus;;
-145;Flüchtlingsunterbringung - Albert-Kuntz-Str. 61,63,65,67,69,71,73;Flüchtlingsunterbringung;Albert-Kuntz-Str. 61,63,65,67,69,71,73;12627;Fernwärme;1354735;405037;;Albert-Kuntz-Str. 61,63,65,67,69,71,73,12627,Berlin;Albert-Kuntz-Str. 61,63,65,67,69,71,73;13.61941;52.53788;Hellersdorf;61;F;Haus;;
-146;Flüchtlingsunterbringung - Alt-Moabit 82 B;Flüchtlingsunterbringung;Alt-Moabit 82 B;10555;n/a;0;244526;Wärmeverbrauch liegt nicht vor;Alt-Moabit 82 B,10555,Berlin;Alt-Moabit 82 B;13.33691;52.52487;Moabit;82B;T;Haus;;
-147;Flüchtlingsunterbringung - Am Beelitzhof 12,14,14A-C,16,16A-C;Flüchtlingsunterbringung;Am Beelitzhof 12,14,14A-C,16,16A-C;14129;n/a;345712;13426;;Am Beelitzhof 12,14,14A-C,16,16A-C,14129,Berlin;Am Beelitzhof 12,14,14A-C,16,16A-C;13.19001;52.43166;Nikolassee;12;F;Haus;;
-148;Flüchtlingsunterbringung - Brebacher Weg 15;Flüchtlingsunterbringung;Brebacher Weg 15;12683;Fernwärme;1088910;228395;;Brebacher Weg 15,12683,Berlin;Brebacher Weg 15;13.56886;52.51393;Biesdorf;15;T;Haus;;
-149;Flüchtlingsunterbringung - Carola-Neher-Str. 65 / Maxie-Wander-Str. 78;Flüchtlingsunterbringung;Carola-Neher-Str. 65 / Maxie-Wander-Str. 78;12619;Fernwärme;1605624;165925;;Carola-Neher-Str. 65 / Maxie-Wander-Str. 78,12619,Berlin;Carola-Neher-Str. 65 / Maxie-Wander-Str. 78;13.59949;52.53038;Hellersdorf;65;F;Haus;;
-150;Flüchtlingsunterbringung - Eschenallee 3;Flüchtlingsunterbringung;Eschenallee 3;14050;Gas,Heizöl;1951734;;;Eschenallee 3,14050,Berlin;Eschenallee 3;13.26872;52.51845;Westend;3;T;Haus;;
-151;Flüchtlingsunterbringung - Kiefholzstr. 71, 71 A-C;Flüchtlingsunterbringung;Kiefholzstr. 71, 71 A-C;12435;Gas;594861;197585;;Kiefholzstr. 71, 71 A-C,12435,Berlin;Kiefholzstr. 71, 71 A-C;13.45682;52.4867;Alt-Treptow;46A;F;Haus;;
-152;Flüchtlingsunterbringung - Kirchhainer Damm 74;Flüchtlingsunterbringung;Kirchhainer Damm 74;12309;Gas;0;122064;Wärmeverbrauch liegt nicht vor;Kirchhainer Damm 74,12309,Berlin;Kirchhainer Damm 74;13.41521;52.37885;Lichtenrade;74;T;Haus;;
-153;Flüchtlingsunterbringung - Kladower Damm 333;Flüchtlingsunterbringung;Kladower Damm 333;14089;Gas;339356;21606;;Kladower Damm 333,14089,Berlin;Kladower Damm 333;13.1503;52.45729;Kladow;333;T;Haus;;
-154;Flüchtlingsunterbringung - Leonorenstr. 33 B;Flüchtlingsunterbringung;Leonorenstr. 33 B;12247;Fernwärme;1569110;487984;;Leonorenstr. 33 B,12247,Berlin;Leonorenstr. 33 B;13.34364;52.44354;Lankwitz;33B;;Haus;;
-155;Flüchtlingsunterbringung - Marienfelder Allee 66-80;Flüchtlingsunterbringung;Marienfelder Allee 66-80;12277;n/a;0;966631;Wärmeverbrauch liegt nicht vor;Marienfelder Allee 66-80,12277,Berlin;Marienfelder Allee 66-80;13.36839;52.42049;Marienfelde;66;M;Haus;;
-156;Flüchtlingsunterbringung - Niedstr. 1,2;Flüchtlingsunterbringung;Niedstr. 1,2;12159;Gas;2297130;486759;;Niedstr. 1,2,12159,Berlin;Niedstr. 1,2;13.33576;52.47249;Friedenau;1;F;Haus;;
-157;Flüchtlingsunterbringung - Paul-Schwenk-Str. 3,5,7,9,11,13,15;Flüchtlingsunterbringung;Paul-Schwenk-Str. 3,5,7,9,11,13,15;12685;Fernwärme;1037807;490262;;Paul-Schwenk-Str. 3,5,7,9,11,13,15,12685,Berlin;Paul-Schwenk-Str. 3,5,7,9,11,13,15;13.53961;52.53771;Marzahn;3;F;Haus;;
-158;Flüchtlingsunterbringung - Rudolf-Leonhard-Str. 13, 13 A-F;Flüchtlingsunterbringung;Rudolf-Leonhard-Str. 13, 13 A-F;12679;FernwärmE;979774;1184594;;Rudolf-Leonhard-Str. 13, 13 A-F,12679,Berlin;Rudolf-Leonhard-Str. 13, 13 A-F;13.56934;52.55132;Marzahn;13A;F;Haus;;
-159;Flüchtlingsunterbringung - Salvador-Allende-Str. 89, 91;Flüchtlingsunterbringung;Salvador-Allende-Str. 89, 91;12559;n/a;0;4215;Wärmeverbrauch liegt nicht vor;Salvador-Allende-Str. 89, 91,12559,Berlin;Salvador-Allende-Str. 89, 91;13.59312;52.44573;Köpenick;89;F;Haus;;
-160;Flüchtlingsunterbringung - Staakener Str. 79;Flüchtlingsunterbringung;Staakener Str. 79;13583;Gas;0;0;Wärme- und Stromverbrauch liegt nicht vor;Staakener Str. 79,13583,Berlin;Staakener Str. 79;13.18757;52.53593;Spandau;85;F;Haus;;
-161;Flüchtlingsunterbringung - Storkower Str. 133A;Flüchtlingsunterbringung;Storkower Str. 133A;10407;n/a;384528;10037;;Storkower Str. 133A,10407,Berlin;Storkower Str. 133A;13.45486;52.53541;Prenzlauer Berg;133A;T;Haus;;
-162;Flüchtlingsunterbringung - Storkower Str. 139 C;Flüchtlingsunterbringung;Storkower Str. 139 C;10407;Fernwärme;86848;18041;;Storkower Str. 139 C,10407,Berlin;Storkower Str. 139 C;13.45426;52.53309;Prenzlauer Berg;139C;;Haus;;
-163;Flüchtlingsunterbringung - Wartenberger Str. 120, 120 A-F;Flüchtlingsunterbringung;Wartenberger Str. 120, 120 A-F;13053;Fernwärme;1182080;452843;;Wartenberger Str. 120, 120 A-F,13053,Berlin;Wartenberger Str. 120, 120 A-F;13.51669;52.56112;Neu-Hohenschönhausen;120A;F;Haus;;
-164;Flüchtlingsunterbringung - Wassersportallee 56,58;Flüchtlingsunterbringung;Wassersportallee 56,58;12527;Gas;241319;;;Wassersportallee 56,58,12527,Berlin;Wassersportallee 56,58;13.57436;52.41427;Grünau;56;F;Haus;;
-165;Flüchtlingsunterbringung - Wittenberger Str. 16, 16 A-C, 18, 18 A-B;Flüchtlingsunterbringung;Wittenberger Str. 16, 16 A-C, 18, 18 A-B;12689;Fernwärme;1431473;33249;;Wittenberger Str. 16, 16 A-C, 18, 18 A-B,12689,Berlin;Wittenberger Str. 16, 16 A-C, 18, 18 A-B;13.56508;52.56508;Marzahn;16A;F;Haus;;
-166;Flüchtlingsunterbringung - Wolfgang-Heinz-Str. 45 A-G;Flüchtlingsunterbringung;Wolfgang-Heinz-Str. 45 A-G;13125;Fernwärme;0;1080189;Wärmeverbrauch liegt nicht vor;Wolfgang-Heinz-Str. 45 A-G,13125,Berlin;Wolfgang-Heinz-Str. 45 A-G;13.49309;52.62999;Buch;45A;T;Haus;;
-167;Flüchtlingsunterbringung - Zum Heckeshorn 30;Flüchtlingsunterbringung;Zum Heckeshorn 30;14109;Gas;;18637;;Zum Heckeshorn 30,14109,Berlin;Zum Heckeshorn 30;13.1612;52.42955;Wannsee;30;T;Haus;;
-168;Gerichte - Alt-Moabit 5;Gerichte;Alt-Moabit 5;10559;Fernwärme;580116;58584;;Alt-Moabit 5,10559,Berlin;Alt-Moabit 5;13.3629348;52.5233073;Moabit;12;F;Haus;TRUE;
-169;Gerichte - Altstädter Ring 7;Gerichte;Altstädter Ring 7;13597;Fernwärme;419608;155328;;Altstädter Ring 7,13597,Berlin;Altstädter Ring 7;13.19985;52.53693;Spandau;7;T;Haus;;
-170;Gerichte - Amtsgerichtsplatz 1;Gerichte;Amtsgerichtsplatz 1;14057;Fernwärme;1861518;244525;;Amtsgerichtsplatz 1,14057,Berlin;Amtsgerichtsplatz 1;13.29507;52.5061;Charlottenburg;1;T;Haus;;
-171;Gerichte - Brunnenplatz 1;Gerichte;Brunnenplatz 1;13357;Fernwärme;1338733;;;Brunnenplatz 1,13357,Berlin;Brunnenplatz 1;13.37563;52.55081;Gesundbrunnen;1;T;Haus;;
-172;Gerichte - Elßholzstr. 30-33;Gerichte;Elßholzstr. 30-33;10781;Gas;0;0;Wärme- und Stromverbrauch liegt nicht vor;Elßholzstr. 30-33,10781,Berlin;Elßholzstr. 30-33;13.35676;52.49248;Schöneberg;30;M;Haus;;
-173;Gerichte - Grunewaldstr. 66-67;Gerichte;Grunewaldstr. 66-67;10823;Gas;1251877;191079;;Grunewaldstr. 66-67,10823,Berlin;Grunewaldstr. 66-67;13.34601;52.48897;Schöneberg;66;M;Haus;;
-174;Gerichte - Hardenbergstr. 31;Gerichte;Hardenbergstr. 31;10623;Fernwärme;1468400;17385;;Hardenbergstr. 31,10623,Berlin;Hardenbergstr. 31;13.33073;52.50726;Charlottenburg;31;T;Haus;;
-175;Gerichte - Invalidenstr. 52;Gerichte;Invalidenstr. 52;10557;Fernwärme;1074279;271383;;Invalidenstr. 52,10557,Berlin;Invalidenstr. 52;13.37128;52.52725;Moabit;52;T;Haus;;
-176;Gerichte - Karl-Marx-Str. 77;Gerichte;Karl-Marx-Str. 77;12043;Fernwärme;811787;128271;;Karl-Marx-Str. 77,12043,Berlin;Karl-Marx-Str. 77;13.43434;52.4818;Neukölln;77;T;Haus;;
-177;Gerichte - Kissingenstr. 5,6;Gerichte;Kissingenstr. 5,6;13189;Fernwärme;652378;;;Kissingenstr. 5,6,13189,Berlin;Kissingenstr. 5,6;13.41566;52.56628;Pankow;5;F;Haus;;
-178;Gerichte - Lehrter Str. 60;Gerichte;Lehrter Str. 60;10557;Fernwärme;965024;;Stromverbrauch liegt nicht vor;Lehrter Str. 60,10557,Berlin;Lehrter Str. 60;13.36147;52.53088;Moabit;60;T;Haus;;
-179;Gerichte - Littenstr. 12-17;Gerichte;Littenstr. 12-17;10179;Fernwärme;4168762;;;Littenstr. 12-17,10179,Berlin;Littenstr. 12-17;13.41395;52.51797;Mitte;12;M;Haus;;
-180;Gerichte - Mandrellaplatz 6;Gerichte;Mandrellaplatz 6;12555;Gas;579872;105816;;Mandrellaplatz 6,12555,Berlin;Mandrellaplatz 6;13.57957;52.45534;Köpenick;6;T;Haus;;
-181;Gerichte - Möckernstr. 128-130;Gerichte;Möckernstr. 128-130;10963;Gas;2119582;596176;;Möckernstr. 128-130,10963,Berlin;Möckernstr. 128-130;13.38128;52.50014;Kreuzberg;130;T;Haus;;
-182;Gerichte - Parkstr. 71;Gerichte;Parkstr. 71;13086;Gas;971027;;;Parkstr. 71,13086,Berlin;Parkstr. 71;13.46013;52.55735;Weißensee;71;T;Haus;;
-183;Gerichte - Ringstr. 9;Gerichte;Ringstr. 9;12203;Gas;766926;84841;;Ringstr. 9,12203,Berlin;Ringstr. 9;13.30774;52.43741;Lichterfelde;9;T;Haus;;
-184;Gerichte - Roedeliusplatz 1;Gerichte;Roedeliusplatz 1;10365;Fernwärme;511778;926233;;Roedeliusplatz 1,10365,Berlin;Roedeliusplatz 1;13.48948;52.51439;Lichtenberg;1;T;Haus;;
-185;Gerichte - Schönstedtstr. 17;Gerichte;Schönstedtstr. 17;12043;Fernwärme;811787;13;;Schönstedtstr. 17,12043,Berlin;Schönstedtstr. 17;13.43501;52.48181;Neukölln;17;T;Haus;;
-186;Gerichte - Schönstedtstr. 5;Gerichte;Schönstedtstr. 5;13357;Fernwärme;1118455;;;Schönstedtstr. 5,13357,Berlin;Schönstedtstr. 5;13.37447;52.55002;Gesundbrunnen;5;T;Haus;;
-187;Gerichte - Tegeler Weg 17-20;Gerichte;Tegeler Weg 17-20;10589;Fernwärme;2232150;96992;;Tegeler Weg 17-20,10589,Berlin;Tegeler Weg 17-20;13.29753;52.52699;Charlottenburg;17;M;Haus;;
-188;Gerichte - Turmstr. 91;Gerichte;Turmstr. 91;10559;Fernwärme;8506223;0;;Turmstr. 91,10559,Berlin;Turmstr. 91;13.3538;52.52638;Moabit;91;T;Haus;;
-189;JVA - Alfredstr. 11;JVA;Alfredstr. 11;10365;Fernwärme;1632800;;;Alfredstr. 11,10365,Berlin;Alfredstr. 11;13.48983;52.5136;Lichtenberg;11;T;Haus;;
-190;JVA - Alt-Moabit 12a / JVA Moabit;JVA;Alt-Moabit 12a / JVA Moabit;10559;Fernwärme,Gas;8604705;0;Stromverbrauch liegt nicht vor;Alt-Moabit 12a / JVA Moabit,10559,Berlin;Alt-Moabit 12a / JVA Moabit;13.3541;52.52411;Moabit;12A;F;Haus;;
-191;JVA - Arkonastr. 56;JVA;Arkonastr. 56;13189;Fernwärme;877226;551935;;Arkonastr. 56,13189,Berlin;Arkonastr. 56;13.41543;52.5657;Pankow;56;T;Haus;;
-192;JVA - Ernst-Stargardt-Allee 1 / JVA Heidering;JVA;Ernst-Stargardt-Allee 1 / JVA Heidering;14979;Fernwärme,Gas;0;;Wärmeverbrauch liegt nicht vor;Ernst-Stargardt-Allee 1 / JVA Heidering,14979,Berlin;Ernst-Stargardt-Allee 1 / JVA Heidering;13.27748;52.34025;Neubeeren;1;F;Haus;;
-193;JVA - Friedrich-Olbricht-Damm 16, JVA Plötzensee;JVA;Friedrich-Olbricht-Damm 16, JVA Plötzensee;13627;Gas;28122647;4896155;;Friedrich-Olbricht-Damm 16, JVA Plötzensee,13627,Berlin;Friedrich-Olbricht-Damm 16, JVA Plötzensee;13.32196;52.53903;Charlottenburg-Nord;16;F;Haus;;
-194;JVA - Friedrich-Olbricht-Damm 17, JVA Plötzensee;JVA;Friedrich-Olbricht-Damm 17, JVA Plötzensee;13627;Gas;22827088;4705;;Friedrich-Olbricht-Damm 17, JVA Plötzensee,13627,Berlin;Friedrich-Olbricht-Damm 17, JVA Plötzensee;13.3215;52.53858;Charlottenburg-Nord;17;F;Haus;;
-195;JVA - Friedrich-Olbricht-Damm 40, JSA;JVA;Friedrich-Olbricht-Damm 40, JSA;13627;Gas;0;169534;Wärmeverbrauch liegt nicht vor;Friedrich-Olbricht-Damm 40, JSA,13627,Berlin;Friedrich-Olbricht-Damm 40, JSA;13.31757;52.54048;Charlottenburg-Nord;40;F;Haus;;
-196;JVA - Kiefheider Weg 72;JVA;Kiefheider Weg 72;13503;Gas;630251;26532;;Kiefheider Weg 72,13503,Berlin;Kiefheider Weg 72;13.24735;52.62162;Heiligensee;72;T;Haus;;
-197;JVA - Kirchhainer Damm 64 - 66, JAA;JVA;Kirchhainer Damm 64 - 66, JAA;12309;Gas;1439454;132782;;Kirchhainer Damm 64 - 66, JAA,12309,Berlin;Kirchhainer Damm 64 - 66, JAA;13.41353;52.3805;Lichtenrade;66;F;Haus;;
-198;JVA - Kisselnallee 19;JVA;Kisselnallee 19;13589;Gas;29498;105624;;Kisselnallee 19,13589,Berlin;Kisselnallee 19;13.18995;52.55425;Falkenhagener Feld;19;T;Haus;;
-199;JVA - Lehrter Str. 61, JVA Plötzensee;JVA;Lehrter Str. 61, JVA Plötzensee;10557;Fernwärme;;17869;;Lehrter Str. 61, JVA Plötzensee,10557,Berlin;Lehrter Str. 61, JVA Plötzensee;13.36223;52.52999;Moabit;61;F;Haus;;
-200;JVA - Lützowstr. 45, JAA;JVA;Lützowstr. 45, JAA;12307;Gas;43275;12265;;Lützowstr. 45, JAA,12307,Berlin;Lützowstr. 45, JAA;13.41163;52.37921;Lichtenrade;45;F;Haus;;
-201;JVA - Neuwedeller Str. 4;JVA;Neuwedeller Str. 4;12053;Fernwärme;;67954;;Neuwedeller Str. 4,12053,Berlin;Neuwedeller Str. 4;13.43107;52.47546;Neukölln;4;T;Haus;;
-202;JVA - Niederneuendorfer Allee 140-150;JVA;Niederneuendorfer Allee 140-150;13587;Gas;1583049;166628;;Niederneuendorfer Allee 140-150,13587,Berlin;Niederneuendorfer Allee 140-150;13.21174;52.56981;Hakenfelde;140;M;Haus;;
-203;JVA - Ollenhauerstr. 128;JVA;Ollenhauerstr. 128;13403;Gas;882413;75931;;Ollenhauerstr. 128,13403,Berlin;Ollenhauerstr. 128;13.3287;52.56666;Reinickendorf;128;T;Haus;;
-204;JVA - Robert-von-Ostertag-Str. 2;JVA;Robert-von-Ostertag-Str. 2;14163;Gas;1763747;;;Robert-von-Ostertag-Str. 2,14163,Berlin;Robert-von-Ostertag-Str. 2;13.23918;52.42576;Zehlendorf;2;T;Haus;;
-205;JVA - Saatwinkler Damm 1A, JVA Plötzensee (JVK);JVA;Saatwinkler Damm 1A, JVA Plötzensee (JVK);13627;Gas,Nahwärme;0;128908;Wärmeverbrauch liegt nicht vor;Saatwinkler Damm 1A, JVA Plötzensee (JVK),13627,Berlin;Saatwinkler Damm 1A, JVA Plötzensee (JVK);13.32623;52.53932;Charlottenburg-Nord;1A;F;Haus;;
-206;JVA - Seidelstr. 39 / JVA Tegel;JVA;Seidelstr. 39 / JVA Tegel;13507;Gas;;;;Seidelstr. 39 / JVA Tegel,13507,Berlin;Seidelstr. 39 / JVA Tegel;13.29583;52.57357;Tegel;39;F;Haus;;
-207;Kultur - Albrechtstr. 20;Kultur;Albrechtstr. 20;10117;Fernwärme;0;352164;Wärmeverbrauch liegt nicht vor;Albrechtstr. 20,10117,Berlin;Albrechtstr. 20;13.38439;52.52252;Mitte;20;T;Haus;;
-208;Kultur - Alte Jakobstr. 128;Kultur;Alte Jakobstr. 128;10969;Fernwärme,Öl;1515406;;;Alte Jakobstr. 128,10969,Berlin;Alte Jakobstr. 128;13.39858;52.50353;Kreuzberg;128;T;Haus;;
-209;Kultur - Alt-Treptow 1;Kultur;Alt-Treptow 1;12435;Gas;141629;65297;;Alt-Treptow 1,12435,Berlin;Alt-Treptow 1;13.47654;52.48588;Alt-Treptow;1;T;Haus;;
-210;Kultur - Am Großen Wannsee 56,58 / Wannsee-Konferenz;Kultur;Am Großen Wannsee 56,58 / Wannsee-Konferenz;14109;Gas;30121;90715;;Am Großen Wannsee 56,58 / Wannsee-Konferenz,14109,Berlin;Am Großen Wannsee 56,58 / Wannsee-Konferenz;13.16636;52.43232;Wannsee;56;F;Haus;;
-211;211 Kultur - Am Köllnischen Park 4 / Marinehaus;Kultur;Am Köllnischen Park 4 / Marinehaus;10179;Fernwärme;0;91931;Wärmeverbrauch liegt nicht vor;Am Köllnischen Park 4 / Marinehaus,10179,Berlin;Am Köllnischen Park 4 / Marinehaus;13.4156;52.51371;Mitte;4;F;Haus;;
-212;Kultur - Am Köllnischen Park 5 / Märkisches Museum;Kultur;Am Köllnischen Park 5 / Märkisches Museum;10179;Fernwärme;778551;106799;;Am Köllnischen Park 5 / Märkisches Museum,10179,Berlin;Am Köllnischen Park 5 / Märkisches Museum;13.41517;52.51358;Mitte;5;F;Haus;;
-213;Kultur - Am Sandwerder 5 / Literarisches Colloquium;Kultur;Am Sandwerder 5 / Literarisches Colloquium;14109;Gas;334331;69173;;Am Sandwerder 5 / Literarisches Colloquium,14109,Berlin;Am Sandwerder 5 / Literarisches Colloquium;13.17852;52.42268;Wannsee;5;F;Haus;;
-214;Kultur - Bismarckstr. 110 / Schillertheater;Kultur;Bismarckstr. 110 / Schillertheater;10625;Fernwärme;1973055;927461;;Bismarckstr. 110 / Schillertheater,10625,Berlin;Bismarckstr. 110 / Schillertheater;13.31825;52.51182;Charlottenburg;110;F;Haus;;
-215;Kultur - Blücherplatz 1 / Amerika-Gedenkbibliothek;Kultur;Blücherplatz 1 / Amerika-Gedenkbibliothek;10961;Gas;1876655;667888;;Blücherplatz 1 / Amerika-Gedenkbibliothek,10961,Berlin;Blücherplatz 1 / Amerika-Gedenkbibliothek;13.39256;52.49671;Kreuzberg;1;F;Haus;;
-216;Kultur - Breite Str. 30-37, ZLB;Kultur;Breite Str. 30-37, ZLB;10178;Fernwärme;3155379;1522377;;Breite Str. 30-37, ZLB,10178,Berlin;Breite Str. 30-37, ZLB;13.40444;52.51527;Mitte;30;T;Haus;;
-217;Kultur - Britzer Str. 5 / Topographie des Terrors;Kultur;Britzer Str. 5 / Topographie des Terrors;12439;Gas;302915;;;Britzer Str. 5 / Topographie des Terrors,12439,Berlin;Britzer Str. 5 / Topographie des Terrors;13.51832;52.45309;Niederschöneweide;5;F;Haus;;
-218;Kultur - Bussardsteig 9 / Brücke - Museum;Kultur;Bussardsteig 9 / Brücke - Museum;14195;Gas;304326;153171;;Bussardsteig 9 / Brücke - Museum,14195,Berlin;Bussardsteig 9 / Brücke - Museum;13.27474;52.46686;Dahlem;9;F;Haus;;
-219;Kultur - Chausseestr. 125 / Brecht-Haus;Kultur;Chausseestr. 125 / Brecht-Haus;10115;Fernwärme;127119;;;Chausseestr. 125 / Brecht-Haus,10115,Berlin;Chausseestr. 125 / Brecht-Haus;13.38482;52.52893;Mitte;125;F;Haus;;
-220;Kultur - Clauertstr. 11 / Museumsdorf Düppel;Kultur;Clauertstr. 11 / Museumsdorf Düppel;14163;Gas;13558;172372;;Clauertstr. 11 / Museumsdorf Düppel,14163,Berlin;Clauertstr. 11 / Museumsdorf Düppel;13.23639;52.42461;Zehlendorf;11;F;Haus;;
-221;Kultur - Colomierstr. 3 / Liebermann-Villa;Kultur;Colomierstr. 3 / Liebermann-Villa;14109;Gas;0;352802;Wärmeverbrauch liegt nicht vor;Colomierstr. 3 / Liebermann-Villa,14109,Berlin;Colomierstr. 3 / Liebermann-Villa;13.16494;52.42881;Wannsee;3;F;Haus;;
-222;Kultur - Fasanenstr. 23;Kultur;Fasanenstr. 23;10719;Fernwärme;110843;33188;;Fasanenstr. 23,10719,Berlin;Fasanenstr. 23;13.32683;52.50211;Charlottenburg;23;T;Haus;;
-223;Kultur - Friedrichstr. 107 / Friedrichstadtpalast;Kultur;Friedrichstr. 107 / Friedrichstadtpalast;10117;Fernwärme;0;651435;Wärmeverbrauch liegt nicht vor;Friedrichstr. 107 / Friedrichstadtpalast,10117,Berlin;Friedrichstr. 107 / Friedrichstadtpalast;13.38802;52.52394;Mitte;107;F;Haus;;
-224;Kultur - Gendarmenmarkt 1-2 / Deutscher Dom;Kultur;Gendarmenmarkt 1-2 / Deutscher Dom;10117;Fernwärme;0;145695;Wärmeverbrauch liegt nicht vor;Gendarmenmarkt 1-2 / Deutscher Dom,10117,Berlin;Gendarmenmarkt 1-2 / Deutscher Dom;13.39291;52.51275;Mitte;1;T;Haus;;
-225;Kultur - Gendarmenmarkt 3-4;Kultur;Gendarmenmarkt 3-4;10117;Fernwärme;2922710;;;Gendarmenmarkt 3-4,10117,Berlin;Gendarmenmarkt 3-4;13.39158;52.51329;Mitte;3;M;Haus;;
-226;Kultur - Genslerstr. 66 / Gedenkstätte Hohenschönhausen;Kultur;Genslerstr. 66 / Gedenkstätte Hohenschönhausen;13055;Fernwärme;1124476;4539930;;Genslerstr. 66 / Gedenkstätte Hohenschönhausen,13055,Berlin;Genslerstr. 66 / Gedenkstätte Hohenschönhausen;13.50015;52.54163;Alt-Hohenschönhausen;66;F;Haus;;
-227;Kultur - Hallesches Ufer 34-38;Kultur;Hallesches Ufer 34-38;10963;Fernwärme;1798821;0;Stromverbrauch liegt nicht vor;Hallesches Ufer 34-38,10963,Berlin;Hallesches Ufer 34-38;13.38599;52.49911;Kreuzberg;34;M;Haus;;
-228;Kultur - Herbert-von-Karajan-Str. 1, Philharmonie;Kultur;Herbert-von-Karajan-Str. 1, Philharmonie;10785;Fernwärme;4134980;0;;Herbert-von-Karajan-Str. 1, Philharmonie,10785,Berlin;Herbert-von-Karajan-Str. 1, Philharmonie;13.36897;52.51007;Tiergarten;1;F;Haus;;
-229;Kultur - Hinter dem Gießhaus 2;Kultur;Hinter dem Gießhaus 2;10117;Fernwärme;;36442;;Hinter dem Gießhaus 2,10117,Berlin;Hinter dem Gießhaus 2;13.39619;52.519;Mitte;2;T;Haus;;
-230;Kultur - Hüttigpfad 16;Kultur;Hüttigpfad 16;13627;Fernwärme;0;123286;Wärmeverbrauch liegt nicht vor;Hüttigpfad 16,13627,Berlin;Hüttigpfad 16;13.32272567;52.54074141;Charlottenburg-Nord;16;T;Haus;TRUE;
-231;Kultur - Kantstr. 11-12 / Theater des Westens;Kultur;Kantstr. 11-12 / Theater des Westens;10623;Fernwärme;181306;198235;;Kantstr. 11-12 / Theater des Westens,10623,Berlin;Kantstr. 11-12 / Theater des Westens;13.3294;52.50629;Charlottenburg;11;T;Haus;;
-232;Kultur - Kantstr. 12 A / Delphi-Filmpalast;Kultur;Kantstr. 12 A / Delphi-Filmpalast;10623;Fernwärme;498;814;;Kantstr. 12 A / Delphi-Filmpalast,10623,Berlin;Kantstr. 12 A / Delphi-Filmpalast;13.32845;52.50585;Charlottenburg;12A;F;Haus;;
-233;Kultur - Käuzchensteig 8-12 / Kunsthaus Dahlem;Kultur;Käuzchensteig 8-12 / Kunsthaus Dahlem;14195;Gas;256667;4503;;Käuzchensteig 8-12 / Kunsthaus Dahlem,14195,Berlin;Käuzchensteig 8-12 / Kunsthaus Dahlem;13.27453;52.46619;Dahlem;8;T;Haus;;
-234;Kultur - Klingelhöferstr. 14 / Bauhaus-Archiv;Kultur;Klingelhöferstr. 14 / Bauhaus-Archiv;10785;Fernwärme;0;0;Wärme- und Stromverbrauch liegt nicht vor;Klingelhöferstr. 14 / Bauhaus-Archiv,10785,Berlin;Klingelhöferstr. 14 / Bauhaus-Archiv;13.35389;52.50633;Tiergarten;14;F;Haus;;
-235;Kultur - Klosterstr. 68 / Podewil;Kultur;Klosterstr. 68 / Podewil;10179;Fernwärme;577293;441246;;Klosterstr. 68 / Podewil,10179,Berlin;Klosterstr. 68 / Podewil;13.4126;52.51741;Mitte;68;F;Haus;;
-236;Kultur - Königin-Luise-Str. 49, Domäne Dahlem;Kultur;Königin-Luise-Str. 49, Domäne Dahlem;14195;Öl;162365;250214;keine vollständige Wärmeverbrauchsdaten;Königin-Luise-Str. 49, Domäne Dahlem,14195,Berlin;Königin-Luise-Str. 49, Domäne Dahlem;13.28865;52.45834;Dahlem;49;F;Haus;;
-237;Kultur - Kunst im Stadtraum;Kultur;Kunst im Stadtraum - Brunnenstraße 188-190;10119;n/a;1911828;402624;;Kunst im Stadtraum - Brunnenstraße 188-190,10119,Berlin;Kunst im Stadtraum - Brunnenstraße 188-190;13.4000167;52.5308493;Mitte;;;Ort;TRUE;
-238;Kultur - Kurfürstendamm 153;Kultur;Kurfürstendamm 153;10709;Fernwärme;1509620;49322;;Kurfürstendamm 153,10709,Berlin;Kurfürstendamm 153;13.30224;52.4988;Wilmersdorf;153;T;Haus;;
-239;Kultur - Linienstr. 227 / Volksbühne;Kultur;Linienstr. 227 / Volksbühne;10178;Fernwärme;165901;710088;;Linienstr. 227 / Volksbühne,10178,Berlin;Linienstr. 227 / Volksbühne;13.41218;52.52738;Mitte;227;F;Haus;;
-240;Kultur - Luxemburger Str. 20 / Atze Musiktheater;Kultur;Luxemburger Str. 20 / Atze Musiktheater;13353;Fernwärme;1791540;94672;;Luxemburger Str. 20 / Atze Musiktheater,13353,Berlin;Luxemburger Str. 20 / Atze Musiktheater;13.35169;52.54332;Wedding;20;F;Haus;;
-241;Kultur - Möckernstr. 26;Kultur;Möckernstr. 26;10963;Fernwärme,Gas;1205517;505132;;Möckernstr. 26,10963,Berlin;Möckernstr. 26;13.3795;52.49824;Kreuzberg;26;T;Haus;;
-242;Kultur - Naunynstr. 27;Kultur;Naunynstr. 27;10997;n/a;81185;20624;;Naunynstr. 27,10997,Berlin;Naunynstr. 27;13.4213;52.502;Kreuzberg;27;T;Haus;;
-243;Kultur - Nikolaikirchplatz 1 / Nikolaikirche;Kultur;Nikolaikirchplatz 1 / Nikolaikirche;10178;Fernwärme;238793;787;;Nikolaikirchplatz 1 / Nikolaikirche,10178,Berlin;Nikolaikirchplatz 1 / Nikolaikirche;13.40766;52.51646;Mitte;4;F;Haus;;
-244;Kultur - Osloer Str. 102 / Bildhauerwerkstatt;Kultur;Osloer Str. 102 / Bildhauerwerkstatt;13359;Gas;484975;123303;;Osloer Str. 102 / Bildhauerwerkstatt,13359,Berlin;Osloer Str. 102 / Bildhauerwerkstatt;13.38071;52.55581;Gesundbrunnen;102;F;Haus;;
-245;Kultur - Pariser Platz 8 / Brandenburger Tor;Kultur;Pariser Platz 8 / Brandenburger Tor;10117;Gas;43769;64035;;Pariser Platz 8 / Brandenburger Tor,10117,Berlin;Pariser Platz 8 / Brandenburger Tor;13.3779;52.51651;Mitte;8;F;Haus;;
-246;Kultur - Parkaue 23-29 / Theater an der Parkaue;Kultur;Parkaue 23-29 / Theater an der Parkaue;10367;Fernwärme;1530452;307623;;Parkaue 23-29 / Theater an der Parkaue,10367,Berlin;Parkaue 23-29 / Theater an der Parkaue;13.47749;52.51656;Lichtenberg;23;T;Haus;;
-247;Kultur - Poststr. 13,14;Kultur;Poststr. 13,14;10178;Fernwärme;389375;111532;;Poststr. 13,14,10178,Berlin;Poststr. 13,14;13.40687;52.51619;Mitte;13;F;Haus;;
-248;Kultur - Poststr. 16 / Ephraimpalais;Kultur;Poststr. 16 / Ephraimpalais;10178;Fernwärme;204947;328703;;Poststr. 16 / Ephraimpalais,10178,Berlin;Poststr. 16 / Ephraimpalais;13.40724;52.51587;Mitte;16;F;Haus;;
-249;Kultur - Poststr. 23 / Knoblauchhaus;Kultur;Poststr. 23 / Knoblauchhaus;10178;Fernwärme;76103;29553;;Poststr. 23 / Knoblauchhaus,10178,Berlin;Poststr. 23 / Knoblauchhaus;13.40695;52.5164;Mitte;23;F;Haus;;
-250;Kultur - Prenzlauer Allee 80;Kultur;Prenzlauer Allee 80;10405;Fernwärme;481006;;;Prenzlauer Allee 80,10405,Berlin;Prenzlauer Allee 80;13.42786;52.54303;Prenzlauer Berg;80;T;Haus;;
-251;Kultur - Schloßstr. 1 A / Bröhan-Museum;Kultur;Schloßstr. 1 A / Bröhan-Museum;14059;Fernwärme;119189;74581;;Schloßstr. 1 A / Bröhan-Museum,14059,Berlin;Schloßstr. 1 A / Bröhan-Museum;13.29533;52.51888;Charlottenburg;1A;F;Haus;;
-252;Kultur - Schumannstr. 11-14 A / Deutsches Theater;Kultur;Schumannstr. 11-14 A / Deutsches Theater;10117;Fernwärme;1938620;2104151;;Schumannstr. 11-14 A / Deutsches Theater,10117,Berlin;Schumannstr. 11-14 A / Deutsches Theater;13.38145;52.52409;Mitte;14A;F;Haus;;
-253;Kultur - Spandauer Damm 19;Kultur;Spandauer Damm 19;14059;Fernwärme;0;24148;Wärmeverbrauch liegt nicht vor;Spandauer Damm 19,14059,Berlin;Spandauer Damm 19;13.29429;52.51911;Charlottenburg;19;T;Haus;;
-254;Kultur - Stresemannstr. 110 / Rosenbeet;Kultur;Stresemannstr. 110 / Rosenbeet;10963;n/a;0;234894;Wärmeverbrauch liegt nicht vor;Stresemannstr. 110 / Rosenbeet,10963,Berlin;Stresemannstr. 110 / Rosenbeet;13.38195;52.5064;Kreuzberg;110;F;Haus;;
-255;Kultur - Stresemannstr. 29-31 / Hebbel am Ufer 1;Kultur;Stresemannstr. 29-31 / Hebbel am Ufer 1;10963;Fernwärme;528492;8154;;Stresemannstr. 29-31 / Hebbel am Ufer 1,10963,Berlin;Stresemannstr. 29-31 / Hebbel am Ufer 1;13.38729129;52.49997106;Kreuzberg;;;Ort;TRUE;more buildings on diffrent flurstuecke
-256;Kultur - Thulestr. 77-79;Kultur;Thulestr. 77-79;13189;Gas;516231;3635;;Thulestr. 77-79,13189,Berlin;Thulestr. 77-79;13.42842;52.55624;Pankow;77;M;Haus;;
-257;Kultur - Tiergartenstr. 4;Kultur;Tiergartenstr. 4;12283;n/a;0;396439;Wärmeverbrauch liegt nicht vor;Tiergartenstr. 4,12283,Berlin;Tiergartenstr. 4;13.55995;52.47363;Biesdorf;4;F;Haus;;
-258;Kultur - Trebbiner Str. 8-9;Kultur;Trebbiner Str. 8-9;10963;Fernwärme;3543363;1379878;;Trebbiner Str. 8-9,10963,Berlin;Trebbiner Str. 8-9;13.37679;52.49861;Kreuzberg;8;M;Haus;;
-259;Kultur - Wrangelstr. 2 / Schlosspark Theater;Kultur;Wrangelstr. 2 / Schlosspark Theater;12165;Fernwärme;;43143;;Wrangelstr. 2 / Schlosspark Theater,12165,Berlin;Wrangelstr. 2 / Schlosspark Theater;13.31799;52.4549;Steglitz;2;F;Haus;;
-260;Polizei - Alemannenstr. 10;Polizei;Alemannenstr. 10;14129;Gas;579759;75931;;Alemannenstr. 10,14129,Berlin;Alemannenstr. 10;13.19493;52.4317;Nikolassee;10;T;Haus;;
-261;Polizei - Alt-Biesdorf 33;Polizei;Alt-Biesdorf 33;12683;Gas;226506;5934;;Alt-Biesdorf 33,12683,Berlin;Alt-Biesdorf 33;13.56192;52.50827;Biesdorf;33;T;Haus;;
-262;Polizei - Alt-Moabit 145;Polizei;Alt-Moabit 145;10557;Gas;42672;221798;;Alt-Moabit 145,10557,Berlin;Alt-Moabit 145;13.36602;52.52208;Moabit;145;T;Haus;;
-263;Polizei - Am Nordgraben 6,7,8;Polizei;Am Nordgraben 6,7,8;13437;Fernwärme;1296481;193277;;Am Nordgraben 6,7,8,13437,Berlin;Am Nordgraben 6,7,8;13.32584;52.58725;Wittenau;6;F;Haus;;
-264;Polizei - Augustaplatz 7;Polizei;Augustaplatz 7;12203;Fernwärme;1851889;441912;;Augustaplatz 7,12203,Berlin;Augustaplatz 7;13.30637;52.44352;Lichterfelde;7;T;Haus;;
-265;Polizei - Baumschulenstr. 1;Polizei;Baumschulenstr. 1;12437;Fernwärme;193489;244442;;Baumschulenstr. 1,12437,Berlin;Baumschulenstr. 1;13.49468;52.47136;Baumschulenweg;1;T;Haus;;
-266;Polizei - Bayernring 44;Polizei;Bayernring 44;12101;Fernwärme;0;214538;Wärmeverbrauch liegt nicht vor;Bayernring 44,12101,Berlin;Bayernring 44;13.38519;52.4815;Tempelhof;44;T;Haus;;
-267;Polizei - Berliner Allee 210;Polizei;Berliner Allee 210;13088;Gas;663614;95214;;Berliner Allee 210,13088,Berlin;Berliner Allee 210;13.46711;52.55722;Weißensee;210;T;Haus;;
-268;Polizei - Berliner Str. 35;Polizei;Berliner Str. 35;13507;Fernwärme;;124983;;Berliner Str. 35,13507,Berlin;Berliner Str. 35;13.28906;52.58246;Tegel;35;T;Haus;;
-269;Polizei - Bernhard-Weiß-Str. 6;Polizei;Bernhard-Weiß-Str. 6;10178;Fernwärme;4217825;1958684;;Bernhard-Weiß-Str. 6,10178,Berlin;Bernhard-Weiß-Str. 6;13.41662;52.52391;Mitte;6;T;Haus;;
-270;Polizei - Bismarckstr. 111;Polizei;Bismarckstr. 111;10625;Fernwärme;419294;162348;;Bismarckstr. 111,10625,Berlin;Bismarckstr. 111;13.31897;52.51213;Charlottenburg;111;T;Haus;;
-271;Polizei - Brunnenstr. 175;Polizei;Brunnenstr. 175;10119;Gas;360658;166628;;Brunnenstr. 175,10119,Berlin;Brunnenstr. 175;13.39875;52.53237;Mitte;175;T;Haus;;
-272;Polizei - Bulgarische Str. 55;Polizei;Bulgarische Str. 55;12435;Heizöl;;101837;;Bulgarische Str. 55,12435,Berlin;Bulgarische Str. 55;13.47394;52.48154;Alt-Treptow;55;T;Haus;;
-273;Polizei - Cecilienstr. 92;Polizei;Cecilienstr. 92;12683;Fernwärme;2061683;780567;;Cecilienstr. 92,12683,Berlin;Cecilienstr. 92;13.56209;52.52907;Biesdorf;92;T;Haus;;
-274;Polizei - Charlottenburger Chaussee 67,75;Polizei;Charlottenburger Chaussee 67,75;13597;Fernwärme;9392759;2704477;;Charlottenburger Chaussee 67,75,13597,Berlin;Charlottenburger Chaussee 67,75;13.22828;52.52779;Spandau;67;F;Haus;;
-275;Polizei - Friedenstr. 31-32;Polizei;Friedenstr. 31-32;10249;n/a;0;217768;Wärmeverbrauch liegt nicht vor;Friedenstr. 31-32,10249,Berlin;Friedenstr. 31-32;13.434;52.52246;Friedrichshain;31;M;Haus;;
-276;Polizei - Friesenstr. 16;Polizei;Friesenstr. 16;10965;Gas;4913931;;;Friesenstr. 16,10965,Berlin;Friesenstr. 16;13.39469;52.48585;Kreuzberg;16;T;Haus;;
-277;Polizei - Gallwitzallee 87,95;Polizei;Gallwitzallee 87,95;12249;Gas;10391731;551935;;Gallwitzallee 87,95,12249,Berlin;Gallwitzallee 87,95;13.34754;52.4278;Lankwitz;87;F;Haus;;
-278;Polizei - Gothaer Str. 19;Polizei;Gothaer Str. 19;10823;Fernwärme;2167663;;;Gothaer Str. 19,10823,Berlin;Gothaer Str. 19;13.34724;52.48865;Schöneberg;19;T;Haus;;
-279;Polizei - Götzstr. 6;Polizei;Götzstr. 6;12099;Gas;699221;418289;;Götzstr. 6,12099,Berlin;Götzstr. 6;13.38744;52.4645;Tempelhof;6;T;Haus;;
-280;Polizei - Grünauer Str. 140;Polizei;Grünauer Str. 140;12557;Gas;;;;Grünauer Str. 140,12557,Berlin;Grünauer Str. 140;13.56913;52.43534;Köpenick;140;T;Haus;;
-281;Polizei - Hadlichstr. 37;Polizei;Hadlichstr. 37;13187;Gas;51607;102816;;Hadlichstr. 37,13187,Berlin;Hadlichstr. 37;13.41506;52.56979;Pankow;37;T;Haus;;
-282;Polizei - Hauptstr. 45;Polizei;Hauptstr. 45;10827;Fernwärme;576731;142493;;Hauptstr. 45,10827,Berlin;Hauptstr. 45;13.34994;52.48331;Schöneberg;45;T;Haus;;
-283;Polizei - Hauptstr. 8;Polizei;Hauptstr. 8;10317;Fernwärme;110203;193277;;Hauptstr. 8,10317,Berlin;Hauptstr. 8;13.48642;52.49621;Lichtenberg;8;T;Haus;;
-284;Polizei - Heinrich-Grüber-Str. 35;Polizei;Heinrich-Grüber-Str. 35;12621;Fernwärme;682618;191079;;Heinrich-Grüber-Str. 35,12621,Berlin;Heinrich-Grüber-Str. 35;13.59154;52.51492;Kaulsdorf;35;T;Haus;;
-285;Polizei - Idastr. 6;Polizei;Idastr. 6;13156;Gas;146485;26721;;Idastr. 6,13156,Berlin;Idastr. 6;13.41207;52.58386;Niederschönhausen;6;T;Haus;;
-286;Polizei - Invalidenstr. 57,58;Polizei;Invalidenstr. 57,58;10557;Fernwärme;522556;;;Invalidenstr. 57,58,10557,Berlin;Invalidenstr. 57,58;13.36189;52.52386;Moabit;57;F;Haus;;
-287;Polizei - Kaiserdamm 1;Polizei;Kaiserdamm 1;14057;Fernwärme;1516357;328703;;Kaiserdamm 1,14057,Berlin;Kaiserdamm 1;13.29543;52.5111;Charlottenburg;1;T;Haus;;
-288;Polizei - Karlstr. 8;Polizei;Karlstr. 8;12557;Fernwärme;;109513;;Karlstr. 8,12557,Berlin;Karlstr. 8;13.57971;52.44241;Köpenick;8;T;Haus;;
-289;Polizei - Keithstr. 28;Polizei;Keithstr. 28;10787;Fernwärme;1487097;350327;;Keithstr. 28,10787,Berlin;Keithstr. 28;13.34672;52.50455;Tiergarten;28;T;Haus;;
-290;Polizei - Koenigsallee 75;Polizei;Koenigsallee 75;14193;n/a;;9572;;Koenigsallee 75,14193,Berlin;Koenigsallee 75;13.26185;52.47995;Grunewald;75;T;Haus;;
-291;Polizei - Königstr. 5;Polizei;Königstr. 5;14163;Gas;1995928;188791;;Königstr. 5,14163,Berlin;Königstr. 5;13.2542;52.43433;Zehlendorf;5;T;Haus;;
-292;Polizei - Kruppstr. 15;Polizei;Kruppstr. 15;10557;Fernwärme;0;14969;Wärmeverbrauch liegt nicht vor;Kruppstr. 15,10557,Berlin;Kruppstr. 15;13.35569;52.53195;Moabit;15;T;Haus;;
-293;Polizei - Kruppstr. 2-4;Polizei;Kruppstr. 2-4;10557;Fernwärme,Öl;9970422;;;Kruppstr. 2-4,10557,Berlin;Kruppstr. 2-4;13.35749;52.53303;Moabit;2;M;Haus;;
-294;Polizei - Lichtenrader Damm 211;Polizei;Lichtenrader Damm 211;12305;Gas;398285;173553;;Lichtenrader Damm 211,12305,Berlin;Lichtenrader Damm 211;13.40732;52.39421;Lichtenrade;211;T;Haus;;
-296;Polizei - Magazinstr. 5;Polizei;Magazinstr. 5;10179;Fernwärme;1098723;216459;;Magazinstr. 5,10179,Berlin;Magazinstr. 5;13.42015;52.51873;Mitte;5;T;Haus;;
-296;Polizei - Marktstr. 13;Polizei;Marktstr. 13;10317;Gas;198235;44;;Marktstr. 13,10317,Berlin;Marktstr. 13;13.47243;52.50359;Lichtenberg;13;T;Haus;;
-297;Polizei - Mertensstr. 140;Polizei;Mertensstr. 140;13587;Gas;725119;90715;;Mertensstr. 140,13587,Berlin;Mertensstr. 140;13.22473;52.56363;Hakenfelde;140;T;Haus;;
-298;Polizei - Moritzstr. 10;Polizei;Moritzstr. 10;13597;Gas;1289722;204381;Stromverbrauch liegt nicht vor;Moritzstr. 10,13597,Berlin;Moritzstr. 10;13.19986;52.53916;Spandau;10;T;Haus;;
-299;Polizei - Neues Ufer 1;Polizei;Neues Ufer 1;10553;Gas;846838;8154;;Neues Ufer 1,10553,Berlin;Neues Ufer 1;13.31751;52.52205;Moabit;1;T;Haus;;
-300;Polizei - Nipkowstr. 23;Polizei;Nipkowstr. 23;12489;Gas;195974;44415;;Nipkowstr. 23,12489,Berlin;Nipkowstr. 23;13.55012;52.43667;Adlershof;23;T;Haus;;
-301;Polizei - Nöldnerstr. 35;Polizei;Nöldnerstr. 35;10317;Fernwärme;401393;0;Stromverbrauch liegt nicht vor;Nöldnerstr. 35,10317,Berlin;Nöldnerstr. 35;13.48453;52.50201;Lichtenberg;35;T;Haus;;
-302;Polizei - Pablo-Picasso-Str. 4;Polizei;Pablo-Picasso-Str. 4;13057;Fernwärme;984462;173553;;Pablo-Picasso-Str. 4,13057,Berlin;Pablo-Picasso-Str. 4;13.51573;52.56622;Neu-Hohenschönhausen;4;T;Haus;;
-303;Polizei - Pankstr. 28;Polizei;Pankstr. 28;13357;Fernwärme;1584477;715945;;Pankstr. 28,13357,Berlin;Pankstr. 28;13.37516;52.54811;Gesundbrunnen;28;T;Haus;;
-304;Polizei - Pionierstr. 160,204;Polizei;Pionierstr. 160,204;13589;Gas;162562;7453;;Pionierstr. 160,204,13589,Berlin;Pionierstr. 160,204;13.16598;52.55642;Falkenhagener Feld;160;F;Haus;;
-305;Polizei - Poelchaustr. 1;Polizei;Poelchaustr. 1;12681;Fernwärme;906811;422749;;Poelchaustr. 1,12681,Berlin;Poelchaustr. 1;13.53864;52.53489;Marzahn;1;T;Haus;;
-306;Polizei - Radelandstr. 21;Polizei;Radelandstr. 21;13589;Gas;9103436;40622;;Radelandstr. 21,13589,Berlin;Radelandstr. 21;13.19204;52.55553;Falkenhagener Feld;21;T;Haus;;
-307;Polizei - Rudolstädter Str. 79,85;Polizei;Rudolstädter Str. 79,85;10713;Fernwärme;1040394;277471;;Rudolstädter Str. 79,85,10713,Berlin;Rudolstädter Str. 79,85;13.30553;52.48557;Wilmersdorf;79;F;Haus;;
-308;Polizei - Ruppiner Chaussee 240,268;Polizei;Ruppiner Chaussee 240,268;13503;Gas;14243949;1288485;;Ruppiner Chaussee 240,268,13503,Berlin;Ruppiner Chaussee 240,268;13.24473;52.61546;Heiligensee;240;F;Haus;;
-309;Polizei - Schmidt-Knobelsdorf-Str. 27;Polizei;Schmidt-Knobelsdorf-Str. 27;13581;Fernwärme;267501;100921;;Schmidt-Knobelsdorf-Str. 27,13581,Berlin;Schmidt-Knobelsdorf-Str. 27;13.18796;52.52222;Wilhelmstadt;27;T;Haus;;
-310;Polizei - Segelfliegerdamm 42;Polizei;Segelfliegerdamm 42;12487;Fernwärme;35993;48097;;Segelfliegerdamm 42,12487,Berlin;Segelfliegerdamm 42;13.50872;52.44341;Johannisthal;42;T;Haus;;
-311;Polizei - Sewanstr. 262;Polizei;Sewanstr. 262;10319;Fernwärme;325003;7635;;Sewanstr. 262,10319,Berlin;Sewanstr. 262;13.51921;52.49438;Friedrichsfelde;262;T;Haus;;
-312;Polizei - Sonnenallee 107;Polizei;Sonnenallee 107;12045;Fernwärme;;135605;;Sonnenallee 107,12045,Berlin;Sonnenallee 107;13.44064;52.48165;Neukölln;107;T;Haus;;
-313;Polizei - Tempelhofer Damm 12;Polizei;Tempelhofer Damm 12;12101;Fernwärme;;3668537;;Tempelhofer Damm 12,12101,Berlin;Tempelhofer Damm 12;13.38554;52.48223;Tempelhof;12;T;Haus;;
-314;Polizei - Thomas-Dehler-Str. 4;Polizei;Thomas-Dehler-Str. 4;10787;Fernwärme;;54149;;Thomas-Dehler-Str. 4,10787,Berlin;Thomas-Dehler-Str. 4;13.34788;52.50984;Tiergarten;4;T;Haus;;
-315;Polizei - Wackenbergstr. 81;Polizei;Wackenbergstr. 81;13156;Gas;4142;4486;;Wackenbergstr. 81,13156,Berlin;Wackenbergstr. 81;13.41816;52.5876;Niederschönhausen;81;T;Haus;;
-316;Polizei - Wedekindstr. 10;Polizei;Wedekindstr. 10;10243;Fernwärme;1878980;250632;;Wedekindstr. 10,10243,Berlin;Wedekindstr. 10;13.44476;52.5123;Friedrichshain;10;T;Haus;;
-317;Polizei - Zwickauer Damm 58;Polizei;Zwickauer Damm 58;12353;Gas;419257;85364;;Zwickauer Damm 58,12353,Berlin;Zwickauer Damm 58;13.47768;52.41939;Rudow;58;T;Haus;;
-318;Schulen - Albrechtstr. 27;Schulen;Albrechtstr. 27;10117;Fernwärme;101647;0;;Albrechtstr. 27,10117,Berlin;Albrechtstr. 27;13.3834;52.52406;Mitte;27;T;Haus;;
-319;Schulen - Allee der Kosmonauten 18;Schulen;Allee der Kosmonauten 18;10315;Fernwärme;804814;181215;;Allee der Kosmonauten 18,10315,Berlin;Allee der Kosmonauten 18;13.51273;52.52345;Friedrichsfelde;18;T;Haus;;
-320;Schulen - Alt-Moabit 10;Schulen;Alt-Moabit 10;10557;Fernwärme;1320896;433066;;Alt-Moabit 10,10557,Berlin;Alt-Moabit 10;13.35787;52.52391;Moabit;10;T;Haus;;
-321;Schulen - Alt-Stralau 40-41;Schulen;Alt-Stralau 40-41;10245;Fernwärme;356871;13665;;Alt-Stralau 40-41,10245,Berlin;Alt-Stralau 40-41;13.47384;52.49334;Friedrichshain;40;M;Haus;;
-322;Schulen - Am Fort 48 D;Schulen;Am Fort 48 D;13591;Gas;218435;277471;;Am Fort 48 D,13591,Berlin;Am Fort 48 D;13.13608;52.52395;Staaken;48D;;Haus;;
-323;Schulen - Birkenstr. 11;Schulen;Birkenstr. 11;12559;Gas;1102944;197527;;Birkenstr. 11,12559,Berlin;Birkenstr. 11;13.60234;52.44659;Köpenick;11;T;Haus;;
-324;Schulen - Bismarckstr. 20;Schulen;Bismarckstr. 20;10625;Fernwärme;1352021;194627;;Bismarckstr. 20,10625,Berlin;Bismarckstr. 20;13.31314;52.51239;Charlottenburg;20;T;Haus;;
-325;Schulen - Bochumer Str. 8;Schulen;Bochumer Str. 8;10555;Fernwärme;1415795;244442;;Bochumer Str. 8,10555,Berlin;Bochumer Str. 8;13.33793;52.52311;Moabit;8;T;Haus;;
-326;Schulen - Buschallee 23a;Schulen;Buschallee 23a;13088;Fernwärme,Gas;1798821;632635;;Buschallee 23a,13088,Berlin;Buschallee 23a;13.47572;52.55287;Weißensee;23A;T;Haus;;
-327;Schulen - Cyclopstr. 1-7;Schulen;Cyclopstr. 1-7;13469;Fernwärme;3635830;;;Cyclopstr. 1-7,13469,Berlin;Cyclopstr. 1-7;13.3273;52.59952;Wittenau;9;F;Haus;;
-328;Schulen - Dammweg 216;Schulen;Dammweg 216;12057;Fernwärme;;29649;;Dammweg 216,12057,Berlin;Dammweg 216;13.46799;52.47236;Neukölln;216;T;Haus;;
-329;Schulen - Danckelmannstr. 25-28;Schulen;Danckelmannstr. 25-28;14059;Fernwärme;1486870;219151;;Danckelmannstr. 25-28,14059,Berlin;Danckelmannstr. 25-28;13.29117;52.51201;Charlottenburg;25;M;Haus;;
-330;Schulen - Darßer Str. 97;Schulen;Darßer Str. 97;13051;Fernwärme;1193892;211411;;Darßer Str. 97,13051,Berlin;Darßer Str. 97;13.49357;52.56474;Neu-Hohenschönhausen;97;T;Haus;;
-331;Schulen - Derfflinger Str. 7,8;Schulen;Derfflinger Str. 7,8;10785;Gas;1904460;25078;;Derfflinger Str. 7,8,10785,Berlin;Derfflinger Str. 7,8;13.3555;52.50327;Tiergarten;7;F;Haus;;
-332;Schulen - Driesener Str. 22;Schulen;Driesener Str. 22;10439;Gas;1181745;164341;;Driesener Str. 22,10439,Berlin;Driesener Str. 22;13.40567;52.55201;Prenzlauer Berg;22;T;Haus;;
-333;Schulen - Dudenstr. 35-37;Schulen;Dudenstr. 35-37;10965;Gas;1661838;281725;;Dudenstr. 35-37,10965,Berlin;Dudenstr. 35-37;13.38028;52.48468;Tempelhof;35;M;Haus;;
-334;Schulen - Erbeskopfweg 6-10;Schulen;Erbeskopfweg 6-10;13158;Gas;301712;49862;;Erbeskopfweg 6-10,13158,Berlin;Erbeskopfweg 6-10;13.40037;52.59351;Rosenthal;6;M;Haus;;
-335;Schulen - Erich-Weinert-Str. 103;Schulen;Erich-Weinert-Str. 103;10409;Fernwärme;1509691;265292;;Erich-Weinert-Str. 103,10409,Berlin;Erich-Weinert-Str. 103;13.43586;52.54595;Prenzlauer Berg;103;T;Haus;;
-336;Schulen - Fischerstr. 32;Schulen;Fischerstr. 32;10317;Fernwärme;2164317;12709;;Fischerstr. 32,10317,Berlin;Fischerstr. 32;13.48943;52.49897;Lichtenberg;32;T;Haus;;
-337;Schulen - Fischerstr. 36;Schulen;Fischerstr. 36;10317;Fernwärme/Gas;2235747;;;Fischerstr. 36,10317,Berlin;Fischerstr. 36;13.48703;52.5011;Lichtenberg;36;T;Haus;;
-338;Schulen - Florastr. 13;Schulen;Florastr. 13;12163;Gas;370324;30624;;Florastr. 13,12163,Berlin;Florastr. 13;13.32873;52.46176;Steglitz;13;T;Haus;;
-339;Schulen - Fritz-Lesch-Str. 35;Schulen;Fritz-Lesch-Str. 35;13053;Fernwärme,Gas;1782239;;;Fritz-Lesch-Str. 35,13053,Berlin;Fritz-Lesch-Str. 35;13.47601;52.54557;Alt-Hohenschönhausen;35;T;Haus;;
-340;Schulen - Gierkeplatz 1,3;Schulen;Gierkeplatz 1,3;10585;Fernwärme;1145384;;;Gierkeplatz 1,3,10585,Berlin;Gierkeplatz 1,3;13.30203;52.51683;Charlottenburg;1;F;Haus;;
-341;Schulen - Goldbeckweg 8-14;Schulen;Goldbeckweg 8-14;13599;Gas;3215481;482992;;Goldbeckweg 8-14,13599,Berlin;Goldbeckweg 8-14;13.23022;52.54363;Haselhorst;8;M;Haus;;
-342;Schulen - Goltzstr. 43-44;Schulen;Goltzstr. 43-44;10781;Gas;111262;14595;;Goltzstr. 43-44,10781,Berlin;Goltzstr. 43-44;13.35303;52.49144;Schöneberg;43;M;Haus;;
-343;Schulen - Gustav-Adolf-Str. 66;Schulen;Gustav-Adolf-Str. 66;13086;Fernwärme;1959548;769923;;Gustav-Adolf-Str. 66,13086,Berlin;Gustav-Adolf-Str. 66;13.44837;52.5594;Weißensee;66;T;Haus;;
-344;Schulen - Haarlemer Str. 27;Schulen;Haarlemer Str. 27;12359;Gas;2449430;;;Haarlemer Str. 27,12359,Berlin;Haarlemer Str. 27;13.45274;52.45768;Britz;27;T;Haus;;
-345;Schulen - Halemweg 24;Schulen;Halemweg 24;13627;Fernwärme;1968100;441246;;Halemweg 24,13627,Berlin;Halemweg 24;13.28804;52.53835;Charlottenburg-Nord;24;T;Haus;;
-346;Schulen - Hartmannsweilerweg 29;Schulen;Hartmannsweilerweg 29;14163;Gas;937585;89661;;Hartmannsweilerweg 29,14163,Berlin;Hartmannsweilerweg 29;13.24888;52.44195;Zehlendorf;29;T;Haus;;
-347;Schulen - Helmholtzstr. 37;Schulen;Helmholtzstr. 37;12459;Fernwärme;1000369;;;Helmholtzstr. 37,12459,Berlin;Helmholtzstr. 37;13.50697;52.46632;Oberschöneweide;37;T;Haus;;
-348;Schulen - Hermann-Hesse-Str. 34,36;Schulen;Hermann-Hesse-Str. 34,36;13156;Gas;1031523;533;;Hermann-Hesse-Str. 34,36,13156,Berlin;Hermann-Hesse-Str. 34,36;13.39581;52.57932;Niederschönhausen;34;F;Haus;;
-349;Schulen - Immenweg 6-10;Schulen;Immenweg 6-10;12169;Fernwärme;3975504;1135474;;Immenweg 6-10,12169,Berlin;Immenweg 6-10;13.34578;52.45205;Steglitz;6;M;Haus;;
-350;Schulen - Klixstr. 6-7;Schulen;Klixstr. 6-7;10823;Gas;528382;105624;;Klixstr. 6-7,10823,Berlin;Klixstr. 6-7;13.35169;52.48874;Schöneberg;6;M;Haus;;
-351;Schulen - Kniprodestr. 27;Schulen;Kniprodestr. 27;10407;Gas;;98564;;Kniprodestr. 27,10407,Berlin;Kniprodestr. 27;13.44709;52.53526;Prenzlauer Berg;27;T;Haus;;
-352;Schulen - Kochstr. 9;Schulen;Kochstr. 9;10969;Fernwärme;577191;3114;;Kochstr. 9,10969,Berlin;Kochstr. 9;13.38869;52.50595;Kreuzberg;9;T;Haus;;
-353;Schulen - Kühleweinstr. 5;Schulen;Kühleweinstr. 5;13409;Gas;3585943;1213347;;Kühleweinstr. 5,13409,Berlin;Kühleweinstr. 5;13.37067;52.56204;Reinickendorf;5;T;Haus;;
-354;Schulen - Leinestr. 37-45;Schulen;Leinestr. 37-45;12049;Fernwärme;;132169;;Leinestr. 37-45,12049,Berlin;Leinestr. 37-45;13.42346;52.47263;Neukölln;37;T;Haus;;
-355;Schulen - Levetzowstr. 3,5;Schulen;Levetzowstr. 3,5;10555;Gas;1233378;;;Levetzowstr. 3,5,10555,Berlin;Levetzowstr. 3,5;13.3317;52.52186;Moabit;3;F;Haus;;
-356;Schulen - Lippstädter Str. 9-11;Schulen;Lippstädter Str. 9-11;12207;Gas;1878352;304686;;Lippstädter Str. 9-11,12207,Berlin;Lippstädter Str. 9-11;13.30557;52.41139;Lichterfelde;9;M;Haus;;
-357;Schulen - Lipschitzallee 25;Schulen;Lipschitzallee 25;12351;Fernwärme;1878352;14954;;Lipschitzallee 25,12351,Berlin;Lipschitzallee 25;13.47306;52.42974;Gropiusstadt;25;T;Haus;;
-358;Schulen - Lobeckstr. 76;Schulen;Lobeckstr. 76;10969;Fernwärme,Gas;2303229;;;Lobeckstr. 76,10969,Berlin;Lobeckstr. 76;13.40319;52.49911;Kreuzberg;76;T;Haus;;
-359;Schulen - Loschmidtstr. 19;Schulen;Loschmidtstr. 19;10587;Fernwärme;573236;77845;;Loschmidtstr. 19,10587,Berlin;Loschmidtstr. 19;13.31295;52.51734;Charlottenburg;19;T;Haus;;
-360;Schulen - Mandelstr. 6-8;Schulen;Mandelstr. 6-8;10409;Fernwärme;804536;632635;;Mandelstr. 6-8,10409,Berlin;Mandelstr. 6-8;13.44136;52.54571;Prenzlauer Berg;6;M;Haus;;
-361;Schulen - Marktstr. 2-3;Schulen;Marktstr. 2-3;10317;Gas;412253;114616;;Marktstr. 2-3,10317,Berlin;Marktstr. 2-3;13.47485;52.50294;Lichtenberg;2;M;Haus;;
-362;Schulen - Marzahner Chaussee 231;Schulen;Marzahner Chaussee 231;12681;Fernwärme;927627;111035;;Marzahner Chaussee 231,12681,Berlin;Marzahner Chaussee 231;13.53317;52.53028;Marzahn;231;T;Haus;;
-363;Schulen - Naglerstr. 1-3;Schulen;Naglerstr. 1-3;10245;Fernwärme;540566;14174;;Naglerstr. 1-3,10245,Berlin;Naglerstr. 1-3;13.4496;52.50223;Friedrichshain;1;M;Haus;;
-364;Schulen - Nauener Str. 13 (ehm. Altonaer Str. 104);Schulen;Nauener Str. 13 (ehm. Altonaer Str. 104);13581;Heizöl;;7788;;Nauener Str. 13 (ehm. Altonaer Str. 104),13581,Berlin;Nauener Str. 13 (ehm. Altonaer Str. 104);13.18144;52.53367;Spandau;13;F;Haus;;
-365;Schulen - Niederwallstr. 6,7;Schulen;Niederwallstr. 6,7;10117;Fernwärme;295273;;;Niederwallstr. 6,7,10117,Berlin;Niederwallstr. 6,7;13.39829;52.51266;Mitte;6;F;Haus;;
-366;Schulen - Nonnendammallee 140-143;Schulen;Nonnendammallee 140-143;13599;Fernwärme;3652947;896114;;Nonnendammallee 140-143,13599,Berlin;Nonnendammallee 140-143;13.24308;52.5391;Haselhorst;140;M;Haus;;
-367;Schulen - Oschatzer Ring 13;Schulen;Oschatzer Ring 13;12627;Fernwärme;45114;6482;;Oschatzer Ring 13,12627,Berlin;Oschatzer Ring 13;13.61434;52.54178;Hellersdorf;13;T;Haus;;
-368;Schulen - Osloer Str. 23-26;Schulen;Osloer Str. 23-26;13359;Gas;1869406;;;Osloer Str. 23-26,13359,Berlin;Osloer Str. 23-26;13.38029;52.5572;Gesundbrunnen;23;M;Haus;;
-369;Schulen - Ostpreußendamm 40;Schulen;Ostpreußendamm 40;12207;Gas;666232;95975;;Ostpreußendamm 40,12207,Berlin;Ostpreußendamm 40;13.31704;52.4303;Lichterfelde;40;T;Haus;;
-370;Schulen - Pappelallee 30-31;Schulen;Pappelallee 30-31;10437;Gas;42587;196466;;Pappelallee 30-31,10437,Berlin;Pappelallee 30-31;13.4174;52.5454;Prenzlauer Berg;30;M;Haus;;
-371;Schulen - Persiusstr. 7-9;Schulen;Persiusstr. 7-9;10245;Fernwärme;363582;1515;;Persiusstr. 7-9,10245,Berlin;Persiusstr. 7-9;13.46221;52.50121;Friedrichshain;7;M;Haus;;
-372;Schulen - Peter-Weiss-Gasse 8;Schulen;Peter-Weiss-Gasse 8;12627;Fernwärme;68494;136254;;Peter-Weiss-Gasse 8,12627,Berlin;Peter-Weiss-Gasse 8;13.60789;52.53859;Hellersdorf;8;T;Haus;;
-373;Schulen - Pfalzburger Str. 22,23;Schulen;Pfalzburger Str. 22,23;10719;Fernwärme;615544;73883;;Pfalzburger Str. 22,23,10719,Berlin;Pfalzburger Str. 22,23;13.32174;52.49385;Wilmersdorf;22;F;Haus;;
-374;Schulen - Pfalzburger Str. 30;Schulen;Pfalzburger Str. 30;10717;Fernwärme;78206;123303;;Pfalzburger Str. 30,10717,Berlin;Pfalzburger Str. 30;13.32107;52.49094;Wilmersdorf;30;T;Haus;;
-375;Schulen - Prinzregentenstr. 32,35;Schulen;Prinzregentenstr. 32,35;10715;Fernwärme;776506;125406;;Prinzregentenstr. 32,35,10715,Berlin;Prinzregentenstr. 32,35;13.33293;52.48364;Wilmersdorf;32;F;Haus;;
-376;Schulen - Prinzregentenstr. 60;Schulen;Prinzregentenstr. 60;10715;Fernwärme;1692126;250214;;Prinzregentenstr. 60,10715,Berlin;Prinzregentenstr. 60;13.3335;52.48237;Wilmersdorf;60;T;Haus;;
-377;Schulen - Rheinsberger Str. 4-5;Schulen;Rheinsberger Str. 4-5;10115;Gas;533651;268632;;Rheinsberger Str. 4-5,10115,Berlin;Rheinsberger Str. 4-5;13.3956;52.53664;Mitte;4;M;Haus;;
-378;Schulen - Rudower Str. 184;Schulen;Rudower Str. 184;12351;Gas;912237;114996;;Rudower Str. 184,12351,Berlin;Rudower Str. 184;13.47512;52.43021;Buckow;184;T;Haus;;
-379;Schulen - Scharfenberg (Insel);Schulen;Scharfenberg (Insel);13505;Gas;;;;Scharfenberg (Insel),13505,Berlin;Scharfenberg (Insel);13.24690145;52.57410782;Tegel;;;Ort;TRUE;
-380;Schulen - Schillerstr. 120;Schulen;Schillerstr. 120;10625;Fernwärme;790784;279093;;Schillerstr. 120,10625,Berlin;Schillerstr. 120;13.31875;52.51076;Charlottenburg;120;T;Haus;;
-381;Schulen - Schwyzer Str. 6-8;Schulen;Schwyzer Str. 6-8;13349;Fernwärme;1528193;;;Schwyzer Str. 6-8,13349,Berlin;Schwyzer Str. 6-8;13.35344;52.55765;Wedding;6;M;Haus;;
-382;Schulen - Steinmetzstr. 79;Schulen;Steinmetzstr. 79;10783;Fernwärme;576745;111035;;Steinmetzstr. 79,10783,Berlin;Steinmetzstr. 79;13.36466;52.49897;Schöneberg;79;T;Haus;;
-383;Schulen - Straßmannstr. 14-16;Schulen;Straßmannstr. 14-16;10249;Fernwärme;1054543;0;Stromverbrauch liegt nicht vor;Straßmannstr. 14-16,10249,Berlin;Straßmannstr. 14-16;13.4485;52.52166;Friedrichshain;14;M;Haus;;
-384;Schulen - Teltower Damm 87-101 (ungerade);Schulen;Teltower Damm 87-101 (ungerade);14167;Gas;7315474;1077075;;Teltower Damm 87-101 (ungerade),14167,Berlin;Teltower Damm 87-101 (ungerade);13.26191;52.42575;Zehlendorf;87;T;Haus;;
-385;Schulen - Wollenbergerstr. 1;Schulen;Wollenbergerstr. 1;13053;Fernwärme;0;0;Wärme- und Stromverbrauch liegt nicht vor;Wollenbergerstr. 1,13053,Berlin;Wollenbergerstr. 1;13.511;52.54677;Alt-Hohenschönhausen;1;T;Haus;;
-386;Schulen - Wrangelstr. 98;Schulen;Wrangelstr. 98;10997;Fernwärme,Gas;3666158;548965;;Wrangelstr. 98,10997,Berlin;Wrangelstr. 98;13.43659;52.50096;Kreuzberg;98;T;Haus;;
+lfd.;Wirtschaftseinheit;Typ;Art der Wärmeversorgung;Wärmeverbrauch;Wärmeverbrauch Witterung;Stromverbrauch;gc_xwert;gc_ywert;gc_ortsteil;Quelle
+1;Dominicusstr. 12;Allgemeiner Bestand;Gas;406.361;453.380;0;13.34604;52.48304;Schöneberg;BIM
+2;Albrecht-Achilles-Str. 61 - 64;Allgemeiner Bestand;Fernwärme;638.433;712.304;187.284;13.30388;52.49768;Wilmersdorf;BIM
+3;Alt-Friedrichsfelde 60;Allgemeiner Bestand;Fernwärme;6.193.990;6.910.676;2.945.322;13.52556;52.50937;Friedrichsfelde;BIM
+4;Am Köllnischen Park 3 / Rungestraße 29;Allgemeiner Bestand;Fernwärme;1.234.900;1.377.786;365.837;13.41572;52.51323;Mitte;BIM
+5;An der Urania 4-10;Allgemeiner Bestand;Fernwärme;880.772;982.683;97.127;13.34874;52.50282;Schöneberg;BIM
+6;Auf dem Grat 2 (ehem. Clayallee 138);Allgemeiner Bestand;Gas;406.361;453.380;132.782;13.27375;52.4554;Dahlem;BIM
+7;Belziger Str. 52-58;Allgemeiner Bestand;Gas;53.508;59.699;228.203;13.34853;52.48602;Schöneberg;BIM
+8;Bismarckstr. 48;Allgemeiner Bestand;Fernwärme;1.375.752;1.534.936;343.686;13.30363;52.51165;Charlottenburg;BIM
+9;Bredtschneiderstr. 5;Allgemeiner Bestand;Fernwärme;739.100;824.619;227.817;13.28079;52.50886;Westend;BIM
+10;Brodauer Str. 16-22;Allgemeiner Bestand;Gas;102.636;114.512;20.000;13.58356;52.50918;Kaulsdorf;BIM
+11;Brunnenstr. 188-190;Allgemeiner Bestand;Gas;1.713.553;1.911.822;402.624;13.40006;52.53085;Mitte;BIM
+12;Bundesallee 171;Allgemeiner Bestand;Fernwärme;3.326.032;3.710.876;1.878.069;13.33149;52.48486;Wilmersdorf;BIM
+13;Buschkrugallee 95;Allgemeiner Bestand;Gas;502.685;560.849;118.097;13.4507;52.4555;Britz;BIM
+14;Eichborndamm 208;Allgemeiner Bestand;Fernwärme;827.950;923.749;341.753;13.32487;52.58719;Wittenau;BIM
+15;Fehrbelliner Platz;Allgemeiner Bestand;Fernwärme;10.022.070;11.181.690;1.439.240;;;Wilmersdorf;BIM
+16;Ferdinand-Schultze-Str. 55;Allgemeiner Bestand;Fernwärme;560.784;625.670;191.512;13.51049;52.53981;Alt-Hohenschönhausen;BIM
+17;Friedrich-Krause-Ufer 24,25;Allgemeiner Bestand;Gas;1.650.607;1.841.593;487.552;13.35483;52.53796;Tiergarten;BIM
+18;Friedrichstr. 219;Allgemeiner Bestand;Fernwärme;1.468.400;1.638.304;578.137;13.39056;52.50501;Kreuzberg;BIM
+19;Fröbelstr. 15;Allgemeiner Bestand;n/a;2.276.026;2.539.377;0;13.42896;52.53986;Prenzlauer Berg;BIM
+20;Fröbelstr. 17;Allgemeiner Bestand;Fernwärme;3.875.519;4.323.942;974.381;13.42734;52.5405;Prenzlauer Berg;BIM
+21;Hanna-Renate-Laurien-Platz 1;Allgemeiner Bestand;Gas;546.875;610.152;186.863;13.34354;52.43851;Lankwitz;BIM
+22;Hartmannsweilerweg 63;Allgemeiner Bestand;Gas;302.613;337.627;183.416;13.24769;52.44467;Zehlendorf;BIM
+23;Havelchaussee 149-151;Allgemeiner Bestand;Gas;106.734;119.084;46.900;13.21555;52.50974;Westend;BIM
+24;Invalidenstr. 60;Allgemeiner Bestand;Fernwärme;3.499.834;3.904.788;1.288.944;13.3648;52.52477;Moabit;BIM
+25;Josef-Orlopp-Str. 62;Allgemeiner Bestand;Gas;590.858;659.224;122.694;13.49146;52.52289;Lichtenberg;BIM
+26;Jüdenstr. 1;Allgemeiner Bestand;Fernwärme;1.950.560;2.176.253;966.629;13.40907;52.51853;Mitte;BIM
+27;Juliusstr. 67;Allgemeiner Bestand;Gas;305.838;341.225;169.447;13.44232;52.46393;Neukölln;BIM
+28;Karl-Hofer-Str. 31;Allgemeiner Bestand;n/a;1.995.928;2.226.870;2.908.133;13.23718;52.43868;Zehlendorf;BIM
+29;Klosterstr. 47;Allgemeiner Bestand;Fernwärme;2.628.360;2.932.479;1.084.931;13.41219;52.51655;Mitte;BIM
+30;Klosterstr. 59;Allgemeiner Bestand;Fernwärme;1.363.640;1.521.422;1.478.425;13.41247;52.51533;Mitte;BIM
+31;Klosterstr. 71;Allgemeiner Bestand;Fernwärme;621.031;692.888;162.348;13.41235;52.5179;Mitte;BIM
+32;Kniprodestr. 31;Allgemeiner Bestand;Fernwärme;0;0;365.697;13.44714;52.53435;Prenzlauer Berg;BIM
+33;Levetzowstr. 1-2;Allgemeiner Bestand;Gas;406.806;453.876;102.019;13.33061;52.52229;Moabit;BIM
+34;Magdalenenstr. 25;Allgemeiner Bestand;Fernwärme;1.607.040;1.792.985;302.813;13.48867;52.51487;Lichtenberg;BIM
+35;Martin-Buber-Str. 20,21;Allgemeiner Bestand;Gas;958.046;1.068.898;237.198;13.25658;52.43419;Zehlendorf;BIM
+36;Martin-Luther-Str. 105;Allgemeiner Bestand;Fernwärme;1.416.234;1.580.102;625.474;13.34536;52.48327;Schöneberg;BIM
+37;Max-Brunnow-Str. 4;Allgemeiner Bestand;Fernwärme;383.883;428.301;68.313;13.45988;52.52621;Lichtenberg;BIM
+38;Mehringdamm 110;Allgemeiner Bestand;Gas;777.122;867.040;187.079;13.38555;52.48735;Kreuzberg;BIM
+39;Mehringdamm 22;Allgemeiner Bestand;Gas;617.691;689.162;234.670;13.38861;52.49475;Kreuzberg;BIM
+40;Mohriner Allee 137;Allgemeiner Bestand;Gas;1.252.952;1.397.927;352.164;13.41438;52.43902;Britz;BIM
+41;Munsterdamm 90 / Planetarium und Sternwarte;Allgemeiner Bestand;Gas;139.231;155.340;112.694;13.34918;52.45769;Steglitz;BIM
+42;Nonnendammallee 21;Allgemeiner Bestand;Fernwärme;1.042.600;1.163.236;352.821;13.23837;52.53872;Haselhorst;BIM
+43;Oranienstr. 106;Allgemeiner Bestand;Fernwärme;1.546.730;1.725.697;653.106;13.40053;52.50628;Kreuzberg;BIM
+44;Osloer Str. 37;Allgemeiner Bestand;Gas;944.230;1.053.484;202.112;13.3741;52.55707;Gesundbrunnen;BIM
+45;Otto-Braun-Str. 70-72 (Haus d. Statistik);Allgemeiner Bestand;n/a;69.137;77.137;17.151;13.41864;52.52314;Mitte;BIM
+46;Parochialstr. 1-3;Allgemeiner Bestand;Fernwärme;746.847;833.262;124.021;13.41069;52.51716;Mitte;BIM
+47;Potsdamer Str. 140;Allgemeiner Bestand;Fernwärme;513.315;572.709;198.235;13.36189;52.4982;Schöneberg;BIM
+48;Potsdamer Str. 186;Allgemeiner Bestand;Heizöl;877.076;978.560;104.246;13.36065;52.4929;Schöneberg;BIM
+49;Potsdamer Str. 61-65;Allgemeiner Bestand;Fernwärme;1.191.852;1.329.757;85.919;13.36707;52.50411;Tiergarten;BIM
+50;Rubensstr. 111;Allgemeiner Bestand;Fernwärme;434.942;485.268;258.388;13.34484;52.46447;Schöneberg;BIM
+51;Salzburger Str. 21-25;Allgemeiner Bestand;Fernwärme;1.427.600;1.592.783;397.740;13.34327;52.48577;Schöneberg;BIM
+52;Sarrazinstr. 4;Allgemeiner Bestand;Gas;549.426;612.998;121.214;13.33176;52.47533;Friedenau;BIM
+53;Schloßstr. 58,59;Allgemeiner Bestand;Gas;566.513;632.062;110.809;13.31297;52.45322;Steglitz;BIM
+54;Seelenbinderstr. 99;Allgemeiner Bestand;Gas;1.148.387;1.281.263;215.267;13.58868;52.45565;Köpenick;BIM
+55;Storkower Str. 134;Allgemeiner Bestand;Fernwärme;1.271.475;1.418.593;540.824;13.45231;52.53267;Prenzlauer Berg;BIM
+56;Storkower Str. 97;Allgemeiner Bestand;Fernwärme;438.919;489.705;163.048;13.45077;52.53684;Prenzlauer Berg;BIM
+57;Straßburger Str. 56;Allgemeiner Bestand;Heizöl;703.318;784.697;218.999;13.41269;52.52921;Prenzlauer Berg;BIM
+58;Tempelhofer Damm 234;Allgemeiner Bestand;Gas;941.265;1.050.176;210.013;13.38372;52.45435;Tempelhof;BIM
+59;Turmstr. 21;Allgemeiner Bestand;Fernwärme;9.956.812;11.108.881;3.632.056;13.34785;52.52642;Moabit;BIM
+60;Turmstr. 22;Allgemeiner Bestand;Fernwärme;293.973;327.988;207.481;13.34715;52.52641;Moabit;BIM
+61;Turmstr. 86;Allgemeiner Bestand;Fernwärme;553.838;617.921;149.708;13.34967;52.52609;Moabit;BIM
+62;Müllerstr. 147;externe Mieter ;Fernwärme;393.330;438.841;706.979;13.35659;52.54686;Wedding;BIM
+63;Neue Jakobstr. 9;externe Mieter ;Fernwärme;848.414;946.581;242.220;13.41131;52.51118;Mitte;BIM
+64;Adlergestell 782;Feuerwehr ;Heizöl;37.546;41.890;4.545;13.64848;52.37579;Schmöckwitz;BIM
+65;Alt-Biesdorf 58;Feuerwehr ;Gas;216.049;241.047;25.875;13.55629;52.50925;Biesdorf;BIM
+66;Alt-Blankenburg 9;Feuerwehr ;Gas;247.950;276.640;25.078;13.45198;52.59295;Blankenburg;BIM
+67;Alt-Heiligensee 68;Feuerwehr ;Heizöl;72.307;80.673;14.597;13.21129;52.6067;Heiligensee;BIM
+68;Alt-Karow 10,11;Feuerwehr ;Gas;215.677;240.632;52.573;13.48301;52.61099;Karow;BIM
+69;Alt-Lübars 12;Feuerwehr ;Gas;45.890;51.199;7.659;13.35809;52.62078;Lübars;BIM
+70;Alt-Rudow 67,69;Feuerwehr ;Gas;142.783;159.304;37.717;13.49685;52.41698;Rudow;BIM
+71;Berliner Str. 16;Feuerwehr ;Gas;281.609;314.193;83.681;13.28617;52.58659;Tegel;BIM
+72;Betckestr. 13;Feuerwehr ;Gas;594.867;663.697;129.212;13.20456;52.52096;Wilhelmstadt;BIM
+73;Blenheimstr. 65,67;Feuerwehr ;Fernwärme;112.688;125.727;17.151;13.5621;52.5421;Marzahn;BIM
+74;Borussiastr. 16,17;Feuerwehr ;Gas;393.301;438.808;72.357;13.38385;52.46697;Tempelhof;BIM
+75;Charlottenburger Str. 10,12;Feuerwehr ;Gas;752.682;839.772;168.640;13.26534;52.43717;Zehlendorf;BIM
+76;Danziger Str., Kniprodestr.;Feuerwehr ;n/a;0;0;20.000;;;Prenzlauer Berg;BIM
+77;Dönhoffstr. 30,31;Feuerwehr ;Gas;295.533;329.728;45.934;13.52034;52.48396;Karlshorst;BIM
+78;Dorfstr. 4;Feuerwehr ;Gas;134.623;150.200;18.917;13.5157;52.57475;Wartenberg;BIM
+79;Edelweißstr. 35;Feuerwehr ;Fernwärme;47.022;52.463;24.901;13.37001;52.58582;Wilhelmsruh;BIM
+80;Edinburger Str. 7;Feuerwehr ;Gas;405.355;452.257;59.159;13.35196;52.55372;Wedding;BIM
+81;Ferdinand-Schultze-Str. 128,130,132;Feuerwehr ;Fernwärme;158.094;176.387;65.394;13.50814;52.54505;Alt-Hohenschönhausen;BIM
+82;Feurigstr. 58;Feuerwehr ;Gas;653.878;729.536;91.676;13.35675;52.48461;Schöneberg;BIM
+83;Frankenbergstr. 23;Feuerwehr ;Gas;105.959;118.220;10.037;13.71614;52.4367;Wilhelmshagen;BIM
+84;Friederikestr. 19;Feuerwehr ;Gas;97.125;108.363;18.041;13.22891;52.57079;Konradshöhe;BIM
+85;Fürstenwalder Allee 356;Feuerwehr ;n/a;0;0;402.624;13.72222;52.43063;Wilhelmshagen;BIM
+86;Gasteiner Str. 19-20;Feuerwehr ;Fernwärme;372.591;415.702;75.188;13.32045;52.48751;Wilmersdorf;BIM
+87;Gatower Str. 333;Feuerwehr ;Pellet;123.045;137.282;20.624;13.1807;52.4897;Gatow;BIM
+88;Godbersenstr. 31;Feuerwehr ;n/a;0;0;57.850;13.64377;52.37832;Schmöckwitz;BIM
+89;Goethestr. 7;Feuerwehr ;Gas;386.578;431.308;59.948;13.3155;52.42956;Lichterfelde;BIM
+90;Gravensteinstr. 9, 4-18;Feuerwehr ;Gas;917.480;1.023.639;155.362;13.43607;52.60702;Französisch Buchholz;BIM
+91;Groß-Berliner Damm 18;Feuerwehr ;Fernwärme;488.391;544.901;216.994;13.51013;52.45026;Johannisthal;BIM
+92;Grunowstr. 18;Feuerwehr ;n/a;0;0;0;13.40927;52.56824;Pankow;BIM
+93;Hackbuschstr. 65;Feuerwehr ;Gas;180.384;201.256;37.915;13.15055;52.54348;Staaken;BIM
+94;Hauptstr. 14;Feuerwehr ;Gas;235.582;262.840;40.655;13.38766;52.61773;Blankenfelde;BIM
+95;Hausvaterweg 16;Feuerwehr ;Gas;229.857;256.453;46.411;13.54614;52.56962;Falkenberg;BIM
+96;Heinsestr. 24;Feuerwehr ;Gas;346.725;386.844;51.195;13.30877;52.61538;Hermsdorf;BIM
+97;Hellersdorfer Str. 143-147;Feuerwehr ;Fernwärme;122.048;136.170;41.511;13.58962;52.52973;Kaulsdorf;BIM
+98;Im Domstift 22;Feuerwehr ;Gas;179.803;200.607;47.050;13.41223;52.39247;Lichtenrade;BIM
+99;Imkerweg/ Insel Werderchen;Feuerwehr ;n/a;522.556;583.019;2.799.052;;;Grünau;BIM
+100;Jagowstr. 31;Feuerwehr ;Gas;776.667;866.533;92.440;13.33369;52.52267;Moabit;BIM
+101;Johannisthaler Chaussee 222;Feuerwehr ;Fernwärme;439.743;490.624;103.804;13.46832;52.43419;Buckow;BIM
+102;Josef-Orlopp-Str. 69;Feuerwehr ;Gas;1.362.664;1.520.333;134.460;13.49285;52.52318;Lichtenberg;BIM
+103;Katzengraben 1,1a;Feuerwehr ;Gas;1.035.508;1.155.323;266.044;13.57904;52.44721;Köpenick;BIM
+104;Kirchhofstr. 20;Feuerwehr ;Gas;847.717;945.803;142.519;13.43843;52.46899;Neukölln;BIM
+105;Kladower Damm 367;Feuerwehr ;Gas;632.187;705.335;53.500;13.14522;52.45472;Kladow;BIM
+106;Krampenburger Weg 1,3;Feuerwehr ;Gas;107.433;119.863;40.042;13.66439;52.41056;Müggelheim;BIM
+107;Kronprinzessinnenweg 20;Feuerwehr ;Gas;619.696;691.399;76.458;13.18465;52.4293;Wannsee;BIM
+108;Kummerower Ring 80;Feuerwehr ;Fernwärme;239.097;266.762;79.774;13.58242;52.52559;Kaulsdorf;BIM
+109;Linienstr. 128-129;Feuerwehr ;Gas;161.207;179.860;28.438;13.38925;52.52658;Mitte;BIM
+110;Mädewalder Weg 21,23;Feuerwehr ;Gas;134.053;149.564;13.793;13.58798;52.50686;Kaulsdorf;BIM
+111;Märkische Allee 181, 189;Feuerwehr ;Fernwärme;1.115.155;1.244.186;286.595;13.53669;52.53499;Marzahn;BIM
+112;Müggelseedamm 178;Feuerwehr ;Gas;237.628;265.123;40.774;13.62612;52.44657;Friedrichshagen;BIM
+113;Mühlenweg 8;Feuerwehr ;Gas;97.418;108.690;27.421;13.68963;52.43902;Rahnsdorf;BIM
+114;Nikolaus-Groß-Weg 2;Feuerwehr ;Gas;3.163.352;3.529.373;2.582.742;13.28239;52.53225;Charlottenburg-Nord;BIM
+115;Nöldnerstr. 36;Feuerwehr ;Fernwärme;33.154;36.990;7.645;13.4839;52.50194;Lichtenberg;BIM
+116;Oderberger Str. 24,25;Feuerwehr ;Gas;383.233;427.576;62.417;13.40667;52.53991;Prenzlauer Berg;BIM
+117;Pablo-Picasso-Str. ggü. 49;Feuerwehr ;Fernwärme;987.046;1.101.254;173.553;13.52684;52.55745;Neu-Hohenschönhausen;BIM
+118;Parkstr. 38-39;Feuerwehr ;Gas;991.103;1.105.780;215.476;13.45975;52.55644;Weißensee;BIM
+119;Pasewalker Str. 120;Feuerwehr ;Fernwärme;138.790;154.849;131.949;13.42898;52.58217;Französisch Buchholz;BIM
+120;Paulsternstr. 34;Feuerwehr ;Fernwärme;102.429;114.281;31.300;13.24789;52.54397;Siemensstadt;BIM
+121;Pölnitzweg 3,5;Feuerwehr ;Fernwärme;146.478;163.426;21.730;13.50217;52.63749;Buch;BIM
+122;Rankestr. 10-12;Feuerwehr ;Fernwärme;691.289;771.276;57.606;13.33263;52.50175;Charlottenburg;BIM
+123;Rathausstr. 70,72;Feuerwehr ;Fernwärme;478.349;533.697;61.031;13.38029;52.44392;Mariendorf;BIM
+124;Reinickendorfer Str. 15a-15c;Feuerwehr ;Fernwärme;465.782;519.676;82.320;13.37;52.54328;Gesundbrunnen;BIM
+125;Remstaler Str. 9;Feuerwehr ;Gas;79.113;88.267;25.359;13.30121;52.63694;Frohnau;BIM
+126;Roedernallee 55;Feuerwehr ;Gas;589.376;657.570;88.832;13.34085;52.58734;Reinickendorf;BIM
+127;Romain-Rolland-Str. 103,105,107;Feuerwehr ;Gas;201.443;224.752;16.367;13.43729;52.57132;Heinersdorf;BIM
+128;Schieritzstr. 24,26;Feuerwehr ;Fernwärme;143.039;159.590;27.230;13.4406;52.54521;Prenzlauer Berg;BIM
+129;Schlierseestr. 10;Feuerwehr ;Gas;88.432;98.664;14.471;13.57936;52.42207;Grünau;BIM
+130;Schmöckwitzer Damm  60;Feuerwehr ;Gas;43.005;47.981;25.240;13.64578;52.34725;Schmöckwitz;BIM
+131;Selchowstr. 4;Feuerwehr ;Gas;142.386;158.861;20.915;13.55003;52.43934;Adlershof;BIM
+132;Semmelweisstr. 83-87;Feuerwehr ;Heizöl;138.792;154.851;31.433;13.52922;52.42383;Altglienicke;BIM
+133;Senheimer Str. 69;Feuerwehr ;n/a;0;0;821.541;13.29291;52.64556;Frohnau;BIM
+134;Siemensstr. 22;Feuerwehr ;Fernwärme;156.000;174.050;9.316;13.51229;52.46426;Oberschöneweide;BIM
+135;Stiftsweg 1a;Feuerwehr ;Fernwärme;175.061;195.317;31.857;13.4155;52.57306;Pankow;BIM
+136;Suarezstr. 9-10;Feuerwehr ;Fernwärme;763.299;851.618;151.944;13.29606;52.50906;Charlottenburg;BIM
+137;Südendstr. 18a;Feuerwehr ;Gas;203.654;227.219;52.288;13.33036;52.45597;Steglitz;BIM
+138;Triftstr. 8;Feuerwehr ;Gas;530.293;591.651;80.421;13.21039;52.5448;Hakenfelde;BIM
+139;Voltairestr. 2;Feuerwehr ;Fernwärme;716.370;799.259;279.154;13.41466;52.51691;Mitte;BIM
+140;Waltersdorfer Str. 107;Feuerwehr ;Gas;97.223;108.472;9.683;13.5742;52.40169;Bohnsdorf;BIM
+141;Wendenschloßstr. 348 / Werft Bootshaus;Feuerwehr ;n/a;329.225;367.319;61.312;13.58456;52.42594;Köpenick;BIM
+142;Wiener Str. 64;Feuerwehr ;Gas;526.173;587.055;135.800;13.42918;52.49863;Kreuzberg;BIM
+143;Wilhelm-von-Siemens-Str. 15;Feuerwehr ;Gas;658.857;735.092;117.684;13.38049;52.42958;Mariendorf;BIM
+144;Wilmsstr. 19,20;Feuerwehr ;Gas;458.618;511.683;75.692;13.40313;52.49551;Kreuzberg;BIM
+145;Albert-Kuntz-Str. 61,63,65,67,69,71,73;Flüchtlingsunterbringung ;Fernwärme;1.511.491;1.686.381;405.037;13.61941;52.53788;Hellersdorf;BIM
+146;Alt-Moabit 82 B;Flüchtlingsunterbringung ;n/a;0;0;244.526;13.33691;52.52487;Moabit;BIM
+147;Am Beelitzhof 12,14,14A-C,16,16A-C;Flüchtlingsunterbringung ;n/a;345.712;385.713;13.426;13.19001;52.43166;Nikolassee;BIM
+148;Brebacher Weg 15;Flüchtlingsunterbringung ;Fernwärme;1.214.908;1.355.481;228.395;13.56886;52.51393;Biesdorf;BIM
+149;Carola-Neher-Str. 65 / Maxie-Wander-Str. 78;Flüchtlingsunterbringung ;Fernwärme;1.791.411;1.998.689;165.925;13.59949;52.53038;Hellersdorf;BIM
+150;Eschenallee 3;Flüchtlingsunterbringung ;Gas;2.177.569;2.429.528;684.513;13.26872;52.51845;Westend;BIM
+151;Kiefholzstr. 71, 71 A-C;Flüchtlingsunterbringung ;Gas;663.692;740.486;197.664;13.45682;52.4867;Alt-Treptow;BIM
+152;Kirchhainer Damm 74;Flüchtlingsunterbringung ;Gas;1.439.454;1.606.009;122.064;13.41521;52.37885;Lichtenrade;BIM
+153;Kladower Damm 333;Flüchtlingsunterbringung ;Gas;378.623;422.432;21.606;13.1503;52.45729;Kladow;BIM
+154;Leonorenstr. 33 B;Flüchtlingsunterbringung ;Fernwärme;1.569.110;1.750.666;487.984;13.34364;52.44354;Lankwitz;BIM
+155;Marienfelder Allee 66-80;Flüchtlingsunterbringung ;n/a;0;0;966.631;13.36839;52.42049;Marienfelde;BIM
+156;Niedstr. 1,2;Flüchtlingsunterbringung ;Gas;2.058.895;2.297.123;403.933;13.33576;52.47249;Friedenau;BIM
+157;Paul-Schwenk-Str. 3,5,7,9,11,13,15;Flüchtlingsunterbringung ;Fernwärme;1.037.807;1.157.888;490.262;13.53961;52.53771;Marzahn;BIM
+158;Rudolf-Leonhard-Str. 13, 13 A-F;Flüchtlingsunterbringung ;Fernwärme;1.093.144;1.219.628;1.184.594;13.56934;52.55132;Marzahn;BIM
+159;Salvador-Allende-Str. 89, 91;Flüchtlingsunterbringung ;n/a;0;0;42.150;13.59312;52.44573;Köpenick;BIM
+160;Staakener Str. 79;Flüchtlingsunterbringung ;Gas;0;0;0;13.18757;52.53593;Spandau;BIM
+161;Storkower Str. 133A;Flüchtlingsunterbringung ;n/a;384.528;429.020;10.037;13.45486;52.53541;Prenzlauer Berg;BIM
+162;Storkower Str. 139 C;Flüchtlingsunterbringung ;Fernwärme;0;0;18.041;13.45426;52.53309;Prenzlauer Berg;BIM
+163;Wartenberger Str. 120, 120 A-F;Flüchtlingsunterbringung ;Fernwärme;1.182.080;1.318.855;452.843;13.51669;52.56112;Neu-Hohenschönhausen;BIM
+164;Wassersportallee 56,58;Flüchtlingsunterbringung ;Gas;216.292;241.318;98.214;13.57436;52.41427;Grünau;BIM
+165;Wittenberger Str. 16, 16 A-C, 18, 18 A-B;Flüchtlingsunterbringung ;Fernwärme;1.431.473;1.597.104;33.249;13.56508;52.56508;Marzahn;BIM
+166;Wolfgang-Heinz-Str. 45 A-G;Flüchtlingsunterbringung ;Fernwärme;1.205.840;1.345.364;1.080.189;13.49309;52.62999;Buch;BIM
+167;Zum Heckeshorn 30;Flüchtlingsunterbringung ;Gas;0;0;18.637;13.1612;52.42955;Wannsee;BIM
+168;Alt-Moabit 5;Gerichte ;Fernwärme;521.317;581.637;101.385;13.3629348;52.5233073;Moabit;BIM
+169;Altstädter Ring 7;Gerichte ;Fernwärme;377.078;420.708;155.328;13.19985;52.53693;Spandau;BIM
+170;Amtsgerichtsplatz 1;Gerichte ;Fernwärme;1.672.841;1.866.400;244.525;13.29507;52.5061;Charlottenburg;BIM
+171;Brunnenplatz 1;Gerichte ;Fernwärme;1.203.043;1.342.243;412.586;13.37563;52.55081;Gesundbrunnen;BIM
+172;Elßholzstr. 30-33;Gerichte ;Gas;3.343.553;3.730.425;630.833;13.35676;52.49248;Schöneberg;BIM
+173;Grunewaldstr. 66-67;Gerichte ;Gas;1.122.045;1.251.873;191.079;13.34601;52.48897;Schöneberg;BIM
+174;Hardenbergstr. 31;Gerichte ;Fernwärme;1.177.253;1.313.469;173.850;13.33073;52.50726;Charlottenburg;BIM
+175;Invalidenstr. 52;Gerichte ;Fernwärme;965.394;1.077.096;272.433;13.37128;52.52725;Moabit;BIM
+176;Karl-Marx-Str. 77;Gerichte ;Fernwärme;727.599;811.787;128.271;13.43434;52.4818;Neukölln;BIM
+177;Kissingenstr. 5,6;Gerichte ;Fernwärme;586.255;654.089;178.390;13.41566;52.56628;Pankow;BIM
+178;Lehrter Str. 60;Gerichte ;Fernwärme;309.202;344.979;103.861;13.36147;52.53088;Moabit;BIM
+179;Littenstr. 12-17;Gerichte ;Fernwärme;3.746.230;4.179.694;770.139;13.41395;52.51797;Mitte;BIM
+180;Mandrellaplatz 6;Gerichte ;Gas;519.734;579.871;105.816;13.57957;52.45534;Köpenick;BIM
+181;Möckernstr. 128-130;Gerichte ;Gas;1.899.761;2.119.576;614.694;13.38128;52.50014;Kreuzberg;BIM
+182;Parkstr. 71;Gerichte ;Gas;598.616;667.880;61.600;13.46013;52.55735;Weißensee;BIM
+183;Ringstr. 9;Gerichte ;Gas;687.388;766.923;84.841;13.30774;52.43741;Lichterfelde;BIM
+184;Roedeliusplatz 1;Gerichte ;Fernwärme;459.906;513.120;284.435;13.48948;52.51439;Lichtenberg;BIM
+185;Schönstedtstr. 17;Gerichte ;Fernwärme;176.335;196.738;13.000;13.43501;52.48181;Neukölln;BIM
+186;Schönstedtstr. 5;Gerichte ;Fernwärme;900.857;1.005.092;365.256;13.37447;52.55002;Gesundbrunnen;BIM
+187;Tegeler Weg 17-20;Gerichte ;Fernwärme;2.005.907;2.238.004;418.287;13.29753;52.52699;Charlottenburg;BIM
+188;Turmstr. 91;Gerichte ;Fernwärme;7.624.045;8.506.197;2.864.081;13.3538;52.52638;Moabit;BIM
+189;Alfredstr. 11;JVA ;Fernwärme;1.467.305;1.637.082;247.624;13.48983;52.5136;Lichtenberg;BIM
+190;Alt-Moabit 12a / JVA Moabit;JVA ;Fernwärme;7.551.734;8.425.520;4.543.235;13.3541;52.52411;Moabit;BIM
+191;Arkonastr. 56;JVA ;Fernwärme;786.249;877.223;150.881;13.41543;52.5657;Pankow;BIM
+192;Ernst-Stargardt-Allee 1 / JVA Heidering;JVA ;Fernwärme;4.871.879;5.435.587;2.281.291;13.27748;52.34025;Neubeeren;BIM
+193;Friedrich-Olbricht-Damm 16, JVA Plötzensee;JVA ;Gas;25.208.289;28.125.055;2.164.842;13.32196;52.53903;Charlottenburg-Nord;BIM
+194;Friedrich-Olbricht-Damm 17, JVA Plötzensee;JVA ;Gas;22.827.088;25.468.333;1.344.417;13.3215;52.53858;Charlottenburg-Nord;BIM
+195;Friedrich-Olbricht-Damm 40, JSA;JVA ;Gas;0;0;1.933.128;13.31757;52.54048;Charlottenburg-Nord;BIM
+196;Kiefheider Weg 72;JVA ;Gas;564.888;630.249;114.254;13.24735;52.62162;Heiligensee;BIM
+197;Kirchhainer Damm 64 - 66, JAA;JVA ;Gas;1.290.169;1.439.450;218.285;13.41353;52.3805;Lichtenrade;BIM
+198;Kisselnallee 19;JVA ;Gas;388.621;433.587;102.410;13.18995;52.55425;Falkenhagener Feld;BIM
+199;Lehrter Str. 61, JVA Plötzensee;JVA ;Fernwärme;655.822;731.705;220.290;13.36223;52.52999;Moabit;BIM
+200;Lützowstr. 45, JAA;JVA ;Gas;280.546;313.007;12.265;13.41163;52.37921;Lichtenrade;BIM
+201;Neuwedeller Str. 4;JVA ;Fernwärme;208.000;232.067;41.200;13.43107;52.47546;Neukölln;BIM
+202;Niederneuendorfer Allee 140-150;JVA ;Gas;1.418.871;1.583.044;201.731;13.21174;52.56981;Hakenfelde;BIM
+203;Ollenhauerstr. 128;JVA ;Gas;259.401;289.416;102.778;13.3287;52.56666;Reinickendorf;BIM
+204;Robert-von-Ostertag-Str. 2;JVA ;Gas;1.580.829;1.763.741;365.078;13.23918;52.42576;Zehlendorf;BIM
+205;Saatwinkler Damm 1A, JVA Plötzensee (JVK);JVA ;Gas;0;0;454.646;13.32623;52.53932;Charlottenburg-Nord;BIM
+206;Seidelstr. 39 / JVA Tegel;JVA ;Gas;20.225.225;22.565.418;4.429.908;13.29583;52.57357;Tegel;BIM
+207;Albrechtstr. 20;Kultur ;Fernwärme;411.986;459.655;352.164;13.38439;52.52252;Mitte;BIM
+208;Alte Jakobstr. 128;Kultur ;Fernwärme;1.515.406;1.690.748;1.655.026;13.39858;52.50353;Kreuzberg;BIM
+209;Alt-Treptow 1;Kultur ;Gas;439.297;490.127;57.700;13.47654;52.48588;Alt-Treptow;BIM
+210;Am Großen Wannsee 56,58 / Wannsee-Konferenz;Kultur ;Gas;238.606;266.214;90.715;13.16636;52.43232;Wannsee;BIM
+211;Am Köllnischen Park 4 / Marinehaus;Kultur ;Fernwärme;0;0;91.931;13.4156;52.51371;Mitte;BIM
+212;Am Köllnischen Park 5 / Märkisches Museum;Kultur ;Fernwärme;699.640;780.593;106.799;13.41517;52.51358;Mitte;BIM
+213;Am Sandwerder 5 / Literarisches Colloquium;Kultur ;Gas;299.659;334.331;69.173;13.17852;52.42268;Wannsee;BIM
+214;Bismarckstr. 110 / Schillertheater;Kultur ;Fernwärme;1.773.073;1.978.229;1.275.866;13.31825;52.51182;Charlottenburg;BIM
+215;Blücherplatz 1 / Amerika-Gedenkbibliothek;Kultur ;Gas;1.217.010;1.357.827;671.100;13.39256;52.49671;Kreuzberg;BIM
+216;Breite Str. 30-37, ZLB;Kultur ;Fernwärme;2.835.560;3.163.653;1.530.635;13.40444;52.51527;Mitte;BIM
+217;Britzer Str. 5 / Topographie des Terrors;Kultur ;Gas;228.268;254.680;115.927;13.51832;52.45309;Niederschöneweide;BIM
+218;Bussardsteig 9 / Brücke - Museum;Kultur ;Gas;454.401;506.978;156.011;13.27474;52.46686;Dahlem;BIM
+219;Chausseestr. 125 / Brecht-Haus;Kultur ;Fernwärme;114.235;127.453;17.651;13.38482;52.52893;Mitte;BIM
+220;Clauertstr. 11 / Museumsdorf Düppel;Kultur ;Gas;84.718;94.520;217.833;13.23639;52.42461;Zehlendorf;BIM
+221;Colomierstr. 3 / Liebermann-Villa;Kultur ;Gas;105.163;117.331;66.650;13.16494;52.42881;Wannsee;BIM
+222;Fasanenstr. 23;Kultur ;Fernwärme;99.608;111.133;33.188;13.32683;52.50211;Charlottenburg;BIM
+223;Friedrichstr. 107 / Friedrichstadtpalast;Kultur ;Fernwärme;1.903.499;2.123.746;2.491.365;13.38802;52.52394;Mitte;BIM
+224;Gendarmenmarkt 1-2 / Deutscher Dom;Kultur ;Fernwärme;501.200;559.193;333.960;13.39291;52.51275;Mitte;BIM
+225;Gendarmenmarkt 3-4;Kultur ;Fernwärme;2.619.596;2.922.701;24.632;13.39158;52.51329;Mitte;BIM
+226;Genslerstr. 66 / Gedenkstätte Hohenschönhausen;Kultur ;Fernwärme;1.124.476;1.254.585;381.223;13.50015;52.54163;Alt-Hohenschönhausen;BIM
+227;Hallesches Ufer 34-38;Kultur ;Fernwärme;254.786;284.266;134.608;13.38599;52.49911;Kreuzberg;BIM
+228;Herbert-von-Karajan-Str. 1, Philharmonie;Kultur ;Fernwärme;4.134.980;4.613.425;3.430.481;13.36897;52.51007;Tiergarten;BIM
+229;Hinter dem Gießhaus 2;Kultur ;Fernwärme;517.386;577.251;98.178;13.39619;52.519;Mitte;BIM
+230;Hüttigpfad 16;Kultur ;Fernwärme;46.577;51.967;9.623;13.32272567;52.54074141;Charlottenburg-Nord;BIM
+231;Kantstr. 11-12 / Theater des Westens;Kultur ;Fernwärme;588.942;657.086;198.235;13.3294;52.50629;Charlottenburg;BIM
+232;Kantstr. 12 A / Delphi-Filmpalast;Kultur ;Fernwärme;179.731;200.527;82.314;13.32845;52.50585;Charlottenburg;BIM
+233;Käuzchensteig 8-12 / Kunsthaus Dahlem;Kultur ;Gas;230.048;256.666;45.030;13.27453;52.46619;Dahlem;BIM
+234;Klingelhöferstr. 14 / Bauhaus-Archiv;Kultur ;Fernwärme;472.043;526.661;57.219;13.35389;52.50633;Tiergarten;BIM
+235;Klosterstr. 68 / Podewil;Kultur ;Fernwärme;577.293;644.090;115.306;13.4126;52.51741;Mitte;BIM
+236;Königin-Luise-Str. 49, Domäne Dahlem;Kultur ;Heizöl;508.333;567.150;341.165;13.28865;52.45834;Dahlem;BIM
+237;Kunst im Stadtraum;Kultur ;n/a;1.911.828;2.133.039;20.624;13.4000167;52.5308493;Mitte;BIM
+238;Kurfürstendamm 153;Kultur ;Fernwärme;1.258.222;1.403.807;765.673;13.30224;52.4988;Wilmersdorf;BIM
+239;Linienstr. 227 / Volksbühne;Kultur ;Fernwärme;1.428.300;1.593.564;1.211.948;13.41218;52.52738;Mitte;BIM
+240;Luxemburger Str. 20 / Atze Musiktheater;Kultur ;Fernwärme;356.979;398.284;94.672;13.35169;52.54332;Wedding;BIM
+241;Möckernstr. 26;Kultur ;Fernwärme;1.083.330;1.208.678;519.606;13.3795;52.49824;Kreuzberg;BIM
+242;Naunynstr. 27;Kultur ;n/a;81.185;90.579;20.624;13.4213;52.502;Kreuzberg;BIM
+243;Nikolaikirchplatz 1 / Nikolaikirche;Kultur ;Fernwärme;214.590;239.419;78.700;13.40766;52.51646;Mitte;BIM
+244;Osloer Str. 102 / Bildhauerwerkstatt;Kultur ;Gas;484.975;541.090;123.303;13.38071;52.55581;Gesundbrunnen;BIM
+245;Pariser Platz 8 / Brandenburger Tor;Kultur ;Gas;39.230;43.769;64.035;13.3779;52.51651;Mitte;BIM
+246;Parkaue 23-29 / Theater an der Parkaue;Kultur ;Fernwärme;1.375.330;1.534.465;309.321;13.47749;52.51656;Lichtenberg;BIM
+247;Poststr. 13,14;Kultur ;Fernwärme;389.375;434.428;111.532;13.40687;52.51619;Mitte;BIM
+248;Poststr. 16 / Ephraimpalais;Kultur ;Fernwärme;204.947;228.661;86.260;13.40724;52.51587;Mitte;BIM
+249;Poststr. 23 / Knoblauchhaus;Kultur ;Fernwärme;68.389;76.302;29.553;13.40695;52.5164;Mitte;BIM
+250;Prenzlauer Allee 80;Kultur ;Fernwärme;432.253;482.268;383.566;13.42786;52.54303;Prenzlauer Berg;BIM
+251;Schloßstr. 1 A / Bröhan-Museum;Kultur ;Fernwärme;755.020;842.381;74.581;13.29533;52.51888;Charlottenburg;BIM
+252;Schumannstr. 11-14 A / Deutsches Theater;Kultur ;Fernwärme;1.938.620;2.162.931;1.544.691;13.38145;52.52409;Mitte;BIM
+253;Spandauer Damm 19;Kultur ;Fernwärme;531.013;592.455;24.148;13.29429;52.51911;Charlottenburg;BIM
+254;Stresemannstr. 110 / Rosenbeet;Kultur ;n/a;;0;234.894;13.38195;52.5064;Kreuzberg;BIM
+255;Stresemannstr. 29-31 / Hebbel am Ufer 1;Kultur ;Fernwärme;474.926;529.878;225.986;13.38729129;52.49997106;Kreuzberg;BIM
+256;Thulestr. 77-79;Kultur ;Gas;462.693;516.230;75.027;13.42842;52.55624;Pankow;BIM
+257;Tiergartenstr. 4;Kultur ;n/a;0;0;396.439;13.55995;52.47363;Biesdorf;BIM
+258;Trebbiner Str. 8-9;Kultur ;Fernwärme;3.152.279;3.517.019;1.822.829;13.37679;52.49861;Kreuzberg;BIM
+259;Wrangelstr. 2 / Schlosspark Theater;Kultur ;Fernwärme;221.350;246.961;158.104;13.31799;52.4549;Steglitz;BIM
+260;Alemannenstr. 10;Polizei ;Gas;519.632;579.757;121.230;13.19493;52.4317;Nikolassee;BIM
+261;Alt-Biesdorf 33;Polizei ;Gas;203.015;226.505;59.340;13.56192;52.50827;Biesdorf;BIM
+262;Alt-Moabit 145;Polizei ;Gas;569.730;635.652;221.798;13.36602;52.52208;Moabit;BIM
+263;Am Nordgraben 6,7,8;Polizei ;Fernwärme;1.165.074;1.299.881;193.277;13.32584;52.58725;Wittenau;BIM
+264;Augustaplatz 7;Polizei ;Fernwärme;1.851.889;2.066.165;444.101;13.30637;52.44352;Lichterfelde;BIM
+265;Baumschulenstr. 1;Polizei ;Fernwärme;173.422;193.488;161.990;13.49468;52.47136;Baumschulenweg;BIM
+266;Bayernring 44;Polizei ;Fernwärme;844.549;942.269;138.793;13.38519;52.4815;Tempelhof;BIM
+267;Berliner Allee 210;Polizei ;Gas;594.791;663.612;133.780;13.46711;52.55722;Weißensee;BIM
+268;Berliner Str. 35;Polizei ;Fernwärme;653.140;728.712;124.983;13.28906;52.58246;Tegel;BIM
+269;Bernhard-Weiß-Str. 6;Polizei ;Fernwärme;3.790.320;4.228.885;2.167.874;13.41662;52.52391;Mitte;BIM
+270;Bismarckstr. 111;Polizei ;Fernwärme;376.796;420.394;162.348;13.31897;52.51213;Charlottenburg;BIM
+271;Brunnenstr. 175;Polizei ;Gas;323.254;360.657;178.725;13.39875;52.53237;Mitte;BIM
+272;Bulgarische Str. 55;Polizei ;Heizöl;407.700;454.874;158.346;13.47394;52.48154;Alt-Treptow;BIM
+273;Cecilienstr. 92;Polizei ;Fernwärme;3.314.491;3.698.000;808.745;13.56209;52.52907;Biesdorf;BIM
+274;Charlottenburger Chaussee 67,75;Polizei ;Fernwärme;9.392.759;10.479.563;2.792.590;13.22828;52.52779;Spandau;BIM
+275;Friedenstr. 31-32;Polizei ;n/a;0;0;217.768;13.434;52.52246;Friedrichshain;BIM
+276;Friesenstr. 16;Polizei ;Gas;10.795.314;12.044.404;3.234.933;13.39469;52.48585;Kreuzberg;BIM
+277;Gallwitzallee 87,95;Polizei ;Gas;10.391.731;11.594.123;1.989.021;13.34754;52.4278;Lankwitz;BIM
+278;Gothaer Str. 19;Polizei ;Fernwärme;1.947.956;2.173.347;541.648;13.34724;52.48865;Schöneberg;BIM
+279;Götzstr. 6;Polizei ;Gas;626.705;699.219;165.136;13.38744;52.4645;Tempelhof;BIM
+280;Grünauer Str. 140;Polizei ;Gas;1.615.108;1.801.987;266.713;13.56913;52.43534;Köpenick;BIM
+281;Hadlichstr. 37;Polizei ;Gas;516.070;575.783;102.816;13.41506;52.56979;Pankow;BIM
+282;Hauptstr. 45;Polizei ;Fernwärme;518.275;578.243;142.493;13.34994;52.48331;Schöneberg;BIM
+283;Hauptstr. 8;Polizei ;Fernwärme;135.036;150.661;9.600;13.48642;52.49621;Lichtenberg;BIM
+284;Heinrich-Grüber-Str. 35;Polizei ;Fernwärme;613.430;684.408;189.550;13.59154;52.51492;Kaulsdorf;BIM
+285;Idastr. 6;Polizei ;Gas;241.754;269.727;68.943;13.41207;52.58386;Niederschönhausen;BIM
+286;Invalidenstr. 57,58;Polizei ;Fernwärme;835.904;932.624;313.660;13.36189;52.52386;Moabit;BIM
+287;Kaiserdamm 1;Polizei ;Fernwärme;1.362.664;1.520.333;330.280;13.29543;52.5111;Charlottenburg;BIM
+288;Karlstr. 8;Polizei ;Fernwärme;116.597;130.088;133.724;13.57971;52.44241;Köpenick;BIM
+289;Keithstr. 28;Polizei ;Fernwärme;1.336.370;1.490.997;260.299;13.34672;52.50455;Tiergarten;BIM
+290;Koenigsallee 75;Polizei ;n/a;300.031;334.746;81.546;13.26185;52.47995;Grunewald;BIM
+291;Königstr. 5;Polizei ;Gas;1.788.931;1.995.922;330.945;13.2542;52.43433;Zehlendorf;BIM
+292;Kruppstr. 15;Polizei ;Fernwärme;272.265;303.768;149.690;13.35569;52.53195;Moabit;BIM
+293;Kruppstr. 2-4;Polizei ;Fernwärme;9.970.422;11.124.066;1.680.107;13.35749;52.53303;Moabit;BIM
+294;Lichtenrader Damm 211;Polizei ;Gas;356.979;398.284;153.830;13.40732;52.39421;Lichtenrade;BIM
+295;Magazinstr. 5;Polizei ;Fernwärme;987.360;1.101.604;216.459;13.42015;52.51873;Mitte;BIM
+296;Marktstr. 13;Polizei ;Gas;198.235;221.172;4.400;13.47243;52.50359;Lichtenberg;BIM
+297;Mertensstr. 140;Polizei ;Gas;649.917;725.117;128.060;13.22473;52.56363;Hakenfelde;BIM
+298;Moritzstr. 10;Polizei ;Gas;1.155.965;1.289.718;254.993;13.19986;52.53916;Spandau;BIM
+299;Neues Ufer 1;Polizei ;Gas;140.483;156.738;81.540;13.31751;52.52205;Moabit;BIM
+300;Nipkowstr. 23;Polizei ;Gas;175.650;195.973;44.415;13.55012;52.43667;Adlershof;BIM
+301;Nöldnerstr. 35;Polizei ;Fernwärme;360.709;402.445;279.498;13.48453;52.50201;Lichtenberg;BIM
+302;Pablo-Picasso-Str. 4;Polizei ;Fernwärme;884.680;987.043;173.553;13.51573;52.56622;Neu-Hohenschönhausen;BIM
+303;Pankstr. 28;Polizei ;Fernwärme;1.615.998;1.802.980;719.239;13.37516;52.54811;Gesundbrunnen;BIM
+304;Pionierstr. 160,204;Polizei ;Gas;145.703;162.562;7.453;13.16598;52.55642;Falkenhagener Feld;BIM
+305;Poelchaustr. 1;Polizei ;Fernwärme;812.766;906.808;422.749;13.53864;52.53489;Marzahn;BIM
+306;Radelandstr. 21;Polizei ;Gas;8.159.321;9.103.408;1.979.917;13.19204;52.55553;Falkenhagener Feld;BIM
+307;Rudolstädter Str. 79,85;Polizei ;Fernwärme;934.943;1.043.122;277.471;13.30553;52.48557;Wilmersdorf;BIM
+308;Ruppiner Chaussee 240,268;Polizei ;Gas;12.764.681;14.241.639;1.297.984;13.24473;52.61546;Heiligensee;BIM
+309;Schmidt-Knobelsdorf-Str. 27;Polizei ;Fernwärme;240.388;268.202;100.921;13.18796;52.52222;Wilhelmstadt;BIM
+310;Segelfliegerdamm 42;Polizei ;Fernwärme;322.602;359.929;132.164;13.50872;52.44341;Johannisthal;BIM
+311;Sewanstr. 262;Polizei ;Fernwärme;292.062;325.856;76.350;13.51921;52.49438;Friedrichsfelde;BIM
+312;Sonnenallee 107;Polizei ;Fernwärme;481.000;536.655;191.092;13.44064;52.48165;Neukölln;BIM
+313;Tempelhofer Damm 12;Polizei ;Fernwärme;5.300.639;5.913.958;3.762.303;13.38554;52.48223;Tempelhof;BIM
+314;Thomas-Dehler-Str. 4;Polizei ;Fernwärme;0;0;54.149;13.34788;52.50984;Tiergarten;BIM
+315;Wackenbergstr. 81;Polizei ;Gas;132.680;148.032;30.282;13.41816;52.5876;Niederschönhausen;BIM
+316;Wedekindstr. 10;Polizei ;Fernwärme;1.684.111;1.878.974;378.294;13.44476;52.5123;Friedrichshain;BIM
+317;Zwickauer Damm 58;Polizei ;Gas;419.257;467.768;138.872;13.47768;52.41939;Rudow;BIM
+318;Albrechtstr. 27;Schulen ;Fernwärme;122.821;137.032;7.850;13.3834;52.52406;Mitte;BIM
+319;Allee der Kosmonauten 18;Schulen ;Fernwärme;259.401;289.416;197.205;13.51273;52.52345;Friedrichsfelde;BIM
+320;Alt-Moabit 10;Schulen ;Fernwärme;1.186.992;1.324.335;571.617;13.35787;52.52391;Moabit;BIM
+321;Alt-Stralau 40-41;Schulen ;Fernwärme;135.928;151.656;13.665;13.47384;52.49334;Friedrichshain;BIM
+322;Am Fort 48 D;Schulen ;Gas;195.781;218.434;98.334;13.13608;52.52395;Staaken;BIM
+323;Birkenstr. 11;Schulen ;Gas;1.407.591;1.570.458;197.527;13.60234;52.44659;Köpenick;BIM
+324;Bismarckstr. 20;Schulen ;Fernwärme;1.214.985;1.355.567;194.627;13.31314;52.51239;Charlottenburg;BIM
+325;Bochumer Str. 8;Schulen ;Fernwärme;1.262.008;1.408.031;244.442;13.33793;52.52311;Moabit;BIM
+326;Buschallee 23a;Schulen ;Fernwärme;1.615.721;1.802.671;636.045;13.47572;52.55287;Weißensee;BIM
+327;Cyclopstr. 1-7;Schulen ;Fernwärme;3.265.670;3.643.530;1.038.948;13.3273;52.59952;Wittenau;BIM
+328;Dammweg 216;Schulen ;Fernwärme;200.444;223.637;48.539;13.46799;52.47236;Neukölln;BIM
+329;Danckelmannstr. 25-28;Schulen ;Fernwärme;1.336.144;1.490.745;306.394;13.29117;52.51201;Charlottenburg;BIM
+330;Darßer Str. 97;Schulen ;Fernwärme;1.072.883;1.197.023;286.827;13.49357;52.56474;Neu-Hohenschönhausen;BIM
+331;Derfflinger Str. 7,8;Schulen ;Gas;2.124.825;2.370.681;25.078;13.3555;52.50327;Tiergarten;BIM
+332;Driesener Str. 22;Schulen ;Gas;1.181.745;1.318.481;154.390;13.40567;52.55201;Prenzlauer Berg;BIM
+333;Dudenstr. 35-37;Schulen ;Gas;1.489.489;1.661.833;356.284;13.38028;52.48468;Tempelhof;BIM
+334;Erbeskopfweg 6-10;Schulen ;Gas;301.712;336.622;49.862;13.40037;52.59351;Rosenthal;BIM
+335;Erich-Weinert-Str. 103;Schulen ;Fernwärme;1.352.308;1.508.779;425.566;13.43586;52.54595;Prenzlauer Berg;BIM
+336;Fischerstr. 32;Schulen ;Fernwärme;347.930;388.188;59.557;13.48943;52.49897;Lichtenberg;BIM
+337;Fischerstr. 36;Schulen ;Fernwärme;2.422.736;2.703.063;484.140;13.48703;52.5011;Lichtenberg;BIM
+338;Florastr. 13;Schulen ;Gas;331.918;370.323;53.761;13.32873;52.46176;Steglitz;BIM
+339;Fritz-Lesch-Str. 35;Schulen ;Fernwärme;1.782.239;1.988.456;789.709;13.47601;52.54557;Alt-Hohenschönhausen;BIM
+340;Gierkeplatz 1,3;Schulen ;Fernwärme;1.028.944;1.148.000;279.087;13.30203;52.51683;Charlottenburg;BIM
+341;Goldbeckweg 8-14;Schulen ;Gas;2.882.368;3.215.877;587.194;13.23022;52.54363;Haselhorst;BIM
+342;Goltzstr. 43-44;Schulen ;Gas;111.262;124.136;14.595;13.35303;52.49144;Schöneberg;BIM
+343;Gustav-Adolf-Str. 66;Schulen ;Fernwärme;1.755.861;1.959.026;769.923;13.44837;52.5594;Weißensee;BIM
+344;Haarlemer Str. 27;Schulen ;Gas;2.195.696;2.449.753;1.179.999;13.45274;52.45768;Britz;BIM
+345;Halemweg 24;Schulen ;Fernwärme;2.636.102;2.941.116;441.246;13.28804;52.53835;Charlottenburg-Nord;BIM
+346;Hartmannsweilerweg 29;Schulen ;Gas;1.541.965;1.720.381;256.985;13.24888;52.44195;Zehlendorf;BIM
+347;Helmholtzstr. 37;Schulen ;Fernwärme;898.975;1.002.992;252.613;13.50697;52.46632;Oberschöneweide;BIM
+348;Hermann-Hesse-Str. 34,36;Schulen ;Gas;924.544;1.031.520;53.300;13.39581;52.57932;Niederschönhausen;BIM
+349;Immenweg 6-10;Schulen ;Fernwärme;3.572.560;3.985.929;1.135.474;13.34578;52.45205;Steglitz;BIM
+350;Klixstr. 6-7;Schulen ;Gas;473.584;528.381;124.036;13.35169;52.48874;Schöneberg;BIM
+351;Kniprodestr. 27;Schulen ;Gas;1.134.829;1.266.136;167.825;13.44709;52.53526;Prenzlauer Berg;BIM
+352;Kochstr. 9;Schulen ;Fernwärme;518.330;578.304;586.798;13.38869;52.50595;Kreuzberg;BIM
+353;Kühleweinstr. 5;Schulen ;Gas;2.475.462;2.761.889;1.333.269;13.37067;52.56204;Reinickendorf;BIM
+354;Leinestr. 37-45;Schulen ;Fernwärme;794.000;885.871;132.169;13.42346;52.47263;Neukölln;BIM
+355;Levetzowstr. 3,5;Schulen ;Gas;1.666.806;1.859.667;207.703;13.3317;52.52186;Moabit;BIM
+356;Lippstädter Str. 9-11;Schulen ;Gas;1.683.549;1.878.347;304.686;13.30557;52.41139;Lichterfelde;BIM
+357;Lipschitzallee 25;Schulen ;Fernwärme;1.878.352;2.095.690;14.954;13.47306;52.42974;Gropiusstadt;BIM
+358;Lobeckstr. 76;Schulen ;Fernwärme;2.069.770;2.309.256;519.299;13.40319;52.49911;Kreuzberg;BIM
+359;Loschmidtstr. 19;Schulen ;Fernwärme;515.124;574.727;77.845;13.31295;52.51734;Charlottenburg;BIM
+360;Mandelstr. 6-8;Schulen ;Fernwärme;719.834;803.124;118.152;13.44136;52.54571;Prenzlauer Berg;BIM
+361;Marktstr. 2-3;Schulen ;Gas;820.987;915.981;114.616;13.47485;52.50294;Lichtenberg;BIM
+362;Marzahner Chaussee 231;Schulen ;Fernwärme;833.606;930.060;111.035;13.53317;52.53028;Marzahn;BIM
+363;Naglerstr. 1-3;Schulen ;Fernwärme;970.349;1.082.625;170.974;13.4496;52.50223;Friedrichshain;BIM
+364;Nauener Str. 13 (ehm. Altonaer Str. 104);Schulen ;Heizöl;99.969;111.536;7.788;13.18144;52.53367;Spandau;BIM
+365;Niederwallstr. 6,7;Schulen ;Fernwärme;265.345;296.047;82.400;13.39829;52.51266;Mitte;BIM
+366;Nonnendammallee 140-143;Schulen ;Fernwärme;3.282.380;3.662.173;1.047.683;13.24308;52.5391;Haselhorst;BIM
+367;Oschatzer Ring 13;Schulen ;Fernwärme;40.541;45.232;12.660;13.61434;52.54178;Hellersdorf;BIM
+368;Osloer Str. 23-26;Schulen ;Gas;1.869.406;2.085.709;489.033;13.38029;52.5572;Gesundbrunnen;BIM
+369;Ostpreußendamm 40;Schulen ;Gas;597.137;666.230;95.975;13.31704;52.4303;Lichterfelde;BIM
+370;Pappelallee 30-31;Schulen ;Gas;381.703;425.869;50.900;13.4174;52.5454;Prenzlauer Berg;BIM
+371;Persiusstr. 7-9;Schulen ;Fernwärme;325.875;363.581;15.150;13.46221;52.50121;Friedrichshain;BIM
+372;Peter-Weiss-Gasse 8;Schulen ;Fernwärme;615.517;686.736;177.181;13.60789;52.53859;Hellersdorf;BIM
+373;Pfalzburger Str. 22,23;Schulen ;Fernwärme;615.544;686.767;73.883;13.32174;52.49385;Wilmersdorf;BIM
+374;Pfalzburger Str. 30;Schulen ;Fernwärme;702.793;784.111;253.983;13.32107;52.49094;Wilmersdorf;BIM
+375;Prinzregentenstr. 32,35;Schulen ;Fernwärme;697.802;778.542;150.039;13.33293;52.48364;Wilmersdorf;BIM
+376;Prinzregentenstr. 60;Schulen ;Fernwärme;1.042.406;1.163.019;250.214;13.3335;52.48237;Wilmersdorf;BIM
+377;Rheinsberger Str. 4-5;Schulen ;Gas;1.281.017;1.429.240;65.297;13.3956;52.53664;Mitte;BIM
+378;Rudower Str. 184;Schulen ;Gas;1.747.708;1.949.929;729.453;13.47512;52.43021;Buckow;BIM
+379;Scharfenberg (Insel);Schulen ;Gas;2.173.101;2.424.543;259.063;13.24690145;52.57410782;Tegel;BIM
+380;Schillerstr. 120;Schulen ;Fernwärme;709.728;791.848;279.093;13.31875;52.51076;Charlottenburg;BIM
+381;Schwyzer Str. 6-8;Schulen ;Fernwärme;1.373.300;1.532.200;905.055;13.35344;52.55765;Wedding;BIM
+382;Steinmetzstr. 79;Schulen ;Fernwärme;907.951;1.013.007;57.414;13.36466;52.49897;Schöneberg;BIM
+383;Straßmannstr. 14-16;Schulen ;Fernwärme;947.658;1.057.308;173.023;13.4485;52.52166;Friedrichshain;BIM
+384;Teltower Damm 87-101 (ungerade);Schulen ;Gas;8.161.947;9.106.339;1.077.075;13.26191;52.42575;Zehlendorf;BIM
+385;Wollenbergerstr. 1;Schulen ;Fernwärme;209.430;233.662;1.163.112;13.511;52.54677;Alt-Hohenschönhausen;BIM
+386;Wrangelstr. 98;Schulen ;Fernwärme;3.159.390;3.524.952;473.323;13.43659;52.50096;Kreuzberg;BIM

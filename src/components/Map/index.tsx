@@ -9,26 +9,30 @@ import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
 import { getConsumtionColor } from '@lib/getConsumtionColor'
 import { MapKey } from './MapKey'
 
+import { getStripes } from '@lib/getStripes'
+
 interface MapType {
-  energyData: any
   zoomToCenter?: number[]
-  entityId: string | number | null
-  setEntityId: (time: string | null | number) => void
+  entityId: number | null
+  setEntityId: (time: null | number) => void
+  setMapZoom: (zoom: number) => void
   entityData: any
   consumptionType: string
   mapZoom: number
+  landparcelData: any
+  pointData: any
+  mapPitch: boolean
 }
 
 const MAP_CONFIG = {
-  defaultZoom: 11,
+  defaultZoom: 15,
   defaultLatitude: 52.520008,
-  defaultLongitude: 13.404954,
+  defaultLongitude: 13.414954,
   minZoom: 10,
   maxZoom: 19,
 }
 
 export const MapComponent: FC<MapType> = ({
-  energyData,
   zoomToCenter,
   entityId,
   setEntityId,
@@ -36,22 +40,34 @@ export const MapComponent: FC<MapType> = ({
   consumptionType,
   mapZoom,
   setMapZoom,
+  landparcelData,
+  pointData,
+  mapPitch,
 }) => {
   const [mapMarkers, setMapMarkers] = useState([])
 
   const map = useRef<Map>(null)
   const highlightedMarker = useRef<Marker>(null)
 
-  if (mapMarkers) {
-    mapMarkers.forEach((m) => {
-      m[0].style.backgroundColor = getConsumtionColor(
-        consumptionType,
-        consumptionType === 'heat' ? m[1].heat : m[1].electricity
-      )
-    })
-  }
+  useEffect(() => {
+    if (mapMarkers) {
+      mapMarkers.forEach((m: any, i: number) => {
+        m.style.backgroundColor = getConsumtionColor(
+          consumptionType,
+          consumptionType === 'heat'
+            ? pointData.features[i].properties.heat
+            : pointData.features[i].properties.electricity
+        )
+        const visble = pointData.features[i].properties.visible
+        m.style['pointer-events'] = visble ? 'unset' : 'none'
+        m.style.opacity = visble ? 1 : 0
+      })
+    }
+  }, [consumptionType, pointData])
 
   // Map setup (run only once on initial render)
+  let loaded = false
+
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -60,9 +76,10 @@ export const MapComponent: FC<MapType> = ({
       // style: mapStyle(),
       // @ts-ignore
       style:
-        process.env.NODE_ENV == 'development'
-          ? mapStyle()
-          : `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
+        // process.env.NODE_ENV == 'development'
+        //   ? mapStyle()
+        //   :
+        `${process.env.NEXT_PUBLIC_MAPTILER_STYLE}`,
       center: [
         MAP_CONFIG.defaultLongitude,
         MAP_CONFIG.defaultLatitude,
@@ -70,35 +87,52 @@ export const MapComponent: FC<MapType> = ({
       zoom: MAP_CONFIG.defaultZoom,
       minZoom: MAP_CONFIG.minZoom,
       maxZoom: MAP_CONFIG.maxZoom,
-      pitch: 20,
+      maxBounds: [
+        11.82943127508483, 51.74832292717255, 15.046752480983088,
+        53.467541934574086,
+      ],
+      pitch: 60,
     })
-
     map.current.on('load', function () {
-      if (!map.current) return
-      let markers: number[] = []
-      energyData.pointData.features.forEach(function (marker: any) {
+      if (!map.current || loaded) return
+      // @ts-ignore
+      let markers = []
+      loaded = true
+
+      pointData.features.forEach(function (marker: any, index: number) {
         const el = document.createElement('div')
+        // @ts-ignore
+        el.key = index
+        el.id = 'marker-' + marker.properties.entityId
+
         el.style.backgroundColor = getConsumtionColor(
           consumptionType,
           consumptionType === 'heat'
             ? marker.properties.heat
             : marker.properties.electricity
         )
-        el.className =
-          'h-3 w-3 rounded-full cursor-pointer border-gray-500 border'
+        el.style.display = 'unset'
+        el.className = 'h-3 w-3 rounded-full cursor-pointer'
+        if (el.style.backgroundColor === 'rgb(255, 255, 255)') {
+          el.className += ' border-gray-500 border'
+        }
         el.addEventListener('click', function () {
+          // @ts-ignore
           onMarkerClick(marker.properties.entityId, marker.geometry.coordinates)
         })
-        markers.push([el, marker.properties])
+        markers.push(el)
 
         // add marker to map
         new maplibregl.Marker(el)
           .setLngLat(marker.geometry.coordinates)
+          // @ts-ignore
           .addTo(map.current)
       })
+      // @ts-ignore
       setMapMarkers(markers)
 
       map.current.on('click', (e) => {
+        // @ts-ignore
         if (e?.originalEvent?.originalTarget?.nodeName === 'CANVAS') {
           setEntityId(null)
           return
@@ -106,23 +140,38 @@ export const MapComponent: FC<MapType> = ({
       })
 
       map.current.on('zoomend', (e) => {
+        // @ts-ignore
         setMapZoom(map.current?.getZoom())
       })
     })
   }, [])
 
   useEffect(() => {
+    // @ts-ignore
+    if (zoomToCenter[0] === 0) {
+      return
+    }
+
     if (map.current && map.current.isStyleLoaded()) {
       // @ts-ignore
       map.current.easeTo({
         // @ts-ignore
         center: zoomToCenter,
-        zoom: 15,
+        zoom: 17,
         // @ts-ignore
         // padding: { left: isMobile ? 0 : 200 },
       })
     }
   }, [zoomToCenter])
+
+  useEffect(() => {
+    if (map.current && map.current.isStyleLoaded()) {
+      // @ts-ignore
+      map.current.easeTo({
+        pitch: mapPitch ? 60 : 0,
+      })
+    }
+  }, [mapPitch])
 
   useEffect(() => {
     if (map.current && map.current.isStyleLoaded()) {
@@ -139,7 +188,7 @@ export const MapComponent: FC<MapType> = ({
     if (map.current && map.current.isStyleLoaded()) {
       if (map.current.getSource('landparcel-source')) {
         map.current.removeLayer('landparcel-layer')
-        map.current.removeLayer('landparcel-layer-extrusion')
+        // map.current.removeLayer('landparcel-layer-extrusion')
         map.current.removeSource('landparcel-source')
         highlightedMarker && highlightedMarker.current?.remove()
       }
@@ -148,8 +197,11 @@ export const MapComponent: FC<MapType> = ({
         return
       }
 
+      // for debugging
+      // console.log(entityData.properties)
+
       let intersectingPolygon = false
-      energyData.landparcel.features.forEach((feat: any) => {
+      landparcelData.features.forEach((feat: any) => {
         if (!intersectingPolygon) {
           if (booleanPointInPolygon(entityData.geometry.coordinates, feat))
             intersectingPolygon = feat
@@ -162,18 +214,26 @@ export const MapComponent: FC<MapType> = ({
           data: intersectingPolygon,
         })
 
+        if (map.current.hasImage('stripes')) {
+          map.current.removeImage('stripes')
+        }
+
+        const fillColor = getConsumtionColor(
+          consumptionType,
+          consumptionType === 'heat'
+            ? entityData.properties.heat
+            : entityData.properties.electricity
+        )
+        // @ts-ignore
+        map.current.addImage(`stripes`, getStripes({ color: fillColor }))
+
         map.current.addLayer(
           {
             id: 'landparcel-layer',
             type: 'fill',
             source: 'landparcel-source',
             paint: {
-              'fill-color': getConsumtionColor(
-                consumptionType,
-                consumptionType === 'heat'
-                  ? entityData.properties.heat
-                  : entityData.properties.electricity
-              ),
+              // 'fill-color': fillColor,
               'fill-opacity': [
                 'interpolate',
                 ['exponential', 0.5],
@@ -183,73 +243,11 @@ export const MapComponent: FC<MapType> = ({
                 16,
                 0.5,
               ],
+              'fill-pattern': `stripes`,
             },
           },
-          process.env.NODE_ENV == 'development' ? '' : 'building'
+          process.env.NODE_ENV == 'development' ? '' : 'building-3d'
         )
-        // map.current.addLayer({
-        //   id: 'landparcel-layer',
-        //   type: 'line',
-        //   source: 'landparcel-source',
-        //   paint: {
-        //     'line-dasharray': [1, 1],
-        //     'line-color': getConsumtionColor(
-        //       consumptionType,
-        //       consumptionType === 'heat'
-        //         ? entityData.properties.heat
-        //         : entityData.properties.electricity
-        //     ),
-        //     // 'line-blur': 6,
-        //     'line-width': 3,
-        //     'line-opacity': [
-        //       'interpolate',
-        //       ['exponential', 0.5],
-        //       ['zoom'],
-        //       13,
-        //       0,
-        //       16,
-        //       0.8,
-        //     ],
-        //   },
-        // })
-
-        // map.current.addLayer({
-        //   id: 'landparcel-layer-extrusion',
-        //   type: 'fill-extrusion',
-        //   source: 'landparcel-source',
-        //   paint: {
-        //     // See the MapLibre Style Specification for details on data expressions.
-        //     // https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/
-
-        //     // Get the fill-extrusion-color from the source 'color' property.
-        //     'fill-extrusion-color': getConsumtionColor(
-        //       consumptionType,
-        //       consumptionType === 'heat'
-        //         ? entityData.properties.heat
-        //         : entityData.properties.electricity
-        //     ),
-        //     'fill-extrusion-height': 30,
-        //     'fill-extrusion-base': 0,
-        //     'fill-extrusion-opacity': 0.3,
-        //   },
-        // })
-        // map.current.addLayer({
-        //   id: 'landparcel-layer',
-        //   type: 'fill',
-        //   source: 'landparcel-source',
-        //   paint: {
-        //     'fill-color': '#9bc95b',
-        //     'fill-opacity': [
-        //       'interpolate',
-        //       ['exponential', 0.5],
-        //       ['zoom'],
-        //       13,
-        //       0,
-        //       22,
-        //       0.4,
-        //     ],
-        //   },
-        // })
 
         // Remove possibly existent markers:
         highlightedMarker.current?.remove()
@@ -275,7 +273,7 @@ export const MapComponent: FC<MapType> = ({
       <div
         id="map"
         className="w-full h-full bg-[#F8F4F0] !fixed"
-        aria-label="Kartenansicht der Einrichtungen"
+        aria-label="Kartenansicht"
       ></div>
       <MapKey consumptionType={consumptionType} />
     </>

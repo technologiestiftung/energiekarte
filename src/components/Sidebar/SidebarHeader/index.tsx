@@ -8,7 +8,7 @@ export interface SidebarHeaderType {
 
 export const SidebarHeader: FC<SidebarHeaderType> = ({
   text,
-  fontSize = 'text-lg sm:text-xl md:text-2xl ',
+  fontSize = 'text-2xl',
 }) => {
   return (
     <>

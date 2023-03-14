@@ -10,6 +10,9 @@ export interface IntroModalType {
   setModalOpen: (date: boolean) => void
   setNavView: (date: 'info' | 'filter') => void
   setSidebarMenuOpen: (date: boolean) => void
+  setRunJoyride: (date: boolean) => void
+  setEntityId: (date: number) => void
+  setConsumptionType: (type: string) => void
 }
 
 export const IntroModal: FC<IntroModalType> = ({
@@ -17,6 +20,9 @@ export const IntroModal: FC<IntroModalType> = ({
   setModalOpen,
   setNavView,
   setSidebarMenuOpen,
+  setRunJoyride,
+  setEntityId,
+  setConsumptionType,
 }) => {
   function closeModal() {
     setModalOpen(false)
@@ -40,46 +46,51 @@ export const IntroModal: FC<IntroModalType> = ({
         className="relative z-50"
         onClose={closeModal}
       >
-        <div className="fixed inset-0 bg-secondary/60" aria-hidden="true" />
+        <div className="fixed inset-0 bg-secondary/80" aria-hidden="true" />
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4 leading-7">
-            <Dialog.Panel className="border-2 border-primary/50  bg-secondary text-textcolor/90 max-h-full p-6 max-w-xs md:max-w-none filter drop-shadow-lg rounded-lg md:min-w-xl md:w-1/2 mx-auto transition-all">
+            <Dialog.Panel className="border border-primary/50  bg-secondary text-textcolor/90 max-h-full p-6 max-w-xs md:max-w-none filter drop-shadow-lg rounded-lg md:min-w-xl md:w-1/2 mx-auto transition-all">
               <button
-                className="text-textcolor focus:outline-none top-0 right-0 m-2 absolute cursor-pointer z-20 hover:bg-primary rounded-full p-2"
+                className="text-textcolor focus:outline-none top-0 right-0 m-4 absolute cursor-pointer z-20 hover:bg-textcolor border-textcolor border-2 rounded-full p-1 hover:text-white"
                 onClick={closeModal}
               >
                 <Cross />
               </button>
-              <h2 className="font-bold text-2xl pb-2 pt-2 text-textcolor/80">
-                Berliner EnergieCheckpoint
+              <h2 className="font-bold text-2xl pb-4 pt-2 text-textcolor/80">
+                Berliner <span className="text-primary">Energie</span>Checkpoint
               </h2>
-              <h4 className="pb-4">
-                <p>Energieverbrauch und Einsparpotentiale - Wie steht es um den Beitrag öffentlicher Gebäude zur Klimaneutralität?<br></br>
-
+              <h4 className="pb-6 leading-normal">
+                <p className="font-bold text-lg pb-2">
+                  Öffentliche Gebäude und ihr Beitrag zur Klimaneutralität
                 </p>
-
                 <p>
-                  Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu beschloss das Berliner Klimaschutz- und Energiewendegesetz (EWG Bln) eine Reduktion der Kohlendioxidemmissionen
-                  um mindestens 95 % im Vergleich zu den Emissionen des Jahres 1990. Öffentliche Gebäude wie Feuerwehren oder Kultureinrichtungen sollen durch Energieeinsparungen und Sanierungen eine Vorbildrolle einnehmen.</p>
-
-                <p>
-                  Wir schauen beispielhaft auf die Daten zu Strom- und Wärmevebrauch sowie Sanierungskosten und Einsparpotenzial der Liegenschaften der BIM (Berliner Immobilien Management)
+                  Berlin möchte spätestens bis 2045 klimaneutral sein.
+                  Dazu wurde im Berliner Klimaschutz- und Energiewendegesetz (EWG Bln) als Ziel eine Reduktion der Kohlendioxidemissionen um mindestens 95 % im Vergleich zum Jahr 1990 festgelegt.
+                  Öffentliche Gebäude wie Schulen und Kultureinrichtungen sollen durch Energieeinsparungen und Sanierungen eine Vorbildrolle einnehmen.
+                  Doch welche Gebäude verbrauchen wie viel Energie und welche Einsparpotentiale stecken in der Sanierung einzelner Gebäude?
+                  Wir schauen beispielhaft auf die Daten zu Liegenschaften der BIM (Berliner Immobilien Management).
                 </p>
-
               </h4>
 
-
-
-
-
               <button
-                className="xmas-btn px-4 bg-secondary hover:bg-primary hover:text-textcolor text-primary p-2 text-bold rounded border-2 border-primary hover:border-primary"
-                onClick={closeModalExplore}
+                className="px-4 bg-primary hover:bg-primary-dark font-bold text-white p-2 text-bold rounded hover:border-primary"
+                onClick={() =>
+                  (function () {
+                    setModalOpen(false)
+                    setEntityId(26)
+                    setConsumptionType('heat')
+
+                    setTimeout(() => {
+                      setRunJoyride(true)
+                    }, 500)
+                  })()
+                }
               >
                 Erkunden
               </button>
+
               <button
-                className="px-4 ml-4 bg-secondary text-textcolor text-bold border-2 border-textcolor/90 hover:border-primary p-2 rounded hover:text-textcolor hover:bg-primary"
+                className="px-4 ml-4 bg-secondary text-gray-500 text-bold hover:text-primary p-2 rounded "
                 onClick={closeModalInfo}
               >
                 Mehr Infos
@@ -94,7 +105,7 @@ export const IntroModal: FC<IntroModalType> = ({
                   </i>
                 </p>
                 <div className="inline-block ml-4 md:flex self-center">
-                  <div className="w-32">
+                  <div className="w-32 md:pt-4 md:pl-4">
                     <TsbLogo className={`w-30`} />
                   </div>
                   <div className="w-32 pt-2 mr-8 md:mt-0 self-center">

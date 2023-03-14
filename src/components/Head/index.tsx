@@ -25,12 +25,12 @@ interface HeadPropType {
 }
 
 export const Head: FC<Partial<HeadPropType>> = ({
-  description = 'Energiekarte Description',
-  siteTitle = 'energiekarte.odis-berlin.de',
-  pageTitle = 'Berliner Energiekarte',
+  description = 'Öffentliche Gebäude und ihr Beitrag zur Klimaneutralität',
+  siteTitle = 'energiecheckpoint.odis-berlin.de',
+  pageTitle = 'Berliner EnergieCheckpoint',
   fbAppId = '',
-  keywords = ['Berlin', 'Energie', 'ODIS', 'Karte', 'Open Data'],
-  themeColor = '#091725',
+  keywords = ['Berlin', 'Energie', 'ODIS', 'Karte', 'Open Data', 'Gebäude', 'Klimaschutz'],
+  themeColor = '#9bc95b',
   locales = ['de'],
   locale = 'de',
   twitterUsername = 'citylabberlin',

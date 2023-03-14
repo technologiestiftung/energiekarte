@@ -3,13 +3,14 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   // distDir: 'build',
-  // basePath: '/weihnachtsmarktkarte',
+  // basePath: '/somepath',
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
+  swcMinify: false,
 }
 
 module.exports = nextConfig

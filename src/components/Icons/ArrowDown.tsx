@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { IconPropType } from './IconPropType'
 
-export const ArrowLeft: FC<IconPropType> = ({
+export const ArrowDown: FC<IconPropType> = ({
   color1,
   color2,
   color3,
@@ -22,7 +22,7 @@ export const ArrowLeft: FC<IconPropType> = ({
       <path
         fillRule="evenodd"
         fill={color1 || 'currentColor'}
-        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
       />
     </svg>
   )

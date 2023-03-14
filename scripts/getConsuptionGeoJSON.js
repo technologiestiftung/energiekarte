@@ -21,12 +21,23 @@ function getConsuptionGeoJSON(headers, dataVerbrauch, headerTransaltions) {
       if (headersWant.includes(h)) {
         props[headerTransaltions[h] || h] = Number(element[i])
           ? Number(element[i])
-          : h === 'Wärmeverbrauch' || h === 'Stromverbrauch'
-          ? -1
+          : h === 'Wärmeverbrauch Witterung' || h === 'Stromverbrauch'
+          ? 0
+          : element[i]
+          ? element[i].trim()
           : element[i]
       }
       if (h.includes('gc_xwert') || h.includes('gc_ywert')) {
         coordinates[h] = Number(element[i])
+      }
+      if (
+        h.includes('Wärmeverbrauch') ||
+        h.includes('Wärmeverbrauch Witterung') ||
+        h.includes('Stromverbrauch')
+      ) {
+        props[headerTransaltions[h] || h] = Number(
+          element[i].replaceAll('.', '')
+        )
       }
     })
 
@@ -61,7 +72,7 @@ const headersWant = [
   'Wirtschaftseinheit',
   'PLZ',
   'Art der Wärmeversorgung',
-  'Wärmeverbrauch',
+  'Wärmeverbrauch Witterung',
   'Stromverbrauch',
   'Bemerkung',
   // 'Adresse',

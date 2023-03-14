@@ -1,22 +1,24 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import { useHasMobileSize } from '@lib/hooks/useHasMobileSize'
-import { Plus, Minus } from '@components/Icons'
+import { Plus, Minus, Box } from '@components/Icons'
 
 const btnClasses =
   'shadow-lg hover:bg-textcolor hover:text-secondary bg-secondary text-textcolor h-10 w-10 mt-2 cursor-pointer list-none text-center grid place-items-center rounded-full'
 
 export interface SidebarNavType {
   navViews: any
-  setNavView: (view: 'info' | 'list') => void
-  navView?: 'info' | 'list'
+  setNavView: (view: 'info' | 'filter') => void
+  navView?: 'info' | 'filter'
   sidebarMenuOpen: boolean
   setSidebarMenuOpen: (open: boolean) => void
   setModalOpen: (open: boolean) => void
-  entityId: string | number | null
-  setEntityId: (time: string | null | number) => void
+  entityId: number | null
+  setEntityId: (time: null | number) => void
   mapZoom: number
   setMapZoom: (time: number) => void
+  mapPitch: boolean
+  setMapPitch: (pitch: boolean) => void
 }
 
 export const SidebarNav: FC<SidebarNavType> = ({
@@ -30,6 +32,8 @@ export const SidebarNav: FC<SidebarNavType> = ({
   setEntityId,
   mapZoom,
   setMapZoom,
+  setMapPitch,
+  mapPitch,
 }) => {
   const hasMobileSize = useHasMobileSize()
   let navPositionClasses =
@@ -39,7 +43,10 @@ export const SidebarNav: FC<SidebarNavType> = ({
     navPositionClasses = 'left-sidebar'
   }
 
-  const padding = sidebarMenuOpen ? (hasMobileSize ? 'pl-4' : 'pl-0') : 'pl-4'
+  // const padding = hasMobileSize ? 'pl-4' : 'pl-0'
+  const padding =
+    sidebarMenuOpen || entityId ? (hasMobileSize ? 'pl-4' : 'pl-0') : 'pl-4'
+
   const navClasses =
     'h-14 cursor-pointer list-none text-center grid place-items-center hover:bg-textcolor'
   function onNavClick(listView: any) {
@@ -55,7 +62,7 @@ export const SidebarNav: FC<SidebarNavType> = ({
         onClick={() => setModalOpen(true)}
         title="home"
         className={classNames(
-          'rotate-90 translate-x-12 translate-y-14 md:rotate-0 md:translate-x-0 md:translate-y-0 fixed top-4 z-20 right-4 text-center text-xs md:text-base cursor-pointer bg-secondary font-bold hover:bg-primary rounded-2xl mb-4 px-4 py-2.5 group'
+          'shadow-lg introbtn rotate-90 translate-x-12 translate-y-14 md:rotate-0 md:translate-x-0 md:translate-y-0 fixed top-4 z-20 right-4 text-center text-xs md:text-base cursor-pointer bg-secondary font-bold hover:bg-primary rounded-2xl mb-4 px-4 py-2.5 group'
         )}
       >
         <span className={'text-primary group-hover:text-secondary'}>
@@ -79,6 +86,7 @@ export const SidebarNav: FC<SidebarNavType> = ({
                 title={listView.name}
                 onClick={() => onNavClick(listView)}
                 className={classNames(
+                  listView.name,
                   'text-secondary',
                   'hover:text-secondary',
                   listView.value === navView && sidebarMenuOpen
@@ -103,6 +111,13 @@ export const SidebarNav: FC<SidebarNavType> = ({
       >
         <div>
           <button
+            title="pitch"
+            className={classNames('pitch-btn', btnClasses)}
+            onClick={() => setMapPitch(!mapPitch)}
+          >
+            <Box />
+          </button>
+          <button
             title="zoom in"
             className={btnClasses}
             onClick={() => setMapZoom(mapZoom + 1)}
@@ -112,7 +127,15 @@ export const SidebarNav: FC<SidebarNavType> = ({
           <button
             title="zoom out"
             className={btnClasses}
-            onClick={() => setMapZoom(mapZoom - 1)}
+            // onClick={() => setMapZoom(mapZoom - 1)}
+            onClick={() =>
+              (function () {
+                console.log('oooo')
+
+                // setMapPitch(false)
+                setMapZoom(mapZoom - 1)
+              })()
+            }
           >
             <Minus />
           </button>

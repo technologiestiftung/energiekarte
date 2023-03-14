@@ -50,6 +50,7 @@ module.exports = {
       white: '#fff',
       textcolor: '#222222',
       primary: '#9bc95b',
+      'primary-dark': '#719D34',
       secondary: '#fff',
       gray: {
         '100': '#EDEDED',
@@ -72,6 +73,11 @@ module.exports = {
       },
       spacing: {
         sidebar: SIDEBARWIDTH,
+      },
+      gridTemplateColumns: {
+        // Simple 20 column grid
+        '20': 'repeat(20, minmax(0, 1fr))',
+        '30': 'repeat(30, minmax(0, 1fr))',
       },
     },
   },
