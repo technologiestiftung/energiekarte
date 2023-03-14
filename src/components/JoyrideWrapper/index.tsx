@@ -15,7 +15,7 @@ const steps = [
     target: '#marker-26',
     title: 'Öffentliche Einrichtungen',
     content:
-      'Wo wird wie viel verbraucht? Die Karte zeigt den Standort und eine grobe Einordnung des Energieverbrauchs unterschiedlicher öffentlicher Einrichtungen bzw. Liegenschaften in Berlin – beispielsweise das Rote Rathaus, Sitz der Regierenden Bürgermeisterin Berlins.',
+      'Wo wird wie viel verbraucht? Die Karte zeigt den Standort und eine grobe Einordnung des Energieverbrauchs unterschiedlicher öffentlicher Einrichtungen bzw. Liegenschaften in Berlin – beispielsweise das Rote Rathaus, Sitz der Regierenden Bürgermeisterin oder des Regierenden Bürgermeisters Berlins.',
     disableBeacon: true,
     spotlightPadding: 75,
     offset: 0,
