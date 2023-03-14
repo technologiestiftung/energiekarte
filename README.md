@@ -9,6 +9,7 @@
 
 Berlin aims to be climate neutral by 2045 at the latest. To this end, the Berlin Climate Protection and Energy Turnaround Act (EWG Bln) resolved to reduce carbon dioxide emissions by at least 95% compared to 1990. Public buildings such as schools and cultural institutions are to play a model role through energy savings and renovations. But which buildings consume how much energy and what potential savings can be found in the renovation of individual buildings? The application takes a closer look at the data on properties from BIM (Berliner Immobilien Management) as an example.
 
+
 ![Map](/public/social-image.jpg)
 
 <!--
