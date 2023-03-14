@@ -113,17 +113,17 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
 
     const isFiltereddd = Boolean(
       filterBuildingType ||
-      filterHeatType ||
-      defaultValues.electricityConsumption[0] !==
-      filterElectricityConsumption[0] ||
-      defaultValues.electricityConsumption[1] !==
-      filterElectricityConsumption[1] ||
-      defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
-      defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
-      defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
-      defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
-      defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
-      defaultValues.savingPotential[1] !== filterSavingPotential[1]
+        filterHeatType ||
+        defaultValues.electricityConsumption[0] !==
+          filterElectricityConsumption[0] ||
+        defaultValues.electricityConsumption[1] !==
+          filterElectricityConsumption[1] ||
+        defaultValues.heatConsumption[0] !== filterHeatConsumption[0] ||
+        defaultValues.heatConsumption[1] !== filterHeatConsumption[1] ||
+        defaultValues.renovationCosts[0] !== filterRenovationCosts[0] ||
+        defaultValues.renovationCosts[1] !== filterRenovationCosts[1] ||
+        defaultValues.savingPotential[0] !== filterSavingPotential[0] ||
+        defaultValues.savingPotential[1] !== filterSavingPotential[1]
     )
 
     setIsFiltered(isFiltereddd)
@@ -178,7 +178,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
           {isFiltered ? (
             <span
               title="gefiltert"
-              className="text-primary inline-block absolute pl-2"
+              className="text-primary inline-block pl-2 relative"
             >
               <Filter size={15} />{' '}
             </span>
@@ -192,7 +192,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
           {isFiltered ? (
             <span
               title="gefiltert"
-              className="text-primary inline-block absolute pl-2"
+              className="text-primary inline-block absolute pl-2 relative"
             >
               <Filter size={15} />{' '}
             </span>
