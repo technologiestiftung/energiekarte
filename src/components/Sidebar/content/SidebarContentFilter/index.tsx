@@ -170,7 +170,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
       <SidebarHeader text="Filter" />
 
       <SidebarBody>
-        <p className="py-2 text-sm">
+        <p className="pt-2 pb-4 text-sm">
           Hier lassen sich die Adressen nach verschiedenen Merkmalen filtern.
         </p>
         <p className="text-xs">
