@@ -33,7 +33,7 @@ const steps = [
     target: '.ranking-btns',
     title: 'Ranking',
     content:
-      'Die Ranking-Funktion erlaubt es, die Karte weiter zu explorieren und die Einrichtungen nacheinander durchzugehen. Es kann zur Liegenschaft mit dem nächsthohen bzw. nächstniedrigen Verbrauch gesprungen werden.',
+      'Die Ranking-Funktion erlaubt es, die Karte weiter zu explorieren und die Einrichtungen nacheinander durchzugehen. Es kann zur Liegenschaft mit dem nächsthöheren bzw. nächstniedrigeren Verbrauch gesprungen werden.',
     placement: 'top',
     disableBeacon: true,
   },
@@ -86,7 +86,7 @@ const steps = [
     target: '.filter',
     title: 'Filter',
     content:
-      'Über die Filterfunktion lassen sich die öffentlichen Einrichtungen nach bestimmten Merkmalen eingrenzen und anzeigen, wie zum Beispiel nach dem Gebäudetyp "Schulen", nach Gebäuden die über Gas beheizt werden oder nach Gebäude mit besonders hohem Einsparpotential.',
+      'Über die Filterfunktion lassen sich die öffentlichen Einrichtungen nach bestimmten Merkmalen eingrenzen und anzeigen, wie zum Beispiel nach dem Gebäudetyp "Schulen", nach Gebäuden, die über Gas beheizt werden, oder nach Gebäuden mit besonders hohem Einsparpotential.',
     placement: 'bottom',
     disableBeacon: true,
   },

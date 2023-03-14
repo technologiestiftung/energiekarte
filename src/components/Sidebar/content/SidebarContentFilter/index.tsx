@@ -312,8 +312,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
         </Accordion>
         <Accordion title="Einsparpotenzial" active={false}>
           <p className="text-xs">
-            Das Einsparpotenzial ist nur eine Schätzung, die sich stets in einem
-            Rahmen befindet.
+            Das Einsparpotenzial ist nur eine Schätzung, die stets als grober Rahmen verstanden werden muss.
             <b className="block pt-2">In Prozent (%)</b>
           </p>
           <RangeSlider
