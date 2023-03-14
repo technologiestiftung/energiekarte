@@ -82,7 +82,7 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ }) => {
                 Open Data Informationsstelle{' '}
               </a>{' '}
               Berliner Behörden bei der Bereit­stellung von Open Data. Mehr
-              offene Daten findest du im{' '}
+              offene Daten findest Du im{' '}
               <a
                 target="blank"
                 href="https://daten.berlin.de"
