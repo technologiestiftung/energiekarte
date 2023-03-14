@@ -171,7 +171,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
 
       <SidebarBody>
         <p className="pt-2 pb-4 text-sm">
-          Hier lassen sich die Informationen zu den einzelnen Adressen filtern.
+          Hier lassen sich die Adressen nach verschiedenen Merkmalen filtern.
         </p>
         <p className="text-xs">
           Gesamter Wäremverbrauch{' '}
