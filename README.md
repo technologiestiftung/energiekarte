@@ -7,7 +7,7 @@
 # Berliner EnergieCheckpoint
 **This application is a prototype. It may contain errors and small bugs. If you notice something you can report an Issue. Thank you!**
 
-Berlin aims to be climate neutral by 2045 at the latest. To this end, the Berlin Climate Protection and Energy Turnaround Act (EWG Bln) resolved to reduce carbon dioxide emissions by at least 95% compared to 1990. Public buildings such as schools and cultural institutions are to play a model role through energy savings and renovations. But which buildings consume how much energy and what potential savings can be found in the renovation of individual buildings? The application takes a closer look at the data on properties from BIM (Berliner Immobilien Management) as an example.
+Berlin aims to be climate neutral by 2045 at the latest. To this end, the Berlin Climate Protection and Energy Turnaround Act (EWG Bln) was passed to reduce carbon dioxide emissions by at least 95% compared to emission levels in 1990. Public buildings such as schools and cultural institutions play a leading role in saving energy by renovation and retrofitting. But which buildings consume how much energy and what potential savings can be made by renovating individual buildings? The application takes a closer look at the data on properties managed by the public enterprise BIM (Berliner Immobilien Management) as an example.
 
 
 ![Map](/public/social-image.jpg)
@@ -56,7 +56,7 @@ Get fancy shields at https://shields.io
 
 ## Context
    
-This application is based on open data. Open data is an important part of Berlin's administrative activities and not only creates transparency and openness, but also enables analysis and applications like this. You can find more open data at the [Berlin Open Data Portal](https://daten.berlin.de).
+This application is based on open data. Open data is an important part of Berlin's administrative activities and on top of creating transparency, enables analysis and applications like this. You can find more open data at the [Berlin Open Data Portal](https://daten.berlin.de).
 
    
 ## Data
@@ -174,7 +174,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## Content Licencing
 
-The data used is is derived from the [BIM website](https://bim-berlin.de/). We have processed and enriched the data for this application. If you use this dataset processed by us, you must indicate that the original raw data came from the BIM (BIM Berliner Immobilienmanagement GmbH).
+The underlying data was adapted from the [BIM website](https://bim-berlin.de/). We have processed and enriched the data for this application. If you use this dataset processed by us, you must indicate that the original raw data was provided by the BIM (Berliner Immobilienmanagement GmbH).
 
 ## Credits
 
