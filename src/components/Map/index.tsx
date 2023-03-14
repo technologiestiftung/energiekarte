@@ -92,6 +92,7 @@ export const MapComponent: FC<MapType> = ({
         53.467541934574086,
       ],
       pitch: 60,
+      attributionControl: false,
     })
     map.current.on('load', function () {
       if (!map.current || loaded) return
@@ -276,6 +277,14 @@ export const MapComponent: FC<MapType> = ({
         aria-label="Kartenansicht"
       ></div>
       <MapKey consumptionType={consumptionType} />
+      <div className="fixed right-0 bottom-0 bg-white/70 text-xs">
+        <a href="https://www.maptiler.com/copyright/" target="_blank">
+          © MapTiler
+        </a>{' '}
+        <a href="https://www.openstreetmap.org/copyright" target="_blank">
+          © OpenStreetMap contributors
+        </a>
+      </div>
     </>
   )
 }
