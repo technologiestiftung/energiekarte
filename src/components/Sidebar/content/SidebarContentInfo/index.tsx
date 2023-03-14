@@ -10,29 +10,44 @@ import { TsbLogo } from '@components/Logos/TsbLogo'
 import { Accordion } from '@components/Accordion'
 import { SenInLogo } from '@components/Logos/SenInLogo'
 
-export interface SidebarContentInfoType { }
+export interface SidebarContentInfoType {}
 
-export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ }) => {
+export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
   return (
     <>
       <SidebarHeader text="Über das Projekt" />
       <div className="leading-relaxed">
         <SidebarBody>
           <p className="text-sm pt-2 pb-2">
-            Wie hoch ist der jährliche Energieverbrauch des Friedrichstadtpalast? Welchen Beitrag zur Energieeinsparung kann die energetische Sanierung des Roten Rathauses leisten?
-            Mit welchem Energieträger wird die Berliner Philharmonie versorgt?
+            Wie hoch ist der jährliche Energieverbrauch des
+            Friedrichstadtpalast? Welchen Beitrag zur Energieeinsparung kann die
+            energetische Sanierung des Roten Rathauses leisten? Mit welchem
+            Energieträger wird die Berliner Philharmonie versorgt?
             <br />
             <br />
-            Als Betreiber öffentlicher Gebäude sind die BIM Berliner Immobilienmanagement GmbH ebenso wie die Bezirke im Rahmen des Berliner Klimaschutz- und Energiewendegesetzes (EWG Bln) verpflichtet zu Energieverbrauchsdaten und Einsparmaßnahmen regemäßig und vollständig zu berichten.
-            Um das Ziel Klimaneutralität bis 2045 zu erreichen, müssen nicht nur die Gebäude der öffentlichen Hand Stück für Stück saniert werden, es bedarf auch eines umfassenden Monitorings um Entwicklungen aufzuzeigen und gegebenenfalls nachjustieren zu können.
+            Als Betreiber öffentlicher Gebäude sind die BIM Berliner
+            Immobilienmanagement GmbH ebenso wie die Bezirke im Rahmen des
+            Berliner Klimaschutz- und Energiewendegesetzes (EWG Bln)
+            verpflichtet zu Energieverbrauchsdaten und Einsparmaßnahmen
+            regemäßig und vollständig zu berichten. Um das Ziel Klimaneutralität
+            bis 2045 zu erreichen, müssen nicht nur die Gebäude der öffentlichen
+            Hand Stück für Stück saniert werden, es bedarf auch eines
+            umfassenden Monitorings um Entwicklungen aufzuzeigen und
+            gegebenenfalls nachjustieren zu können.
           </p>
 
           <Accordion title="Was ist der EnergieCheckpoint?">
             <p className="text-sm pb-2">
-              Der EnergieCheckpoint ist eine prototypische Anwendung, die eine Visualisierung der Daten und Erkundung der einzelnen Standorte möglich macht.
-              So werden z.B. Energieverbräuche nach Strom und Wärme, die Art der Wärmeversorgung sowie Angaben zu Einsparpotenzialen einer Gebäudesanierung für alle Standorte auf einer Karte angezeigt.
-              Mit verschiedenen Filterfunktionen lassen sich die Gebäude nach bestimmten Attributen wie Gebäude- oder Wärmetyp durchsuchen und exportieren.
-              Die Anwendung ist offen für weitere Daten zum Beispiel aus den Berliner Bezirken, um eine landesweites Übersicht zu schaffen
+              Der EnergieCheckpoint ist eine prototypische Anwendung, die eine
+              Visualisierung der Daten und Erkundung der einzelnen Standorte
+              möglich macht. So werden z.B. Energieverbräuche nach Strom und
+              Wärme, die Art der Wärmeversorgung sowie Angaben zu
+              Einsparpotenzialen einer Gebäudesanierung für alle Standorte auf
+              einer Karte angezeigt. Mit verschiedenen Filterfunktionen lassen
+              sich die Gebäude nach bestimmten Attributen wie Gebäude- oder
+              Wärmetyp durchsuchen und exportieren. Die Anwendung ist offen für
+              weitere Daten zum Beispiel aus den Berliner Bezirken, um eine
+              landesweites Übersicht zu schaffen
             </p>
           </Accordion>
 
@@ -48,19 +63,38 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ }) => {
                 Berichte und Reports{' '}
               </a>{' '}
               die Energieverbrauchsübersicht und den Sanierungsfahrplan als
-              PDF-Dateien veröffentlichen. Die Daten liegen (noch) nicht als maschinenlesbare Daten auf dem Berliner Datenportal bereit, weswegen wir in diesem Fall von eingeschränkt offenen Daten sprechen.
-              Die aktuelle Energieverbrauchsübersicht liegt für 2020 vor, die Daten zum Sanierungsfahrplan haben den Stand 04.05.2022. Um die einzelnen Adresspunkte zu Grundstücken zuordnen zu können, haben wir offene Daten zu ALKIS verwendet.
-              Die verarbeiteten Daten und die Skripte zur Datenprozessierung sind in einem GitHub-Repository zu finden. Die Hintergrundkarte basiert auf der OpenStreetMap.
+              PDF-Dateien veröffentlichen. Die Daten liegen (noch) nicht als
+              maschinenlesbare Daten auf dem Berliner Datenportal bereit,
+              weswegen wir in diesem Fall von eingeschränkt offenen Daten
+              sprechen. Die aktuelle Energieverbrauchsübersicht liegt für 2020
+              vor, die Daten zum Sanierungsfahrplan haben den Stand 04.05.2022.
+              Um die einzelnen Adresspunkte zu Grundstücken zuordnen zu können,
+              haben wir offene Daten zu ALKIS verwendet. Die verarbeiteten Daten
+              und die Skripte zur Datenprozessierung sind in einem
+              GitHub-Repository zu finden. Die Hintergrundkarte basiert auf der
+              OpenStreetMap.
             </p>
           </Accordion>
 
           <Accordion title="Wie sind die Daten zu verstehen? Was muss ich beachten?">
             <p className="text-sm pb-2">
-              Der Sanierungsfahrplan, der eine zielorientierte Abarbeitungsreihenfolge der erforderlichen Gebäudesanierungen aufzeigt, dient den Bezirken und der BIM als strategisches Instrument bei der Sanierungsplanung.
-              Die hierin enthaltene Grobkostenschätzung stellt lediglich eine überschlägige informative Angabe zum Anteil der energetischen Sanierungskostenanteile dar und entspricht dem Stand der Erstellung des Sanierungsfahrplans.
-              Über eine energetische Sanierung hinausgehende Sanierungs- und Modernisierungsbedarfe, die im Rahmen einer Gebäudesanierung mit umgesetzt werden, sind hier kostenseitig nicht enthalten.
-              Gleiches gilt für Planungskosten sowie markt- bzw. inflationsbedingte Kostensteigerungen. Die tatsächlichen Sanierungskosten können somit abhängig vom Beginn und Umfang der konkreten Sanierungsmaßnahmen davon abweichen.<br></br>
-              Für 3 Adressen (Wallstr. 32’, WRD Feuerwehr SILB, Dorfstr. 3) konnten nur Sanierungsdaten angezeigt werden.
+              Der Sanierungsfahrplan, der eine zielorientierte
+              Abarbeitungsreihenfolge der erforderlichen Gebäudesanierungen
+              aufzeigt, dient den Bezirken und der BIM als strategisches
+              Instrument bei der Sanierungsplanung. Die hierin enthaltene
+              Grobkostenschätzung stellt lediglich eine überschlägige
+              informative Angabe zum Anteil der energetischen
+              Sanierungskostenanteile dar und entspricht dem Stand der
+              Erstellung des Sanierungsfahrplans. Über eine energetische
+              Sanierung hinausgehende Sanierungs- und Modernisierungsbedarfe,
+              die im Rahmen einer Gebäudesanierung mit umgesetzt werden, sind
+              hier kostenseitig nicht enthalten. Gleiches gilt für
+              Planungskosten sowie markt- bzw. inflationsbedingte
+              Kostensteigerungen. Die tatsächlichen Sanierungskosten können
+              somit abhängig vom Beginn und Umfang der konkreten
+              Sanierungsmaßnahmen davon abweichen.<br></br>
+              Für 3 Adressen (Wallstr. 32’, WRD Feuerwehr SILB, Dorfstr. 3)
+              konnten nur Sanierungsdaten angezeigt werden.
             </p>
           </Accordion>
 
@@ -168,14 +202,14 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open Data Informationsstelle Berlin"
-              // className={}
+                // className={}
               >
                 <OdisLogo className={`w-40`} />
               </a>
             </div>
             <div className="flex flex-col">
               <span className="text-sm mb-2">Gefördert von</span>
-              <SenInLogo className="w-40" />
+              <SenInLogo className="w-32" />
             </div>
           </section>
         </SidebarBody>
