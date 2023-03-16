@@ -1,5 +1,6 @@
 import Joyride, { ACTIONS, EVENTS, STATUS } from 'react-joyride'
 import { FC, useState } from 'react'
+import { useHasMobileSize } from '@lib/hooks/useHasMobileSize'
 
 // 1. Toggle: Wärme, Auswahl von Rotes Rathaus und Zoom auf Gebäude (Jüdenstr. 1), Sprechblase auf Punkt, restlicher Bildschirm ausgegraut
 // 2. Seitenmenü mit Informationen zum Gebäude wird eingeblendet, Dropdown Wärmeverbrauch und Sanierungen sind nicht ausgewählt, restlicher Bildschirm ausgegraut
@@ -123,6 +124,7 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
   setMapPitch,
 }) => {
   const [joyrideIndex, setJoyrideIndex] = useState<number>(0)
+  const hasMobileSize = useHasMobileSize()
 
   const handleJoyrideCallback = (jRData: any) => {
     const { action, index, status, type } = jRData
@@ -156,8 +158,15 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
       }
 
       if (tempIndex === 0) {
+        if (hasMobileSize) {
+          setEntityId(null)
+          setZoomToCenter([13.40907, 52.51853])
+        } else {
+          setEntityId(26)
+        }
       }
       if (tempIndex === 1) {
+        setEntityId(26)
         setShowEntityConsumption(true)
         setShowEntityRenovations(false)
       }
@@ -178,17 +187,24 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         setShowEntityConsumption(true)
         setShowEntityRenovations(false)
         setConsumptionType('electricity')
+
         setMapPitch(true)
       }
       if (tempIndex === 6) {
         setShowEntityConsumption(false)
-        setShowEntityRenovations(true)
+        setShowEntityRenovations(hasMobileSize ? false : true)
         setMapPitch(true)
+        setEntityId(278)
       }
       if (tempIndex === 7) {
         setMapPitch(false)
         setSidebarMenuOpen(false)
         setEntityId(278)
+        if (hasMobileSize) {
+          setEntityId(null)
+        } else {
+          setEntityId(278)
+        }
       }
 
       if (tempIndex === 8) {
@@ -229,22 +245,27 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         options: { primaryColor: '#9bc95b' },
         tooltip: {
           borderRadius: '.2rem',
+          fontSize: hasMobileSize ? '14px' : 'inherit',
         },
         tooltipContainer: {
           textAlign: 'left',
         },
         tooltipTitle: {
           margin: 0,
+          fontSize: hasMobileSize ? '14px' : '18px',
         },
         tooltipContent: {
           padding: '1rem 0',
+          fontSize: hasMobileSize ? '12px' : '14px',
         },
         buttonNext: {
           borderRadius: '.2rem',
           color: '#fff',
+          fontSize: hasMobileSize ? '14px' : '18px',
         },
         buttonBack: {
           marginRight: '.2rem',
+          fontSize: hasMobileSize ? '14px' : '18px',
         },
       }}
     />

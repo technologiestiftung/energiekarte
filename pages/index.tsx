@@ -183,6 +183,7 @@ const MapSite: NextPage = (energyData: any) => {
           setRunJoyride={setRunJoyride}
           setEntityId={setEntityId}
           setConsumptionType={setConsumptionType}
+          setZoomToCenter={setZoomToCenter}
         />
         <ConsumptionTypeSwitch
           setConsumptionType={setConsumptionType}

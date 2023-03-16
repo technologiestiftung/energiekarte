@@ -6,14 +6,17 @@ import { TsbLogo } from '@components/Logos/TsbLogo'
 import { OdisLogo } from '@components/Logos/OdisLogo'
 import { CitylabLogo } from '@components/Logos/CitylabLogo'
 
+import { useHasMobileSize } from '@lib/hooks/useHasMobileSize'
+
 export interface IntroModalType {
   modalOpen: boolean
   setModalOpen: (date: boolean) => void
   setNavView: (date: 'info' | 'filter') => void
   setSidebarMenuOpen: (date: boolean) => void
   setRunJoyride: (date: boolean) => void
-  setEntityId: (date: number) => void
+  setEntityId: (date: number | null) => void
   setConsumptionType: (type: string) => void
+  setZoomToCenter: (center: number[]) => void
 }
 
 export const IntroModal: FC<IntroModalType> = ({
@@ -24,7 +27,10 @@ export const IntroModal: FC<IntroModalType> = ({
   setRunJoyride,
   setEntityId,
   setConsumptionType,
+  setZoomToCenter,
 }) => {
+  const hasMobileSize = useHasMobileSize()
+
   function closeModal() {
     setModalOpen(false)
   }
@@ -61,10 +67,10 @@ export const IntroModal: FC<IntroModalType> = ({
                 Berliner <span className="text-primary">Energie</span>Checkpoint
               </h2>
               <h4 className="pb-6 leading-normal">
-                <p className="font-bold text-lg pb-2">
+                <p className="font-bold text-base md:text-lg pb-2">
                   Öffentliche Gebäude und ihr Beitrag zur Klimaneutralität
                 </p>
-                <p>
+                <p className="text-sm md:text-base">
                   Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu
                   wurde im Berliner Klimaschutz- und Energiewendegesetz (EWG
                   Bln) als Ziel eine Reduktion der Kohlendioxidemissionen um
@@ -83,7 +89,12 @@ export const IntroModal: FC<IntroModalType> = ({
                 onClick={() =>
                   (function () {
                     setModalOpen(false)
-                    setEntityId(26)
+                    if (hasMobileSize) {
+                      setEntityId(null)
+                      setZoomToCenter([13.40907, 52.51853])
+                    } else {
+                      setEntityId(26)
+                    }
                     setConsumptionType('heat')
 
                     setTimeout(() => {
@@ -110,11 +121,11 @@ export const IntroModal: FC<IntroModalType> = ({
                     Berlin
                   </i>
                 </p>
-                <div className="inline-block ml-4 md:flex self-center">
-                  <div className="w-32 pt-2 mr-8 md:mt-0 self-center">
+                <div className="inline-block  pt-0 ml-4 md:flex self-center">
+                  <div className="w-32 md:pt-4 mr-8 md:mt-0 self-center">
                     <OdisLogo className={`w-30`} />
                   </div>
-                  <div className="w-32 pt-2 mr-8 md:mt-0 self-center">
+                  <div className="w-32 pt-0 mr-8 md:mt-0 self-center">
                     <CitylabLogo className={`w-30`} />
                   </div>
                 </div>

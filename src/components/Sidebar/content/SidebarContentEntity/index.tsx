@@ -190,7 +190,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
                 </p>
                 <ul className="text-sm">
                   <li className="flex py-2">
-                    <div className="w-12 place-items-center grid">
+                    <div className="w-12 place-items-center grid text-base renovation-dropdown-header">
                       <BuildingsSanierung
                         size={50}
                         color2={getConsumtionColor(

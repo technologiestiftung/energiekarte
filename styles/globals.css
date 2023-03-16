@@ -27,6 +27,9 @@ body {
     color: #222222;
   }
 
+  .st0{fill:#1D1D1B;}
+	.st1{fill:none;stroke:#1D1D1B;stroke-width:3;stroke-miterlimit:10;}
+
 }
 
 
