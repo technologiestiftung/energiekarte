@@ -21,7 +21,7 @@ const steps = [
     offset: 0,
   },
   {
-    target: '.energy-data',
+    target: '#energy-data',
     title: 'Verbrauchsdaten',
     content:
       'Durch Klick auf einen Standort öffnen sich die Detailinformationen zum Verbrauch (Stand 2020). Der Verbrauch im Roten Rathaus ist vergleichsweise hoch. ABER: Die Daten müssen natürlich auch in Relation zur Größe und Nutzungsart der Einrichtung gesehen werden. Zu einer Einrichtung gehören oft auch mehrere Gebäude. Ein hoher Verbrauch weist nicht direkt auf ein Defizit hin!',
@@ -38,11 +38,12 @@ const steps = [
     disableBeacon: true,
   },
   {
-    target: '.location',
+    target: '#entity-header',
     title: 'Gebäudetyp',
     content:
       'Hier wird der Gebäudetyp bzw. die Art der Liegenschaft und die dazugehörige Adresse angezeigt. Die Liegenschaft mit dem nächstniedrigen Wärmeverbrauch ist eine Einrichtung der Polizei. Die Daten umfassen sowohl das Revier, als auch die Dienstgebäude des Landeskriminalamtes.',
     disableBeacon: true,
+    placement: 'right',
     spotlightPadding: 20,
   },
   {
@@ -149,15 +150,10 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
       let tempIndex = 0
       if (action === 'next') {
         tempIndex = index + 1
-        setJoyrideIndex(tempIndex)
       }
       if (action === 'prev') {
         tempIndex = index - 1
-        setJoyrideIndex(tempIndex)
       }
-
-      console.log('ddd', tempIndex)
-      //                     setConsumptionType('electricity')
 
       if (tempIndex === 0) {
       }
@@ -201,9 +197,11 @@ export const JoyrideWrapper: FC<JoyrideWrapper> = ({
         setEntityId(null)
         setZoomToCenter([13.404954, 52.520008])
         setMapZoom(11)
-
-        return
       }
+
+      setTimeout(() => {
+        setJoyrideIndex(tempIndex)
+      }, 100)
     }
   }
 

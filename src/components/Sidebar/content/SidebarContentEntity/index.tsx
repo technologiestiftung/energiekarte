@@ -76,11 +76,12 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
       <SidebarHeader
         text={typeTranslation(data.entityType)}
         fontSize="text-lg"
+        sidebarId={'entity-header'}
       />
       <SidebarBody>
         {' '}
         <>
-          <div className="flex text-sm pb-2 location">
+          <div className="flex text-sm pb-2">
             <div className="w-12 place-items-center grid">
               <Location />
             </div>
@@ -111,7 +112,7 @@ export const SidebarContentEntity: FC<SidebarContentEntityType> = ({
             active={showEntityConsumption}
             extraClassName="energy-usage-dropdown"
           >
-            <div className="flex text-sm pb-4 energy-data">
+            <div className="flex text-sm pb-4" id="energy-data">
               <div className="w-12 place-items-center grid">
                 <span
                   className={classNames(
