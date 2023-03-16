@@ -192,7 +192,7 @@ export const SidebarContentFilter: FC<SidebarContentFilterType> = ({
           {isFiltered ? (
             <span
               title="gefiltert"
-              className="text-primary inline-block absolute pl-2 relative"
+              className="text-primary inline-block pl-2 relative"
             >
               <Filter size={15} />{' '}
             </span>

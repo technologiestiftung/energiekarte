@@ -207,6 +207,17 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
                 <OdisLogo className={`w-40`} />
               </a>
             </div>
+            <div className="flex flex-col mb-8">
+              <span className="text-sm mb-4">In Zusammenarbeit mit dem</span>
+              <a
+                href="https://odis-berlin.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="CityLAB Berlin"
+              >
+                <CitylabLogo className={`w-40`} />
+              </a>
+            </div>
             <div className="flex flex-col">
               <span className="text-sm mb-2">Gefördert von</span>
               <SenInLogo className="w-32" />
