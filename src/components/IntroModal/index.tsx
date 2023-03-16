@@ -4,6 +4,7 @@ import { Cross } from '../Icons'
 
 import { TsbLogo } from '@components/Logos/TsbLogo'
 import { OdisLogo } from '@components/Logos/OdisLogo'
+import { CitylabLogo } from '@components/Logos/CitylabLogo'
 
 export interface IntroModalType {
   modalOpen: boolean
@@ -64,11 +65,16 @@ export const IntroModal: FC<IntroModalType> = ({
                   Öffentliche Gebäude und ihr Beitrag zur Klimaneutralität
                 </p>
                 <p>
-                  Berlin möchte spätestens bis 2045 klimaneutral sein.
-                  Dazu wurde im Berliner Klimaschutz- und Energiewendegesetz (EWG Bln) als Ziel eine Reduktion der Kohlendioxidemissionen um mindestens 95 % im Vergleich zum Jahr 1990 festgelegt.
-                  Öffentliche Gebäude wie Schulen und Kultureinrichtungen sollen durch Energieeinsparungen und Sanierungen eine Vorbildrolle einnehmen.
-                  Doch welche Gebäude verbrauchen wie viel Energie und welche Einsparpotentiale stecken in der Sanierung einzelner Gebäude?
-                  Wir schauen beispielhaft auf die Daten zu Liegenschaften der BIM (Berliner Immobilien Management).
+                  Berlin möchte spätestens bis 2045 klimaneutral sein. Dazu
+                  wurde im Berliner Klimaschutz- und Energiewendegesetz (EWG
+                  Bln) als Ziel eine Reduktion der Kohlendioxidemissionen um
+                  mindestens 95 % im Vergleich zum Jahr 1990 festgelegt.
+                  Öffentliche Gebäude wie Schulen und Kultureinrichtungen sollen
+                  durch Energieeinsparungen und Sanierungen eine Vorbildrolle
+                  einnehmen. Doch welche Gebäude verbrauchen wie viel Energie
+                  und welche Einsparpotentiale stecken in der Sanierung
+                  einzelner Gebäude? Wir schauen beispielhaft auf die Daten zu
+                  Liegenschaften der BIM (Berliner Immobilien Management).
                 </p>
               </h4>
 
@@ -105,11 +111,11 @@ export const IntroModal: FC<IntroModalType> = ({
                   </i>
                 </p>
                 <div className="inline-block ml-4 md:flex self-center">
-                  <div className="w-32 md:pt-4 md:pl-4">
-                    <TsbLogo className={`w-30`} />
-                  </div>
                   <div className="w-32 pt-2 mr-8 md:mt-0 self-center">
                     <OdisLogo className={`w-30`} />
+                  </div>
+                  <div className="w-32 pt-2 mr-8 md:mt-0 self-center">
+                    <CitylabLogo className={`w-30`} />
                   </div>
                 </div>
               </div>
