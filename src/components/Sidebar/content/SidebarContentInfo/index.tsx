@@ -56,6 +56,7 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ }) => {
 
           <Accordion title="Wie sind die Daten zu verstehen? Was muss ich beachten?">
             <p className="text-sm pb-2">
+              Für das Verständnis der Daten ist der Hinweis wichtig, dass die einzelnen Punkte Adressen aus dem Datensatz darstellen für die es eindeutig zuordbare Verbrauchsdaten gibt. Die Sanierungsdaten beziehen sich auf einzelnen Gebäude oder Gebäudeteile der Liegenschaft. Die farbige Fläche markiert die geschätzte Fläche der Liegenschaft. Dies ist eine Annäherung.
               Der Sanierungsfahrplan, der eine zielorientierte Abarbeitungsreihenfolge der erforderlichen Gebäudesanierungen aufzeigt, dient den Bezirken und der BIM als strategisches Instrument bei der Sanierungsplanung.
               Die hierin enthaltene Grobkostenschätzung stellt lediglich eine überschlägige informative Angabe zum Anteil der energetischen Sanierungskostenanteile dar und entspricht dem Stand der Erstellung des Sanierungsfahrplans.
               Über eine energetische Sanierung hinausgehende Sanierungs- und Modernisierungsbedarfe, die im Rahmen einer Gebäudesanierung mit umgesetzt werden, sind hier kostenseitig nicht enthalten.
