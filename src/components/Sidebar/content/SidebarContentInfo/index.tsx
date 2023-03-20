@@ -116,7 +116,7 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
                 Open Data Informationsstelle{' '}
               </a>{' '}
               Berliner Behörden bei der Bereit­stellung von Open Data. Mehr
-              offene Daten findest du im{' '}
+              offene Daten findest Du im{' '}
               <a
                 target="blank"
                 href="https://daten.berlin.de"
@@ -178,13 +178,13 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
               partizipativen, nachhaltigen und datengetriebenen Gesellschaft mit
               dem Schwerpunkt auf die Bereitstellung und Nutzung offener Daten.
               Du hast Feedback oder willst mehr erfahren? Schau dich auf unserer
-              Webseite um oder kontaktiere uns unter{' '}
+              Webseite um oder {' '}
               <a
                 target="blank"
-                href="mailto:odis@ts.berlin"
+                href="https://odis-berlin.de/contact/"
                 className="text-primary"
               >
-                odis@ts.berlin
+                kontaktiere uns
               </a>
               .
             </p>
