@@ -63,7 +63,7 @@ export const SidebarContentSearch: FC<SidebarContentSearchType> = ({
   setZoomToCenter,
 }) => {
   const [inputVal, setInputVal] = useState('')
-  const [debouncedInputValue] = useDebounce(inputVal, 1000)
+  const [debouncedInputValue] = useDebounce(inputVal, 700)
 
   const { results } = useGeocodedPlace(debouncedInputValue)
 
