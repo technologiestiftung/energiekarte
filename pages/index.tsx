@@ -10,8 +10,9 @@ import { SidebarWrapper } from '@components/Sidebar/SidebarWrapper'
 import { SidebarContentEntity } from '@components/Sidebar/content/SidebarContentEntity'
 import { SidebarContentInfo } from '@components/Sidebar/content/SidebarContentInfo'
 import { SidebarContentFilter } from '@components/Sidebar/content/SidebarContentFilter'
+import { SidebarContentSearch } from '@components/Sidebar/content/SidebarContentSearch'
 
-import { HamburgerMenu, Info, Filter } from '@components/Icons'
+import { HamburgerMenu, Info, Filter, Search } from '@components/Icons'
 
 import { SidebarNav } from '@components/Sidebar/SidebarNav'
 import { MapNav } from '@components/MapNav'
@@ -47,6 +48,12 @@ const navViews = [
     value: 'info',
     name: 'information',
     icon: <Info />,
+    mobileHeight: 'full',
+  },
+  {
+    value: 'search',
+    name: 'search',
+    icon: <Search />,
     mobileHeight: 'full',
   },
 ]
@@ -203,6 +210,9 @@ const MapSite: NextPage = (energyData: any) => {
               pointData={pointData}
               setPointData={setPointData}
             />
+          )}
+          {navView === 'search' && (
+            <SidebarContentSearch setZoomToCenter={setZoomToCenter} />
           )}
         </SidebarWrapper>
         {/* market data information */}
