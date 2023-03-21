@@ -25,8 +25,8 @@ const SearchResultItem: FC<SearchResultItemPropType> = ({
       className={classNames(
         'flex items-center pt-3 text-left w-full',
         'hover:bg-gray-100 rounded transition px-4 -ml-4',
-        'group focus:outline-none focus:ring-2 focus:ring-gray-800',
-        'focus:ring-gray-800 focus:z-10 relative'
+        'group focus:outline-none focus:ring-2 focus:ring-gray-500',
+        'focus:ring-gray-500 focus:z-10 relative'
       )}
       style={{ width: 'calc(100% + 32px)' }}
     >
@@ -87,7 +87,7 @@ export const SidebarContentSearch: FC<SidebarContentSearchType> = ({
             onChange={(evt) => setInputVal(evt.target.value)}
             className={classNames(
               'block px-3 py-2 border rounded border-gray-400 w-full',
-              'my-4 focus:outline-none focus:ring-2 focus:ring-gray-800',
+              'my-4 focus:outline-none focus:ring-2 focus:ring-gray-500',
               'focus:ring-offset-2 focus:ring-offset-white'
             )}
           />
