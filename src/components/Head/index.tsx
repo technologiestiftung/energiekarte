@@ -2,10 +2,12 @@ import { FC } from 'react'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 
-const siteUrl =
-  process.env.URL ||
-  (process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_URL) ||
-  'http://localhost:3000'
+// const siteUrl =
+//   process.env.URL ||
+//   (process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_URL) ||
+//   'http://localhost:3000'
+
+const siteUrl = 'https://energiecheckpoint.odis-berlin.de'
 
 const faviconPath = '/favicon.ico'
 const faviconPNGPath = '/favicons/battery.png'
@@ -29,7 +31,15 @@ export const Head: FC<Partial<HeadPropType>> = ({
   siteTitle = 'energiecheckpoint.odis-berlin.de',
   pageTitle = 'Berliner EnergieCheckpoint',
   fbAppId = '',
-  keywords = ['Berlin', 'Energie', 'ODIS', 'Karte', 'Open Data', 'Gebäude', 'Klimaschutz'],
+  keywords = [
+    'Berlin',
+    'Energie',
+    'ODIS',
+    'Karte',
+    'Open Data',
+    'Gebäude',
+    'Klimaschutz',
+  ],
   themeColor = '#9bc95b',
   locales = ['de'],
   locale = 'de',
