@@ -95,7 +95,7 @@ export const Head: FC<Partial<HeadPropType>> = ({
         <meta property="og:image:alt" content={socialThumbnail} />
       )}
 
-      <link rel="apple-touch-icon" href="/favicons/star.png" />
+      <link rel="apple-touch-icon" href="/favicons/battery.png" />
 
       {/* <link href={faviconPath} type="image/x-icon" rel="shortcut icon" /> */}
       <link href={faviconPNGPath} type="image/png" rel="icon" />
