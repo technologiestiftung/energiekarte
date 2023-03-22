@@ -129,9 +129,10 @@ const MapSite: NextPage = (energyData: any) => {
   }, [navView])
 
   return (
-    pointData && (
+    <>
+      <Head />
+      pointData && (
       <>
-        <Head />
         <JoyrideWrapper
           runJoyride={runJoyride}
           setRunJoyride={setRunJoyride}
@@ -225,7 +226,8 @@ const MapSite: NextPage = (energyData: any) => {
           mapPitch={mapPitch}
         />
       </>
-    )
+      )
+    </>
   )
 }
 
