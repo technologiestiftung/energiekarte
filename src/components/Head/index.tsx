@@ -56,8 +56,6 @@ export const Head: FC<Partial<HeadPropType>> = ({
 
       {description && <meta name="description" content={description} />}
 
-      <meta property="og:type" content="article" />
-
       <meta name="theme-color" content={themeColor} />
 
       {keywords.length > 0 && (
@@ -100,7 +98,7 @@ export const Head: FC<Partial<HeadPropType>> = ({
       {/* <link href={faviconPath} type="image/x-icon" rel="shortcut icon" /> */}
       <link href={faviconPNGPath} type="image/png" rel="icon" />
 
-      <link rel="manifest" href="/manifest.webmanifest" />
+      {/* <link rel="manifest" href="/manifest.webmanifest" /> */}
 
       <link rel="author" href="https://odis-berlin.de" />
     </NextHead>
