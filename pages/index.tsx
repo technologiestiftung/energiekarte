@@ -131,6 +131,7 @@ const MapSite: NextPage = (energyData: any) => {
   return (
     pointData && (
       <>
+        <Head />
         <JoyrideWrapper
           runJoyride={runJoyride}
           setRunJoyride={setRunJoyride}
