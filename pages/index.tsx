@@ -12,10 +12,9 @@ import { SidebarContentInfo } from '@components/Sidebar/content/SidebarContentIn
 import { SidebarContentFilter } from '@components/Sidebar/content/SidebarContentFilter'
 import { SidebarContentSearch } from '@components/Sidebar/content/SidebarContentSearch'
 
-import { HamburgerMenu, Info, Filter, Search } from '@components/Icons'
+import { Info, Filter, Search } from '@components/Icons'
 
 import { SidebarNav } from '@components/Sidebar/SidebarNav'
-import { MapNav } from '@components/MapNav'
 import { ConsumptionTypeSwitch } from '@components/ConsumptionTypeSwitch'
 
 import { IntroModal } from '@components/IntroModal'
@@ -32,12 +31,6 @@ export async function getStaticProps() {
 }
 
 const navViews = [
-  // {
-  //   value: 'list',
-  //   name: 'list',
-  //   icon: <HamburgerMenu />,
-  //   mobileHeight: 'half',
-  // },
   {
     value: 'filter',
     name: 'filter',
@@ -95,30 +88,6 @@ const MapSite: NextPage = (energyData: any) => {
     setPointDataLenght(energyData.pointData.features.length)
   }, [])
 
-  // // when the query string is read check if we have an id
-  // useEffect(() => {
-  //   if (!isReady) return
-  //   const queryId = Number(query.id)
-  //   const allowedId = mapData.allowedIds.includes(Number(query.id))
-  //   if (Boolean(query.id) && allowedId && queryId !== marketId) {
-  //     const queriedMarket = marketsData.filter((d: any) => d.id == queryId)[0]
-  //     // make 2X sure we have the data
-  //     if (queriedMarket) {
-  //       setMarketId(queryId)
-  //       setMarketData(queriedMarket)
-  //       setModalOpen(false)
-  //       setZoomToCenter([queriedMarket.lng, queriedMarket.lat])
-  //       setMapZoom(12)
-  //     }
-  //   } else {
-  //     setModalOpen(true)
-  //   }
-  // }, [isReady])
-
-  // useEffect(() => {
-  //   setMaxMinValues(getMaxMinValues(energyData))
-  // }, [])
-
   // when the id changes -> open the sidebar and set the query
   useEffect(() => {
     if (pointData) {
@@ -133,12 +102,6 @@ const MapSite: NextPage = (energyData: any) => {
         setEntityData(null)
         setZoomToCenter([0, 0])
       }
-      // if (isReady) {
-      //   replace({ pathname, query: { id: entityId } }, undefined, {
-      //     shallow: true,
-      //   })
-      // }
-      // setRankingInfo(findClosestValues(pointData, consumptionType, entityId))
     }
   }, [entityId])
 
@@ -261,7 +224,6 @@ const MapSite: NextPage = (energyData: any) => {
           consumptionType={consumptionType}
           mapPitch={mapPitch}
         />
-        {/* <MapNav mapZoom={mapZoom} setMapZoom={setMapZoom} /> */}
       </>
     )
   )
