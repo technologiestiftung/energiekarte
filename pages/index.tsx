@@ -131,6 +131,7 @@ const MapSite: NextPage = (energyData: any) => {
   return (
     pointData && (
       <>
+        <Head />
         <JoyrideWrapper
           runJoyride={runJoyride}
           setRunJoyride={setRunJoyride}
@@ -144,7 +145,6 @@ const MapSite: NextPage = (energyData: any) => {
           setMapZoom={setMapZoom}
           setMapPitch={setMapPitch}
         />
-        <Head />
         <IntroModal
           modalOpen={modalOpen}
           setModalOpen={setModalOpen}
