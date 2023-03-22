@@ -93,8 +93,23 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
               Kostensteigerungen. Die tatsächlichen Sanierungskosten können
               somit abhängig vom Beginn und Umfang der konkreten
               Sanierungsmaßnahmen davon abweichen.<br></br>
-              Für 3 Adressen (Wallstr. 32’, WRD Feuerwehr SILB, Dorfstr. 3)
-              konnten nur Sanierungsdaten angezeigt werden.
+              <br></br>
+              Für 3 Adressen (Wallstr. 32, WRD Feuerwehr SILB, Dorfstr. 3)
+              liegen nur Sanierungsdaten vor. Sie sind nicht in der Anwendung
+              dargestellt.
+              <br></br>
+              <br></br>
+              Der Stromverbrauch-Vergleich zu einem Einfamilienhaus mit 5
+              Personen bezieht sich auf einen Verbrauch ohne elektrische
+              Warmwasserbereitung (Quelle:{' '}
+              <a
+                target="blank"
+                className="text-primary"
+                href="https://de.statista.com/statistik/daten/studie/558295/umfrage/stromverbrauch-einen-5-personen-haushalts-in-deutschland/"
+              >
+                Statista
+              </a>
+              ).
             </p>
           </Accordion>
 
@@ -178,7 +193,7 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
               partizipativen, nachhaltigen und datengetriebenen Gesellschaft mit
               dem Schwerpunkt auf die Bereitstellung und Nutzung offener Daten.
               Du hast Feedback oder willst mehr erfahren? Schau dich auf unserer
-              Webseite um oder {' '}
+              Webseite um oder{' '}
               <a
                 target="blank"
                 href="https://odis-berlin.de/contact/"

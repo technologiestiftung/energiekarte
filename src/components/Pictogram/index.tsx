@@ -6,7 +6,7 @@ export interface PictogramType {
   consumptionType: string
 }
 
-const houseConsuption = 5900
+const houseConsuption = 5000
 
 function getComparisonNumber(energyUsage: number, consumptionType: string) {
   return (
@@ -38,10 +38,10 @@ export const Pictogram: FC<PictogramType> = ({
     return (
       <>
         <p className="text-xs pt-2 pb-4 text-gray-500">
-          Der Verbrauch aller Gebäude dieser Einrichtung entspricht dem
-          Energieverbrauch von ca.{' '}
+          Der Verbrauch aller Gebäude dieser Einrichtung entspricht etwa dem
+          Energieverbrauch von{' '}
           <span className={'font-bold'}>{amountHouseholds} </span>
-          5-Personenhaushalten ({houseConsuption} kWh).
+          Einfamilienhäusern mit 5 Personen ({houseConsuption} kWh).
         </p>
 
         {amountHouseholds <= 40 && (
