@@ -129,103 +129,105 @@ const MapSite: NextPage = (energyData: any) => {
   }, [navView])
 
   return (
-    pointData && (
-      <>
-        <Head />
-        <JoyrideWrapper
-          runJoyride={runJoyride}
-          setRunJoyride={setRunJoyride}
-          setZoomToCenter={setZoomToCenter}
-          setEntityId={setEntityId}
-          setShowEntityConsumption={setShowEntityConsumption}
-          setShowEntityRenovations={setShowEntityRenovations}
-          setConsumptionType={setConsumptionType}
-          setNavView={setNavView}
-          setSidebarMenuOpen={setSidebarMenuOpen}
-          setMapZoom={setMapZoom}
-          setMapPitch={setMapPitch}
-        />
-        <IntroModal
-          modalOpen={modalOpen}
-          setModalOpen={setModalOpen}
-          setNavView={setNavView}
-          setSidebarMenuOpen={setSidebarMenuOpen}
-          setRunJoyride={setRunJoyride}
-          setEntityId={setEntityId}
-          setConsumptionType={setConsumptionType}
-          setZoomToCenter={setZoomToCenter}
-        />
-        <ConsumptionTypeSwitch
-          setConsumptionType={setConsumptionType}
-          consumptionType={consumptionType}
-        />
-        <SidebarWrapper
-          classes="z-20"
-          position="left"
-          isOpen={sidebarMenuOpen}
-          setOpen={setSidebarMenuOpen}
-          closeSymbol="cross"
-          mobileHeight={mobileHeight}
-        >
-          {navView === 'info' && <SidebarContentInfo />}
-          {navView === 'filter' && (
-            <SidebarContentFilter
-              pointData={pointData}
-              setPointData={setPointData}
+    <>
+      <Head />
+      {pointData && (
+        <>
+          <JoyrideWrapper
+            runJoyride={runJoyride}
+            setRunJoyride={setRunJoyride}
+            setZoomToCenter={setZoomToCenter}
+            setEntityId={setEntityId}
+            setShowEntityConsumption={setShowEntityConsumption}
+            setShowEntityRenovations={setShowEntityRenovations}
+            setConsumptionType={setConsumptionType}
+            setNavView={setNavView}
+            setSidebarMenuOpen={setSidebarMenuOpen}
+            setMapZoom={setMapZoom}
+            setMapPitch={setMapPitch}
+          />
+          <IntroModal
+            modalOpen={modalOpen}
+            setModalOpen={setModalOpen}
+            setNavView={setNavView}
+            setSidebarMenuOpen={setSidebarMenuOpen}
+            setRunJoyride={setRunJoyride}
+            setEntityId={setEntityId}
+            setConsumptionType={setConsumptionType}
+            setZoomToCenter={setZoomToCenter}
+          />
+          <ConsumptionTypeSwitch
+            setConsumptionType={setConsumptionType}
+            consumptionType={consumptionType}
+          />
+          <SidebarWrapper
+            classes="z-20"
+            position="left"
+            isOpen={sidebarMenuOpen}
+            setOpen={setSidebarMenuOpen}
+            closeSymbol="cross"
+            mobileHeight={mobileHeight}
+          >
+            {navView === 'info' && <SidebarContentInfo />}
+            {navView === 'filter' && (
+              <SidebarContentFilter
+                pointData={pointData}
+                setPointData={setPointData}
+              />
+            )}
+            {navView === 'search' && (
+              <SidebarContentSearch setZoomToCenter={setZoomToCenter} />
+            )}
+          </SidebarWrapper>
+          {/* market data information */}
+          <SidebarWrapper
+            classes="z-40 entity-wrapper"
+            position="left"
+            isOpen={sidebarInfoOpen}
+            setOpen={setSidebarInfoOpen}
+            closeSymbol="cross"
+            mobileHeight="full"
+          >
+            <SidebarContentEntity
+              entityId={entityId}
+              entityData={entityData}
+              consumptionType={consumptionType}
+              rankingInfo={rankingInfo}
+              setEntityId={setEntityId}
+              pointDataLenght={pointDataLenght}
+              showEntityConsumption={showEntityConsumption}
+              showEntityRenovations={showEntityRenovations}
             />
-          )}
-          {navView === 'search' && (
-            <SidebarContentSearch setZoomToCenter={setZoomToCenter} />
-          )}
-        </SidebarWrapper>
-        {/* market data information */}
-        <SidebarWrapper
-          classes="z-40 entity-wrapper"
-          position="left"
-          isOpen={sidebarInfoOpen}
-          setOpen={setSidebarInfoOpen}
-          closeSymbol="cross"
-          mobileHeight="full"
-        >
-          <SidebarContentEntity
+          </SidebarWrapper>
+          <SidebarNav
+            navViews={navViews}
+            setNavView={setNavView}
+            navView={navView}
+            sidebarMenuOpen={sidebarMenuOpen}
+            setSidebarMenuOpen={setSidebarMenuOpen}
+            setModalOpen={setModalOpen}
             entityId={entityId}
+            setEntityId={setEntityId}
+            mapZoom={mapZoom}
+            setMapZoom={setMapZoom}
+            setMapPitch={setMapPitch}
+            mapPitch={mapPitch}
+          />
+          <MapComponent
+            zoomToCenter={zoomToCenter}
+            mapZoom={mapZoom}
+            setMapZoom={setMapZoom}
+            landparcelData={landparcelData}
+            pointData={pointData}
+            entityId={entityId}
+            setEntityId={setEntityId}
             entityData={entityData}
             consumptionType={consumptionType}
-            rankingInfo={rankingInfo}
-            setEntityId={setEntityId}
-            pointDataLenght={pointDataLenght}
-            showEntityConsumption={showEntityConsumption}
-            showEntityRenovations={showEntityRenovations}
+            mapPitch={mapPitch}
           />
-        </SidebarWrapper>
-        <SidebarNav
-          navViews={navViews}
-          setNavView={setNavView}
-          navView={navView}
-          sidebarMenuOpen={sidebarMenuOpen}
-          setSidebarMenuOpen={setSidebarMenuOpen}
-          setModalOpen={setModalOpen}
-          entityId={entityId}
-          setEntityId={setEntityId}
-          mapZoom={mapZoom}
-          setMapZoom={setMapZoom}
-          setMapPitch={setMapPitch}
-          mapPitch={mapPitch}
-        />
-        <MapComponent
-          zoomToCenter={zoomToCenter}
-          mapZoom={mapZoom}
-          setMapZoom={setMapZoom}
-          landparcelData={landparcelData}
-          pointData={pointData}
-          entityId={entityId}
-          setEntityId={setEntityId}
-          entityData={entityData}
-          consumptionType={consumptionType}
-          mapPitch={mapPitch}
-        />
-      </>
-    )
+        </>
+      )}
+    </>
   )
 }
 
