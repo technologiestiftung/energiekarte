@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 
 const siteUrl = 'https://energiecheckpoint.odis-berlin.de'
 
-const faviconPath = '/favicon.ico'
+// const faviconPath = '/favicon.ico'
 const faviconPNGPath = '/favicons/battery.png'
 
 interface HeadPropType {
