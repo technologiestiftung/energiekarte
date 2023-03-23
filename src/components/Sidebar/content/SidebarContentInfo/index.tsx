@@ -47,7 +47,7 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({}) => {
               sich die Gebäude nach bestimmten Attributen wie Gebäude- oder
               Wärmetyp durchsuchen und exportieren. Die Anwendung ist offen für
               weitere Daten zum Beispiel aus den Berliner Bezirken, um eine
-              landesweites Übersicht zu schaffen
+              landesweite Übersicht zu schaffen.
             </p>
           </Accordion>
 
