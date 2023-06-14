@@ -27,8 +27,8 @@ export const Comparision: FC<ComparisionType> = ({
           <span>
             Der {type} liegt im Ranking auf Platz{' '}
             <b>{rankingInfo.rankingPosition}</b> von{' '}
-            <b>{rankingInfo.rankingLength}</b>. Finde Grundstücke mit hören bzw.
-            niederigern Verbrauch.
+            <b>{rankingInfo.rankingLength}</b>. Finde Grundstücke mit höherem bzw.
+            niedrigerem Verbrauch.
           </span>
         )}
       </span>
