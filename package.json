@@ -29,15 +29,15 @@
     "use-debounce": "^8.0.4"
   },
   "devDependencies": {
-    "@types/node": "18.19.39",
-    "@types/react": "18.3.3",
+    "@types/node": "18.19.53",
+    "@types/react": "18.3.9",
     "@types/react-dom": "18.3.0",
-    "autoprefixer": "10.4.19",
-    "eslint": "8.57.0",
-    "eslint-config-next": "13.5.6",
+    "autoprefixer": "10.4.20",
+    "eslint": "8.57.1",
+    "eslint-config-next": "13.5.7",
     "eslint-config-prettier": "8.10.0",
-    "postcss": "8.4.39",
-    "tailwindcss": "3.4.4",
+    "postcss": "8.4.47",
+    "tailwindcss": "3.4.13",
     "typescript": "4.9.5"
   }
 }
